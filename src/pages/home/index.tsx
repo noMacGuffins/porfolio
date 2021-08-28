@@ -66,47 +66,73 @@ const Logo = () => {
 
 const TopNav = () => {
     return(
-        <Row style={{backgroundColor: "#232323", color: "#FFFFFF", fontFamily: "Phosphate", position: "sticky", top: 0, zIndex:100}} expand="lg" color="white" px={"15%"}>
+        <Row  color="white" px={"15%"}>
             <Col auto><Logo></Logo></Col>
             <Col auto textWhite itemsCenter hFull flex>About</Col>
             <Col auto textWhite itemsCenter hFull flex>Rarity</Col>
             <Col auto textWhite itemsCenter hFull flex>Re-Roll</Col>
-            <Col auto textWhite itemsCenter hFull flex mx0>C.A.R.P</Col>
+            <Col auto textWhite itemsCenter hFull flex>C.A.R.P</Col>
             <Col auto textWhite itemsCenter hFull flex>Team</Col>
             <Col auto textWhite itemsCenter hFull flex>FAQ</Col>
-            <Col >
-
-            </Col>
         </Row>
     )
 }
 
+const MobileFriendlyNav = () => {
+    return(
+        <Nav
+            style={{backgroundColor: "#232323", color: "white", fontFamily: "Phosphate", position: "sticky", top: 0, zIndex:100, padding: "1% 15% 1% 15%",}}
+            onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+        >
+            <Nav.Item>
+                <Nav.Link style={{color: "white"}}>About</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link  style={{color: "white"}}>Rarity</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link  style={{color: "white"}}>Re-Roll</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link style={{color: "white"}} >C.A.R.P</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link style={{color: "white"}}>Team</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link  style={{color: "white"}}>FAQ</Nav.Link>
+            </Nav.Item>
+        </Nav>
+    )
+}
+ 
 const BottomMenu = () => {
     return(
-        <Row bgColor={"#232323"} color={"white"} fontFamily={"Phosphate"} flex itemsCenter px={"15%"} py50>
-            <Col auto><Logo></Logo></Col>
-            <Col itemsCenter justifyCenter fontSize48 flex >
+        <Div bgColor={"#232323"} color={"white"} fontFamily={"Phosphate"} px={"15%"} py50>
+            <Row>
+            <Col flex itemsCenter justifyCenter mb10><Logo></Logo></Col >
+            <Col itemsCenter justifyCenter fontSize48 flex mb10>
                 <Div bgColor={"#393937"} color={"#FFE058"} rounded20 w300 textCenter>Mint</Div>
             </Col>
-            <Col auto pr120>
-                <Row itemsCenter flex wFull>
+            <Col mb10>
+                <Row>
                     <Div textCenter fontSize24 color={"#8294a6"}>Menu</Div>
                 </Row>
-                <Row>
-                    <Col pr30>
-                        <Row py10>About</Row>
-                        <Row py10>Rarity</Row>
-                        <Row py10>Re-Roll</Row>
+                <Row flex itemsCenter justifyCenter>
+                    <Col>
+                        <Div textCenter py10>About</Div>
+                        <Div textCenter py10>Rarity</Div>
+                        <Div textCenter py10>Re-Roll</Div>
                     </Col>
-                    <Col pl30>
-                        <Row py10>C.A.R.P.</Row>
-                        <Row py10>Team</Row>
-                        <Row py10>FAQ</Row>
+                    <Col>
+                        <Div textCenter py10>C.A.R.P.</Div>
+                        <Div textCenter py10>Team</Div>
+                        <Div textCenter py10>FAQ</Div>
                     </Col>
                 </Row>
             </Col>
-            <Col auto>
-                <Row itemsCenter flex wFull>
+            <Col mb10>
+                <Row>
                     <Div textCenter fontSize24 color={"#8294a6"}>Community</Div>
                 </Row>
                 <Row>
@@ -123,7 +149,8 @@ const BottomMenu = () => {
                     </Col>
                 </Row>
             </Col>
-        </Row>
+            </Row>
+        </Div>
     )
 }
 
@@ -165,33 +192,33 @@ const Home: NextPage = () => {
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link href={`https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap`} rel="stylesheet"/>
-        <TopNav></TopNav>
+        <MobileFriendlyNav></MobileFriendlyNav>
         <Div h={"100%"} >
             <Image alt="" src={bannerImage}  height={"2000px"} ></Image>
             <Div px={"15%"} py50>
-                <Row itemsCenter justifyCenter color={"#D3D3D3"} >
-                    <Col maxW700 auto>
-                        <Row fontSize48 pb36>WELCOME TO BEARDOM</Row>
-                        <Row fontSize18 fontFamily={bodyFontFamily}>
-        Beardom is a collection of 10,000 Bear NFTs designed to move the NFT space forward. In addition to providing value as an avatar project, Beardom is a platform for future Dapp extensions. The first is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract.</Row>
+                <Row color={"#D3D3D3"}>
+                    <Col mb50>
+                        <Div fontSize48 pb36>WELCOME TO BEARDOM</Div>
+                        <Div fontSize18 fontFamily={bodyFontFamily}>
+                            Beardom is a collection of 10,000 Bear NFTs designed to move the NFT space forward. In addition to providing value as an avatar project, Beardom is a platform for future Dapp extensions. The first is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract.
+                        </Div>
                     </Col>
-                    <Col></Col>
-                    <Col  auto>
+                    <Col auto>
                         <Div w300 bgWhite h300 rounded10></Div>
                     </Col>
                 </Row>
-                <Row h100></Row>
-                <Row itemsCenter justifyCenter color={"#D3D3D3"}>
+                <Row h50></Row>
+                <Row  color={"#D3D3D3"}>
                     <Div color={"#FFE058"} fontSize36>• 99.9% of NFTs are not true Dapps</Div>
                     <Div lineHeight={2} fontFamily={bodyFontFamily}>{"Every Bear's metadata is generated on-mint with instant reveal. Nobody has any control over any bear's rarity--randomization truly decentralized."}</Div>
                 </Row>
                 <Row h95></Row>
-                <Row itemsCenter justifyCenter color={"#D3D3D3"}>
+                <Row color={"#D3D3D3"}>
                     <Div color={"#FFE058"} fontSize36>• Conventional roadmaps cover for rugpulls</Div>
                     <Div lineHeight={2} fontFamily={bodyFontFamily}>{"The essence of smart contracts is to ensure promises are fulfilled. Our roadmap offerings are coded into the genesis smart contract fully on-chain."}</Div>
                 </Row>
                 <Row h95></Row>
-                <Row itemsCenter justifyCenter color={"#D3D3D3"}>
+                <Row color={"#D3D3D3"}>
                     <Div color={"#FFE058"} fontSize36>• Unoptimized smart contracts waste YOUR gas money</Div>
                     <Div lineHeight={2} fontFamily={bodyFontFamily}>{"We don't want your money to be burned or sent to miners. Our smart contract is hyper-optimized to reduce minting fees."}</Div>
                 </Row>
@@ -200,7 +227,7 @@ const Home: NextPage = () => {
                     <Col itemsCenter textCenter fontSize36 flex auto>
                         Become Beardom
                     </Col>
-                    <Col itemsCenter justifyCenter fontSize20 auto>
+                    <Col fontSize20 auto>
                         <Row my5><u>🐻0.08 ETH</u></Row>
                         <Row my5><u>🐻10,000 Supplies</u></Row>
                         <Row my5><u>🐻Launch @09.17.2021</u></Row>
@@ -211,51 +238,51 @@ const Home: NextPage = () => {
                 </Row>
                 <Row h135></Row>
                 
-                <Row itemsCenter justifyCenter color={"#D3D3D3"} >
-                    <Div fontSize48 pb36 textCenter>RARITY/TRAITS (TBD)</Div>
+                <Row color={"#D3D3D3"} >
+                    <Div fontSize48 pb30 textCenter>RARITY/TRAITS (TBD)</Div>
                     <Row >
-                        <Col px10 >
-                            <Div  border border5 borderBlack h200></Div>
+                        <Col >
+                            <Div border border5 borderBlack h200></Div>
                         </Col>
-                        <Col px10 >
-                            <Div  border border5 borderBlack h200></Div>
+                        <Col >
+                            <Div border border5 borderBlack h200></Div>
                         </Col>
-                        <Col px10 >
-                            <Div  border border5 borderBlack h200></Div>
+                        <Col >
+                            <Div border border5 borderBlack h200></Div>
                         </Col>
                     </Row>
                 </Row>
                 <Div hrTag h2 bgColor={"#605E5E"} m50></Div>
-                <Row h400 itemsCenter justifyCenter color={"#D3D3D3"} >
-                    <Col maxW700 auto>
-                        <Row fontSize48 pb36>Trait Re-rolling</Row>
-                        <Row fontSize18 fontFamily={bodyFontFamily}>
+                <Row color={"#D3D3D3"}>
+                    <Col mb50>
+                        <Div fontSize48 pb36>Trait Re-rolling</Div>
+                        <Div fontSize18 fontFamily={bodyFontFamily}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
-                        </Row>
+                        </Div>
                     </Col>
-                    <Col></Col>
-                    <Col  auto>
+                    <Col auto>
                         <Div w300 bgWhite h300 rounded10></Div>
                     </Col>
                 </Row>
-                <Div hrTag h2 bgColor={"#605E5E"} m50></Div>
-                <Row h400 itemsCenter justifyCenter color={"#D3D3D3"} >
-                    <Col maxW700 auto>
-                        <Row fontSize48 pb36>Community Artist Royalty Program [C.A.R.P]</Row>
-                        <Row fontSize18 fontFamily={bodyFontFamily}>
+                <Row h50></Row>
+                <Div hrTag h2 bgColor={"#605E5E"} mb50></Div>
+                <Row color={"#D3D3D3"}>
+                    <Col mb50>
+                        <Div fontSize48 pb36>Community Artist Royalty Program [C.A.R.P]</Div>
+                        <Div fontSize18 fontFamily={bodyFontFamily}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
-                        </Row>
+                        </Div>
                     </Col>
-                    <Col></Col>
-                    <Col  auto>
+                    <Col auto>
                         <Div w300 bgWhite h300 rounded10></Div>
                     </Col>
                 </Row>
-                <Div hrTag h2 bgColor={"#605E5E"} m50></Div>
+                <Row h50></Row>
+                <Div hrTag h2 bgColor={"#605E5E"} mb50></Div>
                 <Row itemsCenter justifyCenter color={"#D3D3D3"}>
                     <Div fontSize48 pb36 textCenter>Team</Div>
                     <Row>
-                        <Col pr20 >
+                        <Col pb10>
                             <Div bgColor={"#A0A0A0"} p15 h330>
                                 <Div flex justifyCenter>
                                     <Image alt="" src={eugeneProfile}  width={"200px"} height={"200px"}></Image>
@@ -268,7 +295,7 @@ const Home: NextPage = () => {
                                 </Div>
                             </Div>
                         </Col>
-                        <Col px20 >
+                        <Col pb10>
                             <Div bgColor={"#A0A0A0"} p15 h330>
                                 <Div flex justifyCenter>
                                     <Image alt="" src={ericProfile}  width={"200px"} height={"200px"}></Image>
@@ -281,7 +308,7 @@ const Home: NextPage = () => {
                                 </Div>
                             </Div>
                         </Col>
-                        <Col px20 >
+                        <Col pb10>
                             <Div bgColor={"#A0A0A0"} p15 h330>
                                 <Div flex justifyCenter>
                                     <Image alt="" src={mjProfile}  width={"200px"} height={"200px"}></Image>
@@ -294,7 +321,7 @@ const Home: NextPage = () => {
                                 </Div>
                             </Div>
                         </Col>
-                        <Col pl20 >
+                        <Col pb10>
                             <Div bgColor={"#A0A0A0"} p15 h330>
                                 <Div flex justifyCenter>
                                     <Image alt="" src={chiiProfile}  width={"200px"} height={"200px"}></Image>
@@ -310,7 +337,7 @@ const Home: NextPage = () => {
                     </Row>
                 </Row>
                 <Div hrTag h2 bgColor={"#605E5E"} m50></Div>
-                <Row h400 itemsCenter justifyCenter color={"#D3D3D3"} >
+                <Row itemsCenter justifyCenter color={"#D3D3D3"} >
                     <Col auto fontSize68 mr20 hFull>
                         FAQ
                     </Col>
