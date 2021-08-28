@@ -81,7 +81,7 @@ const TopNav = () => {
 const MobileFriendlyNav = () => {
     return(
         <Nav
-            style={{backgroundColor: "#232323", color: "white", fontFamily: "Phosphate", position: "sticky", top: 0, zIndex:100, padding: "1% 15% 1% 15%",}}
+            style={{backgroundColor: "#232323", color: "white", fontFamily: "Bungee Inline", position: "sticky", top: 0, zIndex:100, padding: "1% 15% 1% 15%",}}
             onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
         >
             <Nav.Item>
@@ -108,7 +108,7 @@ const MobileFriendlyNav = () => {
  
 const BottomMenu = () => {
     return(
-        <Div bgColor={"#232323"} color={"white"} fontFamily={"Phosphate"} px={"15%"} py50>
+        <Div bgColor={"#232323"} color={"white"} fontFamily={"Bungee Inline"} px={"15%"} py50>
             <Row>
             <Col flex itemsCenter justifyCenter mb10><Logo></Logo></Col >
             <Col itemsCenter justifyCenter fontSize48 flex mb10>
@@ -188,7 +188,7 @@ const Home: NextPage = () => {
   }
 
   return (
-    <Div className="container-fluid p-0" style={{backgroundColor: "#30251F", fontFamily: "Phosphate-Inline"}} letterSpacing={2}>
+    <Div className="container-fluid p-0" style={{backgroundColor: "#30251F", fontFamily: "Bungee Inline"}} letterSpacing={2}>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link href={`https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap`} rel="stylesheet"/>
@@ -239,7 +239,7 @@ const Home: NextPage = () => {
                 <Row h135></Row>
                 
                 <Row color={"#D3D3D3"} >
-                    <Div fontSize48 pb30 textCenter>RARITY/TRAITS (TBD)</Div>
+                    <Div fontSize48 pb30 textCenter>RARITY / TRAITS (TBD)</Div>
                     <Row >
                         <Col >
                             <Div border border5 borderBlack h200></Div>
