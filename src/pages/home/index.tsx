@@ -111,7 +111,7 @@ const BottomMenu = () => {
         <Div bgColor={"#232323"} color={"white"} fontFamily={"Bungee Inline"} px={"15%"} py50>
             <Row>
             <Col flex itemsCenter justifyCenter mb10><Logo></Logo></Col >
-            <Col itemsCenter justifyCenter fontSize48 flex mb10>
+            <Col itemsCenter justifyCenter fontSize40 flex mb10>
                 <Div bgColor={"#393937"} color={"#FFE058"} rounded20 w300 textCenter>Mint</Div>
             </Col>
             <Col mb10>
@@ -198,7 +198,7 @@ const Home: NextPage = () => {
             <Div px={"15%"} py50>
                 <Row color={"#D3D3D3"}>
                     <Col mb50>
-                        <Div fontSize48 pb36>WELCOME TO BEARDOM</Div>
+                        <Div fontSize40 pb36>WELCOME TO BEARDOM</Div>
                         <Div fontSize18 fontFamily={bodyFontFamily}>
                             Beardom is a collection of 10,000 Bear NFTs designed to move the NFT space forward. In addition to providing value as an avatar project, Beardom is a platform for future Dapp extensions. The first is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract.
                         </Div>
@@ -209,22 +209,22 @@ const Home: NextPage = () => {
                 </Row>
                 <Row h50></Row>
                 <Row  color={"#D3D3D3"}>
-                    <Div color={"#FFE058"} fontSize36>• 99.9% of NFTs are not true Dapps</Div>
+                    <Div color={"#FFE058"} fontSize30>• 99.9% of NFTs are not true Dapps</Div>
                     <Div lineHeight={2} fontFamily={bodyFontFamily}>{"Every Bear's metadata is generated on-mint with instant reveal. Nobody has any control over any bear's rarity--randomization truly decentralized."}</Div>
                 </Row>
                 <Row h95></Row>
                 <Row color={"#D3D3D3"}>
-                    <Div color={"#FFE058"} fontSize36>• Conventional roadmaps cover for rugpulls</Div>
+                    <Div color={"#FFE058"} fontSize30>• Conventional roadmaps cover for rugpulls</Div>
                     <Div lineHeight={2} fontFamily={bodyFontFamily}>{"The essence of smart contracts is to ensure promises are fulfilled. Our roadmap offerings are coded into the genesis smart contract fully on-chain."}</Div>
                 </Row>
                 <Row h95></Row>
                 <Row color={"#D3D3D3"}>
-                    <Div color={"#FFE058"} fontSize36>• Unoptimized smart contracts waste YOUR gas money</Div>
+                    <Div color={"#FFE058"} fontSize30>• Unoptimized smart contracts waste YOUR gas money</Div>
                     <Div lineHeight={2} fontFamily={bodyFontFamily}>{"We don't want your money to be burned or sent to miners. Our smart contract is hyper-optimized to reduce minting fees."}</Div>
                 </Row>
                 <Row h95></Row>
                 <Row  color={"black"} rounded30 bgColor={"#FFE058"} justifyAround py10>
-                    <Col itemsCenter textCenter fontSize36 flex auto>
+                    <Col itemsCenter textCenter fontSize30 flex auto>
                         Become Beardom
                     </Col>
                     <Col fontSize20 auto>
@@ -232,14 +232,14 @@ const Home: NextPage = () => {
                         <Row my5><u>🐻10,000 Supplies</u></Row>
                         <Row my5><u>🐻Launch @09.17.2021</u></Row>
                     </Col>
-                    <Col itemsCenter justifyCenter auto fontSize48  flex>
+                    <Col itemsCenter justifyCenter auto fontSize40  flex>
                         <Div bgColor={"#393937"} color={"#FFE058"} rounded20 w317 textCenter>Mint</Div>
                     </Col>
                 </Row>
                 <Row h135></Row>
                 
                 <Row color={"#D3D3D3"} >
-                    <Div fontSize48 pb30 textCenter>RARITY / TRAITS (TBD)</Div>
+                    <Div fontSize40 pb30 textCenter>RARITY / TRAITS (TBD)</Div>
                     <Row >
                         <Col >
                             <Div border border5 borderBlack h200></Div>
@@ -255,7 +255,7 @@ const Home: NextPage = () => {
                 <Div hrTag h2 bgColor={"#605E5E"} m50></Div>
                 <Row color={"#D3D3D3"}>
                     <Col mb50>
-                        <Div fontSize48 pb36>Trait Re-rolling</Div>
+                        <Div fontSize40 pb36>Trait Re-rolling</Div>
                         <Div fontSize18 fontFamily={bodyFontFamily}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
                         </Div>
@@ -268,7 +268,7 @@ const Home: NextPage = () => {
                 <Div hrTag h2 bgColor={"#605E5E"} mb50></Div>
                 <Row color={"#D3D3D3"}>
                     <Col mb50>
-                        <Div fontSize48 pb36>Community Artist Royalty Program [C.A.R.P]</Div>
+                        <Div fontSize40 pb36>Community Artist Royalty Program [C.A.R.P]</Div>
                         <Div fontSize18 fontFamily={bodyFontFamily}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
                         </Div>
@@ -280,7 +280,7 @@ const Home: NextPage = () => {
                 <Row h50></Row>
                 <Div hrTag h2 bgColor={"#605E5E"} mb50></Div>
                 <Row itemsCenter justifyCenter color={"#D3D3D3"}>
-                    <Div fontSize48 pb36 textCenter>Team</Div>
+                    <Div fontSize40 pb36 textCenter>Team</Div>
                     <Row>
                         <Col pb10>
                             <Div bgColor={"#A0A0A0"} p15 h330>
