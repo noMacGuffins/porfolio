@@ -69,35 +69,37 @@ const Logo = (props) => {
     )
 }
 
+function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+    useEffect(() => {
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }, []); // Empty array ensures that effect is only run on mount
+    return windowSize;
+}
+
+
 const MobileFriendlyNav = ({callBack}) => {
     const navbarRef = useRef(null)
 
-    function useWindowSize() {
-        // Initialize state with undefined width/height so server and client renders match
-        // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-        const [windowSize, setWindowSize] = useState({
-          width: undefined,
-          height: undefined,
-        });
-        useEffect(() => {
-          // Handler to call on window resize
-          function handleResize() {
-            // Set window width/height to state
-            setWindowSize({
-              width: window.innerWidth,
-              height: window.innerHeight,
-            });
-          }
-          // Add event listener
-          window.addEventListener("resize", handleResize);
-          // Call handler right away so state gets updated with initial window size
-          handleResize();
-          // Remove event listener on cleanup
-          return () => window.removeEventListener("resize", handleResize);
-        }, []); // Empty array ensures that effect is only run on mount
-        return windowSize;
-      }
-      const size = useWindowSize();
+    const size = useWindowSize();
 
     return(
         <Navbar fixed="top" bg="light" expand="lg" style={{color: "black", fontFamily: "Bungee Inline", zIndex:100, padding: (size.width > 1000 ? "1vw 20vw 1vw 20vw" : "1vw 5vw 1vw 5vw"),}}
@@ -114,7 +116,7 @@ const MobileFriendlyNav = ({callBack}) => {
                 <Nav.Link href="#about" onClick={() => callBack(0)}>About</Nav.Link>
                 <Nav.Link href="#rarity" onClick={() => callBack(1)}>Rarity</Nav.Link>
                 <Nav.Link href="#reroll" onClick={() => callBack(2)}>Re-Roll</Nav.Link>
-                <Nav.Link href="#carp" onClick={() => callBack(3)}>C.A.R.P</Nav.Link>
+                <Nav.Link href="#carp" onClick={() => callBack(3)}>CARP</Nav.Link>
                 <Nav.Link href="#team" onClick={() => callBack(4)}>Team</Nav.Link>
                 <Nav.Link href="#faq" onClick={() => callBack(5)}>FAQ</Nav.Link>
             </Nav>
@@ -143,7 +145,7 @@ const BottomMenu = () => {
                         <Div textCenter py10>Re-Roll</Div>
                     </Col>
                     <Col>
-                        <Div textCenter py10>C.A.R.P.</Div>
+                        <Div textCenter py10>CARP</Div>
                         <Div textCenter py10>Team</Div>
                         <Div textCenter py10>FAQ</Div>
                     </Col>
@@ -182,6 +184,9 @@ const Home: NextPage = () => {
     const faqRef = useRef(null)
     const refs = [aboutRef, rarityRef, rerollRef, carpRef, teamRef, faqRef]
     const scrollToRef = (index) => {window.scrollTo(0, refs[index].current.offsetTop - 130)}
+
+    const size = useWindowSize();
+    const xPadding = (size.width > 1000 ? "20vw" : "10vw")
 
     const faqQuestion = [
         {
@@ -249,7 +254,7 @@ const Home: NextPage = () => {
         <MobileFriendlyNav callBack={scrollToRef}></MobileFriendlyNav>
         <Div pt200>
             {/* <Image alt="" src={honeyBackground}></Image> */}
-            <Div px={"20vw"}>
+            <Div px={xPadding}>
                 <Row color={"black"} >
                     <Col mr20>
                         <Div fontSize30 ref={aboutRef}>{"Become Beardom,"}</Div>
@@ -273,6 +278,8 @@ const Home: NextPage = () => {
                         <Div fontSize30 pb36>Our Virtues</Div>
                     </Col>
                 </Row>
+            </Div>
+            <Div style={{paddingLeft: xPadding}}> 
                 <Div style={{overflowX: "scroll", flexDirection: "row",}} flex >
                     {valuesArr.map((value, index) => {
                         return(
@@ -297,7 +304,7 @@ const Home: NextPage = () => {
                     </Col>
                 </Row>
             </Div>
-            <Div style={{paddingLeft: "20vw"}}> 
+            <Div style={{paddingLeft: xPadding}}> 
                 <Div style={{overflowX: "scroll", flexDirection: "row"}} flex>
                     {[pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11].map((imageSrc, index) => {
                         return(
@@ -316,7 +323,7 @@ const Home: NextPage = () => {
                     })}
                 </Div>
             </Div>
-            <Div px={"20vw"}> 
+            <Div px={xPadding}> 
                 <Row h135></Row>
                 <Row color={"black"} >
                     <Div fontSize30 pb30 ref={rarityRef}>RARITY / TRAITS (TBD) </Div>
@@ -348,7 +355,7 @@ const Home: NextPage = () => {
                 <Div h2 mb50></Div>
                 <Row color={"black"} >
                     <Col mb50>
-                        <Div fontSize30 pb36 ref={carpRef}>Community Artist Royalty Program [C.A.R.P]</Div>
+                        <Div fontSize30 pb36 ref={carpRef}>Community Artist Royalty Program [CARP]</Div>
                         <Div fontFamily={bodyFontFamily}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
                         </Div>
@@ -441,9 +448,9 @@ const Home: NextPage = () => {
             <Div h100></Div>
         </Div>
         <Div  style={{position: "fixed", bottom: 0, zIndex: 100, width: "100%"}}>
-            <Row color={"black"} bgColor={"#FFE058"} py30 px={"20vw"} fontSize30>
+            <Row color={"black"} bgColor={"#FFE058"} py30 px={xPadding} fontSize30>
                 <Col textCenter textNowrap>
-                    {quantity * 0.08} <Div spanTag fontSize15>ETH</Div>
+                    {(quantity * 0.08).toFixed(4)} <Div spanTag fontSize15>ETH</Div>
                 </Col>
                 <Col>
                     <Row flexNowrap>
