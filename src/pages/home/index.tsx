@@ -244,6 +244,29 @@ const Home: NextPage = () => {
         },
     ]
 
+    const teamArr = [
+        {
+            name: "Eugene",
+            imageSrc: eugeneProfile,
+            description: "Smart Contract Maniac"
+        },
+        {
+            name: "Eric",
+            imageSrc: ericProfile,
+            description: "Smart Contract Maniac"
+        },
+        {
+            name: "MJ",
+            imageSrc: mjProfile,
+            description: "Smart Contract Maniac"
+        },
+        {
+            name: "Chii",
+            imageSrc: chiiProfile,
+            description: "Smart Contract Maniac"
+        }
+    ]
+
 
   return (
     <Div className="container-fluid p-0" style={{fontFamily: "Bungee Inline", overflowX: "hidden"}} letterSpacing={2}>
@@ -363,8 +386,32 @@ const Home: NextPage = () => {
                 </Row>
                 <Row h5></Row>
                 <Div h2 mb50></Div>
-                <Row itemsCenter flex color={"#D3D3D3"}>
-                    <Div fontSize30 ref={teamRef} color={"black"} pb36>Team</Div>
+                <Div fontSize30 ref={teamRef} color={"black"} pb36>Team</Div>
+                </Div>
+                <Div style={{paddingLeft: xPadding}}> 
+                    <Div style={{overflowX: "scroll", flexDirection: "row"}} flex>
+                        {teamArr.map((teamMember, index) => {
+                            return(
+                                <Div px0 key={index} mr50 pb20>
+                                    <Div rounded10 overflowHidden w230 shadow bgColor={"white"}> 
+                                        <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
+                                            {teamMember.name}
+                                        </Div>
+                                        <Div h230 w230>
+                                            <Image alt="" src={teamMember.imageSrc} ></Image>
+                                        </Div>
+                                        <Div textCenter m0 color={"#42332a"} bgColor={"#b38870"}>
+                                            {teamMember.description}
+                                        </Div>
+                                    </Div>
+                                    
+                                </Div>
+                            )
+                        })}
+                    </Div>
+                </Div>
+                <Div px={xPadding}> 
+                {/* <Row itemsCenter flex color={"#D3D3D3"}>
                     <Row>
                         <Col pb36 px0 mxAuto>
                             <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow> 
@@ -419,7 +466,7 @@ const Home: NextPage = () => {
                             </Div>
                         </Col>
                     </Row>
-                </Row>
+                </Row> */}
                 <Div h2 my50 ref={faqRef}></Div>
                 <Row auto fontSize30 mr20  >
                     FAQ
