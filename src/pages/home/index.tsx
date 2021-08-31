@@ -72,7 +72,7 @@ const Logo = (props) => {
 
 const MobileFriendlyNav = ({callBack}) => {
     return(
-        <Navbar bg="light" expand="lg" style={{color: "black", fontFamily: "Bungee Inline", position: "sticky", top: 0, zIndex:100, padding: "1% 15% 1% 15%",}}>
+        <Navbar fixed="top" bg="light" expand="lg" style={{color: "black", fontFamily: "Bungee Inline", zIndex:100, padding: "1% 15% 1% 15%",}}>
         <Container fluid>
             <Div mr5><Logo fill={"black"} width={50} height={50}></Logo></Div>
             <Navbar.Brand href="#home">
