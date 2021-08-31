@@ -109,7 +109,7 @@ const propsToClx = (props) => {
     top: (v) => addStyle(styles, v, { top: pixelOrValue(v) }),
     bottom: (v) => addStyle(styles, v, { bottom: pixelOrValue(v) }),
     // style font
-    fontSize: (v) => addStyle(styles, v, { fontSize: pixelOrValue(v) }),
+    // fontSize: (v) => addStyle(styles, v, { fontSize: pixelOrValue(v) }),
     // style gap
     gap: (v) => addStyle(styles, v, { gap: pixelOrValue(v) }),
     gapX: (v) => addStyle(styles, v, { columnGap: pixelOrValue(v) }),
@@ -200,14 +200,13 @@ const propsToClx = (props) => {
     // overscrollXAuto: () => clxs.push('overscroll-x-auto'),
     // overscrollXContain: () => clxs.push('overscroll-x-contain'),
     // overscrollXNone: () => clxs.push('overscroll-x-none'),
-    // // position
-    // static: () => clxs.push('static'),
-    // fixed: () => clxs.push('fixed'),
-    // absolute: () => clxs.push('absolute'),
-    // relative: () => clxs.push('relative'),
-    // sticky: () => clxs.push('sticky'),
+    // position
+    static: () => clxs.push('position-static'),
+    fixed: () => clxs.push('position-fixed'),
+    absolute: () => clxs.push('position-absolute'),
+    relative: () => clxs.push('position-relative'),
+    sticky: () => clxs.push('position-sticky'),
     // // top, right, bottom, left
-
     // // visibility
     // visible: () => clxs.push('visible'),
     // invisible: () => clxs.push('invisible'),
@@ -805,16 +804,15 @@ const propsToClx = (props) => {
     // transformGPU: () => clxs.push('transform-gpu'),
     // transformNone: () => clxs.push('transform-none'),
 
-    // // ==== Miscellaneous ====
-    // // box-shadow
-    // shadowSm: () => clxs.push('shadow-sm'),
-    // shadow: () => clxs.push('shadow'),
-    // shadowMd: () => clxs.push('shadow-md'),
-    // shadowLg: () => clxs.push('shadow-lg'),
-    // shadowXl: () => clxs.push('shadow-xl'),
-    // shadow2xl: () => clxs.push('shadow-2xl'),
-    // shadowInner: () => clxs.push('shadow-inner'),
-    // shadowNone: () => clxs.push('shadow-none '),
+    // box-shadow
+    shadowSm: () => clxs.push('shadow-sm'),
+    shadow: () => clxs.push('shadow'),
+    shadowMd: () => clxs.push('shadow-md'),
+    shadowLg: () => clxs.push('shadow-lg'),
+    shadowXl: () => clxs.push('shadow-xl'),
+    shadow2xl: () => clxs.push('shadow-2xl'),
+    shadowInner: () => clxs.push('shadow-inner'),
+    shadowNone: () => clxs.push('shadow-none '),
     // // opacity
     // opacity0: () => clxs.push('opacity-0'),
     // opacity5: () => clxs.push('opacity-5'),

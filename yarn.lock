@@ -2606,11 +2606,6 @@ react-bootstrap@^2.0.0-beta.6:
     uncontrollable "^7.2.1"
     warning "^4.0.3"
 
-react-card-carousel@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/react-card-carousel/-/react-card-carousel-1.1.3.tgz#8a1c32e32964663008a1a98eda29838d0673378e"
-  integrity sha512-iG3ob0rAZMCrNtvkGvQgOPwfYQ9//R977Sk3/WHpSl9dKn/bkLiTQj/Iyfw5/oKZYL+vvGIvWwu776JFXnTC+A==
-
 react-dom@17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
@@ -2634,6 +2629,11 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-multi-carousel@^2.6.5:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/react-multi-carousel/-/react-multi-carousel-2.6.5.tgz#faeceb697b138c7a1c403c58ddc5f33cfc19b3f2"
+  integrity sha512-i5iuAm5XRT/h7uBL9/pGWeRsQXzqvjBrPVP1sobKgDKEvfZuKFpYp/alaQhTRM56Jtkb8jZpSqLn52Ku6jJbDg==
 
 react-refresh@0.8.3:
   version "0.8.3"
