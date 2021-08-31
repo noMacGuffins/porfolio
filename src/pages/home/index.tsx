@@ -21,9 +21,8 @@ import pic8 from 'public/images/8.png'
 import pic9 from 'public/images/9.png'
 import pic10 from 'public/images/10.png'
 import pic11 from 'public/images/11.png'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import ReactCardCarousel from "react-card-carousel";
-
 
 const Discord = () => {
     return(
@@ -71,13 +70,44 @@ const Logo = (props) => {
 }
 
 const MobileFriendlyNav = ({callBack}) => {
+    const navbarRef = useRef(null)
+
+    function useWindowSize() {
+        // Initialize state with undefined width/height so server and client renders match
+        // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+        const [windowSize, setWindowSize] = useState({
+          width: undefined,
+          height: undefined,
+        });
+        useEffect(() => {
+          // Handler to call on window resize
+          function handleResize() {
+            // Set window width/height to state
+            setWindowSize({
+              width: window.innerWidth,
+              height: window.innerHeight,
+            });
+          }
+          // Add event listener
+          window.addEventListener("resize", handleResize);
+          // Call handler right away so state gets updated with initial window size
+          handleResize();
+          // Remove event listener on cleanup
+          return () => window.removeEventListener("resize", handleResize);
+        }, []); // Empty array ensures that effect is only run on mount
+        return windowSize;
+      }
+      const size = useWindowSize();
+
     return(
-        <Navbar fixed="top" bg="light" expand="lg" style={{color: "black", fontFamily: "Bungee Inline", zIndex:100, padding: "1% 15% 1% 15%",}}>
+        <Navbar fixed="top" bg="light" expand="lg" style={{color: "black", fontFamily: "Bungee Inline", zIndex:100, padding: "1vw 15vw 1vw 15vw",}}
+            ref={navbarRef}
+        >
         <Container fluid>
             <Div mr5><Logo fill={"black"} width={50} height={50}></Logo></Div>
-            <Navbar.Brand href="#home">
+            {size.width &&  size.width > 400 && <Navbar.Brand href="#home">
                 BearDom
-            </Navbar.Brand>
+            </Navbar.Brand>}
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -99,7 +129,7 @@ const BottomMenu = () => {
         <Div bgColor={"#232323"} color={"white"} fontFamily={"Bungee Inline"} px={"15%"} py50>
             <Row>
             <Col flex itemsCenter justifyCenter mb10><Logo></Logo></Col >
-            <Col itemsCenter justifyCenter fontSize40 flex mb10>
+            <Col itemsCenter justifyCenter fontSize35 flex mb10>
                 <Div bgColor={"#393937"} color={"#FFE058"} rounded20 w300 textCenter>Mint</Div>
             </Col>
             <Col mb10>
@@ -143,7 +173,7 @@ const BottomMenu = () => {
 }
 
 const Home: NextPage = () => {
-    const bodyFontFamily = "Bungee Inline"
+    const bodyFontFamily = "CMU Serif"
     const aboutRef = useRef(null)
     const rarityRef = useRef(null)
     const rerollRef = useRef(null)
@@ -172,23 +202,28 @@ const Home: NextPage = () => {
         },
     ]
 
-  const [faqExpand, setFaqExpand] = useState([false, false, false, false])
+    const [aboutExpand, setAboutExpand] = useState(false)
+    const [dappExpand, setDappExpand] = useState(false)
+    const [rugpullExpand, setRugpullExpand] = useState(false)
+    const [gasExpand, setGasExpand] = useState(false)
 
-  const onPressFaq = (index) => {
-    let nextExpandState = faqExpand.map((item, itemIndex) => {
-        return(
-            (itemIndex == index) ? !item : item
-        )
-    })
-    setFaqExpand(nextExpandState)
-  }
+    const [faqExpand, setFaqExpand] = useState([false, false, false, false])
+
+    const onPressFaq = (index) => {
+        let nextExpandState = faqExpand.map((item, itemIndex) => {
+            return(
+                (itemIndex == index) ? !item : item
+            )
+        })
+        setFaqExpand(nextExpandState)
+    }
 
     const carouselStyle = {
       position: "relative",
 
       backgroundImage: bannerImage,
       backgroundColor: "rgb(248,249,250)",
-      height: "600px",
+      height: "600vx",
       width: "100%",
       display: "flex",
       flex: 1,
@@ -197,8 +232,8 @@ const Home: NextPage = () => {
     }
 
     const cardStyle = {
-        height: "400px",
-        width: "400px",
+        height: "400vx",
+        width: "400vx",
         textAlign: "center",
         color: "#FFF",
         fontFamily: "sans-serif",
@@ -209,7 +244,7 @@ const Home: NextPage = () => {
     }
 
   return (
-    <Div className="container-fluid p-0" style={{backgroundColor: "#30251F", fontFamily: "Bungee Inline", overflowX: "hidden"}} letterSpacing={2}>
+    <Div className="container-fluid p-0" style={{fontFamily: "Bungee Inline", overflowX: "hidden"}} letterSpacing={2}>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link href={`https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap`} rel="stylesheet"/>
@@ -236,7 +271,7 @@ const Home: NextPage = () => {
                     return(
                         <Div key={index} style={cardStyle}>
                             <Image alt="loading" src={imageSrc} ></Image>
-                            <Div itemsCenter justifyCenter auto fontSize40 fontFamily={"Bungee Inline"} flex>
+                            <Div itemsCenter justifyCenter auto fontSize35 fontFamily={"Bungee Inline"} flex>
                                 <Div bgColor={"#393937"} color={"#FFE058"} rounded20 w317 textCenter>Mint</Div>
                             </Div>
                         </Div>
@@ -244,51 +279,68 @@ const Home: NextPage = () => {
                 })}
                 </ReactCardCarousel>
             </Div>
-            <Div px={"15%"} py50>
-                <Row color={"#D3D3D3"} >
+            <Div px={"20vw"} py50>
+                <Row color={"black"} >
                     <Col mb50>
-                        <Div fontSize40 pb36 ref={aboutRef}>WELCOME TO BEARDOM</Div>
-                        <Div fontSize18 fontFamily={bodyFontFamily}>
+                        <Div fontSize={"50vx"} ref={aboutRef} textCenter >{"WELCOME TO BEARDOM"}</Div>
+                        <Div fontSize20 fontFamily={bodyFontFamily} textCenter onClick={() => setAboutExpand(!aboutExpand)} style={{cursor: "pointer"}}>{"read more >"}</Div>
+                        {aboutExpand && <Div fontSize18 pt36 fontFamily={bodyFontFamily}>
                             Beardom is a collection of 10,000 Bear NFTs designed to move the NFT space forward. In addition to providing value as an avatar project, Beardom is a platform for future Dapp extensions. The first is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract.
-                        </Div>
-                    </Col>
-                    <Col auto>
-                        <Div w300 bgWhite h300 rounded10></Div>
+                        </Div>}
                     </Col>
                 </Row>
                 <Row h50></Row>
-                <Row  color={"#D3D3D3"}>
-                    <Div color={"#FFE058"} fontSize30>• 99.9% of NFTs are not true Dapps</Div>
-                    <Div lineHeight={2} fontFamily={bodyFontFamily}>{"Every Bear's metadata is generated on-mint with instant reveal. Nobody has any control over any bear's rarity--randomization truly decentralized."}</Div>
+                <Row color={"black"} >
+                    <Col>
+                        <Div fontSize35 pb36>We are:</Div>
+                    </Col>
+                </Row>
+                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0>
+                    <Div fontSize30 textCenter>
+                        A <Div spanTag color={"#ffd000"}>True</Div> Dapp
+                    </Div>
+                    <Div p0 bgBlack maxH400>
+                        <Image alt="loading" src={pic2}></Image>
+                    </Div>
+                    <Div lineHeight={2} bgColor={"#b38870"} color={"#42332a"} style={{cursor: "pointer"}} pt10 pb10 textCenter fontSize20 fontFamily={bodyFontFamily} onClick={() => setDappExpand(!dappExpand)}>{"read more >"}</Div>
+                    {dappExpand && <Div lineHeight={2} bgColor={"#b38870"} textCenter fontFamily={bodyFontFamily}>{"Every Bear's metadata is generated on-mint with instant reveal. Nobody has any control over any bear's rarity--randomization truly decentralized."}</Div>}
                 </Row>
                 <Row h95></Row>
-                <Row color={"#D3D3D3"}>
-                    <Div color={"#FFE058"} fontSize30>• Conventional roadmaps cover for rugpulls</Div>
-                    <Div lineHeight={2} fontFamily={bodyFontFamily}>{"The essence of smart contracts is to ensure promises are fulfilled. Our roadmap offerings are coded into the genesis smart contract fully on-chain."}</Div>
+                <Row color={"black"} >
+                    <Col>
+                        <Div fontSize35 pb36 >We despise:</Div>
+                    </Col>
+                </Row>
+                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0>
+                    <Div fontSize30 textCenter>
+                        Conventional roadmaps covering <Div spanTag color={"#ffd000"}>Rugpulls</Div>
+                    </Div>
+                    <Div p0 bgBlack maxH400>
+                        <Image alt="loading" src={pic7}></Image>
+                    </Div>
+                    <Div lineHeight={2} bgColor={"#b38870"} color={"#42332a"} style={{cursor: "pointer"}} pt10 pb10 textCenter fontSize20 fontFamily={bodyFontFamily} onClick={() => setRugpullExpand(!rugpullExpand)}>{"read more >"}</Div>
+                    {rugpullExpand && <Div lineHeight={2} bgColor={"#b38870"} textCenter fontFamily={bodyFontFamily}>{"The essence of smart contracts is to ensure promises are fulfilled. Our roadmap offerings are coded into the genesis smart contract fully on-chain."}</Div>}
                 </Row>
                 <Row h95></Row>
-                <Row color={"#D3D3D3"}>
-                    <Div color={"#FFE058"} fontSize30>• Unoptimized smart contracts waste YOUR gas money</Div>
-                    <Div lineHeight={2} fontFamily={bodyFontFamily}>{"We don't want your money to be burned or sent to miners. Our smart contract is hyper-optimized to reduce minting fees."}</Div>
+                <Row color={"black"} >
+                    <Col>
+                        <Div fontSize35 pb36>We hyper optimize:</Div>
+                    </Col>
                 </Row>
-                <Row h95></Row>
-                <Row  color={"black"} rounded30 bgColor={"#FFE058"} justifyAround py10>
-                    <Col itemsCenter textCenter fontSize30 flex auto>
-                        Become Beardom
-                    </Col>
-                    <Col fontSize20 auto>
-                        <Row my5><u>🐻0.08 ETH</u></Row>
-                        <Row my5><u>🐻10,000 Supplies</u></Row>
-                        <Row my5><u>🐻Launch @09.17.2021</u></Row>
-                    </Col>
-                    <Col itemsCenter justifyCenter auto fontSize40  flex>
-                        <Div bgColor={"#393937"} color={"#FFE058"} rounded20 w317 textCenter>Mint</Div>
-                    </Col>
+                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0>
+                    <Div fontSize30 textCenter>
+                        smart contracts for <Div spanTag color={"#ffd000"}>YOUR</Div> gas money
+                    </Div>
+                    <Div p0 bgBlack maxH400>
+                        <Image alt="loading" src={pic11}></Image>
+                    </Div>
+                    <Div lineHeight={2} bgColor={"#b38870"} color={"#42332a"} style={{cursor: "pointer"}} pt10 pb10 textCenter fontSize20 fontFamily={bodyFontFamily} onClick={() => setGasExpand(!gasExpand)}>{"read more >"}</Div>
+                    {gasExpand && <Div lineHeight={2} bgColor={"#b38870"} textCenter fontFamily={bodyFontFamily}>{"Every Bear's metadata is generated on-mint with instant reveal. Nobody has any control over any bear's rarity--randomization truly decentralized."}</Div>}
                 </Row>
                 <Row h135></Row>
                 
-                <Row color={"#D3D3D3"} >
-                    <Div fontSize40 pb30 textCenter ref={rarityRef}>RARITY / TRAITS (TBD) </Div>
+                <Row color={"black"} >
+                    <Div fontSize35 pb30 textCenter ref={rarityRef}>RARITY / TRAITS (TBD) </Div>
                     <Row >
                         <Col >
                             <Div border border5 borderBlack h200></Div>
@@ -302,22 +354,22 @@ const Home: NextPage = () => {
                     </Row>
                 </Row>
                 <Div hrTag h2 bgColor={"#605E5E"} m50 ></Div>
-                <Row color={"#D3D3D3"}>
+                <Row color={"black"}>
                     <Col mb50>
-                        <Div fontSize40 pb36 ref={rerollRef}>Trait Re-rolling</Div>
+                        <Div fontSize35 pb36 ref={rerollRef} textCenter>Trait Re-rolling</Div>
                         <Div fontSize18 fontFamily={bodyFontFamily}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
                         </Div>
                     </Col>
-                    <Col auto>
+                    {/* <Col auto>
                         <Div w300 bgWhite h300 rounded10></Div>
-                    </Col>
+                    </Col> */}
                 </Row>
                 <Row h50></Row>
                 <Div hrTag h2 bgColor={"#605E5E"} mb50></Div>
-                <Row color={"#D3D3D3"} >
+                <Row color={"black"} >
                     <Col mb50>
-                        <Div fontSize40 pb36 ref={carpRef}>Community Artist Royalty Program [C.A.R.P]</Div>
+                        <Div fontSize35 pb36 ref={carpRef}>Community Artist Royalty Program [C.A.R.P]</Div>
                         <Div fontSize18 fontFamily={bodyFontFamily}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
                         </Div>
@@ -329,56 +381,56 @@ const Home: NextPage = () => {
                 <Row h50></Row>
                 <Div hrTag h2 bgColor={"#605E5E"} mb50></Div>
                 <Row itemsCenter justifyCenter color={"#D3D3D3"}>
-                    <Div fontSize40 pb36 textCenter ref={teamRef}>Team</Div>
+                    <Div fontSize35 pb36 textCenter ref={teamRef} color={"black"}>Team</Div>
                     <Row>
-                        <Col pb10>
-                            <Div bgColor={"#A0A0A0"} p15 h330>
-                                <Div flex justifyCenter>
-                                    <Image alt="" src={eugeneProfile}  width={"200px"} height={"200px"}></Image>
-                                </Div>
-                                <Div textCenter fontSize20 my10 color={"black"}>
+                        <Col>
+                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden>
+                                <Div textCenter fontSize20 color={"black"} bgColor={"#ffe9de"} py5>
                                     Eugene
                                 </Div>
-                                <Div textCenter fontSize15 my10>
+                                <Div>
+                                    <Image alt="" src={eugeneProfile} ></Image>
+                                </Div>
+                                <Div textCenter fontSize15 m0 color={"#42332a"}>
                                     Smart Contract Maniac 
                                 </Div>
                             </Div>
                         </Col>
-                        <Col pb10>
-                            <Div bgColor={"#A0A0A0"} p15 h330>
-                                <Div flex justifyCenter>
-                                    <Image alt="" src={ericProfile}  width={"200px"} height={"200px"}></Image>
-                                </Div>
-                                <Div textCenter fontSize20 my10 color={"black"}>
+                        <Col>
+                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden>
+                                <Div textCenter fontSize20 color={"black"} bgColor={"#ffe9de"} py5>
                                     Eric
                                 </Div>
-                                <Div textCenter fontSize15 my10>
-                                    Community Representative
+                                <Div>
+                                    <Image alt="" src={ericProfile} ></Image>
+                                </Div>
+                                <Div textCenter fontSize15 m0 color={"#42332a"}>
+                                Community Representative
                                 </Div>
                             </Div>
                         </Col>
-                        <Col pb10>
-                            <Div bgColor={"#A0A0A0"} p15 h330>
-                                <Div flex justifyCenter>
-                                    <Image alt="" src={mjProfile}  width={"200px"} height={"200px"}></Image>
+                        <Col>
+                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden>
+                                <Div textCenter fontSize20 color={"black"} bgColor={"#ffe9de"} py5>
+                                    MJ
                                 </Div>
-                                <Div textCenter fontSize20 my10 color={"black"}>
-                                    Minjun
+                                <Div>
+                                    <Image alt="" src={mjProfile} ></Image>
                                 </Div>
-                                <Div textCenter fontSize15 my10>
+                                <Div textCenter fontSize15 m0  color={"#42332a"}>
                                     Website Addict
                                 </Div>
                             </Div>
                         </Col>
-                        <Col pb10>
-                            <Div bgColor={"#A0A0A0"} p15 h330>
-                                <Div flex justifyCenter>
-                                    <Image alt="" src={chiiProfile}  width={"200px"} height={"200px"}></Image>
+                        <Col>
+                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden>
+                                <Div textCenter fontSize20 color={"black"} bgColor={"#ffe9de"} py5>
+                                Chii
                                 </Div>
-                                <Div textCenter fontSize20 my10 color={"black"}>
-                                    Chii
+                                <Div>
+                                    <Image alt="" src={chiiProfile} ></Image>
                                 </Div>
-                                <Div textCenter fontSize15 my10>
+                                <Div textCenter fontSize15 m0  color={"#42332a"}>
                                     Design Guru
                                 </Div>
                             </Div>
@@ -386,7 +438,7 @@ const Home: NextPage = () => {
                     </Row>
                 </Row>
                 <Div hrTag h2 bgColor={"#605E5E"} m50 ref={faqRef}></Div>
-                <Row itemsCenter justifyCenter color={"#D3D3D3"} >
+                <Row itemsCenter justifyCenter color={"black"} >
                     <Col auto fontSize68 mr20 >
                         FAQ
                     </Col>
@@ -397,7 +449,7 @@ const Home: NextPage = () => {
                                     <Div key={index} my30 style={{cursor: "pointer"}}> 
                                     <Row  fontSize24 onClick={() => onPressFaq(index)}>{faqQuestion[index].question}</Row>
                                     {qAndA && 
-                                    <Row>
+                                    <Row fontFamily={bodyFontFamily}>
                                         {faqQuestion[index].answer}
                                     </Row>
                                     }
