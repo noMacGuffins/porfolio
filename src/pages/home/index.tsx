@@ -497,7 +497,7 @@ const Home: NextPage = () => {
         <Div  style={{position: "fixed", bottom: 0, zIndex: 100, width: "100%"}}>
             <Row color={"black"} bgColor={"#FFE058"} py30 px={xPadding} fontSize30>
                 <Col textCenter textNowrap>
-                    {(quantity * 0.08).toFixed(4)} <Div spanTag fontSize15>ETH</Div>
+                    {(quantity * 0.08).toFixed(2)} <Div spanTag fontSize15>ETH</Div>
                 </Col>
                 <Col>
                     <Row flexNowrap>
