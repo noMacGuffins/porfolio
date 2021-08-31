@@ -21,9 +21,8 @@ import pic8 from 'public/images/8.png'
 import pic9 from 'public/images/9.png'
 import pic10 from 'public/images/10.png'
 import pic11 from 'public/images/11.png'
+import honeyBackground from 'public/images/honeyBackground.png'
 import { useState, useRef, useEffect } from 'react'
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 
 const Discord = () => {
     return(
@@ -101,7 +100,7 @@ const MobileFriendlyNav = ({callBack}) => {
       const size = useWindowSize();
 
     return(
-        <Navbar fixed="top" bg="light" expand="lg" style={{color: "black", fontFamily: "Bungee Inline", zIndex:100, padding: "1vw 15vw 1vw 15vw",}}
+        <Navbar fixed="top" bg="light" expand="lg" style={{color: "black", fontFamily: "Bungee Inline", zIndex:100, padding: (size.width > 1000 ? "1vw 15vw 1vw 15vw" : "1vw 5vw 1vw 5vw"),}}
             ref={navbarRef}
         >
         <Container fluid>
@@ -219,30 +218,6 @@ const Home: NextPage = () => {
         setFaqExpand(nextExpandState)
     }
 
-    const carouselStyle = {
-        marginTop: "70px",
-        position: "relative",
-        backgroundImage: bannerImage,
-        backgroundColor: "rgb(248,249,250)",
-        height: "500px",
-        width: "100%",
-        display: "flex",
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "middle"
-    }
-
-    const cardStyle = {
-        height: "400px",
-        width: "400px",
-        textAlign: "center",
-        color: "#FFF",
-        textTransform: "uppercase",
-        borderRadius: "10px",
-        boxSizing: "border-box",
-        overflow: "hidden"
-    }
-
 
   return (
     <Div className="container-fluid p-0" style={{fontFamily: "Bungee Inline", overflowX: "hidden"}} letterSpacing={2}>
@@ -252,41 +227,27 @@ const Home: NextPage = () => {
         <link href={`https://fonts.googleapis.com/css2?family=Montserrat&display=swap`} rel="stylesheet"/>
         <MobileFriendlyNav callBack={scrollToRef}></MobileFriendlyNav>
         <Div >
-            {/* <Image alt="" src={bannerImage}  height={"2000px"} ></Image> */}
-            {/* <Carousel>
+            <Div style={{overflowX: "scroll", flexDirection: "row", backgroundColor: "rgb(248,249,250)"}} flex pt120>
                 {[pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11].map((imageSrc, index) => {
                     return(
-                        
-                        <Carousel.Item key={index} style={{flex}}>
-                            <Image alt="loading" src={imageSrc} ></Image>
-                            <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    )
-                })}
-            </Carousel> */}
-            <Div style={{overflowX: "scroll", flexDirection: "row"}} flex mt100>
-                {[pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11].map((imageSrc, index) => {
-                    return(
-                        <Div pb36 px0 key={index} mx25>
-                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadowLg> 
+                        <Div px0 key={index} mx25 pb20>
+                            <Div rounded10 overflowHidden w230 shadow bgColor={"white"}> 
                                 <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
-                                    Eugene
+                                    0.08 ETH
                                 </Div>
                                 <Div h230 w230>
                                     <Image alt="" src={imageSrc} ></Image>
                                 </Div>
-                                <Div textCenter m0 color={"#42332a"} >
-                                    Mint
+                                <Div itemsCenter justifyCenter auto fontSize20 flex py20>
+                                    <Div bgColor={"#393937"} color={"#FFE058"} rounded20 w200 textCenter>Mint</Div>
                                 </Div>
                             </Div>
+                            
                         </Div>
                     )
                 })}
             </Div>
-
+            <Image alt="" src={honeyBackground} ></Image>
             <Div px={"20vw"} py50>
                 <Row color={"black"} >
                     <Col mb50>
@@ -303,11 +264,11 @@ const Home: NextPage = () => {
                         <Div fontSize30 pb36>We are:</Div>
                     </Col>
                 </Row>
-                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0 shadowLg>
+                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0 shadow>
                     <Div textCenter py10>
                         A <Div spanTag color={"#ffd000"}>True</Div> Dapp
                     </Div>
-                    <Div p0 bgBlack maxH400 maxW400>
+                    <Div p0 bgColor={"#b38870"} maxH400 maxW400>
                         <Image alt="loading" src={pic2} ></Image>
                     </Div>
                     <Div lineHeight={2} bgColor={"#b38870"} color={"#42332a"} style={{cursor: "pointer"}} pt10 pb10 textCenter fontSize={"20vx"} fontFamily={bodyFontFamily} onClick={() => setDappExpand(!dappExpand)}>{"read more >"}</Div>
@@ -319,11 +280,11 @@ const Home: NextPage = () => {
                         <Div fontSize30 pb36 >We despise:</Div>
                     </Col>
                 </Row>
-                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0 shadowLg>
+                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0 shadow>
                     <Div textCenter py10>
                         Conventional roadmaps covering <Div spanTag color={"#ffd000"}>Rugpulls</Div>
                     </Div>
-                    <Div p0 bgBlack maxH400 maxW400>
+                    <Div p0 bgColor={"#b38870"} maxH400 minW400 maxW400>
                         <Image alt="loading" src={pic7}></Image>
                     </Div>
                     <Div lineHeight={2} bgColor={"#b38870"} color={"#42332a"} style={{cursor: "pointer"}} pt10 pb10 textCenter fontSize={"20vx"} fontFamily={bodyFontFamily} onClick={() => setRugpullExpand(!rugpullExpand)}>{"read more >"}</Div>
@@ -335,18 +296,31 @@ const Home: NextPage = () => {
                         <Div fontSize30 pb36>We hyper optimize:</Div>
                     </Col>
                 </Row>
-                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0 shadowLg>
+                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0 shadow>
                     <Div textCenter py10>
                         smart contracts for <Div spanTag color={"#ffd000"}>YOUR</Div> gas money
                     </Div>
-                    <Div p0 bgBlack maxH400 maxW400>
+                    <Div p0 bgColor={"#b38870"} maxH400 maxW400>
                         <Image alt="loading" src={pic11}></Image>
                     </Div>
                     <Div lineHeight={2} bgColor={"#b38870"} color={"#42332a"} style={{cursor: "pointer"}} pt10 pb10 textCenter fontSize={"20vx"} fontFamily={bodyFontFamily} onClick={() => setGasExpand(!gasExpand)}>{"read more >"}</Div>
                     {gasExpand && <Div lineHeight={2} bgColor={"#b38870"} textCenter fontFamily={bodyFontFamily} py10>{"We don't want your money to be burned or sent to miners. Our smart contract is hyper-optimized to reduce minting fees."}</Div>}
                 </Row>
+                <Row h95></Row>
+                <Row  color={"black"} rounded30 bgColor={"#FFE058"} justifyAround py10>
+                    <Col itemsCenter textCenter fontSize30 flex auto>
+                        Become Beardom
+                    </Col>
+                    <Col fontSize20 auto>
+                        <Row my5><u>🐻0.08 ETH</u></Row>
+                        <Row my5><u>🐻10,000 Supplies</u></Row>
+                        <Row my5><u>🐻Launch @09.17.2021</u></Row>
+                    </Col>
+                    <Col itemsCenter justifyCenter auto fontSize40  flex>
+                        <Div bgColor={"#393937"} color={"#FFE058"} rounded20 w317 textCenter>Mint</Div>
+                    </Col>
+                </Row>
                 <Row h135></Row>
-                
                 <Row color={"black"} >
                     <Div fontSize30 pb30 textCenter ref={rarityRef}>RARITY / TRAITS (TBD) </Div>
                     <Row >
@@ -389,7 +363,7 @@ const Home: NextPage = () => {
                     <Div fontSize30 textCenter ref={teamRef} color={"black"} pb36>Team</Div>
                     <Row>
                         <Col pb36 px0>
-                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadowLg> 
+                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow> 
                                 <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
                                     Eugene
                                 </Div>
@@ -402,7 +376,7 @@ const Home: NextPage = () => {
                             </Div>
                         </Col>
                         <Col pb36 px0>
-                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadowLg>
+                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow>
                                 <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
                                     Eric
                                 </Div>
@@ -415,7 +389,7 @@ const Home: NextPage = () => {
                             </Div>
                         </Col>
                         <Col pb36 px0> 
-                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadowLg>
+                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow>
                                 <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
                                     MJ
                                 </Div>
@@ -428,7 +402,7 @@ const Home: NextPage = () => {
                             </Div>
                         </Col>
                         <Col pb36 px0>
-                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadowLg>
+                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow>
                                 <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
                                 Chii
                                 </Div>
