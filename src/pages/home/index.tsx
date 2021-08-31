@@ -223,7 +223,7 @@ const Home: NextPage = () => {
 
       backgroundImage: bannerImage,
       backgroundColor: "rgb(248,249,250)",
-      height: "600vx",
+      height: "600px",
       width: "100%",
       display: "flex",
       flex: 1,
@@ -232,8 +232,8 @@ const Home: NextPage = () => {
     }
 
     const cardStyle = {
-        height: "400vx",
-        width: "400vx",
+        height: "400px",
+        width: "400px",
         textAlign: "center",
         color: "#FFF",
         fontFamily: "sans-serif",
