@@ -100,7 +100,7 @@ const MobileFriendlyNav = ({callBack}) => {
       const size = useWindowSize();
 
     return(
-        <Navbar fixed="top" bg="light" expand="lg" style={{color: "black", fontFamily: "Bungee Inline", zIndex:100, padding: (size.width > 1000 ? "1vw 15vw 1vw 15vw" : "1vw 5vw 1vw 5vw"),}}
+        <Navbar fixed="top" bg="light" expand="lg" style={{color: "black", fontFamily: "Bungee Inline", zIndex:100, padding: (size.width > 1000 ? "1vw 20vw 1vw 20vw" : "1vw 5vw 1vw 5vw"),}}
             ref={navbarRef}
         >
         <Container fluid>
@@ -126,12 +126,12 @@ const MobileFriendlyNav = ({callBack}) => {
  
 const BottomMenu = () => {
     return(
-        <Div bgColor={"#232323"} color={"white"} fontFamily={"Bungee Inline"} px={"15%"} py50>
+        <Div bgColor={"#232323"} color={"white"} fontFamily={"Bungee Inline"} px={"20%"} py50>
             <Row>
             <Col flex itemsCenter justifyCenter mb10><Logo></Logo></Col >
-            <Col itemsCenter justifyCenter fontSize35 flex mb10>
+            {/* <Col itemsCenter justifyCenter fontSize35 flex mb10>
                 <Div bgColor={"#393937"} color={"#FFE058"} rounded20 w300 textCenter>Mint</Div>
-            </Col>
+            </Col> */}
             <Col mb10>
                 <Row>
                     <Div textCenter fontSize24 color={"#8294a6"}>Menu</Div>
@@ -202,12 +202,9 @@ const Home: NextPage = () => {
         },
     ]
 
-    const [aboutExpand, setAboutExpand] = useState(false)
-    const [dappExpand, setDappExpand] = useState(false)
-    const [rugpullExpand, setRugpullExpand] = useState(false)
-    const [gasExpand, setGasExpand] = useState(false)
-
     const [faqExpand, setFaqExpand] = useState([false, false, false, false])
+
+    const [quantity, setQuantity] = useState(0)
 
     const onPressFaq = (index) => {
         let nextExpandState = faqExpand.map((item, itemIndex) => {
@@ -218,6 +215,30 @@ const Home: NextPage = () => {
         setFaqExpand(nextExpandState)
     }
 
+    const valuesArr = [
+        {
+            explanation: "Every Bear's metadata is generated on-mint with instant reveal. Nobody has any control over any bear's rarity--randomization truly decentralized.",
+            component: (<Div py10>
+                A <Div spanTag color={"#ffd000"}>True</Div> Dapp
+            </Div>),
+            title: "We are"
+        },
+        {
+            explanation: "The essence of smart contracts is to ensure promises are fulfilled. Our roadmap offerings are coded into the genesis smart contract fully on-chain.",
+            component: (<Div py10>
+                Conventional roadmaps covering <Div spanTag color={"#ffd000"}>Rugpulls</Div>
+            </Div>),
+            title: "We despise"
+        },
+        {
+            explanation: "We don't want your money to be burned or sent to miners. Our smart contract is hyper-optimized to reduce minting fees.",
+            component: (<Div py10>
+                smart contracts for <Div spanTag color={"#ffd000"}>YOUR</Div> gas money
+            </Div>),
+            title: "We hyper optimize"
+        },
+    ]
+
 
   return (
     <Div className="container-fluid p-0" style={{fontFamily: "Bungee Inline", overflowX: "hidden"}} letterSpacing={2}>
@@ -226,103 +247,79 @@ const Home: NextPage = () => {
         <link href={`https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap`} rel="stylesheet"/>
         <link href={`https://fonts.googleapis.com/css2?family=Montserrat&display=swap`} rel="stylesheet"/>
         <MobileFriendlyNav callBack={scrollToRef}></MobileFriendlyNav>
-        <Div >
-            <Div style={{overflowX: "scroll", flexDirection: "row", backgroundColor: "rgb(248,249,250)"}} flex pt120>
-                {[pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11].map((imageSrc, index) => {
-                    return(
-                        <Div px0 key={index} mx25 pb20>
-                            <Div rounded10 overflowHidden w230 shadow bgColor={"white"}> 
-                                <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
-                                    0.08 ETH
-                                </Div>
-                                <Div h230 w230>
-                                    <Image alt="" src={imageSrc} ></Image>
-                                </Div>
-                                <Div itemsCenter justifyCenter auto fontSize20 flex py20>
-                                    <Div bgColor={"#393937"} color={"#FFE058"} rounded20 w200 textCenter>Mint</Div>
+        <Div pt200>
+            {/* <Image alt="" src={honeyBackground}></Image> */}
+            <Div px={"20vw"}>
+                <Row color={"black"} >
+                    <Col mr20>
+                        <Div fontSize30 ref={aboutRef}>{"Become Beardom,"}</Div>
+                        <Div fontFamily={bodyFontFamily} py10>
+                            a collection of 10,000 Bear NFTs designed to move the NFT space forward.
+                        </Div>
+                        <Div fontFamily={bodyFontFamily} pb30>
+                            Beardom is a platform for future Dapp extensions. The first of which is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract.
+                        </Div>
+                    </Col>
+                    <Col auto py10> 
+                        <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻0.08 ETH</u></Row>
+                        <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻10,000 Supplies</u></Row>
+                        <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻Launch @09.17.2021</u></Row>
+                    </Col>
+                </Row>
+
+                <Row h5></Row>
+                <Row color={"black"} pt50>
+                    <Col>
+                        <Div fontSize30 pb36>Our Virtues</Div>
+                    </Col>
+                </Row>
+                <Div style={{overflowX: "scroll", flexDirection: "row",}} flex >
+                    {valuesArr.map((value, index) => {
+                        return(
+                            <Div px0 key={index} mr50 pb20>
+                                <Div rounded10 overflowHidden w300 border bgColor={"white"} p20> 
+                                    <Div color={"black"} fontSize30>
+                                        {value.title}
+                                    </Div>
+                                    {value.component}
+                                    <Div itemsCenter justifyCenter auto flex py20 fontFamily={bodyFontFamily}>
+                                        {value.explanation}
+                                    </Div>
                                 </Div>
                             </Div>
-                            
-                        </Div>
-                    )
-                })}
+                        )
+                    })}
+                </Div>
+            
+                <Row color={"black"} pt50>
+                    <Col>
+                        <Div fontSize30 pb36>Catalogue</Div>
+                    </Col>
+                </Row>
             </Div>
-            <Image alt="" src={honeyBackground} ></Image>
-            <Div px={"20vw"} py50>
-                <Row color={"black"} >
-                    <Col mb50>
-                        <Div fontSize30 ref={aboutRef} textCenter >{"WELCOME TO BEARDOM"}</Div>
-                        <Div fontFamily={bodyFontFamily} textCenter onClick={() => setAboutExpand(!aboutExpand)} style={{cursor: "pointer"}}>{"read more >"}</Div>
-                        {aboutExpand && <Div fontSize18 pt36 fontFamily={bodyFontFamily} py10>
-                            Beardom is a collection of 10,000 Bear NFTs designed to move the NFT space forward. In addition to providing value as an avatar project, Beardom is a platform for future Dapp extensions. The first is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract.
-                        </Div>}
-                    </Col>
-                </Row>
-                <Row h5></Row>
-                <Row color={"black"} >
-                    <Col>
-                        <Div fontSize30 pb36>We are:</Div>
-                    </Col>
-                </Row>
-                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0 shadow>
-                    <Div textCenter py10>
-                        A <Div spanTag color={"#ffd000"}>True</Div> Dapp
-                    </Div>
-                    <Div p0 bgColor={"#b38870"} maxH400 maxW400>
-                        <Image alt="loading" src={pic2} ></Image>
-                    </Div>
-                    <Div lineHeight={2} bgColor={"#b38870"} color={"#42332a"} style={{cursor: "pointer"}} pt10 pb10 textCenter fontSize={"20vx"} fontFamily={bodyFontFamily} onClick={() => setDappExpand(!dappExpand)}>{"read more >"}</Div>
-                    {dappExpand && <Div lineHeight={2} bgColor={"#b38870"} textCenter fontFamily={bodyFontFamily} py10>{"Every Bear's metadata is generated on-mint with instant reveal. Nobody has any control over any bear's rarity--randomization truly decentralized."}</Div>}
-                </Row>
-                <Row h95></Row>
-                <Row color={"black"} >
-                    <Col>
-                        <Div fontSize30 pb36 >We despise:</Div>
-                    </Col>
-                </Row>
-                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0 shadow>
-                    <Div textCenter py10>
-                        Conventional roadmaps covering <Div spanTag color={"#ffd000"}>Rugpulls</Div>
-                    </Div>
-                    <Div p0 bgColor={"#b38870"} maxH400 minW400 maxW400>
-                        <Image alt="loading" src={pic7}></Image>
-                    </Div>
-                    <Div lineHeight={2} bgColor={"#b38870"} color={"#42332a"} style={{cursor: "pointer"}} pt10 pb10 textCenter fontSize={"20vx"} fontFamily={bodyFontFamily} onClick={() => setRugpullExpand(!rugpullExpand)}>{"read more >"}</Div>
-                    {rugpullExpand && <Div lineHeight={2} bgColor={"#b38870"} textCenter fontFamily={bodyFontFamily} py10>{"The essence of smart contracts is to ensure promises are fulfilled. Our roadmap offerings are coded into the genesis smart contract fully on-chain."}</Div>}
-                </Row>
-                <Row h95></Row>
-                <Row color={"black"} >
-                    <Col>
-                        <Div fontSize30 pb36>We hyper optimize:</Div>
-                    </Col>
-                </Row>
-                <Row color={"black"} rounded10 bgColor={"#ffe9de"} overflowHidden maxW400 mxAuto p0 shadow>
-                    <Div textCenter py10>
-                        smart contracts for <Div spanTag color={"#ffd000"}>YOUR</Div> gas money
-                    </Div>
-                    <Div p0 bgColor={"#b38870"} maxH400 maxW400>
-                        <Image alt="loading" src={pic11}></Image>
-                    </Div>
-                    <Div lineHeight={2} bgColor={"#b38870"} color={"#42332a"} style={{cursor: "pointer"}} pt10 pb10 textCenter fontSize={"20vx"} fontFamily={bodyFontFamily} onClick={() => setGasExpand(!gasExpand)}>{"read more >"}</Div>
-                    {gasExpand && <Div lineHeight={2} bgColor={"#b38870"} textCenter fontFamily={bodyFontFamily} py10>{"We don't want your money to be burned or sent to miners. Our smart contract is hyper-optimized to reduce minting fees."}</Div>}
-                </Row>
-                <Row h95></Row>
-                <Row  color={"black"} rounded30 bgColor={"#FFE058"} justifyAround py10>
-                    <Col itemsCenter textCenter fontSize30 flex auto>
-                        Become Beardom
-                    </Col>
-                    <Col fontSize20 auto>
-                        <Row my5><u>🐻0.08 ETH</u></Row>
-                        <Row my5><u>🐻10,000 Supplies</u></Row>
-                        <Row my5><u>🐻Launch @09.17.2021</u></Row>
-                    </Col>
-                    <Col itemsCenter justifyCenter auto fontSize40  flex>
-                        <Div bgColor={"#393937"} color={"#FFE058"} rounded20 w317 textCenter>Mint</Div>
-                    </Col>
-                </Row>
+            <Div style={{paddingLeft: "20vw"}}> 
+                <Div style={{overflowX: "scroll", flexDirection: "row"}} flex>
+                    {[pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11].map((imageSrc, index) => {
+                        return(
+                            <Div px0 key={index} mr50 pb20>
+                                <Div rounded10 overflowHidden w230 shadow bgColor={"white"}> 
+                                    <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
+                                        0.08 ETH
+                                    </Div>
+                                    <Div h230 w230>
+                                        <Image alt="" src={imageSrc} ></Image>
+                                    </Div>
+                                </Div>
+                                
+                            </Div>
+                        )
+                    })}
+                </Div>
+            </Div>
+            <Div px={"20vw"}> 
                 <Row h135></Row>
                 <Row color={"black"} >
-                    <Div fontSize30 pb30 textCenter ref={rarityRef}>RARITY / TRAITS (TBD) </Div>
+                    <Div fontSize30 pb30 ref={rarityRef}>RARITY / TRAITS (TBD) </Div>
                     <Row >
                         <Col >
                             <Div border border5 borderBlack h200></Div>
@@ -335,10 +332,10 @@ const Home: NextPage = () => {
                         </Col>
                     </Row>
                 </Row>
-                <Div hrTag h2 bgColor={"#605E5E"} m50 ></Div>
+                <Div h2 m50 ></Div>
                 <Row color={"black"}>
                     <Col mb50>
-                        <Div fontSize30 pb36 ref={rerollRef} textCenter>Trait Re-rolling</Div>
+                        <Div fontSize30 pb36 ref={rerollRef}>Trait Re-rolling</Div>
                         <Div fontFamily={bodyFontFamily}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
                         </Div>
@@ -348,7 +345,7 @@ const Home: NextPage = () => {
                     </Col> */}
                 </Row>
                 <Row h5></Row>
-                <Div hrTag h2 bgColor={"#605E5E"} mb50></Div>
+                <Div h2 mb50></Div>
                 <Row color={"black"} >
                     <Col mb50>
                         <Div fontSize30 pb36 ref={carpRef}>Community Artist Royalty Program [C.A.R.P]</Div>
@@ -358,11 +355,11 @@ const Home: NextPage = () => {
                     </Col>
                 </Row>
                 <Row h5></Row>
-                <Div hrTag h2 bgColor={"#605E5E"} mb50></Div>
+                <Div h2 mb50></Div>
                 <Row itemsCenter flex color={"#D3D3D3"}>
-                    <Div fontSize30 textCenter ref={teamRef} color={"black"} pb36>Team</Div>
+                    <Div fontSize30 ref={teamRef} color={"black"} pb36>Team</Div>
                     <Row>
-                        <Col pb36 px0>
+                        <Col pb36 px0 mxAuto>
                             <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow> 
                                 <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
                                     Eugene
@@ -375,7 +372,7 @@ const Home: NextPage = () => {
                                 </Div>
                             </Div>
                         </Col>
-                        <Col pb36 px0>
+                        <Col pb36 px0 mxAuto>
                             <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow>
                                 <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
                                     Eric
@@ -388,7 +385,7 @@ const Home: NextPage = () => {
                                 </Div>
                             </Div>
                         </Col>
-                        <Col pb36 px0> 
+                        <Col pb36 px0 mxAuto> 
                             <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow>
                                 <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
                                     MJ
@@ -401,7 +398,7 @@ const Home: NextPage = () => {
                                 </Div>
                             </Div>
                         </Col>
-                        <Col pb36 px0>
+                        <Col pb36 px0 mxAuto>
                             <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow>
                                 <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
                                 Chii
@@ -416,32 +413,49 @@ const Home: NextPage = () => {
                         </Col>
                     </Row>
                 </Row>
-                <Div hrTag h2 bgColor={"#605E5E"} m50 ref={faqRef}></Div>
-                <Row itemsCenter justifyCenter color={"black"} >
-                    <Col auto fontSize30 mr20 >
-                        FAQ
-                    </Col>
-                    <Col >
-                        {
-                            faqExpand.map((qAndA, index) => {
-                                return(
-                                    <Div key={index} my30 style={{cursor: "pointer"}}> 
-                                    <Row  onClick={() => onPressFaq(index)}>{faqQuestion[index].question}</Row>
+                <Div h2 my50 ref={faqRef}></Div>
+                <Row auto fontSize30 mr20  >
+                    FAQ
+                </Row>
+                <Row itemsCenter justifyCenter color={"black"} mb50>
+                    
+                    {
+                        faqExpand.map((qAndA, index) => {
+                            return(
+                                <Div key={index} border rounded20 p={"20px 40px"} my15 style={{cursor: "pointer"}}> 
+                                    <Row  fontFamily={bodyFontFamily} onClick={() => onPressFaq(index)}>
+                                        {faqQuestion[index].question}
+                                    </Row>
                                     {qAndA && 
                                     <Row fontFamily={bodyFontFamily}>
                                         {faqQuestion[index].answer}
                                     </Row>
                                     }
-                                    {(index !== faqExpand.length-1) && <Div hrTag h2 bgColor={"#605E5E"}></Div>}
-                                    </Div>
-                                )
-                            })
-                        }
-                    </Col>
+                                </Div>
+                            )
+                        })
+                    }
                 </Row>
-
             </Div>
             <BottomMenu></BottomMenu>
+            <Div h100></Div>
+        </Div>
+        <Div  style={{position: "fixed", bottom: 0, zIndex: 100, width: "100%"}}>
+            <Row color={"black"} bgColor={"#FFE058"} py30 px={"20vw"} fontSize30>
+                <Col textCenter textNowrap>
+                    {quantity * 0.08} <Div spanTag fontSize15>ETH</Div>
+                </Col>
+                <Col>
+                    <Row flexNowrap>
+                        <Col textCenter onClick={() => setQuantity((quantity - 1 >= 0 ? quantity - 1 : 0))} style={{cursor: "pointer"}}>-</Col>
+                        <Col auto textCenter>{quantity}</Col>
+                        <Col textCenter onClick={() => setQuantity((quantity + 1 <= 10 ? quantity + 1 : 0))} style={{cursor: "pointer"}}>+</Col>
+                    </Row>
+                </Col>
+                <Col justifyCenter flex>
+                    <Div bgColor={"#393937"} color={"#FFE058"} style={{cursor: "pointer"}} rounded20 w200 textCenter>Mint</Div>
+                </Col>
+            </Row>
         </Div>
     </Div>
   )

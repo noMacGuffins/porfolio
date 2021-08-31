@@ -526,6 +526,7 @@ const propsToClx = (props) => {
     // whitespacePre: () => clxs.push('whitespace-pre'),
     // whitespacePreLine: () => clxs.push('whitespace-pre-line'),
     // whitespacePreWrap: () => clxs.push('whitespace-pre-wrap'),
+    textNowrap: () => clxs.push('text-nowrap'),
     // // word-break
     // breakNormal: () => clxs.push('break-normal'),
     // breakWords: () => clxs.push('break-words'),
@@ -849,7 +850,7 @@ const propsToClx = (props) => {
     // // flex-wrap
     // flexWrap: () => clxs.push('flex-wrap'),
     // flexWrapReverse: () => clxs.push('flex-wrap-reverse'),
-    // flexNowrap: () => clxs.push('flex-nowrap'),
+    flexNowrap: () => clxs.push('flex-nowrap'),
     // // flex
     // flex1: () => clxs.push('flex-1'),
     // flexAuto: () => clxs.push('flex-auto'),
