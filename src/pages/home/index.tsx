@@ -503,7 +503,7 @@ const Home: NextPage = () => {
                     <Row flexNowrap>
                         <Col textCenter onClick={() => setQuantity((quantity - 1 >= 0 ? quantity - 1 : 0))} style={{cursor: "pointer"}}>-</Col>
                         <Col auto textCenter>{quantity}</Col>
-                        <Col textCenter onClick={() => setQuantity((quantity + 1 <= 10 ? quantity + 1 : 0))} style={{cursor: "pointer"}}>+</Col>
+                        <Col textCenter onClick={() => setQuantity((quantity + 1 <= 10 ? quantity + 1 : 10))} style={{cursor: "pointer"}}>+</Col>
                     </Row>
                 </Col>
                 <Col justifyCenter flex>
