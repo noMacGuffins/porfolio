@@ -185,9 +185,10 @@ const Home: NextPage = () => {
 
     const carouselStyle = {
       position: "relative",
+
       backgroundImage: bannerImage,
       backgroundColor: "rgb(248,249,250)",
-      height: "700px",
+      height: "600px",
       width: "100%",
       display: "flex",
       flex: 1,
@@ -196,8 +197,8 @@ const Home: NextPage = () => {
     }
 
     const cardStyle = {
-        height: "500px",
-        width: "500px",
+        height: "400px",
+        width: "400px",
         textAlign: "center",
         color: "#FFF",
         fontFamily: "sans-serif",
@@ -208,7 +209,7 @@ const Home: NextPage = () => {
     }
 
   return (
-    <Div className="container-fluid p-0" style={{backgroundColor: "#30251F", fontFamily: "Bungee Inline"}} letterSpacing={2}>
+    <Div className="container-fluid p-0" style={{backgroundColor: "#30251F", fontFamily: "Bungee Inline", overflowX: "hidden"}} letterSpacing={2}>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link href={`https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap`} rel="stylesheet"/>
