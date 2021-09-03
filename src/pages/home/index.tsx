@@ -285,7 +285,7 @@ const Home: NextPage = () => {
         <link href={`https://fonts.googleapis.com/css2?family=Montserrat&display=swap`} rel="stylesheet"/>
         <MobileFriendlyNav callBack={scrollToRef}></MobileFriendlyNav>
         <Div >
-                <Row color={"black"} relative h={hugeImageWidth*1337/1374+120} style={{backgroundImage: `url(${opal.src})`}} px={"15vw"} >
+                <Row color={"black"} relative h={hugeImageWidth*1337/1374+120} style={{backgroundImage: `url(${opal.src})`}} px={"15vw"} overflowHidden >
                     <Col h={hugeImageWidth*1337/1374} mt150 style={{backgroundImage: `url(${opal.src})`}} w500>
                         <Div style={{fontSize: "5vw"}} ref={aboutRef} pb36 >
                             {"Become Beardom,"}
