@@ -186,6 +186,7 @@ const Home: NextPage = () => {
     const faqRef = useRef(null)
     const refs = [aboutRef, rarityRef, rerollRef, carpRef, teamRef, faqRef]
     const scrollToRef = (index) => {window.scrollTo(0, refs[index].current.offsetTop - 130)}
+    const carouselRef = useRef(null)
 
     const size = useWindowSize();
     const xPadding = (size.width > 1000 ? "20vw" : "10vw")
@@ -289,6 +290,7 @@ const Home: NextPage = () => {
         )
     }
 
+
   return (
     <Div className="container-fluid p-0" style={{fontFamily: "Bungee Inline", overflowX: "hidden"}} letterSpacing={2}>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -302,12 +304,12 @@ const Home: NextPage = () => {
                     {"Become Beardom,"}
                 </Div>
                 <Div relative h400>
-                <ReactCardCarousel autoplay={true} autoplay_speed={2500} spread={'wide'}>
+                <ReactCardCarousel spread={'wide'} ref={carouselRef}>
                     {/* <Div style={{overflowX: "scroll", flexDirection: "row",}} flex> */}
                         {valuesArr.map((value, index) => {
                             return(
                                 // <Div px0 key={index} mr50 pb20>
-                                    <Div rounded10 overflowHidden w300 border bgColor={"white"} p20 h400 key={index}> 
+                                    <Div rounded10 overflowHidden w300 border bgColor={"white"} p20 h400 key={index} style={{cursor: "pointer"}}> 
                                         <Div color={"black"} fontSize20 >
                                         {value.component}
                                         </Div>
