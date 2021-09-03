@@ -329,7 +329,7 @@ const Home: NextPage = () => {
                     <Col mr20 >
                             <Div fontFamily={bodyFontFamily} py10>
                                 <FadeUpDiv>
-                                    a collection of 10,000 Bear NFTs designed to move the NFT space forward.
+                                    We are a collection of 10,000 Bear NFTs designed to move the NFT space forward.
                                 </FadeUpDiv>
                             </Div>
                             <Div fontFamily={bodyFontFamily} pb30>
@@ -434,31 +434,29 @@ const Home: NextPage = () => {
                 </FadeUpDiv>
             </Div>
             <Div px={xPadding}> 
-                <FadeUpDiv>
-                    <Div h2 my50 ref={faqRef}></Div>
-                    <Row auto fontSize30 mr20  >
-                        FAQ
-                    </Row>
-                    <Row itemsCenter justifyCenter color={"black"} mb50>
-                        
-                        {
-                            faqExpand.map((qAndA, index) => {
-                                return(
-                                    <Div key={index} border rounded20 p={"20px 40px"} my15 style={{cursor: "pointer"}}> 
-                                        <Row  fontFamily={bodyFontFamily} onClick={() => onPressFaq(index)}>
-                                            {faqQuestion[index].question}
-                                        </Row>
-                                        {qAndA && 
-                                        <Row fontFamily={bodyFontFamily}>
-                                            {faqQuestion[index].answer}
-                                        </Row>
-                                        }
-                                    </Div>
-                                )
-                            })
-                        }
-                    </Row>
-                </FadeUpDiv>
+                <Div h2 my50 ref={faqRef}></Div>
+                <Row auto fontSize30 mr20  >
+                    FAQ
+                </Row>
+                <Row itemsCenter justifyCenter color={"black"} mb50>
+                    
+                    {
+                        faqExpand.map((qAndA, index) => {
+                            return(
+                                <Div key={index} border rounded20 p={"20px 40px"} my15 style={{cursor: "pointer"}}> 
+                                    <Row  fontFamily={bodyFontFamily} onClick={() => onPressFaq(index)}>
+                                        {faqQuestion[index].question}
+                                    </Row>
+                                    {qAndA && 
+                                    <Row fontFamily={bodyFontFamily}>
+                                        {faqQuestion[index].answer}
+                                    </Row>
+                                    }
+                                </Div>
+                            )
+                        })
+                    }
+                </Row>
             </Div>
             <Div h60></Div>
             <BottomMenu></BottomMenu>
