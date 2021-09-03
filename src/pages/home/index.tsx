@@ -21,8 +21,10 @@ import pic8 from 'public/images/8.png'
 import pic9 from 'public/images/9.png'
 import pic10 from 'public/images/10.png'
 import pic11 from 'public/images/11.png'
-import honeyBackground from 'public/images/honeyBackground.png'
 import { useState, useRef, useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import ReactCardCarousel from "react-card-carousel";
 
 const Discord = () => {
     return(
@@ -116,7 +118,7 @@ const MobileFriendlyNav = ({callBack}) => {
                 <Nav.Link href="#about" onClick={() => callBack(0)}>About</Nav.Link>
                 <Nav.Link href="#rarity" onClick={() => callBack(1)}>Rarity</Nav.Link>
                 <Nav.Link href="#reroll" onClick={() => callBack(2)}>Re-Roll</Nav.Link>
-                <Nav.Link href="#carp" onClick={() => callBack(3)}>CARP</Nav.Link>
+                <Nav.Link href="#carp" onClick={() => callBack(3)}>C.A.R.P.</Nav.Link>
                 <Nav.Link href="#team" onClick={() => callBack(4)}>Team</Nav.Link>
                 <Nav.Link href="#faq" onClick={() => callBack(5)}>FAQ</Nav.Link>
             </Nav>
@@ -145,7 +147,7 @@ const BottomMenu = () => {
                         <Div textCenter py10>Re-Roll</Div>
                     </Col>
                     <Col>
-                        <Div textCenter py10>CARP</Div>
+                        <Div textCenter py10>C.A.R.P.</Div>
                         <Div textCenter py10>Team</Div>
                         <Div textCenter py10>FAQ</Div>
                     </Col>
@@ -224,7 +226,7 @@ const Home: NextPage = () => {
         {
             explanation: "Every Bear's metadata is generated on-mint with instant reveal. Nobody has any control over any bear's rarity--randomization truly decentralized.",
             component: (<Div py10>
-                A <Div spanTag color={"#ffd000"}>True</Div> Dapp
+                A <Div spanTag color={"#ffd000"}>True Dapp</Div>
             </Div>),
             title: "We are"
         },
@@ -238,7 +240,7 @@ const Home: NextPage = () => {
         {
             explanation: "We don't want your money to be burned or sent to miners. Our smart contract is hyper-optimized to reduce minting fees.",
             component: (<Div py10>
-                smart contracts for <Div spanTag color={"#ffd000"}>YOUR</Div> gas money
+                hyper-optimized smart contracts for YOUR <Div spanTag color={"#ffd000"}>gas money</Div> 
             </Div>),
             title: "We hyper optimize"
         },
@@ -267,6 +269,25 @@ const Home: NextPage = () => {
         }
     ]
 
+    useEffect(() => {
+        AOS.init();
+    })
+
+    const FadeUpDiv = (props) => {
+        return(
+            <div data-aos="fade-up"
+                data-aos-offset="100"
+                data-aos-delay="30"
+                data-aos-duration="600"
+                data-aos-easing="ease-in"
+                // data-aos-mirror="true"
+                data-aos-once="false"
+                // data-aos-anchor-placement="top-center"
+                >
+                {props.children}
+            </div>
+        )
+    }
 
   return (
     <Div className="container-fluid p-0" style={{fontFamily: "Bungee Inline", overflowX: "hidden"}} letterSpacing={2}>
@@ -275,133 +296,78 @@ const Home: NextPage = () => {
         <link href={`https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap`} rel="stylesheet"/>
         <link href={`https://fonts.googleapis.com/css2?family=Montserrat&display=swap`} rel="stylesheet"/>
         <MobileFriendlyNav callBack={scrollToRef}></MobileFriendlyNav>
-        <Div pt200>
-            {/* <Image alt="" src={honeyBackground}></Image> */}
-            <Div px={xPadding}>
-                <Row color={"black"} >
-                    <Col mr20>
-                        <Div fontSize30 ref={aboutRef}>{"Become Beardom,"}</Div>
-                        <Div fontFamily={bodyFontFamily} py10>
-                            a collection of 10,000 Bear NFTs designed to move the NFT space forward.
-                        </Div>
-                        <Div fontFamily={bodyFontFamily} pb30>
-                            Beardom is a platform for future Dapp extensions. The first of which is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract.
-                        </Div>
+        <Div >
+            <Div px={xPadding} bgColor={"rgb(248,249,250)"} pt150>
+                <Div fontSize30 ref={aboutRef} pb36>
+                    {"Become Beardom,"}
+                </Div>
+                <Div relative h400>
+                <ReactCardCarousel autoplay={true} autoplay_speed={2500} spread={'wide'}>
+                    {/* <Div style={{overflowX: "scroll", flexDirection: "row",}} flex> */}
+                        {valuesArr.map((value, index) => {
+                            return(
+                                // <Div px0 key={index} mr50 pb20>
+                                    <Div rounded10 overflowHidden w300 border bgColor={"white"} p20 h400 key={index}> 
+                                        <Div color={"black"} fontSize20 >
+                                        {value.component}
+                                        </Div>
+                                        {/* {value.component} */}
+                                        <Div itemsCenter justifyCenter auto flex py20 fontFamily={bodyFontFamily}>
+                                            {value.explanation}
+                                        </Div>
+                                    </Div>
+                                // </Div>
+                            )
+                        })}
+                    {/* </Div> */}
+                </ReactCardCarousel>
+                </Div>
+                <Div h100></Div>
+                <Row color={"black"}>
+                    <Col mr20 >
+                            <Div fontFamily={bodyFontFamily} py10>
+                                <FadeUpDiv>
+                                    a collection of 10,000 Bear NFTs designed to move the NFT space forward.
+                                </FadeUpDiv>
+                            </Div>
+                            <Div fontFamily={bodyFontFamily} pb30>
+                                <FadeUpDiv>
+                                Beardom is a platform for future Dapp extensions. The first of which is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract.
+                                </FadeUpDiv>
+                            </Div>
+                        
                     </Col>
                     <Col auto py10> 
-                        <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻0.08 ETH</u></Row>
-                        <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻10,000 Supplies</u></Row>
-                        <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻Launch @09.17.2021</u></Row>
-                    </Col>
-                </Row>
-
-                <Row h5></Row>
-                <Row color={"black"} pt50>
-                    <Col>
-                        <Div fontSize30 pb36>Our Virtues</Div>
+                        <FadeUpDiv>
+                            <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻0.08 ETH</u></Row>
+                            <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻10,000 Supplies</u></Row>
+                            <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻Launch @09.17.2021</u></Row>
+                        </FadeUpDiv>
                     </Col>
                 </Row>
             </Div>
-            <Div style={{paddingLeft: xPadding}}> 
-                <Div style={{overflowX: "scroll", flexDirection: "row",}} flex >
-                    {valuesArr.map((value, index) => {
-                        return(
-                            <Div px0 key={index} mr50 pb20>
-                                <Div rounded10 overflowHidden w300 border bgColor={"white"} p20> 
-                                    <Div color={"black"} fontSize30>
-                                        {value.title}
-                                    </Div>
-                                    {value.component}
-                                    <Div itemsCenter justifyCenter auto flex py20 fontFamily={bodyFontFamily}>
-                                        {value.explanation}
-                                    </Div>
-                                </Div>
-                            </Div>
-                        )
-                    })}
-                </Div>
-            
-                <Row color={"black"} pt50>
-                    <Col>
-                        <Div fontSize30 pb36>Catalogue</Div>
-                    </Col>
-                </Row>
-            </Div>
-            <Div style={{paddingLeft: xPadding}}> 
-                <Div style={{overflowX: "scroll", flexDirection: "row"}} flex>
-                    {[pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11].map((imageSrc, index) => {
-                        return(
-                            <Div px0 key={index} mr50 pb20>
-                                <Div rounded10 overflowHidden w230 shadow bgColor={"white"}> 
-                                    <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
-                                        0.08 ETH
-                                    </Div>
-                                    <Div h230 w230>
-                                        <Image alt="" src={imageSrc} ></Image>
-                                    </Div>
-                                </Div>
-                                
-                            </Div>
-                        )
-                    })}
-                </Div>
-            </Div>
-            <Div px={xPadding}> 
-                <Row h135></Row>
-                <Row color={"black"} >
-                    <Div fontSize30 pb30 ref={rarityRef}>RARITY / TRAITS (TBD) </Div>
-                    <Row >
-                        <Col >
-                            <Div border border5 borderBlack h200></Div>
-                        </Col>
-                        <Col >
-                            <Div border border5 borderBlack h200></Div>
-                        </Col>
-                        <Col >
-                            <Div border border5 borderBlack h200></Div>
-                        </Col>
-                    </Row>
-                </Row>
-                <Div h2 m50 ></Div>
+            <Div h100></Div>
+            <Div px={xPadding}>
+                <FadeUpDiv>
                 <Row color={"black"}>
-                    <Col mb50>
-                        <Div fontSize30 pb36 ref={rerollRef}>Trait Re-rolling</Div>
-                        <Div fontFamily={bodyFontFamily}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
-                        </Div>
-                    </Col>
-                    {/* <Col auto>
-                        <Div w300 bgWhite h300 rounded10></Div>
-                    </Col> */}
-                </Row>
-                <Row h5></Row>
-                <Div h2 mb50></Div>
-                <Row color={"black"} >
-                    <Col mb50>
-                        <Div fontSize30 pb36 ref={carpRef}>Community Artist Royalty Program [CARP]</Div>
-                        <Div fontFamily={bodyFontFamily}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
-                        </Div>
+                    <Col>
+                        <Div fontSize30 pb36>RARITY</Div>
                     </Col>
                 </Row>
-                <Row h5></Row>
-                <Div h2 mb50></Div>
-                <Div fontSize30 ref={teamRef} color={"black"} pb36>Team</Div>
-                </Div>
-                <Div style={{paddingLeft: xPadding}}> 
+                </FadeUpDiv>
+            </Div>
+            <Div style={{paddingLeft: xPadding}}> 
+                <FadeUpDiv>
                     <Div style={{overflowX: "scroll", flexDirection: "row"}} flex>
-                        {teamArr.map((teamMember, index) => {
+                        {[pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11].map((imageSrc, index) => {
                             return(
                                 <Div px0 key={index} mr50 pb20>
                                     <Div rounded10 overflowHidden w230 shadow bgColor={"white"}> 
                                         <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
-                                            {teamMember.name}
+                                            0.08 ETH
                                         </Div>
                                         <Div h230 w230>
-                                            <Image alt="" src={teamMember.imageSrc} ></Image>
-                                        </Div>
-                                        <Div textCenter m0 color={"#42332a"} bgColor={"#b38870"}>
-                                            {teamMember.description}
+                                            <Image alt="" src={imageSrc} ></Image>
                                         </Div>
                                     </Div>
                                     
@@ -409,93 +375,95 @@ const Home: NextPage = () => {
                             )
                         })}
                     </Div>
-                </Div>
-                <Div px={xPadding}> 
-                {/* <Row itemsCenter flex color={"#D3D3D3"}>
-                    <Row>
-                        <Col pb36 px0 mxAuto>
-                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow> 
-                                <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
-                                    Eugene
-                                </Div>
-                                <Div h230 w230>
-                                    <Image alt="" src={eugeneProfile} ></Image>
-                                </Div>
-                                <Div textCenter m0 color={"#42332a"} >
-                                    Smart Contract Maniac 
-                                </Div>
-                            </Div>
-                        </Col>
-                        <Col pb36 px0 mxAuto>
-                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow>
-                                <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
-                                    Eric
-                                </Div>
-                                <Div h230 w230>
-                                    <Image alt="" src={ericProfile} ></Image>
-                                </Div>
-                                <Div textCenter m0 color={"#42332a"} >
-                                Community Representative
-                                </Div>
-                            </Div>
-                        </Col>
-                        <Col pb36 px0 mxAuto> 
-                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow>
-                                <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
-                                    MJ
-                                </Div>
-                                <Div h230 w230>
-                                    <Image alt="" src={mjProfile} width={400} height={400} ></Image>
-                                </Div>
-                                <Div textCenter m0  color={"#42332a"} >
-                                    Website Addict
-                                </Div>
-                            </Div>
-                        </Col>
-                        <Col pb36 px0 mxAuto>
-                            <Div bgColor={"#b38870"} h330 rounded10 overflowHidden w230 shadow>
-                                <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
-                                Chii
-                                </Div>
-                                <Div h230 w230>
-                                    <Image alt="" src={chiiProfile} ></Image>
-                                </Div>
-                                <Div textCenter m0  color={"#42332a"} >
-                                    Design Guru
-                                </Div>
+                </FadeUpDiv>
+            </Div>
+            <Div h60></Div>
+            <Div px={xPadding}> 
+                <FadeUpDiv>
+                <Row color={"black"}>
+                    <Col mb50>
+                        <Div fontSize30 pb36 ref={rerollRef}>Trait Re-rolling</Div>
+                        <Div fontFamily={bodyFontFamily}>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
+                        </Div>
+                    </Col>
+                </Row>
+                </FadeUpDiv>
+            </Div>
+            <Div h60></Div>
+            <Div px={xPadding}> 
+                <FadeUpDiv>
+                    <Row color={"black"} >
+                        <Col mb50>
+                            <Div fontSize30 pb36 ref={carpRef}>Community Artist Royalty Program [C.A.R.P.]</Div>
+                            <Div fontFamily={bodyFontFamily}>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
                             </Div>
                         </Col>
                     </Row>
-                </Row> */}
-                <Div h2 my50 ref={faqRef}></Div>
-                <Row auto fontSize30 mr20  >
-                    FAQ
-                </Row>
-                <Row itemsCenter justifyCenter color={"black"} mb50>
-                    
-                    {
-                        faqExpand.map((qAndA, index) => {
-                            return(
-                                <Div key={index} border rounded20 p={"20px 40px"} my15 style={{cursor: "pointer"}}> 
-                                    <Row  fontFamily={bodyFontFamily} onClick={() => onPressFaq(index)}>
-                                        {faqQuestion[index].question}
-                                    </Row>
-                                    {qAndA && 
-                                    <Row fontFamily={bodyFontFamily}>
-                                        {faqQuestion[index].answer}
-                                    </Row>
-                                    }
-                                </Div>
-                            )
-                        })
-                    }
-                </Row>
+                </FadeUpDiv>
             </Div>
+            <Div h60></Div>
+            <Div> 
+                <FadeUpDiv>
+                    <Div fontSize30 ref={teamRef} px={xPadding} color={"black"} pb36>Team</Div>
+                    <Div style={{paddingLeft: xPadding}}> 
+                        <Div style={{overflowX: "scroll", flexDirection: "row"}} flex>
+                            {teamArr.map((teamMember, index) => {
+                                return(
+                                    <Div px0 key={index} mr50 pb20>
+                                        <Div rounded10 overflowHidden w230 shadow bgColor={"white"}> 
+                                            <Div textCenter color={"black"} bgColor={"#ffe9de"} py5 >
+                                                {teamMember.name}
+                                            </Div>
+                                            <Div h230 w230>
+                                                <Image alt="" src={teamMember.imageSrc} ></Image>
+                                            </Div>
+                                            <Div textCenter m0 color={"#42332a"} bgColor={"#b38870"}>
+                                                {teamMember.description}
+                                            </Div>
+                                        </Div>
+                                        
+                                    </Div>
+                                )
+                            })}
+                        </Div>
+                    </Div>
+                </FadeUpDiv>
+            </Div>
+            <Div px={xPadding}> 
+                <FadeUpDiv>
+                    <Div h2 my50 ref={faqRef}></Div>
+                    <Row auto fontSize30 mr20  >
+                        FAQ
+                    </Row>
+                    <Row itemsCenter justifyCenter color={"black"} mb50>
+                        
+                        {
+                            faqExpand.map((qAndA, index) => {
+                                return(
+                                    <Div key={index} border rounded20 p={"20px 40px"} my15 style={{cursor: "pointer"}}> 
+                                        <Row  fontFamily={bodyFontFamily} onClick={() => onPressFaq(index)}>
+                                            {faqQuestion[index].question}
+                                        </Row>
+                                        {qAndA && 
+                                        <Row fontFamily={bodyFontFamily}>
+                                            {faqQuestion[index].answer}
+                                        </Row>
+                                        }
+                                    </Div>
+                                )
+                            })
+                        }
+                    </Row>
+                </FadeUpDiv>
+            </Div>
+            <Div h60></Div>
             <BottomMenu></BottomMenu>
-            <Div h100></Div>
+            <Div h70></Div>
         </Div>
         <Div  style={{position: "fixed", bottom: 0, zIndex: 100, width: "100%"}}>
-            <Row color={"black"} bgColor={"#FFE058"} py30 px={xPadding} fontSize30>
+            <Row color={"black"} bgColor={"#FFE058"} py20 px={xPadding} fontSize30>
                 <Col textCenter textNowrap>
                     {(quantity * 0.08).toFixed(2)} <Div spanTag fontSize15>ETH</Div>
                 </Col>
