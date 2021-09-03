@@ -30,6 +30,7 @@ import OpenSea from 'src/components/svg/OpenSea'
 import DiscordBlack from 'src/components/svg/DiscordBlack'
 import Discord from 'src/components/svg/Discord'
 import basicBear from 'public/images/basicBear.png'
+import opal from 'public/images/opal.png'
 
 const Logo = (props) => {
 
@@ -272,6 +273,9 @@ const Home: NextPage = () => {
         )
     }
 
+    const hugeImageWidth = 500
+
+    console.log(opal.src)
 
   return (
     <Div className="container-fluid p-0" style={{fontFamily: "Bungee Inline", overflowX: "hidden"}} letterSpacing={2}>
@@ -281,26 +285,19 @@ const Home: NextPage = () => {
         <link href={`https://fonts.googleapis.com/css2?family=Montserrat&display=swap`} rel="stylesheet"/>
         <MobileFriendlyNav callBack={scrollToRef}></MobileFriendlyNav>
         <Div >
-            <Div px={xPadding} pt150>
-                <Row color={"black"}>
-                    <Col mr20 >
-                            <Div fontSize100 ref={aboutRef} pb36>
-                                {"Become Beardom,"}
-                            </Div>
-                            <Div fontFamily={bodyFontFamily} py10>
-                                <FadeUpDiv>
-                                    We are a collection of 10,000 Bear NFTs designed to move the NFT space forward.
-                                </FadeUpDiv>
-                            </Div>
-                            <Div fontFamily={bodyFontFamily} pb30>
-                                <FadeUpDiv>
-                                Beardom is a platform for future Dapp extensions. The first of which is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract.
-                                </FadeUpDiv>
-                            </Div>
-                            
+                <Row color={"black"} relative h={hugeImageWidth*1337/1374+120} style={{backgroundImage: `url(${opal.src})`}} px={"15vw"} >
+                    <Col h={hugeImageWidth*1337/1374} mt150 style={{backgroundImage: `url(${opal.src})`}} w500>
+                        <Div style={{fontSize: "5vw"}} ref={aboutRef} pb36 >
+                            {"Become Beardom,"}
+                        </Div>
+                        <Div fontFamily={bodyFontFamily} py10>
+                            <FadeUpDiv>
+                                We are a collection of 10,000 Bear NFTs designed to move the NFT space forward.
+                            </FadeUpDiv>
+                        </Div>
                     </Col>
-                    <Col auto py10> 
-                        <Image alt="" src={basicBear} width={300} height={300}></Image>
+                    <Col h={hugeImageWidth*54133738/1374} mt120 p0 width={hugeImageWidth} >
+                        <Image alt="" src={basicBear} width={hugeImageWidth} height={hugeImageWidth*1337/1374}></Image>
                     </Col>
                     {/* <Col auto py10> 
                         <FadeUpDiv>
@@ -310,10 +307,14 @@ const Home: NextPage = () => {
                         </FadeUpDiv>
                     </Col> */}
                 </Row>
-            </Div>
-            <Div h50></Div>
-            <Div px={xPadding}>
-                <FadeUpDiv>
+
+            <Div px={xPadding} py50 >
+                {/* <FadeUpDiv> */}
+                <Div fontFamily={bodyFontFamily} pb30>
+                    Beardom is a platform for future Dapp extensions. The first of which is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract. 
+                </Div>
+                {/* </FadeUpDiv> */}
+                {/* <FadeUpDiv> */}
                 <Div style={{overflowX: "scroll", flexDirection: "row",}} flex>
                 {valuesArr.map((value, index) => {
                         return(
@@ -331,20 +332,19 @@ const Home: NextPage = () => {
                         )
                     })}
                 </Div>
-                </FadeUpDiv>
+                {/* </FadeUpDiv> */}
             </Div>
-            <Div h100></Div>
-            <Div px={xPadding}>
-                <FadeUpDiv>
+            <Div px={xPadding} pt50 bgColor={'rgb(248,249,250)'}>
+                {/* <FadeUpDiv> */}
                 <Row color={"black"}>
                     <Col>
                         <Div fontSize30 pb36 ref={rarityRef}>RARITY</Div>
                     </Col>
                 </Row>
-                </FadeUpDiv>
+                {/* </FadeUpDiv> */}
             </Div>
-            <Div style={{paddingLeft: xPadding}}> 
-                <FadeUpDiv>
+            <Div style={{paddingLeft: xPadding}} pb50 bgColor={'rgb(248,249,250)'}> 
+                {/* <FadeUpDiv> */}
                     <Div style={{overflowX: "scroll", flexDirection: "row"}} flex>
                         {[pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11].map((imageSrc, index) => {
                             return(
@@ -362,11 +362,11 @@ const Home: NextPage = () => {
                             )
                         })}
                     </Div>
-                </FadeUpDiv>
+                {/* </FadeUpDiv> */}
             </Div>
             <Div h60></Div>
             <Div px={xPadding}> 
-                <FadeUpDiv>
+                {/* <FadeUpDiv> */}
                 <Row color={"black"}>
                     <Col mb50>
                         <Div fontSize30 pb36 ref={rerollRef}>Trait Re-rolling</Div>
@@ -375,11 +375,11 @@ const Home: NextPage = () => {
                         </Div>
                     </Col>
                 </Row>
-                </FadeUpDiv>
+                {/* </FadeUpDiv> */}
             </Div>
             <Div h60></Div>
             <Div px={xPadding}> 
-                <FadeUpDiv>
+                {/* <FadeUpDiv> */}
                     <Row color={"black"} >
                         <Col mb50>
                             <Div fontSize30 pb36 ref={carpRef}>Community Artist Royalty Program [C.A.R.P.]</Div>
@@ -388,11 +388,11 @@ const Home: NextPage = () => {
                             </Div>
                         </Col>
                     </Row>
-                </FadeUpDiv>
+                {/* </FadeUpDiv> */}
             </Div>
             <Div h60></Div>
             <Div> 
-                <FadeUpDiv>
+                {/* <FadeUpDiv> */}
                     <Div fontSize30 ref={teamRef} px={xPadding} color={"black"} pb36>Team</Div>
                     <Div style={{paddingLeft: xPadding}}> 
                         <Div style={{overflowX: "scroll", flexDirection: "row"}} flex>
@@ -416,7 +416,7 @@ const Home: NextPage = () => {
                             })}
                         </Div>
                     </Div>
-                </FadeUpDiv>
+                {/* </FadeUpDiv> */}
             </Div>
             <Div px={xPadding}> 
                 <Div h2 my50 ref={faqRef}></Div>
