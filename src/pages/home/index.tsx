@@ -21,7 +21,17 @@ import pic8 from 'public/images/8.png'
 import pic9 from 'public/images/9.png'
 import pic10 from 'public/images/10.png'
 import pic11 from 'public/images/11.png'
-import { useState, useRef, useEffect } from 'react'
+import pic12 from 'public/images/12.png'
+import pic13 from 'public/images/13.png'
+import pic14 from 'public/images/14.png'
+import pic15 from 'public/images/15.png'
+import pic16 from 'public/images/16.png'
+import pic17 from 'public/images/17.png'
+import pic18 from 'public/images/18.png'
+import pic19 from 'public/images/19.png'
+import pic20 from 'public/images/20.png'
+import pic21 from 'public/images/21.png'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Twitter from 'src/components/svg/Twitter'
@@ -71,7 +81,7 @@ function useWindowSize() {
 const MobileFriendlyNav = ({callBack}) => {
     const navbarRef = useRef(null)
     const size = useWindowSize();
-
+    
     return(
         <Navbar fixed="top" bg="light" expand="lg" style={{color: "black", fontFamily: "Bungee Inline", zIndex:100, padding: (size.width > 1000 ? "1vw 20vw 1vw 20vw" : "1vw 5vw 1vw 5vw"),}}
             ref={navbarRef}
@@ -86,10 +96,51 @@ const MobileFriendlyNav = ({callBack}) => {
             <Nav className="me-auto">
                 <Nav.Link href="#about" onClick={() => callBack(0)}><Div textCenter>About</Div></Nav.Link>
                 <Nav.Link href="#rarity" onClick={() => callBack(1)}><Div textCenter>Rarity</Div></Nav.Link>
-                <Nav.Link href="#reroll" onClick={() => callBack(2)}><Div textCenter textNoWrap>Re-Roll</Div></Nav.Link>
+                <Nav.Link href="#reroll" onClick={() => callBack(2)}><Div textCenter>Re-Roll</Div></Nav.Link>
                 <Nav.Link href="#carp" onClick={() => callBack(3)}><Div textCenter>C.A.R.P</Div></Nav.Link>
                 <Nav.Link href="#team" onClick={() => callBack(4)}><Div textCenter>Team</Div></Nav.Link>
                 <Nav.Link href="#faq" onClick={() => callBack(5)}><Div textCenter>FAQ</Div></Nav.Link>
+            </Nav>
+            <Nav>
+                <Nav.Link>
+                    <Row flexNowrap >
+                        <Col></Col>
+                        <Col auto style={{cursor: "pointer"}} onClick={() => {window.open('https://discord.gg/P8sTq8y7')}}>
+                            <DiscordBlack width={30} height={30}></DiscordBlack>
+                        </Col>
+                        <Col auto style={{cursor: "pointer"}} onClick={() => {window.open('https://twitter.com/beardom_io')}}>
+                            <TwitterBlack width={30} height={30}></TwitterBlack>
+                        </Col>
+                        <Col></Col>
+                    </Row>
+                </Nav.Link>
+            </Nav>
+            </Navbar.Collapse>
+        </Container>
+        </Navbar>
+    )
+}
+
+const DummyNav = () => {
+    const size = useWindowSize();
+    
+    return(
+        <Navbar expand="lg" style={{color: "black", fontFamily: "Bungee Inline", zIndex:0, padding: (size.width > 1000 ? "1vw 20vw 1vw 20vw" : "1vw 5vw 1vw 5vw"),}}
+        >
+        <Container fluid>
+            <Div mr5><Logo fill={"black"} width={50} height={50}></Logo></Div>
+            {size.width &&  size.width > 400 && <Navbar.Brand href="#home">
+                BearDom
+            </Navbar.Brand>}
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+                <Nav.Link href="#about" ><Div textCenter>About</Div></Nav.Link>
+                <Nav.Link href="#rarity" ><Div textCenter>Rarity</Div></Nav.Link>
+                <Nav.Link href="#reroll" ><Div textCenter>Re-Roll</Div></Nav.Link>
+                <Nav.Link href="#carp" ><Div textCenter>C.A.R.P</Div></Nav.Link>
+                <Nav.Link href="#team" ><Div textCenter>Team</Div></Nav.Link>
+                <Nav.Link href="#faq" ><Div textCenter>FAQ</Div></Nav.Link>
             </Nav>
             <Nav>
                 <Nav.Link>
@@ -257,7 +308,7 @@ const Home: NextPage = () => {
         AOS.init();
     })
 
-    const FadeUpDiv = (props) => {
+    const FadeUpDiv = useCallback((props) => {
         return(
             <div data-aos="fade-up"
                 data-aos-offset="100"
@@ -271,11 +322,81 @@ const Home: NextPage = () => {
                 {props.children}
             </div>
         )
+    }, [])
+
+    const ZoomInDiv = useCallback((props) => {
+        return(
+            <div data-aos="zoom-in"
+                >
+                {props.children}
+            </div>
+        )
+    }, [])
+
+    const bearArray = [
+        pic12,
+        pic13,
+        pic14,
+        pic15,
+        pic16,
+        pic17,
+        pic18,
+        pic19,
+        pic20,
+        pic21,
+        pic12,
+        pic13,
+        pic14,
+        pic15,
+        pic16,
+        pic17,
+        pic18,
+        pic19,
+        pic20,
+        pic21,
+    ]
+
+    const getRandomInt = () => {
+        return Math.floor(Math.random() * (bearArray.length-1));
     }
 
-    const hugeImageWidth = 500
+    const [imagesRow1, setImagesRow1] = useState(Array(12).fill('rgb(248,249,250)'))
+    const [imagesRow2a, setImagesRow2a] = useState(Array(3).fill('rgb(248,249,250)'))
+    const [imagesRow2b, setImagesRow2b] = useState(Array(7).fill('rgb(248,249,250)'))
+    const [imagesRow3, setImagesRow3] = useState(Array(12).fill('rgb(248,249,250)'))
+    const [imagesRow4, setImagesRow4] = useState(Array(12).fill('rgb(248,249,250)'))
 
-    console.log(opal.src)
+    const changeVisibilityOfRow1 = (i, value) => {
+        let newImageVisibilities = [...imagesRow1]
+        newImageVisibilities[i] = value
+        console.log("enter")
+        setImagesRow1(newImageVisibilities)
+    }
+    const changeVisibilityOfRow2a = (i, value) => {
+        let newImageVisibilities = [...imagesRow2a]
+        newImageVisibilities[i] = value
+        console.log("enter")
+        setImagesRow2a(newImageVisibilities)
+    }
+    const changeVisibilityOfRow2b = (i, value) => {
+        let newImageVisibilities = [...imagesRow2b]
+        newImageVisibilities[i] = value
+        console.log("enter")
+        setImagesRow2b(newImageVisibilities)
+    }
+    const changeVisibilityOfRow3 = (i, value) => {
+        let newImageVisibilities = [...imagesRow3]
+        newImageVisibilities[i] = value
+        console.log("enter")
+        setImagesRow3(newImageVisibilities)
+    }
+    const changeVisibilityOfRow4 = (i, value) => {
+        let newImageVisibilities = [...imagesRow4]
+        newImageVisibilities[i] = value
+        console.log("enter")
+        setImagesRow4(newImageVisibilities)
+    }
+
 
   return (
     <Div className="container-fluid p-0" style={{fontFamily: "Bungee Inline", overflowX: "hidden"}} letterSpacing={2}>
@@ -284,37 +405,144 @@ const Home: NextPage = () => {
         <link href={`https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap`} rel="stylesheet"/>
         <link href={`https://fonts.googleapis.com/css2?family=Montserrat&display=swap`} rel="stylesheet"/>
         <MobileFriendlyNav callBack={scrollToRef}></MobileFriendlyNav>
+        <DummyNav></DummyNav>
         <Div >
-                <Row color={"black"} relative h={hugeImageWidth*1337/1374+120} style={{backgroundImage: `url(${opal.src})`}} px={"15vw"} overflowHidden >
-                    <Col h={hugeImageWidth*1337/1374} mt150 style={{backgroundImage: `url(${opal.src})`}} w500>
-                        <Div style={{fontSize: "5vw"}} ref={aboutRef} pb36 >
-                            {"Become Beardom,"}
-                        </Div>
-                        <Div fontFamily={bodyFontFamily} py10>
-                            <FadeUpDiv>
-                                We are a collection of 10,000 Bear NFTs designed to move the NFT space forward.
-                            </FadeUpDiv>
-                        </Div>
-                    </Col>
-                    <Col h={hugeImageWidth*54133738/1374} mt120 p0 width={hugeImageWidth} >
-                        <Image alt="" src={basicBear} width={hugeImageWidth} height={hugeImageWidth*1337/1374}></Image>
-                    </Col>
-                    {/* <Col auto py10> 
-                        <FadeUpDiv>
-                            <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻0.08 ETH</u></Row>
-                            <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻10,000 Supplies</u></Row>
-                            <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻Launch @09.17.2021</u></Row>
-                        </FadeUpDiv>
-                    </Col> */}
+            <Div bgColor={"rgb(248,249,250)"}>
+                <Row relative style={{padding: "0vw"}} >
+                    {
+                        imagesRow1.map((visibility, index) => {
+                            return(
+                                <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
+                                    <Div style={{visibility:"hidden"}}>
+                                        <Image alt="" src={bearArray[index]} ></Image>
+                                    </Div>
+                                    <Div absolute h={"100%"} w={"100%"} top0>
+                                        {visibility=="" && <ZoomInDiv >
+                                            <Div bgColor={"white"} rounded10 overflowHidden>
+                                                <Image alt="" src={bearArray[index]} ></Image>
+                                            </Div>
+                                        </ZoomInDiv>}
+                                    </Div>
+                                    <Div absolute zIndex={100} bgColor={visibility} h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow1(index, "")} onMouseOut={(e) => changeVisibilityOfRow1(index, "rgb(248,249,250)")}>
+                                    </Div>
+                                </Col>
+                            )
+                        })
+                    }
                 </Row>
-
+                <Row relative style={{padding: "0vw"}} >
+                    {
+                        imagesRow2a.map((visibility, index) => {
+                            return(
+                                <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
+                                    <Div style={{visibility:"hidden"}}>
+                                        <Image alt="" src={bearArray[index]} ></Image>
+                                    </Div>
+                                    <Div absolute h={"100%"} w={"100%"} top0>
+                                        {visibility=="" && <ZoomInDiv >
+                                            <Div bgColor={"white"} rounded10 overflowHidden>
+                                                <Image alt="" src={bearArray[index]} ></Image>
+                                            </Div>
+                                        </ZoomInDiv>}
+                                    </Div>
+                                    <Div absolute zIndex={100} bgColor={visibility} h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow2a(index, "")} onMouseOut={(e) => changeVisibilityOfRow2a(index, "rgb(248,249,250)")}>
+                                    </Div>
+                                </Col>
+                            )
+                        })
+                    }
+                    <Col col2 style={{padding: "0vw", lineHeight: 0}} bgColor={"rgb(255, 224, 88)"} color={"#393937"} relative rounded10>
+                        <Div absolute zIndex={100} top0 h={"100%"} w={"100%"} flex itemsCenter justifyCenter>
+                            <Div>Become Beardom</Div>
+                        </Div>
+                    </Col>
+                    {
+                        imagesRow2b.map((visibility, index) => {
+                            return(
+                                <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
+                                    <Div style={{visibility:"hidden"}}>
+                                        <Image alt="" src={bearArray[index]} ></Image>
+                                    </Div>
+                                    <Div absolute h={"100%"} w={"100%"} top0>
+                                        {visibility=="" && <ZoomInDiv >
+                                            <Div bgColor={"white"} rounded10 overflowHidden>
+                                                <Image alt="" src={bearArray[index]} ></Image>
+                                            </Div>
+                                        </ZoomInDiv>}
+                                    </Div>
+                                    <Div absolute zIndex={100} bgColor={visibility} h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow2b(index, "")} onMouseOut={(e) => changeVisibilityOfRow2b(index, "rgb(248,249,250)")}>
+                                    </Div>
+                                </Col>
+                            )
+                        })
+                    }
+                </Row>
+                <Row relative style={{padding: "0vw"}} >
+                    {
+                        imagesRow3.map((visibility, index) => {
+                            return(
+                                <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
+                                    <Div style={{visibility:"hidden"}}>
+                                        <Image alt="" src={bearArray[index]} ></Image>
+                                    </Div>
+                                    <Div absolute h={"100%"} w={"100%"} top0>
+                                        {visibility=="" && <ZoomInDiv >
+                                            <Div bgColor={"white"} rounded10 overflowHidden>
+                                                <Image alt="" src={bearArray[index]} ></Image>
+                                            </Div>
+                                        </ZoomInDiv>}
+                                    </Div>
+                                    <Div absolute zIndex={100} bgColor={visibility} h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow3(index, "")} onMouseOut={(e) => changeVisibilityOfRow3(index, "rgb(248,249,250)")}>
+                                    </Div>
+                                </Col>
+                            )
+                        })
+                    }
+                </Row>
+                <Row relative style={{padding: "0vw"}} >
+                    {
+                        imagesRow4.map((visibility, index) => {
+                            return(
+                                <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
+                                    <Div style={{visibility:"hidden"}}>
+                                        <Image alt="" src={bearArray[index]} ></Image>
+                                    </Div>
+                                    <Div absolute h={"100%"} w={"100%"} top0>
+                                        {visibility=="" && <ZoomInDiv >
+                                            <Div bgColor={"white"} rounded10 overflowHidden>
+                                                <Image alt="" src={bearArray[index]} ></Image>
+                                            </Div>
+                                        </ZoomInDiv>}
+                                    </Div>
+                                    <Div absolute zIndex={100} bgColor={visibility} h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow4(index, "")} onMouseOut={(e) => changeVisibilityOfRow4(index, "rgb(248,249,250)")}>
+                                    </Div>
+                                </Col>
+                            )
+                        })
+                    }
+                </Row>
+            </Div>
+            {/* <Col auto py10> 
+                <FadeUpDiv>
+                    <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻0.08 ETH</u></Row>
+                    <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻10,000 Supplies</u></Row>
+                    <Row py5 my20 color={"black"} rounded30 bgColor={"#FFE058"}><u>🐻Launch @09.17.2021</u></Row>
+                </FadeUpDiv>
+            </Col> */}
             <Div px={xPadding} py50 >
-                {/* <FadeUpDiv> */}
-                <Div fontFamily={bodyFontFamily} pb30>
-                    Beardom is a platform for future Dapp extensions. The first of which is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract. 
+                <FadeUpDiv>
+                <Div fontFamily={bodyFontFamily} py10>
+                    <FadeUpDiv>
+                        We are a collection of 10,000 Bear NFTs designed to move the NFT space forward.
+                    </FadeUpDiv>
                 </Div>
-                {/* </FadeUpDiv> */}
-                {/* <FadeUpDiv> */}
+                <Div fontFamily={bodyFontFamily} pb30>
+                    <FadeUpDiv>
+                        Beardom is a platform for future Dapp extensions. The first of which is our community artist royalty program (programmed into the genesis smart contract). Future drops/ideas such as follow-up NFT projects will conform to this standard and be directly linked on-chain to, and from, the Beardom contract. 
+                    </FadeUpDiv>
+                </Div>
+                </FadeUpDiv>
+                <FadeUpDiv>
                 <Div style={{overflowX: "scroll", flexDirection: "row",}} flex>
                 {valuesArr.map((value, index) => {
                         return(
@@ -332,19 +560,19 @@ const Home: NextPage = () => {
                         )
                     })}
                 </Div>
-                {/* </FadeUpDiv> */}
+                </FadeUpDiv>
             </Div>
-            <Div px={xPadding} pt50 bgColor={'rgb(248,249,250)'}>
-                {/* <FadeUpDiv> */}
+            <Div px={xPadding} pt50 bgColor={'rgb(248,249,250)'} ref={rarityRef}>
+                <FadeUpDiv>
                 <Row color={"black"}>
                     <Col>
-                        <Div fontSize30 pb36 ref={rarityRef}>RARITY</Div>
+                        <Div fontSize30 pb36 >RARITY</Div>
                     </Col>
                 </Row>
-                {/* </FadeUpDiv> */}
+                </FadeUpDiv>
             </Div>
             <Div style={{paddingLeft: xPadding}} pb50 bgColor={'rgb(248,249,250)'}> 
-                {/* <FadeUpDiv> */}
+                <FadeUpDiv>
                     <Div style={{overflowX: "scroll", flexDirection: "row"}} flex>
                         {[pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11].map((imageSrc, index) => {
                             return(
@@ -362,38 +590,38 @@ const Home: NextPage = () => {
                             )
                         })}
                     </Div>
-                {/* </FadeUpDiv> */}
+                </FadeUpDiv>
             </Div>
             <Div h60></Div>
-            <Div px={xPadding}> 
-                {/* <FadeUpDiv> */}
+            <Div px={xPadding} ref={rerollRef}> 
+                <FadeUpDiv>
                 <Row color={"black"}>
                     <Col mb50>
-                        <Div fontSize30 pb36 ref={rerollRef}>Trait Re-rolling</Div>
+                        <Div fontSize30 pb36 >Trait Re-rolling</Div>
                         <Div fontFamily={bodyFontFamily}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
                         </Div>
                     </Col>
                 </Row>
-                {/* </FadeUpDiv> */}
+                </FadeUpDiv>
             </Div>
             <Div h60></Div>
-            <Div px={xPadding}> 
-                {/* <FadeUpDiv> */}
+            <Div px={xPadding} ref={carpRef}> 
+                <FadeUpDiv>
                     <Row color={"black"} >
                         <Col mb50>
-                            <Div fontSize30 pb36 ref={carpRef}>Community Artist Royalty Program [C.A.R.P.]</Div>
+                            <Div fontSize30 pb36 >Community Artist Royalty Program [C.A.R.P.]</Div>
                             <Div fontFamily={bodyFontFamily}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi iusto placeat voluptatem sed voluptate officiis, aliquid accusantium dolorum cumque itaque expedita tenetur ipsa laboriosam, facere nisi similique. Mollitia, nobis.
                             </Div>
                         </Col>
                     </Row>
-                {/* </FadeUpDiv> */}
+                </FadeUpDiv>
             </Div>
             <Div h60></Div>
-            <Div> 
-                {/* <FadeUpDiv> */}
-                    <Div fontSize30 ref={teamRef} px={xPadding} color={"black"} pb36>Team</Div>
+            <Div ref={teamRef}> 
+                <FadeUpDiv>
+                    <Div fontSize30  px={xPadding} color={"black"} pb36>Team</Div>
                     <Div style={{paddingLeft: xPadding}}> 
                         <Div style={{overflowX: "scroll", flexDirection: "row"}} flex>
                             {teamArr.map((teamMember, index) => {
@@ -416,10 +644,10 @@ const Home: NextPage = () => {
                             })}
                         </Div>
                     </Div>
-                {/* </FadeUpDiv> */}
+                </FadeUpDiv>
             </Div>
-            <Div px={xPadding}> 
-                <Div h2 my50 ref={faqRef}></Div>
+            <Div px={xPadding} ref={faqRef}> 
+                <Div h2 my50 ></Div>
                 <Row auto fontSize30 mr20  >
                     FAQ
                 </Row>
@@ -449,7 +677,7 @@ const Home: NextPage = () => {
         </Div>
         <Div  style={{position: "fixed", bottom: 0, zIndex: 100, width: "100%"}}>
             <Row color={"black"} bgColor={"#FFE058"} py20 px={xPadding} fontSize30>
-                <Col textCenter textNowrap>
+                <Col textCenter>
                     {(quantity * 0.08).toFixed(2)} <Div spanTag fontSize15>ETH</Div>
                 </Col>
                 <Col>
