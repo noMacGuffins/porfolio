@@ -407,14 +407,14 @@ const Home: NextPage = () => {
         <MobileFriendlyNav callBack={scrollToRef}></MobileFriendlyNav>
         <DummyNav></DummyNav>
         <Div >
-            <Div bgColor={"#393937"}>
+            <Div bgColor={""}>
                 <Row relative style={{padding: "0vw"}} >
                     {
                         imagesRow1.map((visibility, index) => {
                             return(
                                 <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
                                     <Div >
-                                        <Image alt="" src={bearArray[index]} ></Image>
+                                        <Image alt="" src={basicBear} ></Image>
                                     </Div>
                                     <Div absolute h={"100%"} w={"100%"} top0>
                                         {visibility=="" && <ZoomInDiv >
@@ -436,7 +436,7 @@ const Home: NextPage = () => {
                             return(
                                 <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
                                     <Div >
-                                        <Image alt="" src={bearArray[index]} ></Image>
+                                        <Image alt="" src={basicBear} ></Image>
                                     </Div>
                                     <Div absolute h={"100%"} w={"100%"} top0>
                                         {visibility=="" && <ZoomInDiv >
@@ -461,7 +461,7 @@ const Home: NextPage = () => {
                             return(
                                 <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
                                     <Div >
-                                        <Image alt="" src={bearArray[index]} ></Image>
+                                        <Image alt="" src={basicBear} ></Image>
                                     </Div>
                                     <Div absolute h={"100%"} w={"100%"} top0>
                                         {visibility=="" && <ZoomInDiv >
@@ -483,7 +483,7 @@ const Home: NextPage = () => {
                             return(
                                 <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
                                     <Div >
-                                        <Image alt="" src={bearArray[index]} ></Image>
+                                        <Image alt="" src={basicBear} ></Image>
                                     </Div>
                                     <Div absolute h={"100%"} w={"100%"} top0>
                                         {visibility=="" && <ZoomInDiv >
@@ -505,7 +505,7 @@ const Home: NextPage = () => {
                             return(
                                 <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
                                     <Div >
-                                        <Image alt="" src={bearArray[index]} ></Image>
+                                        <Image alt="" src={basicBear} ></Image>
                                     </Div>
                                     <Div absolute h={"100%"} w={"100%"} top0>
                                         {visibility=="" && <ZoomInDiv >
