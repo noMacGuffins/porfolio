@@ -407,13 +407,13 @@ const Home: NextPage = () => {
         <MobileFriendlyNav callBack={scrollToRef}></MobileFriendlyNav>
         <DummyNav></DummyNav>
         <Div >
-            <Div bgColor={"rgb(248,249,250)"}>
+            <Div bgColor={"#393937"}>
                 <Row relative style={{padding: "0vw"}} >
                     {
                         imagesRow1.map((visibility, index) => {
                             return(
                                 <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
-                                    <Div style={{visibility:"hidden"}}>
+                                    <Div >
                                         <Image alt="" src={bearArray[index]} ></Image>
                                     </Div>
                                     <Div absolute h={"100%"} w={"100%"} top0>
@@ -423,7 +423,7 @@ const Home: NextPage = () => {
                                             </Div>
                                         </ZoomInDiv>}
                                     </Div>
-                                    <Div absolute zIndex={100} bgColor={visibility} h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow1(index, "")} onMouseOut={(e) => changeVisibilityOfRow1(index, "rgb(248,249,250)")}>
+                                    <Div absolute zIndex={100}  h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow1(index, "")} onMouseOut={(e) => changeVisibilityOfRow1(index, "rgb(248,249,250)")}>
                                     </Div>
                                 </Col>
                             )
@@ -435,7 +435,7 @@ const Home: NextPage = () => {
                         imagesRow2a.map((visibility, index) => {
                             return(
                                 <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
-                                    <Div style={{visibility:"hidden"}}>
+                                    <Div >
                                         <Image alt="" src={bearArray[index]} ></Image>
                                     </Div>
                                     <Div absolute h={"100%"} w={"100%"} top0>
@@ -445,7 +445,7 @@ const Home: NextPage = () => {
                                             </Div>
                                         </ZoomInDiv>}
                                     </Div>
-                                    <Div absolute zIndex={100} bgColor={visibility} h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow2a(index, "")} onMouseOut={(e) => changeVisibilityOfRow2a(index, "rgb(248,249,250)")}>
+                                    <Div absolute zIndex={100}  h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow2a(index, "")} onMouseOut={(e) => changeVisibilityOfRow2a(index, "rgb(248,249,250)")}>
                                     </Div>
                                 </Col>
                             )
@@ -460,7 +460,7 @@ const Home: NextPage = () => {
                         imagesRow2b.map((visibility, index) => {
                             return(
                                 <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
-                                    <Div style={{visibility:"hidden"}}>
+                                    <Div >
                                         <Image alt="" src={bearArray[index]} ></Image>
                                     </Div>
                                     <Div absolute h={"100%"} w={"100%"} top0>
@@ -470,7 +470,7 @@ const Home: NextPage = () => {
                                             </Div>
                                         </ZoomInDiv>}
                                     </Div>
-                                    <Div absolute zIndex={100} bgColor={visibility} h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow2b(index, "")} onMouseOut={(e) => changeVisibilityOfRow2b(index, "rgb(248,249,250)")}>
+                                    <Div absolute zIndex={100}  h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow2b(index, "")} onMouseOut={(e) => changeVisibilityOfRow2b(index, "rgb(248,249,250)")}>
                                     </Div>
                                 </Col>
                             )
@@ -482,7 +482,7 @@ const Home: NextPage = () => {
                         imagesRow3.map((visibility, index) => {
                             return(
                                 <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
-                                    <Div style={{visibility:"hidden"}}>
+                                    <Div >
                                         <Image alt="" src={bearArray[index]} ></Image>
                                     </Div>
                                     <Div absolute h={"100%"} w={"100%"} top0>
@@ -492,7 +492,7 @@ const Home: NextPage = () => {
                                             </Div>
                                         </ZoomInDiv>}
                                     </Div>
-                                    <Div absolute zIndex={100} bgColor={visibility} h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow3(index, "")} onMouseOut={(e) => changeVisibilityOfRow3(index, "rgb(248,249,250)")}>
+                                    <Div absolute zIndex={100}  h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow3(index, "")} onMouseOut={(e) => changeVisibilityOfRow3(index, "rgb(248,249,250)")}>
                                     </Div>
                                 </Col>
                             )
@@ -504,7 +504,7 @@ const Home: NextPage = () => {
                         imagesRow4.map((visibility, index) => {
                             return(
                                 <Col key={index} style={{padding: "0vw", lineHeight: 0, cursor: "pointer"}} relative >
-                                    <Div style={{visibility:"hidden"}}>
+                                    <Div >
                                         <Image alt="" src={bearArray[index]} ></Image>
                                     </Div>
                                     <Div absolute h={"100%"} w={"100%"} top0>
@@ -514,7 +514,7 @@ const Home: NextPage = () => {
                                             </Div>
                                         </ZoomInDiv>}
                                     </Div>
-                                    <Div absolute zIndex={100} bgColor={visibility} h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow4(index, "")} onMouseOut={(e) => changeVisibilityOfRow4(index, "rgb(248,249,250)")}>
+                                    <Div absolute zIndex={100}  h={"100%"} w={"100%"} top0 onMouseOver={() => changeVisibilityOfRow4(index, "")} onMouseOut={(e) => changeVisibilityOfRow4(index, "rgb(248,249,250)")}>
                                     </Div>
                                 </Col>
                             )
