@@ -1,24 +1,27 @@
 import type { AppProps } from 'next/app'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { wrapper } from "src/store/store";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { deployedABI, deployedAddress } from "src/modules/constants";
 
-const useKaikasWallet = async () => {
+const useKaikasWallet = () => {
 	// @ts-ignore
-	if (typeof window.klaytn !== "undefined") {
+	if (typeof window !== "undefined" && typeof window.klaytn !== "undefined") {
 		const klaytn = window["klaytn"];
 		if (!klaytn._kaikas.isEnabled()) {
 			try {
-				const accounts = await klaytn.enable();
-				return accounts[0];
+				klaytn.enable();
 			} catch (error) {
 				console.error(error);
 				console.log("Most likely user cancelled popup");
 			}
 		} else if (!klaytn._kaikas.isApproved()) {
 			console.log("No kaikas wallet history");
+		} else {
+			console.log("kaikas enabled and approved");
 		}
+	} else {
+		console.log("window undefined");
 	}
 };
 
@@ -65,15 +68,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 		// 	.on("receipt", (receipt) => {
 		// 		console.log(receipt);
 		// 	});
-		smartContract.methods
-			.getBalance()
-			.send({
-				from: selectedAddress,
-				gas: "250000",
-			})
-			.then((res) => {
-				console.log(res);
-			});
+		if (selectedAddress) {
+			smartContract.methods.getBalance().send(
+				{
+					from: selectedAddress,
+					gas: "250000",
+				},
+				(err, res) => {
+					console.log(res);
+				},
+			);
+		}
 	});
 
 	// klaytn.on("accountsChanged", function (accounts) {
@@ -82,4 +87,5 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 	return <Component {...pageProps} />;
 }
+
 export default wrapper.withRedux(MyApp);
