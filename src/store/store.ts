@@ -31,6 +31,6 @@ const makeStore = (context: Context) => {
   sagaMiddleware.run(rootSaga)
   return store
 }
-console.log(process.env.NODE_ENV, 'process.env.NODE_ENV')
+// console.log(process.env.NODE_ENV, 'process.env.NODE_ENV')
 
 export const wrapper = createWrapper<Store<State>>(makeStore, { debug: Boolean(process.env.CONF_IS_DEVELOPMENT) })
