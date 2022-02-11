@@ -971,6 +971,7 @@ const propsToClx = (props) => {
     maxWMd: () => clxs.push('max-w-md'),
     maxWLg: () => clxs.push('max-w-lg'),
     maxWXl: () => clxs.push('max-w-xl'),
+    maxWXl7: () => clxs.push('max-w-xl-7'),
     maxWFull: () => clxs.push('max-w-full'),
     maxWMin: () => clxs.push('max-w-min'),
     maxWMax: () => clxs.push('max-w-max'),
