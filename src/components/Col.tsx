@@ -1,9 +1,9 @@
 import React from "react"
 import Div from "./Div"
-import type { DivPropType } from 'src/types/DivPropType'
+import type { DivPropsType } from "src/types/DivPropsType";
 
 type ColType =
-	| DivPropType
+	| DivPropsType
 	| {
 			auto?;
 			children?;
