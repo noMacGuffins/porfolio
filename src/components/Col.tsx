@@ -1,5 +1,5 @@
-import React from "react"
-import Div from "./Div"
+import React from "react";
+import Div from "./Div";
 import type { DivPropsType } from "src/types/DivPropsType";
 
 type ColType =
@@ -7,16 +7,17 @@ type ColType =
 	| {
 			auto?;
 			children?;
+			key?;
 	  };
 
 const Col = (props: ColType) => {
-	const { auto, ...others } = props;
+	const { auto, key, ...others } = props;
 	if (auto) others["colAuto"] = auto;
 	return (
-		<Div col {...others}>
+		<Div key={key} col {...others}>
 			{props.children}
 		</Div>
 	);
 };
 
-export default Col
+export default Col;
