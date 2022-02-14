@@ -124,13 +124,14 @@ const propsToClx = (props) => {
 		gapY: (v) => addStyle(styles, v, { rowGap: pixelOrValue(v) }),
 		// line height
 		lineHeight: (v) => addStyle(styles, v, { lineHeight: v }),
-    //font-size
-    textXs: () => addStyle(styles, '', { fontSize: 5 }),
-    textSm: () => addStyle(styles, '', { fontSize: 10 }),
-    textBase: () => addStyle(styles, '', { fontSize: 15 }),
-    textLg: () => addStyle(styles, '', { fontSize: 20 }),
-    textXl: () => addStyle(styles, '', { fontSize: 30 }),
-    textXxl: () => addStyle(styles, '', { fontSize: 70 }),
+		//font-size
+		textXs: () => addStyle(styles, "", { fontSize: 5 }),
+		textSm: () => addStyle(styles, "", { fontSize: 10 }),
+		textBase: () => addStyle(styles, "", { fontSize: 15 }),
+		textLg: () => addStyle(styles, "", { fontSize: 20 }),
+		textXl: () => addStyle(styles, "", { fontSize: 30 }),
+		textXxl: () => addStyle(styles, "", { fontSize: 70 }),
+		textXxxl: () => addStyle(styles, "", { fontSize: 150 }),
 
 		// ==== Layout ====
 		// breakpoints
@@ -1072,7 +1073,7 @@ const propsToClx = (props) => {
 		bdBlurSm: () => clxs.push("backdrop-blur-sm"),
 		bdBlur: () => clxs.push("backdrop-blur"),
 		bdBlurMd: () => clxs.push("backdrop-blur-md"),
-		bdBlurlurLg: () => clxs.push("backdrop-blur-lg"),
+		bdBlurLg: () => clxs.push("backdrop-blur-lg"),
 		bdBlurXl: () => clxs.push("backdrop-blur-xl"),
 		bdBlur2xl: () => clxs.push("backdrop-blur-2xl"),
 		bdBlur3xl: () => clxs.push("backdrop-blur-3xl"),

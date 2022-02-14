@@ -4,8 +4,11 @@ import Div from "src/components/Div";
 export const pagesWording = {
 	home: {
 		index: {
+			title: {
+				en: "GOMZ",
+			},
 			mainMessage: {
-				en: "A world without hard cheese.",
+				en: "For a world without hard cheese.",
 			},
 			secondaryMessage: {
 				en: "Minting starts March 30, 2022.",

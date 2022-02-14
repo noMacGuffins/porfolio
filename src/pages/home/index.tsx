@@ -1,4 +1,4 @@
-import { Fragment, Suspense, useMemo, useRef, useState } from "react";
+import { Fragment, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Div from "src/components/Div";
 import Row from "src/components/Row";
 import Col from "src/components/Col";
@@ -8,6 +8,8 @@ import EmptyBlock from "src/components/EmptyBlock";
 import Helmet from "react-helmet";
 import { Stars } from "@react-three/drei";
 import { Vector3, Color, TextureLoader, Vector2 } from "three";
+import { Controller, Scene } from "react-scrollmagic";
+import { Tween, Timeline } from "react-gsap";
 
 function Box(props) {
 	// This reference gives us direct access to the THREE.Mesh object
@@ -70,7 +72,7 @@ const RoundedButton = ({ size, color, text }) => {
 			textProps = { ...textProps, textSuccess: true };
 			break;
 		case "black":
-			divProps = { ...divProps, bgGrayOpacity: true };
+			divProps = { ...divProps, bgGrayOpacity: true, bdBlurSm: true };
 			textProps = { ...textProps, textWhite: true };
 			break;
 		default:
@@ -84,20 +86,38 @@ const RoundedButton = ({ size, color, text }) => {
 	);
 };
 
-function Image({ from, to }) {
+function CastAwayAstronaut({ from, to, speed }) {
 	const texture = useLoader(TextureLoader, "https://beardom.s3.ap-northeast-2.amazonaws.com/avatars/emptyFaceAstronaut.png");
-	const [position, setPosition] = useState(from);
+	const [position, setPosition] = useState({ ...from, rotation: Math.PI });
+	const [stop, setStop] = useState(false);
 	useFrame((state, delta) => {
 		setPosition((prevPosition) => {
+			if (Math.abs(to.x - prevPosition.x) < 0.5 / speed && Math.abs(to.y - prevPosition.y) < 0.5 / speed) {
+				setStop(true);
+			}
+			if (stop) return prevPosition;
 			return {
-				x: (to.x - from.x) * Math.sin(state.clock.elapsedTime),
-				y: 0 + (to.y - from.y) * Math.sin(state.clock.elapsedTime),
+				x: from.x + (from.x - to.x) * Math.sin(state.clock.elapsedTime) * speed,
+				y: from.y + (from.y - to.y) * Math.sin(state.clock.elapsedTime) * speed,
+				rotation: Math.sin(state.clock.elapsedTime),
 			};
 		});
 	});
 	return (
+		<>
+			<mesh position={new Vector3(position.x, position.y, 0)}>
+				<planeBufferGeometry attach="geometry" args={[0.3, 0.3]} />
+				<meshBasicMaterial attach="material" map={texture} repeat={new Vector2(1, 1)} />
+			</mesh>
+		</>
+	);
+}
+
+function CanvasImage({ position, src, size }) {
+	const texture = useLoader(TextureLoader, src);
+	return (
 		<mesh position={new Vector3(position.x, position.y, 0)}>
-			<planeBufferGeometry attach="geometry" args={[0.3, 0.3]} />
+			<planeBufferGeometry attach="geometry" args={size} />
 			<meshBasicMaterial attach="material" map={texture} repeat={new Vector2(1, 1)} />
 		</mesh>
 	);
@@ -121,6 +141,17 @@ const MovingSpotlight = ({ from, to, color }) => {
 	);
 };
 
+const Sphere = () => {
+	const planet = useRef(null);
+
+	return (
+		<mesh ref={planet} visible position={[0, 0, 0]}>
+			<sphereBufferGeometry attach="geometry" args={[1.5, 32, 32]} />
+			<meshStandardMaterial attach="material" color="#1f1f1f" />
+		</mesh>
+	);
+};
+
 export default function Home() {
 	const locale = "en";
 	return (
@@ -128,16 +159,18 @@ export default function Home() {
 			<Helmet bodyAttributes={{ style: "background-color : #000" }} />
 			<Div fixed hScreen wScreen>
 				<Canvas>
-					<Stars count={2000} />
+					<Stars count={1000} />
 					<MovingSpotlight to={{ x: 24, y: 1 }} from={{ x: 19, y: 10 }} color={new Color(255, 0, 0)} />
 					<spotLight color={new Color(0, 255, 0)} intensity={0.01} position={new Vector3(0, 0, 40)} angle={Math.PI} penumbra={0} distance={50} />
+					{/* <Sphere /> */}
+					<pointLight position={new Vector3(0, 0, 0)} color={"green"} intensity={100} power={100} />
 					<Suspense fallback={null}>
-						<Image to={{ x: 2, y: 4 }} from={{ x: 1, y: 3 }} />
+						<CastAwayAstronaut from={{ x: 0, y: 0 }} to={{ x: 10, y: 10 }} speed={0.8} />
 					</Suspense>
 				</Canvas>
 			</Div>
-			<Div maxW={960} mxAuto textWhite py15>
-				<Row>
+			<Div fixed bdBlurXl wFull py15 z100>
+				<Row maxW={960} mxAuto>
 					<Col auto>
 						<Row roundedLg px={20}>
 							<Col auto px0>
@@ -152,20 +185,59 @@ export default function Home() {
 					</Col>
 					<Col></Col>
 				</Row>
-				<EmptyBlock h={100} />
-				<Div mxAuto maxW={600} fontBold textXxl textCenter leadingNone bdBlurSm py50 rounded3xl>
-					{pagesWording.home.index.mainMessage[locale]}
-				</Div>
-				<Div mxAuto maxW={500} textLg textCenter textGray500 bdBlurSm rounded3xl>
-					{pagesWording.home.index.secondaryMessage[locale]}
-				</Div>
-				<Div mxAuto maxW={500} textBase textCenter textGray600 bdBlurSm rounded3xl>
-					{pagesWording.home.index.tertiaryMessage[locale]}
-				</Div>
-				<Div justifyCenter flex py25 bdBlurSm rounded3xl>
-					<RoundedButton size={"xlarge"} color={"black"} text={pagesWording.home.index.mintButton[locale]} />
-				</Div>
+			</Div>
+			<Div maxW={960} mxAuto textWhite>
+				<Controller>
+					<Scene duration={600} pin={{ pushFollowers: false }} triggerHook={0.5} offset={300}>
+						<Div>
+							<Div mxAuto maxW={600} fontBold textCenter leadingNone bdBlurSm py50 rounded3xl relative h250>
+								<Scene duration={100} triggerHook={0} pin={{ pushFollowers: false }}>
+									{(progress) => (
+										<Timeline totalProgress={progress} paused>
+											<Timeline
+												target={
+													<Div textXxxl clx={"timeline"}>
+														{pagesWording.home.index.title[locale]}
+													</Div>
+												}
+											>
+												<Tween from={{ opacity: 1, y: 0 }} to={{ opacity: -1, y: -100 }} />
+											</Timeline>
+											<Timeline
+												target={
+													<Div textXxl clx={"timeline"} absolute top0>
+														{pagesWording.home.index.mainMessage[locale]}
+													</Div>
+												}
+											>
+												<Tween from={{ opacity: -1, y: 100 }} to={{ opacity: 1, y: 0 }} />
+											</Timeline>
+										</Timeline>
+									)}
+								</Scene>
+							</Div>
+
+							<Div mxAuto maxW={500} textLg textCenter textGray500 bdBlurSm rounded3xl>
+								{pagesWording.home.index.secondaryMessage[locale]}
+							</Div>
+							<Div mxAuto maxW={500} textBase textCenter textGray600 bdBlurSm rounded3xl>
+								{pagesWording.home.index.tertiaryMessage[locale]}
+							</Div>
+							<Div justifyCenter flex py25>
+								<RoundedButton size={"xlarge"} color={"black"} text={pagesWording.home.index.mintButton[locale]} />
+							</Div>
+						</Div>
+					</Scene>
+				</Controller>
+
 				<EmptyBlock h={75} />
+			</Div>
+			<Div h500 wScreen>
+				<Canvas>
+					<MovingSpotlight to={{ x: 24, y: 1 }} from={{ x: 19, y: 10 }} color={new Color(255, 0, 0)} />
+					<spotLight color={new Color(0, 255, 0)} intensity={0.01} position={new Vector3(0, 0, 0)} angle={Math.PI} penumbra={0} distance={50} />
+					<Suspense fallback={null}>{/* <CanvasImage position={{ x: 0, y: 0 }} src={"static/images/1.png"} size={[5, 5]} /> */}</Suspense>
+				</Canvas>
 			</Div>
 		</Div>
 	);
