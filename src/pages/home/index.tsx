@@ -239,8 +239,8 @@ export default function Home() {
 					</Suspense>
 				</Canvas>
 			</Div>
-			<Div fixed bdBlurXl wFull py15 z100>
-				<Row maxW={960} mxAuto>
+			<Div fixed bdBlurXl wFull pt20 pb10 z100>
+				<Row maxW={960} mxAuto flex justifyCenter>
 					<Col auto>
 						<Row roundedLg px={20}>
 							<Col auto px0>
@@ -254,6 +254,36 @@ export default function Home() {
 						</Row>
 					</Col>
 					<Col></Col>
+					<Col auto>
+						<Div spanTag fontLight textWhite>
+							Story
+						</Div>
+					</Col>
+					<Col auto>
+						<Div spanTag fontLight textWhite>
+							Gomz NFT
+						</Div>
+					</Col>
+					<Col auto>
+						<Div spanTag fontLight textWhite>
+							GomRoomz Metaverse
+						</Div>
+					</Col>
+					<Col auto>
+						<Div spanTag fontLight textWhite>
+							Roadmap
+						</Div>
+					</Col>
+					<Col auto>
+						<Div spanTag fontLight textWhite>
+							Team
+						</Div>
+					</Col>
+					<Col auto>
+						<Div spanTag fontLight textWhite>
+							FAQ
+						</Div>
+					</Col>
 					<Col auto>
 						<Div spanTag fontLight textWhite>
 							{locale}
