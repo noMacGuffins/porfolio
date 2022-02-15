@@ -31,19 +31,14 @@ export const pagesWording = {
 			},
 			storySection: {
 				title: {
-					en: (
-						<>
-							Never lose hospitality,
-							<br /> even as space nomads.
-						</>
-					),
+					en: "Story",
 				},
 				plot: {
 					en: (
 						<>
 							Greed-driven, planet-wide war has rendered Gomz&apos;s homes uninhabitable. 10,000 of these bears have turned to space with an
 							altruistic vision:{" "}
-							<Div textWhite textCenter py15>
+							<Div textWhite textCenter py15 fontBold>
 								Establish a world without hate by helping individuals that are in need.
 							</Div>{" "}
 							After years of deep hibernation in their space capsules, Gomz have been awakened by other space wanderers who are also in search of a
@@ -52,10 +47,18 @@ export const pagesWording = {
 						</>
 					),
 				},
+				comment: {
+					en: (
+						<>
+							Gomz will never lose hospitality.
+							<br /> Even as space nomads.
+						</>
+					),
+				},
 			},
 			gallerySection: {
 				title: {
-					en: <>Gomz Nft</>,
+					en: <>Gomz NFT</>,
 				},
 				plot: {
 					en: (
@@ -65,6 +68,28 @@ export const pagesWording = {
 								Gomz gallery
 							</Div>{" "}
 							for a preview.
+						</>
+					),
+				},
+			},
+			gomRoomzSection: {
+				title: {
+					en: <>GomRoomz Nft</>,
+				},
+				description: {
+					en: (
+						<>
+							The Gomz spaceship will be released as metaverse with P2E and community socialization utilities. GomRoomz is special in that anyone with
+							a Klaytn wallet will be able to join the metaverse. With more users, more fun and utility especially for room holders.
+							<br />
+							<Div textWhite fontBold spanTag textXl>
+								Gomz holders
+							</Div>{" "}
+							will be provided with{" "}
+							<Div textWhite fontBold spanTag textXl>
+								HUGE
+							</Div>{" "}
+							advantages in minting GomRoomz depending on the number and rarities of thier Gomz NFTs.
 						</>
 					),
 				},

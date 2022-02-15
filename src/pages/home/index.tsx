@@ -216,7 +216,6 @@ const MovingSpotlight = ({ from, to, color }) => {
 
 export default function Home() {
 	const locale = "en";
-	const image = useRef(null);
 	function RotateCamera() {
 		useFrame((state) => {
 			state.camera.rotation.z += 0.02 * Math.sin(state.clock.elapsedTime * 0.8);
@@ -318,10 +317,9 @@ export default function Home() {
 																<Div imgTag src={"static/images/gomzPlanet.png"} h400 w400></Div>
 															</Col>
 															<Col bdBlurSm rounded3xl>
-																<Div fontBold textXl textWhite mb15>
+																<Div fontBold textXxl textWhite mb15>
 																	{pagesWording.home.index.storySection.title[locale]}
 																</Div>
-
 																<Div textLg textGray500>
 																	{pagesWording.home.index.storySection.plot[locale]}
 																</Div>
@@ -351,10 +349,9 @@ export default function Home() {
 										<Div maxW={960} mxAuto>
 											<Row>
 												<Col bdBlurSm rounded3xl>
-													<Div fontBold textXl textWhite mb15>
+													<Div fontBold textXxl textWhite mb15>
 														{pagesWording.home.index.gallerySection.title[locale]}
 													</Div>
-
 													<Div textLg textGray500>
 														{pagesWording.home.index.gallerySection.plot[locale]}
 													</Div>
@@ -376,7 +373,7 @@ export default function Home() {
 															<Suspense fallback={null}>
 																<AstronautHelmet />
 																{/* @ts-ignore */}
-																<Image url={"static/images/1cut.png"} ref={image} scale={[23, 23]} position-y={19} position-z={3} />
+																<Image url={"static/images/1cut.png"} scale={[23, 23]} position-y={19} position-z={3} />
 																<RotateCamera />
 															</Suspense>
 														</Canvas>
@@ -391,36 +388,44 @@ export default function Home() {
 							</Timeline>
 						)}
 					</Scene>
-					{/* <Div>
-						<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0.5} offset={200}>
-							{(progress) => (
-								<Timeline totalProgress={progress} paused>
-									<Timeline
-										target={
-											<Div absolute h900 w900 right0>
-												<Row>
-													<Col auto>
-														<video width={600} height={400} autoPlay muted loop>
+				</Div>
+			</Controller>
+			<Controller>
+				<Div relative>
+					<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0.5} offset={1000}>
+						{(progress) => (
+							<Timeline totalProgress={progress} paused>
+								<Timeline
+									target={
+										<Div h900 w900 absolute maxW={960} top={-200} left400>
+											<Row>
+												<Col auto>
+													<Div overflowHidden w500 h500>
+														<video autoPlay width="100%" height={800} muted loop>
 															<source src="/gomRoomz.mp4" type="video/mp4" />
 														</video>
-													</Col>
-													<Col auto>
-														<Div>
-															<Div spanTag fontBold textWhite textXxl>
-																GomRoomz
-															</Div>
-														</Div>
-													</Col>
-												</Row>
+													</Div>
+												</Col>
+												<Col relative>
+													<Div spanTag fontBold textWhite textXxl absolute bottom0>
+														{pagesWording.home.index.gomRoomzSection.title[locale]}
+													</Div>
+												</Col>
+											</Row>
+											<EmptyBlock h={50} />
+											<Div w700 mxAuto textCenter>
+												<Div textLg textGray500>
+													{pagesWording.home.index.gomRoomzSection.description[locale]}
+												</Div>
 											</Div>
-										}
-									>
-										<Tween from={{ x: 1000 }} to={{ x: -400 }} />
-									</Timeline>
+										</Div>
+									}
+								>
+									<Tween from={{ x: -500 }} to={{ x: 0 }} />
 								</Timeline>
-							)}
-						</Scene>
-					</Div> */}
+							</Timeline>
+						)}
+					</Scene>
 				</Div>
 			</Controller>
 		</Div>
