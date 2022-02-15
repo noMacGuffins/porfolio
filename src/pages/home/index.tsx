@@ -421,13 +421,13 @@ export default function Home() {
 				</Div>
 			</Controller>
 			<Controller>
-				<Div relative>
+				<Div>
 					<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0.5} offset={1000}>
 						{(progress) => (
 							<Timeline totalProgress={progress} paused>
 								<Timeline
 									target={
-										<Div h900 w900 absolute maxW={960} top={-200} left400>
+										<Div h900 maxW={960} top={-200} mxAuto mt={-300}>
 											<Row>
 												<Col auto>
 													<Div overflowHidden w500 h500>
