@@ -74,7 +74,7 @@ export const pagesWording = {
 			},
 			gomRoomzSection: {
 				title: {
-					en: <>GomRoomz NFT</>,
+					en: <>GomRoomz Metaverse</>,
 				},
 				description: {
 					en: (
