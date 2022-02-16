@@ -133,9 +133,9 @@ const GomzNFT = () => {
 		return (
 			<Div mxAuto px20>
 				<EmptyBlock h={50} />
-				<Div h400 wFull>
+				<Div h250 wFull>
 					<Canvas camera={{ fov: 30, near: 1, far: 1000, position: [0, 120, 100] }}>
-						<OrbitControls enableZoom={false} />
+						<OrbitControls enableZoom={false} enablePan={false} />
 						<MovingSpotlight to={{ x: 24, y: 1 }} from={{ x: 19, y: 10 }} color={new Color(255, 0, 0)} />
 						<spotLight color={new Color(0, 255, 0)} intensity={0.01} position={new Vector3(0, 0, 40)} angle={Math.PI} penumbra={0} distance={50} />
 						<ambientLight intensity={0.1} />
@@ -147,7 +147,7 @@ const GomzNFT = () => {
 						</Suspense>
 					</Canvas>
 				</Div>
-				<Div mt={-100} style={{ zIndex: 10 }}>
+				<Div mt={-50} style={{ zIndex: 10 }}>
 					<Div fontBold textXl textWhite mb15>
 						{pagesWording.home.index.gallerySection.title[locale]}
 					</Div>
@@ -287,7 +287,7 @@ const TopBar = () => {
 	if (isTablet)
 		return (
 			<Div fixed bdBlurXl wFull pt20 pb10 z100>
-				<Row mxAuto flex justifyCenter px30>
+				<Row mxAuto flex justifyCenter pr20>
 					<Col auto>
 						<Row roundedLg px={20}>
 							<Col auto px0>
