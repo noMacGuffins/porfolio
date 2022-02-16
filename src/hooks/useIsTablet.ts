@@ -9,7 +9,6 @@ export default function useIsTablet() {
   useEffect(() => {
     window.addEventListener('resize', handleResize)
     handleResize()
-    console.log(Math.min(document.documentElement.clientWidth,window.innerWidth))
     return () => window.removeEventListener('resize', handleResize)
   }, [])
   return isTablet

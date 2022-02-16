@@ -24,14 +24,15 @@ const CallToActionAndStory = () => {
 	const isTablet = useIsTablet();
 	return (
 		<Div maxW={960} mxAuto textWhite relative px10>
+			<EmptyBlock h={250} />
 			<Div imgTag absolute src={"static/images/planets/11.png"} h80></Div>
 			<Div imgTag absolute src={"static/images/planets/13.png"} h30 right200 top50></Div>
 			{!isTablet && <Div imgTag absolute src={"static/images/planets/18.png"} h100 left500 top300></Div>}
 			{!isTablet && <Div imgTag absolute src={"static/images/planets/19.png"} h40 left100 top600></Div>}
-			<Scene duration={isTablet ? 250 : 600} pin={{ pushFollowers: false }} triggerHook={0.5} offset={300}>
+			<Scene duration={isTablet ? 1 : 600} pin={{ pushFollowers: false }} triggerHook={0.5} offset={300}>
 				<Div>
 					<Div mxAuto maxW={600} fontBold textCenter leadingNone bdBlurSm py50={!isTablet} pb30={isTablet} rounded3xl relative h250={!isTablet}>
-						<Scene duration={100} triggerHook={0} pin={{ pushFollowers: false }}>
+						<Scene duration={100} triggerHook={0} pin={{ pushFollowers: true }}>
 							{(progress) => (
 								<Timeline totalProgress={progress} paused>
 									<Timeline
@@ -132,7 +133,7 @@ const GomzNFT = () => {
 		return (
 			<Div mxAuto px20>
 				<EmptyBlock h={50} />
-				<Div h600 wFull>
+				<Div h400 wFull>
 					<Canvas camera={{ fov: 30, near: 1, far: 1000, position: [0, 120, 100] }}>
 						<OrbitControls enableZoom={false} />
 						<MovingSpotlight to={{ x: 24, y: 1 }} from={{ x: 19, y: 10 }} color={new Color(255, 0, 0)} />
@@ -146,7 +147,7 @@ const GomzNFT = () => {
 						</Suspense>
 					</Canvas>
 				</Div>
-				<Div mt={-270}>
+				<Div mt={-100} style={{ zIndex: 10 }}>
 					<Div fontBold textXl textWhite mb15>
 						{pagesWording.home.index.gallerySection.title[locale]}
 					</Div>
@@ -219,7 +220,7 @@ const GomRoomzMetaverse = () => {
 			<Div>
 				<EmptyBlock h={100} />
 				<Div px20>
-					<Div overflowHidden w={"100%"}>
+					<Div overflowHidden w={"100%"} z10>
 						<video autoPlay width="100%" muted loop>
 							<source src="/gomRoomz.mp4" type="video/mp4" />
 						</video>
@@ -371,7 +372,7 @@ export default function Home() {
 			<Div bgBlack>
 				<Helmet bodyAttributes={{ style: "background-color : #000" }} />
 				<Div fixed wScreen hScreen>
-					<Canvas>
+					<Canvas style={{ zIndex: -10 }}>
 						<Stars count={700} />
 					</Canvas>
 				</Div>
