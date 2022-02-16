@@ -874,25 +874,10 @@ export const deployedABI = [
 
 export const deployedAddress = "0xE5e47D1540D136777C0B4E0865F467987C3d6513";
 
+export const LOCALE_EN = 'en'
+export const LOCALE_KO = 'en'
+export const locales = [
+    LOCALE_EN,
+    LOCALE_KO,
+]
 
-export const COLORS = {
-    PRIMARY: '#7a5de8',
-    PRIMARY_LIGHT: 'rgba(122, 93, 232, 0.2)',
-    SECONDARY: '#513ccd',
-    SECONDARY2: '#3f3d88',
-    SUCCESS: '#3cd278',
-    SUCCESS_LIGHT: 'rgba(60, 210, 120, 0.1)',
-    INFO: '#2A97FF',
-    INFO_LIGHT: 'rgba(42, 151, 255, 0.1)',
-    WARNING: '#F6c343',
-    DANGER: '#FF3051',
-    DANGER_LIGHT: 'rgba(255, 48, 81, 0.1)',
-    GRAY100: '#f7f9fb',
-    GRAY200: '#edf0f5',
-    GRAY300: '#e2e9f2',
-    GRAY400: '#c6d3e6',
-    GRAY500: '#abbcd5',
-    GRAY600: '#869ab8',
-    GRAY700: '#4e5b73',
-    BLACK: '#161c2d',
-  }

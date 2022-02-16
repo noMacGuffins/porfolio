@@ -14,10 +14,97 @@ import RoundedButton from "src/components/RoundedButton";
 import { AstronautHelmet } from "src/components/AstronautHelmet";
 import MovingSpotlight from "src/components/MovingSpotlight";
 import useIsTablet from "src/hooks/useIsTablet";
+import { useSelector } from "react-redux";
+import { RootState } from "src/store/reducers/rootReducer";
 
-export default function Home() {
-	const locale = "en";
-	function RotateCamera() {
+const CallToActionAndStory = () => {
+	const { locale } = useSelector((state: RootState) => ({
+		locale: state.app.locale,
+	}));
+	return (
+		<Div maxW={960} mxAuto textWhite relative px30>
+			<Div imgTag absolute src={"static/images/planets/11.png"} h80></Div>
+			<Div imgTag absolute src={"static/images/planets/13.png"} h30 right200 top50></Div>
+			<Div imgTag absolute src={"static/images/planets/18.png"} h100 left500 top300></Div>
+			<Div imgTag absolute src={"static/images/planets/19.png"} h40 left100 top600></Div>
+			<Scene duration={600} pin={{ pushFollowers: false }} triggerHook={0.5} offset={300}>
+				<Div>
+					<Div mxAuto maxW={600} fontBold textCenter leadingNone bdBlurSm py50 rounded3xl relative h250>
+						<Scene duration={100} triggerHook={0} pin={{ pushFollowers: false }}>
+							{(progress) => (
+								<Timeline totalProgress={progress} paused>
+									<Timeline
+										target={
+											<Div textXxxl clx={"timeline"}>
+												{pagesWording.home.index.mintSection.title[locale]}
+											</Div>
+										}
+									>
+										<Tween from={{ opacity: 1, y: 0 }} to={{ opacity: -1, y: -100 }} />
+									</Timeline>
+									<Timeline
+										target={
+											<Div textXxl clx={"timeline"} absolute top0>
+												{pagesWording.home.index.mintSection.mainMessage[locale]}
+											</Div>
+										}
+									>
+										<Tween from={{ opacity: -1, y: 100 }} to={{ opacity: 1, y: 0 }} />
+									</Timeline>
+								</Timeline>
+							)}
+						</Scene>
+					</Div>
+					<Div mxAuto maxW={500} textLg textCenter textGray500 bdBlurSm rounded3xl>
+						{pagesWording.home.index.mintSection.secondaryMessage[locale]}
+					</Div>
+					<Div mxAuto maxW={500} textBase textCenter textGray600 bdBlurSm rounded3xl>
+						{pagesWording.home.index.mintSection.tertiaryMessage[locale]}
+					</Div>
+					<Div justifyCenter flex py25>
+						<RoundedButton size={"xlarge"} color={"black"} text={pagesWording.home.index.mintSection.mintButton[locale]} />
+					</Div>
+					<EmptyBlock />
+					<Div>
+						<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0.5} offset={200}>
+							{(progress) => (
+								<Timeline totalProgress={progress} paused>
+									<Timeline
+										target={
+											<Div absolute h900 w900 right0>
+												<Row>
+													<Col auto>
+														<Div imgTag src={"static/images/gomzPlanet.png"} h400 w400></Div>
+													</Col>
+													<Col bdBlurSm rounded3xl>
+														<Div fontBold textXl textWhite mb15>
+															{pagesWording.home.index.storySection.title[locale]}
+														</Div>
+														<Div textLg textGray500>
+															{pagesWording.home.index.storySection.plot[locale]}
+														</Div>
+													</Col>
+												</Row>
+											</Div>
+										}
+									>
+										<Tween from={{ x: 1000 }} to={{ x: 0 }} />
+									</Timeline>
+								</Timeline>
+							)}
+						</Scene>
+					</Div>
+				</Div>
+			</Scene>
+		</Div>
+	);
+};
+
+const GomzNFT = () => {
+	const { locale } = useSelector((state: RootState) => ({
+		locale: state.app.locale,
+	}));
+	const RotateCamera = () => {
 		useFrame((state) => {
 			state.camera.rotation.z += 0.02 * Math.sin(state.clock.elapsedTime * 0.8);
 			state.camera.rotation.y += 0.03 * Math.sin(state.clock.elapsedTime * 0.3);
@@ -25,238 +112,176 @@ export default function Home() {
 			state.camera.updateProjectionMatrix();
 		});
 		return null;
-	}
+	};
+	return (
+		<Div>
+			<Scene duration={300} pin={{ pushFollowers: false }} triggerHook={0.5} offset={1000}>
+				{(progress) => (
+					<Timeline totalProgress={progress} paused>
+						<Timeline
+							target={
+								<Div maxW={960} mxAuto px30>
+									<Row>
+										<Col bdBlurSm rounded3xl>
+											<Div fontBold textXl textWhite mb15>
+												{pagesWording.home.index.gallerySection.title[locale]}
+											</Div>
+											<Div textLg textGray500>
+												{pagesWording.home.index.gallerySection.plot[locale]}
+											</Div>
+										</Col>
+										<Col auto>
+											<Div h600 w400>
+												<Canvas camera={{ fov: 30, near: 1, far: 1000, position: [0, 120, 100] }}>
+													<OrbitControls enableZoom={false} />
+													<MovingSpotlight to={{ x: 24, y: 1 }} from={{ x: 19, y: 10 }} color={new Color(255, 0, 0)} />
+													<spotLight
+														color={new Color(0, 255, 0)}
+														intensity={0.01}
+														position={new Vector3(0, 0, 40)}
+														angle={Math.PI}
+														penumbra={0}
+														distance={50}
+													/>
+													<ambientLight intensity={0.1} />
+													<Suspense fallback={null}>
+														<AstronautHelmet />
+														{/* @ts-ignore */}
+														<Image url={"static/images/1cut.png"} scale={[23, 23]} position-y={19} position-z={3} />
+														<RotateCamera />
+													</Suspense>
+												</Canvas>
+											</Div>
+										</Col>
+									</Row>
+								</Div>
+							}
+						>
+							<Tween from={{ x: -1000 }} to={{ x: 0 }} />
+						</Timeline>
+					</Timeline>
+				)}
+			</Scene>
+		</Div>
+	);
+};
+
+const GomRoomzMetaverse = () => {
+	const { locale } = useSelector((state: RootState) => ({
+		locale: state.app.locale,
+	}));
+	return (
+		<Div>
+			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0.5} offset={1000}>
+				{(progress) => (
+					<Timeline totalProgress={progress} paused>
+						<Timeline
+							target={
+								<Div h900 maxW={960} top={-100} mxAuto mt={-300} px30>
+									<Row>
+										<Col auto>
+											<Div overflowHidden w400>
+												<video autoPlay width="100%" muted loop>
+													<source src="/gomRoomz.mp4" type="video/mp4" />
+												</video>
+											</Div>
+										</Col>
+										<Col relative>
+											<Div spanTag fontBold textWhite textXl absolute bottom0>
+												{pagesWording.home.index.gomRoomzSection.title[locale]}
+											</Div>
+										</Col>
+									</Row>
+									<EmptyBlock h={15} />
+									<Div w700 mxAuto textCenter bdBlurSm>
+										<Div textLg textGray500>
+											{pagesWording.home.index.gomRoomzSection.description[locale]}
+										</Div>
+									</Div>
+								</Div>
+							}
+						>
+							<Tween from={{ x: -500 }} to={{ x: 0 }} />
+						</Timeline>
+					</Timeline>
+				)}
+			</Scene>
+		</Div>
+	);
+};
+
+export default function Home() {
+	const locale = "en";
 
 	const [isTablet] = useIsTablet();
 	console.log(isTablet);
 
 	return (
-		<Div bgBlack>
-			<Helmet bodyAttributes={{ style: "background-color : #000" }} />
-			<Div fixed hScreen wScreen>
-				<Canvas>
-					<Stars count={700} />
-				</Canvas>
-			</Div>
-			<Div fixed bdBlurXl wFull pt20 pb10 z100>
-				<Row maxW={960} mxAuto flex justifyCenter px30>
-					<Col auto>
-						<Row roundedLg px={20}>
-							<Col auto px0>
-								<Div imgTag src={"static/images/basicBearWhite.png"} h={30} w={30} style={{ objectFit: "cover" }} />
-							</Col>
-							<Col auto px0 pr8 flex itemsCenter>
-								<Div spanTag fontBold textWhite>
-									Gomz
-								</Div>
-							</Col>
-						</Row>
-					</Col>
-					<Col></Col>
-					<Col auto>
-						<Div spanTag fontLight textWhite>
-							Story
-						</Div>
-					</Col>
-					<Col auto>
-						<Div spanTag fontLight textWhite>
-							Gomz NFT
-						</Div>
-					</Col>
-					<Col auto>
-						<Div spanTag fontLight textWhite>
-							GomRoomz Metaverse
-						</Div>
-					</Col>
-					<Col auto>
-						<Div spanTag fontLight textWhite>
-							Roadmap
-						</Div>
-					</Col>
-					<Col auto>
-						<Div spanTag fontLight textWhite>
-							Team
-						</Div>
-					</Col>
-					<Col auto>
-						<Div spanTag fontLight textWhite>
-							FAQ
-						</Div>
-					</Col>
-					<Col auto>
-						<Div spanTag fontLight textWhite>
-							{locale}
-						</Div>
-					</Col>
-				</Row>
-			</Div>
-			<Div maxW={960} mxAuto textWhite relative px30>
-				<Div imgTag absolute src={"static/images/planets/11.png"} h80></Div>
-				<Div imgTag absolute src={"static/images/planets/13.png"} h30 right200 top50></Div>
-				<Div imgTag absolute src={"static/images/planets/18.png"} h100 left500 top300></Div>
-				<Div imgTag absolute src={"static/images/planets/19.png"} h40 left100 top600></Div>
-				<Controller>
-					<Scene duration={600} pin={{ pushFollowers: false }} triggerHook={0.5} offset={300}>
-						<Div>
-							<Div mxAuto maxW={600} fontBold textCenter leadingNone bdBlurSm py50 rounded3xl relative h250>
-								<Scene duration={100} triggerHook={0} pin={{ pushFollowers: false }}>
-									{(progress) => (
-										<Timeline totalProgress={progress} paused>
-											<Timeline
-												target={
-													<Div textXxxl clx={"timeline"}>
-														{pagesWording.home.index.mintSection.title[locale]}
-													</Div>
-												}
-											>
-												<Tween from={{ opacity: 1, y: 0 }} to={{ opacity: -1, y: -100 }} />
-											</Timeline>
-											<Timeline
-												target={
-													<Div textXxl clx={"timeline"} absolute top0>
-														{pagesWording.home.index.mintSection.mainMessage[locale]}
-													</Div>
-												}
-											>
-												<Tween from={{ opacity: -1, y: 100 }} to={{ opacity: 1, y: 0 }} />
-											</Timeline>
-										</Timeline>
-									)}
-								</Scene>
-							</Div>
-							<Div mxAuto maxW={500} textLg textCenter textGray500 bdBlurSm rounded3xl>
-								{pagesWording.home.index.mintSection.secondaryMessage[locale]}
-							</Div>
-							<Div mxAuto maxW={500} textBase textCenter textGray600 bdBlurSm rounded3xl>
-								{pagesWording.home.index.mintSection.tertiaryMessage[locale]}
-							</Div>
-							<Div justifyCenter flex py25>
-								<RoundedButton size={"xlarge"} color={"black"} text={pagesWording.home.index.mintSection.mintButton[locale]} />
-							</Div>
-							<EmptyBlock />
-							<Div>
-								<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0.5} offset={200}>
-									{(progress) => (
-										<Timeline totalProgress={progress} paused>
-											<Timeline
-												target={
-													<Div absolute h900 w900 right0>
-														<Row>
-															<Col auto>
-																<Div imgTag src={"static/images/gomzPlanet.png"} h400 w400></Div>
-															</Col>
-															<Col bdBlurSm rounded3xl>
-																<Div fontBold textXl textWhite mb15>
-																	{pagesWording.home.index.storySection.title[locale]}
-																</Div>
-																<Div textLg textGray500>
-																	{pagesWording.home.index.storySection.plot[locale]}
-																</Div>
-															</Col>
-														</Row>
-													</Div>
-												}
-											>
-												<Tween from={{ x: 1000 }} to={{ x: 0 }} />
-											</Timeline>
-										</Timeline>
-									)}
-								</Scene>
-							</Div>
-						</Div>
-					</Scene>
-				</Controller>
-			</Div>
-			<EmptyBlock h={600} />
-			<Controller>
-				<Div>
-					<Scene duration={300} pin={{ pushFollowers: false }} triggerHook={0.5} offset={1000}>
-						{(progress) => (
-							<Timeline totalProgress={progress} paused>
-								<Timeline
-									target={
-										<Div maxW={960} mxAuto px30>
-											<Row>
-												<Col bdBlurSm rounded3xl>
-													<Div fontBold textXl textWhite mb15>
-														{pagesWording.home.index.gallerySection.title[locale]}
-													</Div>
-													<Div textLg textGray500>
-														{pagesWording.home.index.gallerySection.plot[locale]}
-													</Div>
-												</Col>
-												<Col auto>
-													<Div h600 w400>
-														<Canvas camera={{ fov: 30, near: 1, far: 1000, position: [0, 120, 100] }}>
-															<OrbitControls enableZoom={false} />
-															<MovingSpotlight to={{ x: 24, y: 1 }} from={{ x: 19, y: 10 }} color={new Color(255, 0, 0)} />
-															<spotLight
-																color={new Color(0, 255, 0)}
-																intensity={0.01}
-																position={new Vector3(0, 0, 40)}
-																angle={Math.PI}
-																penumbra={0}
-																distance={50}
-															/>
-															<ambientLight intensity={0.1} />
-															<Suspense fallback={null}>
-																<AstronautHelmet />
-																{/* @ts-ignore */}
-																<Image url={"static/images/1cut.png"} scale={[23, 23]} position-y={19} position-z={3} />
-																<RotateCamera />
-															</Suspense>
-														</Canvas>
-													</Div>
-												</Col>
-											</Row>
-										</Div>
-									}
-								>
-									<Tween from={{ x: -1000 }} to={{ x: 0 }} />
-								</Timeline>
-							</Timeline>
-						)}
-					</Scene>
+		<Controller>
+			<Div bgBlack>
+				<Helmet bodyAttributes={{ style: "background-color : #000" }} />
+				<Div fixed hScreen wScreen>
+					<Canvas>
+						<Stars count={700} />
+					</Canvas>
 				</Div>
-			</Controller>
-			<Controller>
-				<Div>
-					<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0.5} offset={1000}>
-						{(progress) => (
-							<Timeline totalProgress={progress} paused>
-								<Timeline
-									target={
-										<Div h900 maxW={960} top={-100} mxAuto mt={-300} px30>
-											<Row>
-												<Col auto>
-													<Div overflowHidden w400>
-														<video autoPlay width="100%" muted loop>
-															<source src="/gomRoomz.mp4" type="video/mp4" />
-														</video>
-													</Div>
-												</Col>
-												<Col relative>
-													<Div spanTag fontBold textWhite textXl absolute bottom0>
-														{pagesWording.home.index.gomRoomzSection.title[locale]}
-													</Div>
-												</Col>
-											</Row>
-											<EmptyBlock h={50} />
-											<Div w700 mxAuto textCenter>
-												<Div textLg textGray500>
-													{pagesWording.home.index.gomRoomzSection.description[locale]}
-												</Div>
-											</Div>
-										</Div>
-									}
-								>
-									<Tween from={{ x: -500 }} to={{ x: 0 }} />
-								</Timeline>
-							</Timeline>
-						)}
-					</Scene>
+				<Div fixed bdBlurXl wFull pt20 pb10 z100>
+					<Row maxW={960} mxAuto flex justifyCenter px30>
+						<Col auto>
+							<Row roundedLg px={20}>
+								<Col auto px0>
+									<Div imgTag src={"static/images/basicBearWhite.png"} h={30} w={30} style={{ objectFit: "cover" }} />
+								</Col>
+								<Col auto px0 pr8 flex itemsCenter>
+									<Div spanTag fontBold textWhite>
+										Gomz
+									</Div>
+								</Col>
+							</Row>
+						</Col>
+						<Col></Col>
+						<Col auto>
+							<Div spanTag fontLight textWhite>
+								Story
+							</Div>
+						</Col>
+						<Col auto>
+							<Div spanTag fontLight textWhite>
+								Gomz NFT
+							</Div>
+						</Col>
+						<Col auto>
+							<Div spanTag fontLight textWhite>
+								GomRoomz Metaverse
+							</Div>
+						</Col>
+						<Col auto>
+							<Div spanTag fontLight textWhite>
+								Roadmap
+							</Div>
+						</Col>
+						<Col auto>
+							<Div spanTag fontLight textWhite>
+								Team
+							</Div>
+						</Col>
+						<Col auto>
+							<Div spanTag fontLight textWhite>
+								FAQ
+							</Div>
+						</Col>
+						<Col auto>
+							<Div spanTag fontLight textWhite>
+								{locale}
+							</Div>
+						</Col>
+					</Row>
 				</Div>
-			</Controller>
-		</Div>
+				<CallToActionAndStory />
+				<EmptyBlock h={600} />
+				<GomzNFT />
+				<GomRoomzMetaverse />
+			</Div>
+		</Controller>
 	);
 }

@@ -82,11 +82,11 @@ export const pagesWording = {
 							The Gomz spaceship will be released as metaverse with P2E and community socialization utilities. GomRoomz is special in that anyone with
 							a Klaytn wallet will be able to join the metaverse. With more users, more fun and utility especially for room holders.
 							<br />
-							<Div textWhite fontBold spanTag textXl>
+							<Div textWhite fontBold spanTag>
 								Gomz holders
 							</Div>{" "}
 							will be provided with{" "}
-							<Div textWhite fontBold spanTag textXl>
+							<Div textWhite fontBold spanTag>
 								HUGE
 							</Div>{" "}
 							advantages in minting GomRoomz depending on the number and rarities of thier Gomz NFTs.
