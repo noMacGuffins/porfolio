@@ -14,8 +14,11 @@ import RoundedButton from "src/components/RoundedButton";
 import { AstronautHelmet } from "src/components/AstronautHelmet";
 import MovingSpotlight from "src/components/MovingSpotlight";
 import useIsTablet from "src/hooks/useIsTablet";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "src/store/reducers/rootReducer";
+import { useSelectedAddress } from "src/hooks/wallet/kaikas";
+import SignInModal from "src/components/modals/SignInModal";
+import { modalActions } from "src/store/reducers/modalReducer";
 
 const CallToActionAndStory = () => {
 	const { locale } = useSelector((state: RootState) => ({
@@ -280,10 +283,18 @@ const GomRoomzMetaverse = () => {
 };
 
 const TopBar = () => {
-	const { locale } = useSelector((state: RootState) => ({
+	const dispatch = useDispatch();
+	const { locale, isLoggedIn } = useSelector((state: RootState) => ({
 		locale: state.app.locale,
+		isLoggedIn: state.auth.isLoggedIn,
 	}));
 	const isTablet = useIsTablet();
+	const selectedAddress = useSelectedAddress();
+	const onClickLogin = () => {
+		if (isLoggedIn && selectedAddress) return;
+		dispatch(modalActions.setSignInEnabled(true));
+	};
+
 	if (isTablet)
 		return (
 			<Div fixed bdBlurXl wFull pt20 pb10 z100>
@@ -301,9 +312,15 @@ const TopBar = () => {
 						</Row>
 					</Col>
 					<Col></Col>
-					<Col auto>
+					{/* <Col auto>
 						<Div spanTag fontLight textWhite>
 							{locale}
+						</Div>
+					</Col> */}
+					<Col auto px10></Col>
+					<Col auto bgWhite rounded3xl pt2 cursorPointer onClick={onClickLogin}>
+						<Div spanTag fontLight fontMedium>
+							{isLoggedIn && selectedAddress ? selectedAddress.substring(0, 5) + "..." : "Login"}
 						</Div>
 					</Col>
 				</Row>
@@ -311,8 +328,9 @@ const TopBar = () => {
 		);
 	return (
 		<Div fixed bdBlurXl wFull pt20 pb10 z100>
+			<SignInModal />
 			<Row maxW={960} mxAuto flex justifyCenter px30>
-				<Col auto>
+				<Col auto cursorPointer>
 					<Row roundedLg px={20}>
 						<Col auto px0>
 							<Div imgTag src={"static/images/basicBearWhite.png"} h={30} w={30} style={{ objectFit: "cover" }} />
@@ -325,39 +343,45 @@ const TopBar = () => {
 					</Row>
 				</Col>
 				<Col></Col>
-				<Col auto>
+				<Col auto pt1 cursorPointer>
 					<Div spanTag fontLight textWhite>
 						Story
 					</Div>
 				</Col>
-				<Col auto>
+				<Col auto pt1 cursorPointer>
 					<Div spanTag fontLight textWhite>
 						Gomz NFT
 					</Div>
 				</Col>
-				<Col auto>
+				<Col auto pt1 cursorPointer>
 					<Div spanTag fontLight textWhite>
 						GomRoomz Metaverse
 					</Div>
 				</Col>
-				<Col auto>
+				<Col auto pt1 cursorPointer>
 					<Div spanTag fontLight textWhite>
 						Roadmap
 					</Div>
 				</Col>
-				<Col auto>
+				<Col auto pt1 cursorPointer>
 					<Div spanTag fontLight textWhite>
 						Team
 					</Div>
 				</Col>
-				<Col auto>
+				<Col auto pt1 cursorPointer>
 					<Div spanTag fontLight textWhite>
 						FAQ
 					</Div>
 				</Col>
-				<Col auto>
+				<Col auto pt1 cursorPointer>
 					<Div spanTag fontLight textWhite>
 						{locale}
+					</Div>
+				</Col>
+				<Col auto px10></Col>
+				<Col auto bgWhite rounded3xl pt2 cursorPointer onClick={onClickLogin}>
+					<Div spanTag fontLight fontMedium>
+						{isLoggedIn && selectedAddress ? selectedAddress.substring(0, 5) + "..." : "Login"}
 					</Div>
 				</Col>
 			</Row>

@@ -903,3 +903,6 @@ export const locales = [
     LOCALE_EN,
     LOCALE_KO,
 ]
+
+export const KAIKAS = "KAIKAS"
+export const KLIP = "KLIP"
