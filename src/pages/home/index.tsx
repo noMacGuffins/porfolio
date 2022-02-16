@@ -210,9 +210,67 @@ const GomRoomzMetaverse = () => {
 	);
 };
 
-export default function Home() {
-	const locale = "en";
+const TopBar = () => {
+	const { locale } = useSelector((state: RootState) => ({
+		locale: state.app.locale,
+	}));
+	return (
+		<Div fixed bdBlurXl wFull pt20 pb10 z100>
+			<Row maxW={960} mxAuto flex justifyCenter px30>
+				<Col auto>
+					<Row roundedLg px={20}>
+						<Col auto px0>
+							<Div imgTag src={"static/images/basicBearWhite.png"} h={30} w={30} style={{ objectFit: "cover" }} />
+						</Col>
+						<Col auto px0 pr8 flex itemsCenter>
+							<Div spanTag fontBold textWhite>
+								Gomz
+							</Div>
+						</Col>
+					</Row>
+				</Col>
+				<Col></Col>
+				<Col auto>
+					<Div spanTag fontLight textWhite>
+						Story
+					</Div>
+				</Col>
+				<Col auto>
+					<Div spanTag fontLight textWhite>
+						Gomz NFT
+					</Div>
+				</Col>
+				<Col auto>
+					<Div spanTag fontLight textWhite>
+						GomRoomz Metaverse
+					</Div>
+				</Col>
+				<Col auto>
+					<Div spanTag fontLight textWhite>
+						Roadmap
+					</Div>
+				</Col>
+				<Col auto>
+					<Div spanTag fontLight textWhite>
+						Team
+					</Div>
+				</Col>
+				<Col auto>
+					<Div spanTag fontLight textWhite>
+						FAQ
+					</Div>
+				</Col>
+				<Col auto>
+					<Div spanTag fontLight textWhite>
+						{locale}
+					</Div>
+				</Col>
+			</Row>
+		</Div>
+	);
+};
 
+export default function Home() {
 	const [isTablet] = useIsTablet();
 	console.log(isTablet);
 
@@ -225,58 +283,7 @@ export default function Home() {
 						<Stars count={700} />
 					</Canvas>
 				</Div>
-				<Div fixed bdBlurXl wFull pt20 pb10 z100>
-					<Row maxW={960} mxAuto flex justifyCenter px30>
-						<Col auto>
-							<Row roundedLg px={20}>
-								<Col auto px0>
-									<Div imgTag src={"static/images/basicBearWhite.png"} h={30} w={30} style={{ objectFit: "cover" }} />
-								</Col>
-								<Col auto px0 pr8 flex itemsCenter>
-									<Div spanTag fontBold textWhite>
-										Gomz
-									</Div>
-								</Col>
-							</Row>
-						</Col>
-						<Col></Col>
-						<Col auto>
-							<Div spanTag fontLight textWhite>
-								Story
-							</Div>
-						</Col>
-						<Col auto>
-							<Div spanTag fontLight textWhite>
-								Gomz NFT
-							</Div>
-						</Col>
-						<Col auto>
-							<Div spanTag fontLight textWhite>
-								GomRoomz Metaverse
-							</Div>
-						</Col>
-						<Col auto>
-							<Div spanTag fontLight textWhite>
-								Roadmap
-							</Div>
-						</Col>
-						<Col auto>
-							<Div spanTag fontLight textWhite>
-								Team
-							</Div>
-						</Col>
-						<Col auto>
-							<Div spanTag fontLight textWhite>
-								FAQ
-							</Div>
-						</Col>
-						<Col auto>
-							<Div spanTag fontLight textWhite>
-								{locale}
-							</Div>
-						</Col>
-					</Row>
-				</Div>
+				<TopBar />
 				<CallToActionAndStory />
 				<EmptyBlock h={600} />
 				<GomzNFT />
