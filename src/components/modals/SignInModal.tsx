@@ -52,6 +52,7 @@ export default function SignInModal() {
 			};
 			dispatch(authActions.login(loginParams));
 			closeModal();
+			dispatch(modalActions.setConfettiEnabled(true));
 		} else {
 			setError(<Div spanTag>{"Error occurred while authorizing."}</Div>);
 		}
@@ -82,6 +83,7 @@ export default function SignInModal() {
 					};
 					dispatch(authActions.login(loginParams));
 					closeModal();
+					dispatch(modalActions.setConfettiEnabled(true));
 				} catch (error) {
 					setError(
 						<Div spanTag textWarning>

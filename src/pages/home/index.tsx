@@ -20,6 +20,7 @@ import { useSelectedAddress } from "src/hooks/wallet/kaikas";
 import SignInModal from "src/components/modals/SignInModal";
 import { modalActions } from "src/store/reducers/modalReducer";
 import KlipQRModal from "src/components/modals/KlipQRModal";
+import Confetti from "src/components/modals/Confetti";
 
 const CallToActionAndStory = () => {
 	const { locale } = useSelector((state: RootState) => ({
@@ -392,10 +393,18 @@ const TopBar = () => {
 
 export default function Home() {
 	const isTablet = useIsTablet();
+	const confettiProps = {
+		force: 0.4,
+		duration: 3000,
+		particleCount: 60,
+		floorHeight: 1000,
+		floorWidth: 1000,
+	};
 	return (
 		<Controller>
 			<Div bgBlack>
 				<Helmet bodyAttributes={{ style: "background-color : #000; overflow-x: hidden;" }} />
+				<Confetti />
 				<Div fixed wScreen hScreen>
 					<Canvas style={{ zIndex: -10 }}>
 						<Stars count={700} />

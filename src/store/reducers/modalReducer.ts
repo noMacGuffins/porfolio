@@ -9,6 +9,9 @@ const modalSlice = createSlice({
     klipQR: {
       enabled: false,
       qrImage: null
+    },
+    confetti: {
+      enabled: false,
     }
   },
   reducers: {
@@ -22,6 +25,9 @@ const modalSlice = createSlice({
     closeKlipQR(state) {
       state.klipQR.enabled = false;
     },
+    setConfettiEnabled(state, action) {
+      state.confetti.enabled = action.payload
+    }
   },
 })
 
