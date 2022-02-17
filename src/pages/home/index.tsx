@@ -29,14 +29,14 @@ const CallToActionAndStory = () => {
 	const isTablet = useIsTablet();
 	return (
 		<Div maxW={960} mxAuto textWhite relative px10>
-			<EmptyBlock h={250} />
+			{isTablet && <EmptyBlock h={250} />}
 			<Div imgTag absolute src={"static/images/planets/11.png"} h80></Div>
 			<Div imgTag absolute src={"static/images/planets/13.png"} h30 right200 top50></Div>
 			{!isTablet && <Div imgTag absolute src={"static/images/planets/18.png"} h100 left500 top300></Div>}
 			{!isTablet && <Div imgTag absolute src={"static/images/planets/19.png"} h40 left100 top600></Div>}
 			<Scene duration={isTablet ? 1 : 600} pin={{ pushFollowers: false }} triggerHook={0.5} offset={300}>
 				<Div>
-					<Div mxAuto maxW={600} fontBold textCenter leadingNone bdBlurSm py50={!isTablet} pb30={isTablet} rounded3xl relative h250={!isTablet}>
+					<Div mxAuto maxW={600} fontBold textCenter leadingNone bdBlurSm py80={!isTablet} pb30={isTablet} rounded3xl relative h250={!isTablet}>
 						<Scene duration={100} triggerHook={0} pin={{ pushFollowers: true }}>
 							{(progress) => (
 								<Timeline totalProgress={progress} paused>
