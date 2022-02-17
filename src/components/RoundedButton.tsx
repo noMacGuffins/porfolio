@@ -1,6 +1,6 @@
 import Div from "./Div";
 
-const RoundedButton = ({ size, color, text }) => {
+const RoundedButton = ({ size, color, text, onClick }) => {
 	let divProps = {} as any;
 	let textProps = {} as any;
 	switch (size) {
@@ -44,7 +44,7 @@ const RoundedButton = ({ size, color, text }) => {
 		default:
 	}
 	return (
-		<Div {...divProps}>
+		<Div {...divProps} textCenter onClick={onClick} cursorPointer>
 			<Div spanTag {...textProps}>
 				{text}
 			</Div>

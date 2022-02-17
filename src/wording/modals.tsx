@@ -32,4 +32,11 @@ export const modalsWording = {
 			en: "Dont have a Klaytn wallet?",
 		},
 	},
+	klipQR: {
+		signIn: {
+			title: {
+				en: "Scan this QR code with Kakaotalk's camera",
+			},
+		},
+	},
 };

@@ -19,6 +19,7 @@ import { RootState } from "src/store/reducers/rootReducer";
 import { useSelectedAddress } from "src/hooks/wallet/kaikas";
 import SignInModal from "src/components/modals/SignInModal";
 import { modalActions } from "src/store/reducers/modalReducer";
+import KlipQRModal from "src/components/modals/KlipQRModal";
 
 const CallToActionAndStory = () => {
 	const { locale } = useSelector((state: RootState) => ({
@@ -67,7 +68,7 @@ const CallToActionAndStory = () => {
 						{pagesWording.home.index.mintSection.tertiaryMessage[locale]}
 					</Div>
 					<Div justifyCenter flex py25>
-						<RoundedButton size={"xlarge"} color={"black"} text={pagesWording.home.index.mintSection.mintButton[locale]} />
+						<RoundedButton size={"xlarge"} color={"black"} text={pagesWording.home.index.mintSection.mintButton[locale]} onClick={() => {}} />
 					</Div>
 					<EmptyBlock />
 					{isTablet ? (
@@ -284,12 +285,13 @@ const GomRoomzMetaverse = () => {
 
 const TopBar = () => {
 	const dispatch = useDispatch();
-	const { locale, isLoggedIn } = useSelector((state: RootState) => ({
+	const { locale, isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
 		locale: state.app.locale,
 		isLoggedIn: state.auth.isLoggedIn,
+		walletType: state.auth.walletType,
+		selectedAddress: state.auth.klaytnAddress,
 	}));
 	const isTablet = useIsTablet();
-	const selectedAddress = useSelectedAddress();
 	const onClickLogin = () => {
 		if (isLoggedIn && selectedAddress) return;
 		dispatch(modalActions.setSignInEnabled(true));
@@ -328,7 +330,6 @@ const TopBar = () => {
 		);
 	return (
 		<Div fixed bdBlurXl wFull pt20 pb10 z100>
-			<SignInModal />
 			<Row maxW={960} mxAuto flex justifyCenter px30>
 				<Col auto cursorPointer>
 					<Row roundedLg px={20}>
@@ -394,7 +395,7 @@ export default function Home() {
 	return (
 		<Controller>
 			<Div bgBlack>
-				<Helmet bodyAttributes={{ style: "background-color : #000" }} />
+				<Helmet bodyAttributes={{ style: "background-color : #000; overflow-x: hidden;" }} />
 				<Div fixed wScreen hScreen>
 					<Canvas style={{ zIndex: -10 }}>
 						<Stars count={700} />
@@ -404,6 +405,8 @@ export default function Home() {
 				<CallToActionAndStory />
 				<GomzNFT />
 				<GomRoomzMetaverse />
+				<SignInModal />
+				{/* <KlipQRModal /> */}
 			</Div>
 		</Controller>
 	);

@@ -1,3 +1,4 @@
+export const APP_NAME = 'Gomz Website'
 export const deployedABI = [
     {
         "inputs": [],
@@ -906,3 +907,5 @@ export const locales = [
 
 export const KAIKAS = "KAIKAS"
 export const KLIP = "KLIP"
+
+export const HOME_URL = "http://localhost:3000/home"
