@@ -21,12 +21,26 @@ import SignInModal from "src/components/modals/SignInModal";
 import { modalActions } from "src/store/reducers/modalReducer";
 import KlipQRModal from "src/components/modals/KlipQRModal";
 import Confetti from "src/components/modals/Confetti";
+import { KAIKAS } from "src/modules/constants";
 
 const CallToActionAndStory = () => {
-	const { locale } = useSelector((state: RootState) => ({
+	const { locale, isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
 		locale: state.app.locale,
+		isLoggedIn: state.auth.isLoggedIn,
+		walletType: state.auth.walletType,
+		selectedAddress: state.auth.klaytnAddress,
 	}));
+	const dispatch = useDispatch();
 	const isTablet = useIsTablet();
+	const mint = () => {
+		if (isLoggedIn) {
+			if (walletType == KAIKAS) {
+			} else {
+			}
+		} else {
+			dispatch(modalActions.setSignInEnabled(true));
+		}
+	};
 	return (
 		<Div maxW={960} mxAuto textWhite relative px10>
 			{isTablet && <EmptyBlock h={250} />}
