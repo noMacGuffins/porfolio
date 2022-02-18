@@ -16,12 +16,15 @@ import MovingSpotlight from "src/components/MovingSpotlight";
 import useIsTablet from "src/hooks/useIsTablet";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "src/store/reducers/rootReducer";
-import { useSelectedAddress } from "src/hooks/wallet/kaikas";
+import { useCaver, useSelectedAddress } from "src/hooks/wallet/kaikas";
 import SignInModal from "src/components/modals/SignInModal";
 import { modalActions } from "src/store/reducers/modalReducer";
 import KlipQRModal from "src/components/modals/KlipQRModal";
 import Confetti from "src/components/modals/Confetti";
 import { KAIKAS } from "src/modules/constants";
+import { useSmartContract } from "src/hooks/contract/kip17";
+import { klipPrepareMint, klipRequestQRUrl } from "src/modules/klipApiHelper";
+import { generateQR } from "src/modules/generateQR";
 
 const CallToActionAndStory = () => {
 	const { locale, isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
@@ -32,10 +35,36 @@ const CallToActionAndStory = () => {
 	}));
 	const dispatch = useDispatch();
 	const isTablet = useIsTablet();
-	const mint = () => {
+	const smartContract = useSmartContract();
+	const caver = useCaver();
+	const mint = async () => {
 		if (isLoggedIn) {
-			if (walletType == KAIKAS) {
+			if (walletType == KAIKAS && smartContract && caver) {
+				try {
+					const mintPrepareResponse = await smartContract.methods.mint(1).send({
+						from: selectedAddress,
+						gas: "250000",
+						value: caver.utils.toPeb(1, "KLAY"),
+					});
+					dispatch(modalActions.setConfettiEnabled(true));
+				} catch {
+					console.log("Error");
+				}
 			} else {
+				try {
+					const mintPrepareResponse = await klipPrepareMint(selectedAddress, 1);
+					console.log(mintPrepareResponse.request_key);
+					const deeplinkUrl = await klipRequestQRUrl(mintPrepareResponse.request_key);
+					const qrImage = await generateQR(deeplinkUrl);
+					dispatch(
+						modalActions.openKlipQR({
+							qrImage,
+							requestKey: mintPrepareResponse.request_key,
+						}),
+					);
+				} catch {
+					console.log("Error");
+				}
 			}
 		} else {
 			dispatch(modalActions.setSignInEnabled(true));
@@ -83,7 +112,7 @@ const CallToActionAndStory = () => {
 						{pagesWording.home.index.mintSection.tertiaryMessage[locale]}
 					</Div>
 					<Div justifyCenter flex py25>
-						<RoundedButton size={"xlarge"} color={"black"} text={pagesWording.home.index.mintSection.mintButton[locale]} onClick={() => {}} />
+						<RoundedButton size={"xlarge"} color={"black"} text={pagesWording.home.index.mintSection.mintButton[locale]} onClick={mint} />
 					</Div>
 					<EmptyBlock />
 					{isTablet ? (
@@ -429,7 +458,7 @@ export default function Home() {
 				<GomzNFT />
 				<GomRoomzMetaverse />
 				<SignInModal />
-				{/* <KlipQRModal /> */}
+				<KlipQRModal />
 			</Div>
 		</Controller>
 	);

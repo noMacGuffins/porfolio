@@ -12,7 +12,7 @@ import { images } from "src/modules/images";
 import { modalsWording } from "src/wording/modals";
 import { authActions } from "src/store/reducers/authReducer";
 import { HOME_URL, KAIKAS, KLIP } from "src/modules/constants";
-import { klipPrepareAuth, klipRequestQRUrl, klipResultAuth } from "src/modules/klipApiHelper";
+import { klipPrepareAuth, klipRequestQRUrl, klipResult } from "src/modules/klipApiHelper";
 import { generateQR } from "src/modules/generateQR";
 import RoundedButton from "../RoundedButton";
 
@@ -38,7 +38,7 @@ export default function SignInModal() {
 		});
 	};
 	const onClickKlipQRDone = async () => {
-		const klipAuthResult = await klipResultAuth(qrCode.requestKey);
+		const klipAuthResult = await klipResult(qrCode.requestKey);
 		if (klipAuthResult.status == "prepared") {
 			setError(<Div spanTag>{"You have not authorized yet."}</Div>);
 		} else if (klipAuthResult.status == "canceled") {
@@ -59,14 +59,14 @@ export default function SignInModal() {
 		return;
 	};
 	const onClickKlip = async () => {
-		const authResponse = await klipPrepareAuth();
-		const deeplinkUrl = await klipRequestQRUrl(authResponse.request_key);
+		const authPrepareResponse = await klipPrepareAuth();
+		const deeplinkUrl = await klipRequestQRUrl(authPrepareResponse.request_key);
 		const qrImage = await generateQR(deeplinkUrl);
 		setError(<Div spanTag>{modalsWording.klipQR.signIn.title[locale]}</Div>);
 		setQRCode({
 			enabled: true,
 			qrImage: qrImage,
-			requestKey: authResponse.request_key,
+			requestKey: authPrepareResponse.request_key,
 		});
 	};
 	const onClickKaikas = async () => {

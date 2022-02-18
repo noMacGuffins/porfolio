@@ -22,7 +22,6 @@ export const useKaikasWallet = () => {
 };
 
 export const useCaver = () => {
-	useKaikasWallet();
 	// @ts-ignore
 	if (typeof window !== "undefined") {
 		return window["caver"];

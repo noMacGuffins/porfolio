@@ -8,7 +8,8 @@ const modalSlice = createSlice({
     },
     klipQR: {
       enabled: false,
-      qrImage: null
+      qrImage: null,
+      requestKey: null,
     },
     confetti: {
       enabled: false,
@@ -20,7 +21,8 @@ const modalSlice = createSlice({
     },
     openKlipQR(state, action) {
       state.klipQR.enabled = true
-      state.klipQR.qrImage = action.payload
+      state.klipQR.qrImage = action.payload.qrImage
+      state.klipQR.requestKey = action.payload.requestKey
     },
     closeKlipQR(state) {
       state.klipQR.enabled = false;
