@@ -15,12 +15,13 @@ import { HOME_URL, KAIKAS, KLIP } from "src/modules/constants";
 import { klipPrepareAuth, klipRequestQRUrl, klipResult } from "src/modules/klipApiHelper";
 import { generateQR } from "src/modules/generateQR";
 import RoundedButton from "../RoundedButton";
+import { useRouter } from "next/router";
 
 export default function SignInModal() {
 	const dispatch = useDispatch();
-	const { signInEnabled, locale } = useSelector((state: RootState) => ({
+	const { locale } = useRouter();
+	const { signInEnabled } = useSelector((state: RootState) => ({
 		signInEnabled: state.modal.signIn.enabled,
-		locale: state.app.locale,
 	}));
 	const [qrCode, setQRCode] = useState({
 		enabled: false,

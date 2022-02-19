@@ -898,13 +898,6 @@ export const COLORS = {
     BLACK: '#161c2d',
 }
 
-export const LOCALE_EN = 'en'
-export const LOCALE_KO = 'en'
-export const locales = [
-    LOCALE_EN,
-    LOCALE_KO,
-]
-
 export const KAIKAS = "KAIKAS"
 export const KLIP = "KLIP"
 

@@ -8,12 +8,13 @@ import RoundedButton from "../RoundedButton";
 import { useState } from "react";
 import { klipResult } from "src/modules/klipApiHelper";
 import { KLIP } from "src/modules/constants";
+import { useRouter } from "next/router";
 
 export default function KlipQRModal() {
+	const { locale } = useRouter();
 	const dispatch = useDispatch();
-	const { klipQR, locale } = useSelector((state: RootState) => ({
+	const { klipQR } = useSelector((state: RootState) => ({
 		klipQR: state.modal.klipQR,
-		locale: state.app.locale,
 	}));
 	const [error, setError] = useState(<Div spanTag>{"Please scan the QR code to authorize your action."}</Div>);
 	const closeModal = () => {

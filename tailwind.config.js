@@ -9,7 +9,7 @@ const px = (num) => ({ [num]: `${num}px` })
 
 const basicColors = {
   primary: {
-    DEFAULT: '#7a5de8',
+    DEFAULT: 'rgb(143, 105, 77)',
     light: 'rgba(122, 93, 232, 0.2)',
     pastel: '#dddaf6',
     teens: '#4c9cff',
@@ -55,7 +55,7 @@ const basicColors = {
 }
 
 const teensColors = {
-  primary: { DEFAULT: '#4c9cff', light: '#dbebff' },
+  primary: { DEFAULT: 'rgb(174, 86, 28)', light: '#dbebff' },
   secondary: '#317CD9',
   secondary2: '#105DBB',
   transparent: 'transparent',

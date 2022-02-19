@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { KAIKAS, KLIP, LOCALE_EN } from 'src/modules/constants'
+import { KAIKAS, KLIP } from 'src/modules/constants'
 
 const klaytn = (typeof window == 'undefined') ? null : window["klaytn"]
 

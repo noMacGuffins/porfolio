@@ -25,14 +25,17 @@ import { KAIKAS } from "src/modules/constants";
 import { useSmartContract } from "src/hooks/contract/kip17";
 import { klipPrepareMint, klipRequestQRUrl } from "src/modules/klipApiHelper";
 import { generateQR } from "src/modules/generateQR";
+import { GlobeAltIcon } from "@heroicons/react/outline";
+import TopBar from "src/components/TopBar";
+import { useRouter } from "next/router";
 
 const CallToActionAndStory = () => {
-	const { locale, isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
-		locale: state.app.locale,
+	const { isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
 		isLoggedIn: state.auth.isLoggedIn,
 		walletType: state.auth.walletType,
 		selectedAddress: state.auth.klaytnAddress,
 	}));
+	const { locale } = useRouter();
 	const dispatch = useDispatch();
 	const isTablet = useIsTablet();
 	const smartContract = useSmartContract();
@@ -164,9 +167,7 @@ const CallToActionAndStory = () => {
 };
 
 const GomzNFT = () => {
-	const { locale } = useSelector((state: RootState) => ({
-		locale: state.app.locale,
-	}));
+	const { locale } = useRouter();
 	const RotateCamera = () => {
 		useFrame((state) => {
 			state.camera.rotation.z += 0.02 * Math.sin(state.clock.elapsedTime * 0.8);
@@ -259,9 +260,7 @@ const GomzNFT = () => {
 };
 
 const GomRoomzMetaverse = () => {
-	const { locale } = useSelector((state: RootState) => ({
-		locale: state.app.locale,
-	}));
+	const { locale } = useRouter();
 	const isTablet = useIsTablet();
 	if (isTablet)
 		return (
@@ -327,122 +326,7 @@ const GomRoomzMetaverse = () => {
 	);
 };
 
-const TopBar = () => {
-	const dispatch = useDispatch();
-	const { locale, isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
-		locale: state.app.locale,
-		isLoggedIn: state.auth.isLoggedIn,
-		walletType: state.auth.walletType,
-		selectedAddress: state.auth.klaytnAddress,
-	}));
-	const isTablet = useIsTablet();
-	const onClickLogin = () => {
-		if (isLoggedIn && selectedAddress) return;
-		dispatch(modalActions.setSignInEnabled(true));
-	};
-
-	if (isTablet)
-		return (
-			<Div fixed bdBlurXl wFull pt20 pb10 z100>
-				<Row mxAuto flex justifyCenter pr20>
-					<Col auto>
-						<Row roundedLg px={20}>
-							<Col auto px0>
-								<Div imgTag src={"static/images/basicBearWhite.png"} h={30} w={30} style={{ objectFit: "cover" }} />
-							</Col>
-							<Col auto px0 pr8 flex itemsCenter>
-								<Div spanTag fontBold textWhite>
-									Gomz
-								</Div>
-							</Col>
-						</Row>
-					</Col>
-					<Col></Col>
-					{/* <Col auto>
-						<Div spanTag fontLight textWhite>
-							{locale}
-						</Div>
-					</Col> */}
-					<Col auto px10></Col>
-					<Col auto bgWhite rounded3xl pt2 cursorPointer onClick={onClickLogin}>
-						<Div spanTag fontLight fontMedium>
-							{isLoggedIn && selectedAddress ? selectedAddress.substring(0, 5) + "..." : "Login"}
-						</Div>
-					</Col>
-				</Row>
-			</Div>
-		);
-	return (
-		<Div fixed bdBlurXl wFull pt20 pb10 z100>
-			<Row maxW={960} mxAuto flex justifyCenter px30>
-				<Col auto cursorPointer>
-					<Row roundedLg px={20}>
-						<Col auto px0>
-							<Div imgTag src={"static/images/basicBearWhite.png"} h={30} w={30} style={{ objectFit: "cover" }} />
-						</Col>
-						<Col auto px0 pr8 flex itemsCenter>
-							<Div spanTag fontBold textWhite>
-								Gomz
-							</Div>
-						</Col>
-					</Row>
-				</Col>
-				<Col></Col>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight textWhite>
-						Story
-					</Div>
-				</Col>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight textWhite>
-						Gomz NFT
-					</Div>
-				</Col>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight textWhite>
-						GomRoomz Metaverse
-					</Div>
-				</Col>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight textWhite>
-						Roadmap
-					</Div>
-				</Col>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight textWhite>
-						Team
-					</Div>
-				</Col>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight textWhite>
-						FAQ
-					</Div>
-				</Col>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight textWhite>
-						{locale}
-					</Div>
-				</Col>
-				<Col auto px10></Col>
-				<Col auto bgWhite rounded3xl pt2 cursorPointer onClick={onClickLogin}>
-					<Div spanTag fontLight fontMedium>
-						{isLoggedIn && selectedAddress ? selectedAddress.substring(0, 5) + "..." : "Login"}
-					</Div>
-				</Col>
-			</Row>
-		</Div>
-	);
-};
-
 export default function Home() {
-	const isTablet = useIsTablet();
-	const confettiProps = {
-		force: 0.4,
-		duration: 3000,
-		particleCount: 60,
-		floorHeight: 1000,
-		floorWidth: 1000,
-	};
 	return (
 		<Controller>
 			<Div bgBlack>
@@ -453,7 +337,7 @@ export default function Home() {
 						<Stars count={700} />
 					</Canvas>
 				</Div>
-				<TopBar />
+				<TopBar mode={"dark"} />
 				<CallToActionAndStory />
 				<GomzNFT />
 				<GomRoomzMetaverse />
