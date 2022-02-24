@@ -8,6 +8,7 @@ import Col from "./Col";
 import Div from "./Div";
 import Row from "./Row";
 import { useRouter } from "next/router";
+import Helmet from "react-helmet";
 
 const TopBar = ({ mode }) => {
 	const { locale } = useRouter();
@@ -20,74 +21,58 @@ const TopBar = ({ mode }) => {
 	const textColorProp = mode == "dark" ? { textWhite: true } : { textBlack: true };
 	const loginButtonProps = mode == "dark" ? { bgWhite: true, textBlack: true } : { bgBlack: true, textWhite: true };
 
-	if (isTablet)
-		return (
-			<Div fixed bdBlurXl wFull pt20 pb10 z100 {...textColorProp}>
-				<Row mxAuto flex justifyCenter pr20>
-					<Col auto>
-						<Row roundedLg px={20}>
-							<Col auto px0>
-								<Div imgTag src={logoSrc} h={30} w={30} style={{ objectFit: "cover" }} />
-							</Col>
-							<Col auto px0 pr8 flex itemsCenter {...logoTextProps}>
-								<Div spanTag fontBold>
-									Gomz
-								</Div>
-							</Col>
-						</Row>
+	return (
+		<>
+			<Helmet>
+				<link rel="preconnect" href="https://fonts.googleapis.com"/>
+				<link rel="preconnect" href="https://fonts.gstatic.com" />
+				<link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@100&display=swap" rel="stylesheet"/>
+			</Helmet>
+			<Div fixed bdBlurXl wFull pt10 pb5 z100  {...textColorProp} fontFamily={"Taviraj"}>
+				<Row maxW={960} mxAuto flex justifyCenter>
+					<Col auto cursorPointer>
+						<Link href="/home" passHref>
+							<Row roundedLg px={10}>
+								<Col auto px0>
+									<Div imgTag src={logoSrc} h={70} w={70} style={{ objectFit: "cover" }} />
+								</Col>
+								<Col auto px10 pr1 flex itemsCenter>
+									<Div spanTag fontBold {...logoTextProps}>
+										SooniLabs
+									</Div>
+								</Col>
+							</Row>
+						</Link>
 					</Col>
 					<Col></Col>
-					<Col auto px10></Col>
-					
-				</Row>
-			</Div>
-		);
-	return (
-		<Div fixed bdBlurXl wFull pt20 pb10 z100 {...textColorProp}>
-			<Row maxW={960} mxAuto flex justifyCenter px30>
-				<Col auto cursorPointer>
-					<Link href="/home" passHref>
-						<Row roundedLg px={20}>
-							<Col auto px0>
-								<Div imgTag src={logoSrc} h={30} w={30} style={{ objectFit: "cover" }} />
-							</Col>
-							<Col auto px0 pr8 flex itemsCenter>
-								<Div spanTag fontBold {...logoTextProps}>
-									Gomz
-								</Div>
-							</Col>
-						</Row>
-					</Link>
-				</Col>
-				<Col></Col>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight>
-						Gomz Gallery
-					</Div>
-				</Col>
-				<Link href="/gomz-space" passHref>
-					<Col auto pt1 cursorPointer>
+					<Col auto flex itemsCenter cursorPointer>
 						<Div spanTag fontLight>
-							GomSpace Metaverse
+							Portfolio
 						</Div>
 					</Col>
-				</Link>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight>
-						Roadmap
-					</Div>
-				</Col>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight>
-						Sooni
-					</Div>
-				</Col>
-				<Col auto py4 cursorPointer>
-					<GlobeAltIcon className="h-20 w-20 text-blue-500" />
-				</Col>
-				<Col auto px10></Col>
-			</Row>
-		</Div>
+					<Link href="/gomz-space" passHref>
+						<Col flex auto itemsCenter cursorPointer>
+							<Div fontLight >
+								Team
+							</Div>
+						</Col>
+					</Link>
+					<Col flex itemsCenter auto cursorPointer>
+						<Div itemsCenter spanTag fontLight>
+							Content
+						</Div>
+					</Col>
+					<Col auto flex itemsCenter cursorPointer>
+						<Div spanTag fontLight>
+							About
+						</Div>
+					</Col>
+					<Col auto px10></Col>
+				</Row>
+			</Div>		
+		
+		</>
+		
 	);
 };
 

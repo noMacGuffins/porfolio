@@ -132,6 +132,8 @@ const propsToClx = (props) => {
 		textXl: () => addStyle(styles, "", { fontSize: 30 }),
 		textXxl: () => addStyle(styles, "", { fontSize: 70 }),
 		textXxxl: () => addStyle(styles, "", { fontSize: 150 }),
+		//font-family
+		fontFamily: (v) => addStyle(styles, "", {fontFamily: v}),
 
 		// ==== Layout ====
 		// breakpoints
@@ -419,7 +421,7 @@ const propsToClx = (props) => {
 		textOpacity75: () => clxs.push("text-opacity-75"),
 		textOpacity80: () => clxs.push("text-opacity-80"),
 		//font-family
-
+		
 		// font-smoothing
 		antialiased: () => clxs.push("antialiased"),
 		subpixelAntialiased: () => clxs.push("subpixel-antialiased"),
