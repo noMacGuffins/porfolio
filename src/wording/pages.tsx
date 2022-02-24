@@ -4,6 +4,37 @@ import Div from "src/components/Div";
 export const pagesWording = {
 	home: {
 		index: {
+			MainPage: {
+				Title: (
+					<>
+						Building Blockchain Technology{" "}
+						for the Betterment of Society
+					</>
+				), 
+				AboutUs: (
+					<>
+						Founded in 2021, SOONI Labs is the first Korean NFT-focused company that bridges the gap 
+						between NFTs and Real-World utility through practical D-App (Decentralized Application) extensions.
+					</>
+				),
+				OurStory: (
+					<>
+						Our team consists of eight childhood friends that enjoy building various types of 
+						organizations-ranging from charity foundations, social-app development, to K-beauty entrepreneurship. 
+						However, for NFTs, it wasn’t until early 2021 when we really began researching the art, blockchain technology, and community in NFT itself. 
+						As projects began to grow exponentially worldwide, we questioned the industry-“How come Koreans have not recognized the true value of NFTs?” 
+						Since then, we dove into this industry. 
+					</>
+				),
+				ourMission: (
+					<>
+						Our objective as a team is simple-contribute to the ongoing development NFTs worldwide and introduce valuable NFT projects to Koreans.
+						As NFT enthusiasts, we will continuously develop beneficial projects for our global community. 
+						Moreover, despite the harsh criticism against blockchain technology in Korea, 
+						we are here to make a positive impact- a warm NFT ecosystem where art, society, and technology are all appreciated.
+					</>
+				),
+			}, 
 			mintSection: {
 				title: {
 					ko: "GOMZ",

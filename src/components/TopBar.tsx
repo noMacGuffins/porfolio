@@ -24,20 +24,20 @@ const TopBar = ({ mode }) => {
 	return (
 		<>
 			<Helmet>
-				<link rel="preconnect" href="https://fonts.googleapis.com"/>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" />
-				<link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@100&display=swap" rel="stylesheet"/>
+				<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;600&family=Taviraj:wght@100&display=swap" rel="stylesheet" />
 			</Helmet>
-			<Div fixed bdBlurXl wFull pt10 pb5 z100  {...textColorProp} fontFamily={"Taviraj"}>
-				<Row maxW={960} mxAuto flex justifyCenter>
+			<Div fixed bgWhite wFull z100  {...textColorProp} fontFamily={"Be Vietnam Pro"}>
+				<Row maxW={1500} mxAuto flex justifyCenter>
 					<Col auto cursorPointer>
 						<Link href="/home" passHref>
 							<Row roundedLg px={10}>
 								<Col auto px0>
-									<Div imgTag src={logoSrc} h={70} w={70} style={{ objectFit: "cover" }} />
+									<Div imgTag src={logoSrc} h={100} w={100} style={{ objectFit: "cover" }} />
 								</Col>
-								<Col auto px10 pr1 flex itemsCenter>
-									<Div spanTag fontBold {...logoTextProps}>
+								<Col auto px1 pr1 flex itemsCenter>
+									<Div fontSize35 spanTag fontExtrabold {...logoTextProps}>
 										SooniLabs
 									</Div>
 								</Col>
@@ -46,24 +46,24 @@ const TopBar = ({ mode }) => {
 					</Col>
 					<Col></Col>
 					<Col auto flex itemsCenter cursorPointer>
-						<Div spanTag fontLight>
+						<Div spanTag fontMedium>
 							Portfolio
 						</Div>
 					</Col>
 					<Link href="/gomz-space" passHref>
 						<Col flex auto itemsCenter cursorPointer>
-							<Div fontLight >
+							<Div spanTag fontMedium>
 								Team
 							</Div>
 						</Col>
 					</Link>
 					<Col flex itemsCenter auto cursorPointer>
-						<Div itemsCenter spanTag fontLight>
+						<Div spanTag fontMedium>
 							Content
 						</Div>
 					</Col>
 					<Col auto flex itemsCenter cursorPointer>
-						<Div spanTag fontLight>
+						<Div spanTag fontMedium>
 							About
 						</Div>
 					</Col>
