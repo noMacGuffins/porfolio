@@ -22,6 +22,7 @@
         font-family: 'Noto Sans';
         font-weight: 600;
         font-style: normal;  } }
-    
-    
     }
+    textarea:focus, input:focus{
+      outline: none;
+  }

@@ -5,13 +5,38 @@ export const pagesWording = {
 	home: {
 		index: {
 			MainPage: {
-				Title: (
+				Title1: (
 					<>
 						Building Blockchain Technology{" "}
 						for the Betterment of Society
 					</>
 				), 
-				AboutUs: (
+				Title2: (
+					<>
+						From Blockchain,<br/>For People
+					</>
+				),
+				Title3: (
+					<>
+						Bridging the gap between blockchain technology and the real world
+					</>
+				),
+				Title4: (
+					<>
+						Bridging the gap between blockchain technology and the real world. 
+						Bridging the gap between blockchain technology and the real world. 
+						Bridging the gap between blockchain technology and the real world.
+					</>
+				),
+				Connect: (
+					<>
+					Want to know more about how we plan to revolutionize the connection between virtual&physical?
+					</>
+					
+				),
+			},
+			AboutUs: {
+				Intro: (
 					<>
 						Founded in 2021, SOONI Labs is the first Korean NFT-focused company that bridges the gap 
 						between NFTs and Real-World utility through practical D-App (Decentralized Application) extensions.
@@ -34,7 +59,7 @@ export const pagesWording = {
 						we are here to make a positive impact- a warm NFT ecosystem where art, society, and technology are all appreciated.
 					</>
 				),
-			}, 
+			},
 			mintSection: {
 				title: {
 					ko: "GOMZ",

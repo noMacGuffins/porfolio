@@ -29,42 +29,43 @@ const TopBar = ({ mode }) => {
 				<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;600&family=Taviraj:wght@100&display=swap" rel="stylesheet" />
 			</Helmet>
 			<Div fixed bgWhite wFull z100  {...textColorProp} fontFamily={"Be Vietnam Pro"}>
-				<Row maxW={1500} mxAuto flex justifyCenter>
+				<Row maxW={1500} mxAuto flex justifyCenter pt10>
 					<Col auto cursorPointer>
 						<Link href="/home" passHref>
-							<Row roundedLg px={10}>
-								<Col auto px0>
-									<Div imgTag src={logoSrc} h={100} w={100} style={{ objectFit: "cover" }} />
-								</Col>
-								<Col auto px1 pr1 flex itemsCenter>
-									<Div fontSize35 spanTag fontExtrabold {...logoTextProps}>
-										SooniLabs
-									</Div>
-								</Col>
-							</Row>
+							<Div pl20 imgTag src={logoSrc} h={100} w={100} style={{ objectFit: "cover" }} />
 						</Link>
 					</Col>
 					<Col></Col>
 					<Col auto flex itemsCenter cursorPointer>
-						<Div spanTag fontMedium>
-							Portfolio
-						</Div>
-					</Col>
-					<Link href="/gomz-space" passHref>
-						<Col flex auto itemsCenter cursorPointer>
-							<Div spanTag fontMedium>
-								Team
-							</Div>
-						</Col>
-					</Link>
-					<Col flex itemsCenter auto cursorPointer>
-						<Div spanTag fontMedium>
-							Content
+						<Div spanTag fontBold px20>
+							About us
 						</Div>
 					</Col>
 					<Col auto flex itemsCenter cursorPointer>
-						<Div spanTag fontMedium>
-							About
+						<Div spanTag fontBold px20>
+							Team
+						</Div>
+					</Col>
+					<Link href="/gomz-space" passHref>
+						<Col auto flex itemsCenter cursorPointer>
+							<Div spanTag fontBold px20>
+								Portfolio
+							</Div>
+						</Col>
+					</Link>
+					<Col auto flex itemsCenter cursorPointer>
+						<Div spanTag fontBold px20>
+							Partnerships
+						</Div>
+					</Col>
+					<Col auto flex itemsCenter cursorPointer>
+						<Div spanTag fontBold px20>
+							Contact
+						</Div>
+					</Col>
+					<Col auto flex itemsCenter cursorPointer>
+						<Div spanTag fontBold px20 fontSize10>
+							EN/KR
 						</Div>
 					</Col>
 					<Col auto px10></Col>
