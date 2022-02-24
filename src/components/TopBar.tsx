@@ -1,7 +1,7 @@
 import { GlobeAltIcon } from "@heroicons/react/outline";
 import { useDispatch, useSelector } from "react-redux";
 import useIsTablet from "src/hooks/useIsTablet";
-import { modalActions } from "src/store/reducers/modalReducer";
+
 import { RootState } from "src/store/reducers/rootReducer";
 import Link from "next/link";
 import Col from "./Col";
@@ -12,17 +12,10 @@ import { useRouter } from "next/router";
 const TopBar = ({ mode }) => {
 	const { locale } = useRouter();
 	const dispatch = useDispatch();
-	const { isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
-		isLoggedIn: state.auth.isLoggedIn,
-		walletType: state.auth.walletType,
-		selectedAddress: state.auth.klaytnAddress,
-	}));
+
 	const isTablet = useIsTablet();
-	const onClickLogin = () => {
-		if (isLoggedIn && selectedAddress) return;
-		dispatch(modalActions.setSignInEnabled(true));
-	};
-	const logoSrc = mode == "dark" ? "static/images/basicBearWhite.png" : "static/images/basicBearNoBg.png";
+
+	const logoSrc = mode == "dark" ? "static/images/SooniLabs.png" : "static/images/SooniLabs.png";
 	const logoTextProps = mode == "dark" ? { textWhite: true } : { textPrimary: true };
 	const textColorProp = mode == "dark" ? { textWhite: true } : { textBlack: true };
 	const loginButtonProps = mode == "dark" ? { bgWhite: true, textBlack: true } : { bgBlack: true, textWhite: true };
@@ -45,11 +38,7 @@ const TopBar = ({ mode }) => {
 					</Col>
 					<Col></Col>
 					<Col auto px10></Col>
-					<Col auto {...loginButtonProps} rounded3xl pt2 cursorPointer onClick={onClickLogin}>
-						<Div spanTag fontLight fontMedium>
-							{isLoggedIn && selectedAddress ? selectedAddress.substring(0, 5) + "..." : "Login"}
-						</Div>
-					</Col>
+					
 				</Row>
 			</Div>
 		);
@@ -97,11 +86,6 @@ const TopBar = ({ mode }) => {
 					<GlobeAltIcon className="h-20 w-20 text-blue-500" />
 				</Col>
 				<Col auto px10></Col>
-				<Col auto rounded3xl pt2 cursorPointer {...loginButtonProps} onClick={onClickLogin}>
-					<Div spanTag fontLight fontMedium>
-						{isLoggedIn && selectedAddress ? selectedAddress.substring(0, 5) + "..." : "Login"}
-					</Div>
-				</Col>
 			</Row>
 		</Div>
 	);
