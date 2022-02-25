@@ -514,6 +514,7 @@ const propsToClx = (props) => {
 		textLeft: () => clxs.push("text-left"),
 		textCenter: () => clxs.push("text-center"),
 		textRight: () => clxs.push("text-right"),
+		textBottom: () => clxs.push("text-bottom"),
 		textJustify: () => clxs.push("text-justify"),
 		// text-decoration
 		underline: () => clxs.push("underline"),

@@ -13,8 +13,8 @@ const Home: NextPage = () => {
 	return (
 		<Div>
 			<TopBar mode={"light"}></TopBar>
-			<Div pt170 px={"5%"} pb50>
-				<Row pt80 pb100>
+			<Div pt170 px={"5%"} borderBlack borderB2>
+				<Row pt80 pb70>
 					<Col style={{flex: 6}}>
 						<Div fontSize60 fontBold lineHeight={1.2}>
 							{pagesWording.home.index.MainPage.Title1}
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
 						<Div imgTag src={"static/images/downarrow.png"} style={{ objectFit: "cover" }} />
 					</Col>
 				</Row>
-				<Row py100>
+				<Row py70>
 					<Col style={{flex: 5}}>
 						<Div fontSize40 fontBold lineHeight = {1.2}>
 							{pagesWording.home.index.MainPage.Title3}
@@ -42,12 +42,12 @@ const Home: NextPage = () => {
 						<Div imgTag src={"static/images/asterisk.png"} h={200} w={200} style={{ objectFit: "cover" }} />
 					</Col>
 				</Row>
-				<Row py100>
+				<Row py70>
 					<Col style={{flex: 6}} >
 						<Div fontSize40 fontBold lineHeight = {1.2} pb30>
 							Discover Sooni Labs
 						</Div>
-						<Link href="/home" passHref>
+						<Link href="/aboutus" passHref>
 							<Div py15 cursorPointer fontSize20>
 								About us
 							</Div>
@@ -63,9 +63,9 @@ const Home: NextPage = () => {
 							</Div>
 						</Link>
 					</Col>
-					<Col style={{flex: 4}} justifyCenter/>
+					<Col style={{flex: 4}}/>
 				</Row>
-				<Row py70>
+				<Row pt70 pb120>
 					<Col style={{flex: 1}} >
 						<Div fontSize40 fontBold lineHeight = {1.2} pb50>
 							{pagesWording.home.index.MainPage.Connect}
@@ -73,6 +73,40 @@ const Home: NextPage = () => {
 						<Submit />
 					</Col>
 					<Col style={{flex: 1}} justifyCenter/>
+				</Row>
+			</Div>
+			<Div py100>
+				<Row>
+					<Col auto>
+						<Div pl20 imgTag src={"static/images/SooniLabs.png"} h={100} w={100} style={{ objectFit: "cover" }} />
+					</Col>
+					<Col style={{flex:8}}>
+						<Div textCenter fontSize40 fontBold>
+							Get in touch
+						</Div>
+						<Div textCenter>
+							contact@soonilabs.io
+						</Div>
+					</Col>
+					<Col style={{flex:3}} pr20>
+						<Div textLeft fontSize20 fontBold>
+							Address
+						</Div>
+						<Div textLeft>
+							Unit D104 <br/> 116 street name <br/> Seoul South Korea
+						</Div>
+					</Col>
+					<Col style={{flex:3}} pr20>
+						<Div textLeft fontSize20 fontBold>
+							Follow us
+						</Div>
+						<Div textLeft>
+							Twitter
+						</Div>
+						<Div textLeft>
+							Instagram
+						</Div>
+					</Col>
 				</Row>
 			</Div>
 		</Div>

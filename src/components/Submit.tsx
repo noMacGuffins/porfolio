@@ -34,7 +34,7 @@ function Submit() {
 			</Row>
 			)}
 			{submit == 1 && (
-				<Div spanTag> "Thanks for sigining up." </Div>
+				<Div textCenter> Thanks for sigining up. </Div>
 			)}
 		</Div>
 	)
