@@ -8,9 +8,32 @@ import { pagesWording } from "src/wording/pages";
 import Form from "src/components/Submit";
 import Submit from "src/components/Submit";
 import { cps } from "redux-saga/effects";
+import { useDispatch, useSelector } from "react-redux";
+import { modalActions } from "src/store/reducers/modalReducer";
+import Detail from "src/components/modals/Detail";
+enum Team {
+	Minjun, Eric, Sehan, Jieun, Jaehwan, Seungan, Jade, Noam
 
+}
 
 const Home: NextPage = () => {
+	const dispatch = useDispatch()
+	const handleClickMember = (key) => {
+		console.log("he")
+		switch (key) {
+			case Team.Minjun: 
+				dispatch(modalActions.setTeamDetail({
+					enabled: true,
+					name: "Minjun",
+					desc: "fuck",
+					imgSrc: null,
+				}))
+				break;
+			default:
+				break;
+		}
+	}
+
 	return (
 		<Div>
 			<TopBar mode={"light"}></TopBar>
@@ -28,7 +51,7 @@ const Home: NextPage = () => {
 					</Col>
 				</Row>
 				<Row py20>
-					<Col>
+					<Col onClick={() => handleClickMember(Team.Minjun)}>
 						<Div fontSize25 fontBold>
 							Min Jun Kim
 						</Div>
@@ -135,7 +158,9 @@ const Home: NextPage = () => {
 					</Col>
 				</Row>
 			</Div>
+			<Detail/>
 		</Div>
+		
 	);
 }
 
