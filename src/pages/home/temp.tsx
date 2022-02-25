@@ -49,7 +49,7 @@ const Home: NextPage = () => {
 					Values
 				</Div>	
 				<Div pt20 pr100>
-					{pagesWording.home.index.MainPage.AboutUs}
+					{pagesWording.home.index.AboutUs}
 				</Div>
 			</Div>
 			

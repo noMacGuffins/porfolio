@@ -29,7 +29,7 @@ const TopBar = ({ mode }) => {
 				<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;600&family=Taviraj:wght@100&display=swap" rel="stylesheet" />
 			</Helmet>
 			<Div fixed bgWhite wFull z100  {...textColorProp} fontFamily={"Be Vietnam Pro"}>
-				<Row maxW={1500} mxAuto flex justifyCenter pt10>
+				<Row maxW={1500} mxAuto flex justifyCenter pt30>
 					<Col auto cursorPointer>
 						<Link href="/home" passHref>
 							<Div pl20 imgTag src={logoSrc} h={100} w={100} style={{ objectFit: "cover" }} />

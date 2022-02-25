@@ -6,20 +6,21 @@ import TopBar from "src/components/TopBar";
 import Link from "next/link";
 import { pagesWording } from "src/wording/pages";
 import Form from "src/components/Submit";
+import Submit from "src/components/Submit";
 
 
 const Home: NextPage = () => {
 	return (
 		<Div>
 			<TopBar mode={"light"}></TopBar>
-			<Div pt160 px={"5%"} pb50>
-				<Row py40>
+			<Div pt170 px={"5%"} pb50>
+				<Row pt80 pb100>
 					<Col style={{flex: 6}}>
-						<Div fontSize60 fontBold lineHeight = {1.3}>
+						<Div fontSize60 fontBold lineHeight={1.2}>
 							{pagesWording.home.index.MainPage.Title1}
 						</Div>
 					</Col>
-					<Col flex style={{flex: 3.5}} justifyCenter itemsEnd>
+					<Col flex style={{flex: 3.5}} itemsEnd>
 						<Div px10 borderBlack borderL2>
 							{pagesWording.home.index.MainPage.Title2}
 						</Div>
@@ -28,8 +29,8 @@ const Home: NextPage = () => {
 						<Div imgTag src={"static/images/downarrow.png"} style={{ objectFit: "cover" }} />
 					</Col>
 				</Row>
-				<Row py70>
-					<Col style={{flex: 6}}>
+				<Row py100>
+					<Col style={{flex: 5}}>
 						<Div fontSize40 fontBold lineHeight = {1.2}>
 							{pagesWording.home.index.MainPage.Title3}
 						</Div>
@@ -37,11 +38,11 @@ const Home: NextPage = () => {
 							{pagesWording.home.index.MainPage.Title4}
 						</Div>
 					</Col>
-					<Col flex style={{flex: 4}} justifyCenter>
-						<Div imgTag src={"static/images/asterisk.png"} style={{ objectFit: "cover" }} />
+					<Col flex style={{flex: 5}} justifyCenter itemsCenter>
+						<Div imgTag src={"static/images/asterisk.png"} h={200} w={200} style={{ objectFit: "cover" }} />
 					</Col>
 				</Row>
-				<Row py70>
+				<Row py100>
 					<Col style={{flex: 6}} >
 						<Div fontSize40 fontBold lineHeight = {1.2} pb30>
 							Discover Sooni Labs
@@ -62,34 +63,18 @@ const Home: NextPage = () => {
 							</Div>
 						</Link>
 					</Col>
-					<Col flex style={{flex: 4}} justifyCenter/>
+					<Col style={{flex: 4}} justifyCenter/>
 				</Row>
 				<Row py70>
-					<Col style={{flex: 6}} >
-						<Div fontSize40 fontBold lineHeight = {1.2} pb30>
+					<Col style={{flex: 1}} >
+						<Div fontSize40 fontBold lineHeight = {1.2} pb50>
 							{pagesWording.home.index.MainPage.Connect}
 						</Div>
-
-
-						<Form/>
-						<Row>
-							<Col style={{flex: 6}}>
-								<Div fontSize20 borderBlack borderB2>
-									<input placeholder="Your email address" required/>
-								</Div>
-							</Col>
-							<Col style={{flex: 4}}>
-
-							</Col>
-						</Row>
-						
-						
+						<Submit />
 					</Col>
-					<Col flex style={{flex: 4}} justifyCenter/>
+					<Col style={{flex: 1}} justifyCenter/>
 				</Row>
 			</Div>
-			
-			
 		</Div>
 	);
 }
