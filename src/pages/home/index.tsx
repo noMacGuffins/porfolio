@@ -52,7 +52,7 @@ const Home: NextPage = () => {
 								About us
 							</Div>
 						</Link>
-						<Link href="/home" passHref>
+						<Link href="/team" passHref>
 							<Div py15 cursorPointer fontSize20>
 								Team
 							</Div>

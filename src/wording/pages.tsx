@@ -42,6 +42,11 @@ export const pagesWording = {
 						between NFTs and Real-World utility through practical D-App (Decentralized Application) extensions.
 					</>
 				),
+				bridge: (
+					<>
+						Rather than giving a classic buisness introduction, we would like to share a brief narrative about us, SOONI.
+					</>
+				),
 				OurStory: (
 					<>
 						Our team consists of eight childhood friends that enjoy building various types of 
@@ -63,9 +68,9 @@ export const pagesWording = {
 			Team :{
 				Minjun : (
 					<>
-						| Co-founder of SOONI Labs <br/>
-						| Blockchain, NFT, Metaverse, and Crypto <br/>
-						| Klaytn & Ethereum & Sexy Girl enthusiast <br/>
+						Co-founder of SOONI Labs <br/>
+						Blockchain, NFT, Metaverse, and Crypto <br/>
+						Klaytn & Ethereum enthusiast <br/>
 					</>
 				) 
 			},

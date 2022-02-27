@@ -895,7 +895,7 @@ const propsToClx = (props) => {
 		order12: () => clxs.push("order-12"),
 
 		// ==== Box Alignment ====
-		// justify-content
+		// justify-content(hor aligning)
 		justifyStart: () => clxs.push("justify-start"),
 		justifyEnd: () => clxs.push("justify-end"),
 		justifyCenter: () => clxs.push("justify-center"),
@@ -914,14 +914,14 @@ const propsToClx = (props) => {
 		justifySelfEnd: () => clxs.push("justify-self-end"),
 		justifySelfCenter: () => clxs.push("justify-self-center"),
 		justifySelfStretch: () => clxs.push("justify-self-stretch"),
-		// align-content
+		// align-content(space between lines justifyvertically)
 		contentStart: () => clxs.push("content-start"),
 		contentCenter: () => clxs.push("content-center"),
 		contentEnd: () => clxs.push("content-end"),
 		contentBetween: () => clxs.push("content-between"),
 		contentAround: () => clxs.push("content-around"),
 		contentEvenly: () => clxs.push("content-evenly"),
-		// align-items
+		// align-items(one - line aligning)
 		itemsStretch: () => clxs.push("items-stretch"),
 		itemsStart: () => clxs.push("items-start"),
 		itemsCenter: () => clxs.push("items-center"),

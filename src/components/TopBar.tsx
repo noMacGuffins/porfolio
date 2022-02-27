@@ -39,7 +39,7 @@ const TopBar = ({ mode }) => {
 						</Link>
 					</Col>
 					<Col auto flex itemsCenter cursorPointer>
-						<Link href="/aboutus" passHref>
+						<Link href="/team" passHref>
 							<Div spanTag fontBold px20>
 								Team
 							</Div>
