@@ -5,20 +5,22 @@ import Div from "../Div";
 import Modal from "./modal";
 
 export default function Detail() {
-	const {teamDetail } = useSelector((state: RootState) => ({
-		teamDetail: state.modal.teamDetail
-	}));
+	const detail = useSelector((state: RootState) => state.modal.teamDetail);
+
 	const dispatch = useDispatch()
 	const handleClose = () =>{
-		const { enabled, ...rest } = teamDetail
 		dispatch(modalActions.setTeamDetail({
-			enabled: false,
-			...rest			
+			enabled: false		   
 		}))
 	}
 	return (
-		<Modal open={teamDetail.enabled} onClose={handleClose}>
-			<Div> Hello</Div>
+		<Modal open={detail.enabled} onClose={handleClose}>
+			<Div mx20 px15> 
+				<Div fontBold fontSize40> {detail.name} </Div>
+				<Div> {detail.position} </Div>
+				<Div imgTag src={"static/images/ceo2.png"} h={160} w={120} style={{ objectFit: "cover" }} />
+				<Div> {detail.desc} </Div>
+			</Div>
 		</Modal>
 	)
 }

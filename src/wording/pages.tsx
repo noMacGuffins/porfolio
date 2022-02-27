@@ -60,43 +60,14 @@ export const pagesWording = {
 					</>
 				),
 			},
-			mintSection: {
-				title: {
-					ko: "GOMZ",
-					en: "GOMZ",
-				},
-				mainMessage: {
-					ko: "부정적 에너지 없는 세상을 위해",
-					en: "For a world without hard cheese.",
-				},
-				secondaryMessage: {
-					ko: "민팅은 2022.5.5에 시작됩니다",
-					en: "Minting starts May 5, 2022.",
-				},
-				tertiaryMessage: {
-					ko: (
-						<>
-							연락은{" "}
-							<Div spanTag textInfo>
-								tier0.momentum.kr@gmail.com
-							</Div>
-							으로 해주세요.
-						</>
-					),
-					en: (
-						<>
-							For inquieries or collaboration opportunities please contact{" "}
-							<Div spanTag textInfo>
-								tier0.momentum.kr@gmail.com
-							</Div>
-							.
-						</>
-					),
-				},
-				mintButton: {
-					ko: "민트",
-					en: "Mint",
-				},
+			Team :{
+				Minjun : (
+					<>
+						| Co-founder of SOONI Labs <br/>
+						| Blockchain, NFT, Metaverse, and Crypto <br/>
+						| Klaytn & Ethereum & Sexy Girl enthusiast <br/>
+					</>
+				) 
 			},
 			storySection: {
 				title: {

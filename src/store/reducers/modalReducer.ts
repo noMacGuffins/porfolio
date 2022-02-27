@@ -6,6 +6,7 @@ const modalSlice = createSlice({
 	  teamDetail: {
 		  enabled: false,
 		  name: null,
+		  position: null,
 		  desc: null,
 		  imgSrc: null, 
 	  }

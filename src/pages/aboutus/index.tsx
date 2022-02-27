@@ -11,21 +11,84 @@ import { cps } from "redux-saga/effects";
 import { useDispatch, useSelector } from "react-redux";
 import { modalActions } from "src/store/reducers/modalReducer";
 import Detail from "src/components/modals/Detail";
+
 enum Team {
 	Minjun, Eric, Sehan, Jieun, Jaehwan, Seungan, Jade, Noam
-
 }
 
 const Home: NextPage = () => {
 	const dispatch = useDispatch()
-	const handleClickMember = (key) => {
-		console.log("he")
+	const handleClickMember = (key: string) => {
 		switch (key) {
-			case Team.Minjun: 
+			case "Min Jun Kim": 
 				dispatch(modalActions.setTeamDetail({
 					enabled: true,
-					name: "Minjun",
-					desc: "fuck",
+					name: key,
+					position: "Chief Executive Officer",
+					desc: pagesWording.home.index.Team.Minjun,
+					imgSrc: "static/images/ceo2.png",
+				}))
+				break;
+			case "Eric Kim": 
+				dispatch(modalActions.setTeamDetail({
+					enabled: true,
+					name: key,
+					position: "Chief Buisness Officer",
+					desc: "Hi",
+					imgSrc: null,
+				}))
+				break;
+			case "Sehan Park": 
+				dispatch(modalActions.setTeamDetail({
+					enabled: true,
+					name: key,
+					position: "Chief Technology Officer",
+					desc: "Hi",
+					imgSrc: null,
+				}))
+				break;
+			case "Ji Eun Park": 
+				dispatch(modalActions.setTeamDetail({
+					enabled: true,
+					name: key,
+					position: "Creative Director",
+					desc: "Hi",
+					imgSrc: null,
+				}))
+				break;
+			case "Jeahwan Jeong": 
+				dispatch(modalActions.setTeamDetail({
+					enabled: true,
+					name: key,
+					position: "Lead Developer",
+					desc: "Hi",
+					imgSrc: null,
+				}))
+				break;
+			case "Seung An Jung": 
+				dispatch(modalActions.setTeamDetail({
+					enabled: true,
+					name: key,
+					position: "Assistant Developer",
+					desc: "Hi",
+					imgSrc: null,
+				}))
+				break;
+			case "Jade Yang": 
+				dispatch(modalActions.setTeamDetail({
+					enabled: true,
+					name: key,
+					position: "Web Designer",
+					desc: "Hi",
+					imgSrc: null,
+				}))
+				break;
+			case "Noam Ballon": 
+				dispatch(modalActions.setTeamDetail({
+					enabled: true,
+					name: key,
+					position: "Web Designer",
+					desc: "Hi",
 					imgSrc: null,
 				}))
 				break;
@@ -37,21 +100,21 @@ const Home: NextPage = () => {
 	return (
 		<Div>
 			<TopBar mode={"light"}></TopBar>
-			<Div pt170 pb100 px={"5%"} borderBlack borderB2>
+			<Div pt140 pb100 px={"5%"} borderBlack borderB2>
 				<Row pt80 pb70>
-					<Col style={{flex:7}}>
+					<Col style={{flex:6}}>
 						<Div fontSize90 fontBold lineHeight={1.2} textCenter>
 							Our Team.
 						</Div>
 					</Col>
-					<Col style={{flex:3}} flex borderBlack borderL2 itemsEnd>
-						<Div fontSize20 lineHeight={1.2} textLeft >
+					<Col style={{flex:4}} flex itemsEnd>
+						<Div fontSize20 pl20 borderBlack borderL2 lineHeight={1.2} textLeft >
 							A group of active problem solvers <br/> working together to provide value <br/> in the blockchain and our world.
 						</Div>
 					</Col>
 				</Row>
 				<Row py20>
-					<Col onClick={() => handleClickMember(Team.Minjun)}>
+					<Col onClick={() => handleClickMember("Min Jun Kim")} pl30>
 						<Div fontSize25 fontBold>
 							Min Jun Kim
 						</Div>
@@ -59,7 +122,7 @@ const Home: NextPage = () => {
 							Chief Executive Officer
 						</Div>
 					</Col>
-					<Col>
+					<Col onClick={() => handleClickMember("Eric Kim")} pl30>
 						<Div fontSize25 fontBold>
 							Eric Kim
 						</Div>
@@ -67,7 +130,7 @@ const Home: NextPage = () => {
 							Chief Business Officer
 						</Div>
 					</Col>
-					<Col>
+					<Col onClick={() => handleClickMember("Sehan Park")} pl30>
 						<Div fontSize25 fontBold>
 							Sehan Park
 						</Div>
@@ -77,7 +140,7 @@ const Home: NextPage = () => {
 					</Col>
 				</Row>
 				<Row py20>
-					<Col>
+					<Col onClick={() => handleClickMember("Ji Eun Park")} pl30>
 						<Div fontSize25 fontBold>
 							Ji Eun Park
 						</Div>
@@ -85,7 +148,7 @@ const Home: NextPage = () => {
 							Creative Director
 						</Div>
 					</Col>
-					<Col>
+					<Col onClick={() => handleClickMember("Jeahwan Jeong")} pl30>
 						<Div fontSize25 fontBold>
 							Jeahwan Jeong
 						</Div>
@@ -93,7 +156,7 @@ const Home: NextPage = () => {
 							Lead Developer
 						</Div>
 					</Col>
-					<Col>
+					<Col onClick={() => handleClickMember("Seung An Jung")} pl30>
 						<Div fontSize25 fontBold>
 							Seung An Jung
 						</Div>
@@ -103,7 +166,7 @@ const Home: NextPage = () => {
 					</Col>
 				</Row>
 				<Row py20>
-					<Col>
+					<Col onClick={() => handleClickMember("Jade Yang")} pl30>
 						<Div fontSize25 fontBold>
 							Jade Yang
 						</Div>
@@ -111,15 +174,15 @@ const Home: NextPage = () => {
 							Web Designer
 						</Div>
 					</Col>
-					<Col>
+					<Col onClick={() => handleClickMember("Noam Ballon")} pl30>
 						<Div fontSize25 fontBold>
-							Noah Ballon
+							Noam Ballon
 						</Div>
 						<Div>
 							Web Designer
 						</Div>						
 					</Col>
-					<Col>
+					<Col pl30>
 						
 					</Col>
 				</Row>
