@@ -64,6 +64,47 @@ export const pagesWording = {
 						we are here to make a positive impact- a warm NFT ecosystem where art, society, and technology are all appreciated.
 					</>
 				),
+				value1: {
+					title: (
+						<>
+							For you and those around us
+						</>
+					),	
+					content: (
+						<>
+							Every project of ours is dedicated to solve societal issues. We aspire to help everyone recognize
+							the practicality of NFTs regardless of gender, knowledge, and generational gap.
+						</>
+					),
+				},	
+				value2: {
+					title: (
+						<>
+							Against the status quo
+						</>
+					),	
+					content: (
+						<>
+							When it comes to cryptocurrency, blockchain, and NFTs, there are certain stereotypes that do hold up in reality. 
+							Crypto is often recognized as a “rugpull”, “ponzi scheme”, and a “rich-getting-richer mechanism”. 
+							Through practical applications of NFTs, we challenge such stereotypes surrounding digital assets. 
+						</>
+					),
+				},
+				value3: {
+					title: (
+						<>
+							Community-obsessed
+						</>
+					),	
+					content: (
+						<>
+							We believe the longevity of NFT collections are determined by the community. 
+							To build a powerful community for our company and projects, we listen to our supporters’ voices. 
+							Your words are reflected in our future decisions. 
+						</>
+					),
+				},
 			},
 			Team :{
 				Minjun : (

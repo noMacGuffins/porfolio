@@ -49,7 +49,7 @@ const Home: NextPage = () => {
 					</Col>
 					<Col style={{flex: 4}}/>
 				</Row>
-				<Row pt70 pb120>
+				<Row py70>
 					<Col style={{flex: 1}} />
 					<Col style={{flex: 1}} >
 						<Div fontSize90 fontBold lineHeight = {1.2} pb50>
@@ -61,19 +61,45 @@ const Home: NextPage = () => {
 					</Col>
 				</Row>
 				<Row py70>
-					<Col style={{flex: 6}} >
+					<Col auto>
 						<Div fontSize90 fontBold lineHeight = {1.2} pb50>
-							Story
+							Values
 						</Div>
-						<Div>
-							{pagesWording.home.index.AboutUs.OurStory}
-						</Div>
+						<Row>
+							<Col style={{flex: 1}} flexCol justifyCenter>
+								<Div imgTag src={"static/images/ceo2.png"} h={100} w={100} style={{ objectFit: "cover" }} />
+								<Div fontBold>
+									{pagesWording.home.index.AboutUs.value1.title}
+								</Div>
+								<Div>
+									{pagesWording.home.index.AboutUs.value1.content}
+								</Div>
+							</Col>
+							<Col style={{flex: 1}} >
+								<Div imgTag src={"static/images/ceo2.png"} h={100} w={100} style={{ objectFit: "cover" }} />
+								<Div fontBold>
+									{pagesWording.home.index.AboutUs.value2.title}
+								</Div>
+								<Div>
+									{pagesWording.home.index.AboutUs.value2.content}
+								</Div>
+							</Col>	
+							<Col style={{flex: 1}} >
+								<Div imgTag src={"static/images/ceo2.png"} h={100} w={100} style={{ objectFit: "cover" }} />
+								<Div fontBold>
+									{pagesWording.home.index.AboutUs.value3.title}
+								</Div>
+								<Div>
+									{pagesWording.home.index.AboutUs.value3.content}
+								</Div>
+							</Col>
+						</Row>
 					</Col>
 					<Col style={{flex: 4}}/>
 				</Row>
 			</Div>
-			<Div py100>
-				<Row>
+			<Div py50>
+				<Row mxAuto flex justifyCenter>
 					<Col auto>
 						<Div pl20 imgTag src={"static/images/SooniLabs.png"} h={100} w={100} style={{ objectFit: "cover" }} />
 					</Col>
