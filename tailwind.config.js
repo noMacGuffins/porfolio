@@ -24,7 +24,7 @@ const basicColors = {
   current: 'currentColor',
   gray: {
     DEFAULT: '#f9fafb',
-    100: 'rgb(252, 252, 252)',
+    100: 'rgb(250, 250, 250)',
     200: '#e5e8eb',
     300: '#d1d6db',
     400: '#b0b8c1',
