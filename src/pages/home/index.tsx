@@ -1,116 +1,118 @@
-import { NextPage } from "next";
 import Div from "src/components/Div";
 import Row from "src/components/Row";
 import Col from "src/components/Col";
-import TopBar from "src/components/TopBar";
-import Link from "next/link";
 import { pagesWording } from "src/wording/pages";
-import Form from "src/components/Submit";
-import Submit from "src/components/Submit";
+import Helmet from "react-helmet";
+import { Controller, Scene } from "react-scrollmagic";
+import { Tween, Timeline } from "react-gsap";
+import useIsTablet from "src/hooks/useIsTablet";
+import TopBar from "src/components/TopBar";
+import EmptyBlock from "src/components/EmptyBlock";
 
+const CallToActionAndStory = () => {
+	const isTablet = useIsTablet();
 
-const Home: NextPage = () => {
 	return (
-		<Div>
-			<TopBar mode={"light"}></TopBar>
-			<Div pt170 px={"5%"} borderBlack borderB2>
-				<Row pt80 pb70>
-					<Col style={{flex: 6}}>
-						<Div fontSize60 fontBold lineHeight={1.2}>
-							{pagesWording.home.index.MainPage.Title1}
+		<Div relative>
+			{/* <Div absolute top100 right0 w500 h500 textBlack fontBold style={{ transform: "rotate(45deg)" }}>
+				<svg viewBox="0 0 500 500">
+					<path
+						id="curve"
+						fill={"transparent"}
+						d="M6,150C49.63,93,105.79,36.65,156.2,47.55,207.89,58.74,213,131.91,264,150c40.67,14.43,108.57-6.91,229-145"
+					/>
+					<text style={{ paddingLeft: 10 }}>
+						<textPath xlinkHref="#curve"> Bridging the gap between blockchain technology and the real world. </textPath>
+					</text>
+				</svg>
+			</Div> */}
+			<Div maxW={960} mxAuto relative px10 textColor={"rgba(0, 0, 0, 0.7)"}>
+				<Scene duration={isTablet ? 1 : 600} pin={{ pushFollowers: false }} triggerHook={0.5} offset={300}>
+					<Div>
+						<Div mxAuto maxW={600} fontBold textCenter leadingNone py80={!isTablet} pb30={isTablet} rounded3xl relative h250={!isTablet}>
+							<Scene duration={200} triggerHook={0} pin={{ pushFollowers: true }}>
+								{(progress) => (
+									<Timeline totalProgress={progress} paused>
+										<Timeline
+											target={
+												<Div textXxxl={!isTablet} textXxl={isTablet} clx={"timeline"}>
+													Sooni Labs.
+												</Div>
+											}
+										>
+											<Tween from={{ opacity: 1, y: 0 }} to={{ opacity: -1, y: -100 }} />
+										</Timeline>
+										<Timeline
+											target={
+												<Div textXxl={!isTablet} fontSize40={isTablet} clx={"timeline"} absolute bottom0 style={{ filter: "invert(100%)" }}>
+													Blockchain,
+													<Div fontSize40>for the Betterment of Society.</Div>
+												</Div>
+											}
+										>
+											<Tween from={{ opacity: -1, y: 100 }} to={{ opacity: 1, y: 0 }} />
+										</Timeline>
+									</Timeline>
+								)}
+							</Scene>
 						</Div>
-					</Col>
-					<Col flex style={{flex: 3.5}} itemsEnd>
-						<Div px10 borderBlack borderL2>
-							{pagesWording.home.index.MainPage.Title2}
-						</Div>
-					</Col>
-					<Col flex style={{flex: 0.5}} itemsEnd>
-						<Div imgTag src={"static/images/downarrow.png"} style={{ objectFit: "cover" }} />
-					</Col>
-				</Row>
-				<Row py70>
-					<Col style={{flex: 5}}>
-						<Div fontSize40 fontBold lineHeight = {1.2}>
-							{pagesWording.home.index.MainPage.Title3}
-						</Div>
-						<Div py15>
-							{pagesWording.home.index.MainPage.Title4}
-						</Div>
-					</Col>
-					<Col flex style={{flex: 5}} justifyCenter itemsCenter>
-						<Div imgTag src={"static/images/asterisk.png"} h={200} w={200} style={{ objectFit: "cover" }} />
-					</Col>
-				</Row>
-				<Row py70>
-					<Col style={{flex: 6}} >
-						<Div fontSize40 fontBold lineHeight = {1.2} pb30>
-							Discover Sooni Labs
-						</Div>
-						<Link href="/aboutus" passHref>
-							<Div py15 cursorPointer fontSize20>
-								About us
+						<EmptyBlock h={200} />
+						{isTablet ? (
+							<Div px10>
+								<Div imgTag src={"images/sooniLabsIcon.png"} w={"100%"}></Div>
+								<Div fontBold textXl textWhite mb15>
+									{pagesWording.home.index.MainPage.Title2}
+								</Div>
+								<Div textLg textGray500>
+									{pagesWording.home.index.MainPage.Title2}
+								</Div>
 							</Div>
-						</Link>
-						<Link href="/team" passHref>
-							<Div py15 cursorPointer fontSize20>
-								Team
+						) : (
+							<Div>
+								<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0.5} offset={200}>
+									{(progress) => (
+										<Timeline totalProgress={progress} paused>
+											<Timeline
+												target={
+													<Div absolute h900 w900 right0>
+														<Row>
+															<Col auto>
+																<Div imgTag src={"images/sooniLabsIconNoBg.png"} h={591 / 1.2} w={421 / 1.2}></Div>
+															</Col>
+															<Col rounded3xl>
+																<Div fontBold textXl mb15>
+																	About Us
+																</Div>
+																<Div textLg textGray500>
+																	{pagesWording.home.index.MainPage.Title2}
+																</Div>
+															</Col>
+														</Row>
+													</Div>
+												}
+											>
+												<Tween from={{ x: 900 }} to={{ x: 0 }} />
+											</Timeline>
+										</Timeline>
+									)}
+								</Scene>
+								<EmptyBlock h={600} />
 							</Div>
-						</Link>
-						<Link href="/home" passHref>
-							<Div py15 cursorPointer fontSize20>
-								Partnerships
-							</Div>
-						</Link>
-					</Col>
-					<Col style={{flex: 4}}/>
-				</Row>
-				<Row pt70 pb120>
-					<Col style={{flex: 1}} >
-						<Div fontSize40 fontBold lineHeight = {1.2} pb50>
-							{pagesWording.home.index.MainPage.Connect}
-						</Div>
-						<Submit />
-					</Col>
-					<Col style={{flex: 1}} justifyCenter/>
-				</Row>
-			</Div>
-			<Div py100>
-				<Row>
-					<Col auto>
-						<Div pl20 imgTag src={"static/images/SooniLabs.png"} h={100} w={100} style={{ objectFit: "cover" }} />
-					</Col>
-					<Col style={{flex:8}}>
-						<Div textCenter fontSize40 fontBold>
-							Get in touch
-						</Div>
-						<Div textCenter>
-							contact@soonilabs.io
-						</Div>
-					</Col>
-					<Col style={{flex:3}} pr20>
-						<Div textLeft fontSize20 fontBold>
-							Address
-						</Div>
-						<Div textLeft>
-							Unit D104 <br/> 116 street name <br/> Seoul South Korea
-						</Div>
-					</Col>
-					<Col style={{flex:3}} pr20>
-						<Div textLeft fontSize20 fontBold>
-							Follow us
-						</Div>
-						<Div textLeft>
-							Twitter
-						</Div>
-						<Div textLeft>
-							Instagram
-						</Div>
-					</Col>
-				</Row>
+						)}
+					</Div>
+				</Scene>
 			</Div>
 		</Div>
 	);
-}
+};
 
-export default Home
+export default function Home() {
+	return (
+		<Controller>
+			<Div>
+				<TopBar mode={"light"} />
+				<CallToActionAndStory />
+			</Div>
+		</Controller>
+	);
+}

@@ -23,21 +23,8 @@ const TopBar = ({ mode }) => {
 				<link rel="preconnect" href="https://fonts.gstatic.com" />
 				<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;600&family=Taviraj:wght@100&display=swap" rel="stylesheet" />
 			</Helmet>
-			<Div fixed bgWhite wFull z100  {...textColorProp} fontFamily={"Be Vietnam Pro"}>
-				<Row maxW={1500} mxAuto flex justifyCenter py20>
-					<Col auto cursorPointer>
-						<Link href="/home" passHref>
-							<Div pl20 imgTag src={"static/images/SooniLabs.png"} h={100} w={100} style={{ objectFit: "cover" }} />
-						</Link>
-					</Col>
-					<Col></Col>
-					<Col auto flex itemsCenter cursorPointer>
-						<Link href="/aboutus" passHref>
-							<Div spanTag fontBold px20>
-								About us
-							</Div>
-						</Link>
-					</Col>
+			<Div fixed wFull z100 {...textColorProp} fontFamily={"Be Vietnam Pro"}>
+				<Row flex justifyCenter py20 maxW={1000} mxAuto>
 					<Col auto flex itemsCenter cursorPointer>
 						<Link href="/team" passHref>
 							<Div spanTag fontBold px20>
@@ -66,17 +53,9 @@ const TopBar = ({ mode }) => {
 							</Div>
 						</Link>
 					</Col>
-					<Col auto flex itemsCenter cursorPointer>
-						<Div spanTag fontBold px20 fontSize10>
-							EN/KR
-						</Div>
-					</Col>
-					<Col auto px10></Col>
 				</Row>
-			</Div>		
-		
+			</Div>
 		</>
-		
 	);
 };
 

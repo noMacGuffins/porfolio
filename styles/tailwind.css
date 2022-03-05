@@ -1,9 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;600&family=Taviraj:wght@100&display=swap');
 @layer base {
     body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-family: Be Vietnam Pro, -apple-system, BlinkMacSystemFont, sans-serif !important;
+      background-image: "url(image/sooniLabsBWIcon.png)";
+      background-repeat: "repeat";
     }
     @font-face {
       * {
