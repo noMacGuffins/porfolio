@@ -5,7 +5,7 @@ export const pagesWording = {
 	home: {
 		index: {
 			MainPage: {
-				Title1: <>Blockchain, for the Betterment of Society</>,
+				Title1: <>Building blockchain, for the Betterment of Society</>,
 				Title2: (
 					<>
 						From Blockchain,

@@ -4,6 +4,7 @@ text-primary-pastel
 text-primary-teens
 text-primary-teensLight
 text-secondary
+text-secondary-light
 text-secondary2
 text-transparent
 text-current

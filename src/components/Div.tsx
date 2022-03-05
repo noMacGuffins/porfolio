@@ -407,6 +407,8 @@ const propsToClx = (props) => {
 		textGray500: () => clxs.push("text-gray-500"),
 		textGray600: () => clxs.push("text-gray-600"),
 		textGray700: () => clxs.push("text-gray-700"),
+		textGray800: () => clxs.push("text-gray-800"),
+		textGray900: () => clxs.push("text-gray-900"),
 		//text opacity
 		textOpacity0: () => clxs.push("text-opacity-0"),
 		textOpacity5: () => clxs.push("text-opacity-5"),
@@ -1037,6 +1039,7 @@ const propsToClx = (props) => {
 		bgPrimary: () => clxs.push("bg-primary"),
 		bgPrimaryLight: () => clxs.push("bg-primary-light"),
 		bgSecondary: () => clxs.push("bg-secondary"),
+		bgSecondaryLight: () => clxs.push("bg-secondary-light"),
 		bgSecondary2: () => clxs.push("bg-secondary2"),
 		bgInfo: () => clxs.push("bg-info"),
 		bgInfoLight: () => clxs.push("bg-info-light"),
