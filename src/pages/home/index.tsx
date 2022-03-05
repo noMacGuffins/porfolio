@@ -8,37 +8,23 @@ import { Tween, Timeline } from "react-gsap";
 import useIsTablet from "src/hooks/useIsTablet";
 import TopBar from "src/components/TopBar";
 import EmptyBlock from "src/components/EmptyBlock";
+import { PlusCircleIcon } from "@heroicons/react/outline";
+import "src/scripts/cursorMove";
 
 const CallToActionAndStory = () => {
 	const isTablet = useIsTablet();
 
 	return (
 		<Div bgGray100>
-			{/* <Div absolute top100 right0 w500 h500 textBlack fontBold style={{ transform: "rotate(45deg)" }}>
-				<svg viewBox="0 0 500 500">
-					<path
-						id="curve"
-						fill={"transparent"}
-						d="
-							M 250, 250
-							a 100,100 0 1,1 100,0
-							a 100,100 0 1,1 -100,0
-						"
-					/>
-					<text style={{ paddingLeft: 10 }}>
-						<textPath xlinkHref="#curve"> Bridging the gap between blockchain technology and the world</textPath>
-					</text>
-				</svg>
-			</Div> */}
 			<Div relative>
 				<TopBar mode={"light"} />
 				<Div>
-					<Div h={"105vh"} relative flex row overflowHidden itemsCenter justifyCenter>
+					<Div h={"105vh"} relative flex row overflowHidden itemsCenter justifyCenter clx={"radial-gradient"}>
 						<Div maxW={600} fontBold textCenter leadingNone pb150>
 							<Div textXxl clx={"timeline"} mb10 textGray900>
 								Sooni Labs
 							</Div>
-							<Div textXl clx={"timeline colorful colorful3"} textGray900>
+							<Div textXl clx={"timeline colorful colorful2"} textGray900>
 								Blockchain for the Betterment of Society
 							</Div>
 						</Div>
@@ -62,7 +48,7 @@ const CallToActionAndStory = () => {
 						<Scene duration={200} pin={{ pushFollowers: true }}>
 							{(progress) => (
 								<Timeline totalProgress={progress} paused>
-									<Timeline target={<Div absolute w800 h800 rounded3000 style={{ backgroundColor: "rgba(0, 0, 256, 0.1)" }}></Div>}>
+									<Timeline target={<Div absolute w800 h800 rounded3000 style={{ backgroundColor: "rgba(0, 256, 0, 0.1)" }}></Div>}>
 										<Tween from={{ scaleX: 0, scaleY: 0, y: -100, x: -100 }} to={{ scaleX: 1, scaleY: 1 }} />
 									</Timeline>
 								</Timeline>
@@ -71,53 +57,104 @@ const CallToActionAndStory = () => {
 						<Scene duration={200} pin={{ pushFollowers: true }}>
 							{(progress) => (
 								<Timeline totalProgress={progress} paused>
-									<Timeline target={<Div absolute w800 h800 rounded3000 style={{ backgroundColor: "rgba(0, 256, 0, 0.1)" }}></Div>}>
+									<Timeline target={<Div absolute w800 h800 rounded3000 style={{ backgroundColor: "rgba(0, 256, 256, 0.1)" }}></Div>}>
 										<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 1, scaleY: 1 }} />
 									</Timeline>
 								</Timeline>
 							)}
 						</Scene>
 					</Div>
-					{isTablet ? (
-						<Div px10>
-							<Div imgTag src={"images/sooniLabsIcon.png"} w={"100%"}></Div>
-							<Div fontBold textXl textWhite mb15>
-								{pagesWording.home.index.MainPage.Title2}
-							</Div>
-							<Div textLg textGray500>
-								{pagesWording.home.index.MainPage.Title2}
-							</Div>
-						</Div>
-					) : (
-						<Div relative wScreen overflowHidden>
-							<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={200}>
-								{(progress) => (
-									<Timeline totalProgress={progress} paused>
-										<Timeline
-											target={
-												<Div flex itemsCenter justifyCenter py100>
-													<Div maxW={600}>
-														<Div fontBold textXl mb15>
-															About Us
-														</Div>
-														<Div textLg textGray900>
-															Founded in 2021, SOONI Labs is the first Korean NFT-focused company that bridges the gap between NFTs and Real-World
-															utility through practical B-Apps.
-														</Div>
+					<Div relative wScreen overflowHidden>
+						<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={200}>
+							{(progress) => (
+								<Timeline totalProgress={progress} paused>
+									<Timeline
+										target={
+											<Div flex itemsCenter justifyCenter py100>
+												<Div maxW={960}>
+													<Div fontBold textXl mb15>
+														Our Mission
+													</Div>
+													<Div textLg textGray900>
+														As NFT enthusiasts, we will continuously develop beneficial projects for not only Koreans but also the global community.
+														We are here to make a positive impact, to create a warm NFT ecosystem where art, society, and technology are all
+														appreciated.
 													</Div>
 												</Div>
-											}
-										>
-											<Tween from={{ x: 800 }} to={{ x: 0, y: 0 }} />
-										</Timeline>
-										<Timeline target={<Div absolute top0 left={"30%"} w1000 h1000 rounded3000 style={{ backdropFilter: "invert(100%)" }}></Div>}>
-											<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 3, scaleY: 3 }} />
-										</Timeline>
+											</Div>
+										}
+									>
+										<Tween from={{ x: 800 }} to={{ x: 0 }} />
 									</Timeline>
-								)}
-							</Scene>
-						</Div>
-					)}
+									<Timeline target={<Div absolute top0 left={"30%"} w1000 h1000 rounded3000 style={{ backdropFilter: "invert(100%)" }}></Div>}>
+										<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 3, scaleY: 3 }} />
+									</Timeline>
+								</Timeline>
+							)}
+						</Scene>
+					</Div>
+					<Div relative wScreen overflowHidden>
+						<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={700}>
+							{(progress) => (
+								<Timeline totalProgress={progress} paused>
+									<Timeline
+										target={
+											<Div flex itemsCenter justifyCenter py100>
+												<Div maxW={960}>
+													<Div fontBold textXl mb15>
+														Our Values
+													</Div>
+													<Row gapX={20}>
+														<Col overflowHidden rounded2xl p0>
+															<Div absolute wFull hFull p20>
+																<Div relative wFull hFull>
+																	<Div fontBold textLg maxW={200}>
+																		For you and those around us
+																	</Div>
+																	<Div fontNormal w30 h30 absolute bottom0 right0>
+																		<PlusCircleIcon />
+																	</Div>
+																</Div>
+															</Div>
+															<Div imgTag src={"images/helping.jpeg"} objectCover hFull wFull></Div>
+														</Col>
+														<Col overflowHidden rounded2xl p0>
+															<Div absolute wFull hFull p20>
+																<Div relative wFull hFull>
+																	<Div fontBold textLg maxW={200}>
+																		Against the status quo
+																	</Div>
+																	<Div fontNormal w30 h30 absolute bottom0 right0>
+																		<PlusCircleIcon />
+																	</Div>
+																</Div>
+															</Div>
+															<Div imgTag src={"images/statusQuo.jpeg"} objectCover hFull wFull></Div>
+														</Col>
+														<Col overflowHidden rounded2xl p0>
+															<Div absolute wFull hFull p20>
+																<Div relative wFull hFull>
+																	<Div fontBold textLg maxW={200}>
+																		Community-obsessed
+																	</Div>
+																	<Div fontNormal w30 h30 absolute bottom0 right0>
+																		<PlusCircleIcon />
+																	</Div>
+																</Div>
+															</Div>
+															<Div imgTag src={"images/community.jpeg"} objectCover hFull wFull></Div>
+														</Col>
+													</Row>
+												</Div>
+											</Div>
+										}
+									>
+										<Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+									</Timeline>
+								</Timeline>
+							)}
+						</Scene>
+					</Div>
 					<EmptyBlock h={900} />
 				</Div>
 			</Div>

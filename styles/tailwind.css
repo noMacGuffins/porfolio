@@ -32,7 +32,7 @@
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      text-shadow: 7px 7px 0px #d2d2d22e;
+      /* text-shadow: 7px 7px 0px #bdbdbd2e; */
       padding-right: 1px
     }
 
