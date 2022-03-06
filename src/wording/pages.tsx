@@ -104,7 +104,7 @@ export const pagesWording = {
 			},
 			community: {
 				title: {
-					en: <>Community-obsessedo</>,
+					en: <>Community-obsessed</>,
 					ko: <>커뮤니티 중점</>,
 				},
 				desc: {
@@ -122,16 +122,6 @@ export const pagesWording = {
 					),
 				},
 			},
-		},
-	},
-	footer: {
-		intro: {
-			en: <>Sooni Labs is the first Korean NFT-focused company that bridges the gap between NFTs and Real-World utility through practical B-Apps.</>,
-			ko: <>순이는 실용적인 D-App(Decentralized Application)을 통해 NFT의 실제 사회 공헌도를 높이는 한국 최초의 NFT 중심 기업입니다.</>,
-		},
-		subscribe: {
-			en: <>Subscribe to our newsletters</>,
-			ko: <>순이 뉴스레터 구독하기</>,
 		},
 	},
 	home: {
