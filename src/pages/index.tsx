@@ -66,8 +66,8 @@ const Main = () => {
 const AboutUs = () => {
 	const { locale } = useRouter();
 	return (
-		<Div relative wScreen overflowHidden>
-			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={200}>
+		<Div relative wScreen overflowHidden bgBlack textWhite>
+			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={400}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
 						<Timeline
@@ -77,16 +77,28 @@ const AboutUs = () => {
 										<Div fontBold textXl mb15>
 											{pagesWording.index.aboutUs.title[locale]}
 										</Div>
-										<Div textLg textGray900>
+										<Div textLg textGray100>
 											{pagesWording.index.aboutUs.subtitle[locale]}
 										</Div>
 									</Div>
 								</Div>
 							}
 						>
-							<Tween from={{ x: 800 }} to={{ x: 0 }} />
+							<Tween from={{ y: 400 }} to={{ y: 0 }} />
 						</Timeline>
-						<Timeline target={<Div absolute top0 left={"30%"} w1000 h1000 rounded3000 style={{ backdropFilter: "invert(100%)" }}></Div>}>
+						<Timeline
+							target={
+								<Div
+									absolute
+									top0
+									left={"30%"}
+									w1000
+									h1000
+									rounded3000
+									style={{ backdropFilter: "invert(100%)", backgroundColor: "rgba(0, 256, 0, 0.1)" }}
+								></Div>
+							}
+						>
 							<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 3, scaleY: 3 }} />
 						</Timeline>
 					</Timeline>
@@ -99,8 +111,8 @@ const AboutUs = () => {
 const Mission = () => {
 	const { locale } = useRouter();
 	return (
-		<Div relative wScreen overflowHidden bgGray200>
-			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={500}>
+		<Div relative wScreen overflowHidden bgBlack textWhite>
+			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={700}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
 						<Timeline
@@ -110,14 +122,29 @@ const Mission = () => {
 										<Div fontBold textXl mb15>
 											{pagesWording.index.mission.title[locale]}
 										</Div>
-										<Div textLg textGray900>
+										<Div textLg textGray100>
 											{pagesWording.index.mission.subtitle[locale]}
 										</Div>
 									</Div>
 								</Div>
 							}
 						>
-							<Tween from={{ x: 800 }} to={{ x: 0 }} />
+							<Tween from={{ y: 400 }} to={{ y: 0 }} />
+						</Timeline>
+						<Timeline
+							target={
+								<Div
+									absolute
+									top0
+									left={"30%"}
+									w1000
+									h1000
+									rounded3000
+									style={{ backdropFilter: "invert(100%)", backgroundColor: "rgba(0, 256, 256, 0.1)" }}
+								></Div>
+							}
+						>
+							<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 3, scaleY: 3 }} />
 						</Timeline>
 					</Timeline>
 				)}
@@ -218,7 +245,7 @@ const Values = () => {
 								</Div>
 							}
 						>
-							<Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+							<Tween from={{ y: 400 }} to={{ y: 0 }} />
 						</Timeline>
 					</Timeline>
 				)}
