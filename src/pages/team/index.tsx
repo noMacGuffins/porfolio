@@ -9,6 +9,7 @@ import useIsTablet from "src/hooks/useIsTablet";
 import { useRouter } from "next/router";
 import BasicHeadWrapper from "src/components/BasicHeadWrapper";
 import "src/scripts/cursorMove";
+import Col from "src/components/Col";
 
 const Content = () => {
 	const isTablet = useIsTablet();
@@ -16,59 +17,51 @@ const Content = () => {
 
 	const teamMembersInfo = [
 		{
-			name: "Min Jun Kim",
-			position: "CEO",
-			desc: (
-				<>
-					KAIST BTM undergraduate
-					<br />
-					NONCE
-					<br />
-					MSK
-				</>
-			),
+			name: pagesWording.team.index.members.minjun.name[locale],
+			position: pagesWording.team.index.members.minjun.position[locale],
+			desc: pagesWording.team.index.members.minjun.desc[locale],
 			img: "images/team/minjunkim.jpg",
 		},
 		{
-			name: "Yea Jean Lee",
-			position: "CMO",
-			desc: <>Yonsei Business Undergraduate</>,
+			name: pagesWording.team.index.members.yeajean.name[locale],
+			position: pagesWording.team.index.members.yeajean.position[locale],
+			desc: pagesWording.team.index.members.yeajean.desc[locale],
 			img: "images/team/minjunkim.jpg",
 		},
 		{
-			name: "Min Su Kim",
-			position: "CBO",
-			desc: <>NYU Statistics Undergraduate</>,
+			name: pagesWording.team.index.members.eric.name[locale],
+			position: pagesWording.team.index.members.eric.position[locale],
+			desc: pagesWording.team.index.members.eric.desc[locale],
 			img: "images/team/minjunkim.jpg",
 		},
 		{
-			name: "Ji Eun Park",
-			position: "Creative Director",
-			desc: <>Hong Kong PolyU Undergraduate</>,
+			name: pagesWording.team.index.members.jieun.name[locale],
+			position: pagesWording.team.index.members.jieun.position[locale],
+			desc: pagesWording.team.index.members.jieun.desc[locale],
 			img: "images/team/minjunkim.jpg",
 		},
 		{
-			name: "Jade Yang",
-			position: "UI/UX designer",
-			desc: <>KAIST Undergraduate</>,
+			name: pagesWording.team.index.members.jade.name[locale],
+			position: pagesWording.team.index.members.jade.position[locale],
+			desc: pagesWording.team.index.members.jade.desc[locale],
 			img: "images/team/minjunkim.jpg",
 		},
 		{
-			name: "Se Han Park",
-			position: "CTO",
-			desc: <>KAIST Undergraduate</>,
+			name: pagesWording.team.index.members.ian.name[locale],
+			position: pagesWording.team.index.members.ian.position[locale],
+			desc: pagesWording.team.index.members.ian.desc[locale],
 			img: "images/team/sehanpark.jpg",
 		},
 		{
-			name: "Jaehwan Jeong",
-			position: "Blockchain Developer",
-			desc: <>KAIST Undergraduate</>,
+			name: pagesWording.team.index.members.jaehwan.name[locale],
+			position: pagesWording.team.index.members.jaehwan.position[locale],
+			desc: pagesWording.team.index.members.jaehwan.desc[locale],
 			img: "images/team/minjunkim.jpg",
 		},
 		{
-			name: "Seung An Jung",
-			position: "Server-side Developer",
-			desc: <>KAIST Undergraduate</>,
+			name: pagesWording.team.index.members.seungan.name[locale],
+			position: pagesWording.team.index.members.seungan.position[locale],
+			desc: pagesWording.team.index.members.seungan.desc[locale],
 			img: "images/team/minjunkim.jpg",
 		},
 	];
@@ -77,15 +70,13 @@ const Content = () => {
 		<Div clx={!isTablet && "radial-gradient"}>
 			<TopBar mode={"light"}></TopBar>
 			<Div pt200 pb100 borderBlack borderB2>
-				<Div row={!isTablet} pb100 maxW={1200} mxAuto px30>
-					<Div flex itemsEnd leadingNone auto maxW={300} py0>
-						<Div textXxl={!isTablet} fontSize60={isTablet} fontBold clx={"colorful colorful2"}>
-							Our Team
-						</Div>
+				<Div row={!isTablet} pb100 maxW={1200} mxAuto px30 gapX={30}>
+					<Div col={!isTablet} leadingNone colAuto textXxl={!isTablet} fontSize60={isTablet} fontBold clx={"colorful colorful2"}>
+						{pagesWording.team.index.title[locale]}
 					</Div>
-					<Div flex itemsEnd py0 maxW={500} mt20>
+					<Div flex col={!isTablet} itemsEnd py0 maxW={500} mt20>
 						<Div textLg fontBold textLeft textGray700>
-							A group of active problem solvers working together to provide value from blockchain for the world.
+							{pagesWording.team.index.subtitle[locale]}
 						</Div>
 					</Div>
 				</Div>

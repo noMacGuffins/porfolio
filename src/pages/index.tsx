@@ -203,12 +203,13 @@ const Values = () => {
 																<Div
 																	fontBold
 																	maxW={250}
+																	pb15
+																	leadingNone
 																	clx={"text-20 transition group-hover:transition-all group-hover:translate-y-10 group-hover:text-30"}
 																>
 																	{content.title}
 																</Div>
 																<Div
-																	
 																	clx={
 																		"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 group-hover:text-15"
 																	}

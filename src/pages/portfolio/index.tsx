@@ -4,7 +4,6 @@ import TopBar from "src/components/TopBar";
 import { pagesWording } from "src/wording/pages";
 import Detail from "src/components/modals/Detail";
 import Footer from "src/components/Footer";
-import { PlusCircleIcon } from "@heroicons/react/outline";
 import useIsTablet from "src/hooks/useIsTablet";
 import { useRouter } from "next/router";
 import BasicHeadWrapper from "src/components/BasicHeadWrapper";
@@ -18,14 +17,14 @@ const Content = () => {
 
 	const teamMembersInfo = [
 		{
-			name: "Gomz",
-			desc: "Pop Art PFP NFT",
+			name: pagesWording.portfolio.index.items.gomz.name[locale],
+			desc: pagesWording.portfolio.index.items.gomz.desc[locale],
 			visual: "images/portfolio/gomzNoBg.png",
 			isImg: true,
 		},
 		{
-			name: "GomzSpace",
-			desc: "2d Metaverse",
+			name: pagesWording.portfolio.index.items.gomzSpace.name[locale],
+			desc: pagesWording.portfolio.index.items.gomzSpace.desc[locale],
 			visual: "images/portfolio/gomzSpace.mp4",
 			isImg: false,
 		},
@@ -36,16 +35,14 @@ const Content = () => {
 			<TopBar mode={"light"}></TopBar>
 			<Div pt200 pb100 borderBlack borderB2>
 				<Div row={!isTablet} pb100 maxW={1200} mxAuto px30>
-					<Div flex itemsEnd leadingNone auto maxW={300} py0>
-						<Div textXxl={!isTablet} fontSize60={isTablet} fontBold clx={"colorful colorful2"}>
-							Porfolio
-						</Div>
+					<Div flex itemsEnd leadingNone auto textXxl={!isTablet} fontSize60={isTablet} fontBold clx={"colorful colorful2"} py0>
+						{pagesWording.portfolio.index.title[locale]}
 					</Div>
 				</Div>
 				<Div maxW={1200} mxAuto px30>
 					{teamMembersInfo.map((content) => {
 						return (
-							<Row key={content.name} mb50 gapX={50}>
+							<Row key={content.name} mb50 gapX={30}>
 								<Col relative overflowHidden rounded2xl p0 cursorPointer h300 w300 auto>
 									{content.isImg ? (
 										<Div imgTag src={content.visual} objectCover hFull wFull></Div>
