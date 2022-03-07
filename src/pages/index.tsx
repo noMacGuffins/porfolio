@@ -1,6 +1,4 @@
 import Div from "src/components/Div";
-import Row from "src/components/Row";
-import Col from "src/components/Col";
 import { pagesWording } from "src/wording/pages";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
@@ -10,14 +8,14 @@ import { PlusCircleIcon } from "@heroicons/react/outline";
 import "src/scripts/cursorMove";
 import BasicHeadWrapper from "src/components/BasicHeadWrapper";
 import { useRouter } from "next/router";
-import { globalsWording } from "src/wording/globals";
+import Footer from "src/components/Footer";
 
 const Main = () => {
 	const isTablet = useIsTablet();
 	const { locale } = useRouter();
 	return (
-		<Div h={"104vh"} relative flex row overflowHidden itemsCenter justifyCenter clx={"radial-gradient"} px30>
-			<Div maxW={600} fontBold textCenter leadingNone pb70>
+		<Div h={"102vh"} relative flex row itemsCenter justifyCenter clx={"radial-gradient"} px30>
+			<Div maxW={600} fontBold textCenter leadingNone pb70 z100>
 				<Div textXxl={!isTablet} fontSize60={isTablet} clx={"timeline"} mb10 textGray900>
 					{pagesWording.index.main.title[locale]}
 				</Div>
@@ -30,8 +28,8 @@ const Main = () => {
 					<Timeline totalProgress={progress} paused>
 						<Timeline
 							target={
-								<Div absolute left0 top={isTablet ? "60%" : "30%"} bgBlack px30 py20 w80 rounded2xl cursorPointer>
-									<Div fontBold textWhite style={{ writingMode: "vertical-lr", textOrientation: "mixed" }}>
+								<Div absolute left0 top={isTablet ? "80%" : "30%"} bgBlack px30 py20 w80={!isTablet} maxW={isTablet && 200} rounded2xl cursorPointer>
+									<Div fontBold textWhite style={!isTablet && { writingMode: "vertical-lr", textOrientation: "mixed" }}>
 										{pagesWording.index.main.subscribe[locale]}
 									</Div>
 								</Div>
@@ -45,7 +43,19 @@ const Main = () => {
 			<Scene duration={200} pin={{ pushFollowers: true }}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
-						<Timeline target={<Div absolute w800 h800 rounded3000 style={{ backgroundColor: "rgba(0, 256, 0, 0.1)" }}></Div>}>
+						<Timeline
+							target={
+								<Div
+									absolute
+									w800={!isTablet}
+									h800={!isTablet}
+									w300={isTablet}
+									h300={isTablet}
+									rounded3000
+									style={{ backgroundColor: "rgba(0, 256, 0, 0.1)" }}
+								></Div>
+							}
+						>
 							<Tween from={{ scaleX: 0, scaleY: 0, y: -100, x: -100 }} to={{ scaleX: 1, scaleY: 1 }} />
 						</Timeline>
 					</Timeline>
@@ -54,7 +64,19 @@ const Main = () => {
 			<Scene duration={200} pin={{ pushFollowers: true }}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
-						<Timeline target={<Div absolute w800 h800 rounded3000 style={{ backgroundColor: "rgba(0, 256, 256, 0.1)" }}></Div>}>
+						<Timeline
+							target={
+								<Div
+									absolute
+									w800={!isTablet}
+									h800={!isTablet}
+									w300={isTablet}
+									h300={isTablet}
+									rounded3000
+									style={{ backgroundColor: "rgba(0, 256, 256, 0.1)" }}
+								></Div>
+							}
+						>
 							<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 1, scaleY: 1 }} />
 						</Timeline>
 					</Timeline>
@@ -67,40 +89,26 @@ const Main = () => {
 const AboutUs = () => {
 	const { locale } = useRouter();
 	return (
-		<Div relative wScreen overflowHidden bgBlack textWhite px30>
-			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={400}>
+		<Div relative wScreen overflowHidden px30>
+			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={250}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
 						<Timeline
 							target={
-								<Div flex itemsCenter justifyCenter py150>
+								<Div flex itemsCenter justifyCenter py150 z100>
 									<Div maxW={960}>
 										<Div fontBold textXl mb15>
 											{pagesWording.index.aboutUs.title[locale]}
 										</Div>
-										<Div textLg textGray100>
-											{pagesWording.index.aboutUs.subtitle[locale]}
-										</Div>
+										<Div textLg>{pagesWording.index.aboutUs.subtitle[locale]}</Div>
 									</Div>
 								</Div>
 							}
 						>
 							<Tween from={{ y: 400 }} to={{ y: 0 }} />
 						</Timeline>
-						<Timeline
-							target={
-								<Div
-									absolute
-									top0
-									left={"30%"}
-									w1000
-									h1000
-									rounded3000
-									style={{ backdropFilter: "invert(100%)", backgroundColor: "rgba(0, 256, 0, 0.1)" }}
-								></Div>
-							}
-						>
-							<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 3, scaleY: 3 }} />
+						<Timeline target={<Div absolute top0 left={"30%"} w1000 h1000 rounded3000 style={{ backgroundColor: "rgba(0, 256, 0, 0.15)" }}></Div>}>
+							<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 2.5, scaleY: 2.5 }} />
 						</Timeline>
 					</Timeline>
 				)}
@@ -112,40 +120,26 @@ const AboutUs = () => {
 const Mission = () => {
 	const { locale } = useRouter();
 	return (
-		<Div relative wScreen overflowHidden bgBlack textWhite px30>
+		<Div relative wScreen overflowHidden px30>
 			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={700}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
 						<Timeline
 							target={
-								<Div flex itemsCenter justifyCenter py150>
+								<Div flex itemsCenter justifyCenter py150 z100>
 									<Div maxW={960}>
 										<Div fontBold textXl mb15>
 											{pagesWording.index.mission.title[locale]}
 										</Div>
-										<Div textLg textGray100>
-											{pagesWording.index.mission.subtitle[locale]}
-										</Div>
+										<Div textLg>{pagesWording.index.mission.subtitle[locale]}</Div>
 									</Div>
 								</Div>
 							}
 						>
 							<Tween from={{ y: 400 }} to={{ y: 0 }} />
 						</Timeline>
-						<Timeline
-							target={
-								<Div
-									absolute
-									top0
-									left={"30%"}
-									w1000
-									h1000
-									rounded3000
-									style={{ backdropFilter: "invert(100%)", backgroundColor: "rgba(0, 256, 256, 0.1)" }}
-								></Div>
-							}
-						>
-							<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 3, scaleY: 3 }} />
+						<Timeline target={<Div absolute top0 left={"30%"} w1000 h1000 rounded3000 style={{ backgroundColor: "rgba(0, 256, 256, 0.15)" }}></Div>}>
+							<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 2.5, scaleY: 2.5 }} />
 						</Timeline>
 					</Timeline>
 				)}
@@ -182,11 +176,29 @@ const Values = () => {
 										<Div fontBold textXl mb15>
 											{pagesWording.index.values.title[locale]}
 										</Div>
-										<Div row={!isTablet} gapX={20}>
-											{valueContents.map((content) => {
+										<Div
+											style={{
+												display: "grid",
+												gridTemplateColumns: isTablet ? "1fr" : "1fr 1fr 1fr",
+												gridTemplateRows: 300,
+												gridRowGap: 20,
+												gridColumnGap: 20,
+											}}
+										>
+											{valueContents.map((content, index) => {
 												return (
-													<Div relative col={!isTablet} overflowHidden rounded2xl p0 cursorPointer key={content.title} m30={isTablet} h300={isTablet}>
-														<Div absolute wFull hFull p20 clx={"group transition hover:backdrop-blur-md hover:transition-all"}>
+													<Div
+														relative
+														col={!isTablet}
+														overflowHidden
+														rounded2xl
+														p0
+														cursorPointer
+														key={content.title}
+														h300={isTablet}
+														clx={`group transition hover:transition-all`}
+													>
+														<Div absolute wFull hFull p20 clx={"group-hover:backdrop-blur-lg"}>
 															<Div relative wFull hFull>
 																<Div
 																	fontBold
@@ -196,6 +208,7 @@ const Values = () => {
 																	{content.title}
 																</Div>
 																<Div
+																	
 																	clx={
 																		"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 group-hover:text-15"
 																	}
@@ -225,53 +238,6 @@ const Values = () => {
 	);
 };
 
-const Footer = () => {
-	const { locale } = useRouter();
-	return (
-		<Div bgBlack textWhite py150 px30>
-			<Row mxAuto maxW={960} mb100>
-				<Col pr0 style={{ flex: 2 }}>
-					<Div mb20 fontBold>
-						{globalsWording.footer.intro[locale]}
-					</Div>
-					<Div cursorPointer>{globalsWording.footer.subscribe[locale]}</Div>
-				</Col>
-				<Col></Col>
-				<Col auto pl0>
-					<Div cursorPointer mb20>
-						{globalsWording.footer.pages.team[locale]}
-					</Div>
-					<Div cursorPointer mb20>
-						{globalsWording.footer.pages.portfolio[locale]}
-					</Div>
-					<Div cursorPointer mb20>
-						{globalsWording.footer.pages.contact[locale]}
-					</Div>
-				</Col>
-			</Row>
-			<Row mxAuto maxW={960}>
-				<Col pr0>
-					<Div>ⒸSooni Labs</Div>
-				</Col>
-				<Col></Col>
-				<Col auto pl0>
-					<Row gapX={20}>
-						<Col px0 cursorPointer>
-							<Div imgTag src={"images/mailIcon.png"} w30 h30></Div>
-						</Col>
-						<Col px0 cursorPointer>
-							<Div imgTag src={"images/instagramIcon.png"} w30 h30></Div>
-						</Col>
-						<Col pl0 cursorPointer>
-							<Div imgTag src={"images/twitterIcon.png"} w30 h30></Div>
-						</Col>
-					</Row>
-				</Col>
-			</Row>
-		</Div>
-	);
-};
-
 const Content = () => {
 	return (
 		<Controller>
@@ -287,7 +253,7 @@ const Content = () => {
 	);
 };
 
-export default function Home() {
+export default function Index() {
 	return (
 		<BasicHeadWrapper>
 			<Content />

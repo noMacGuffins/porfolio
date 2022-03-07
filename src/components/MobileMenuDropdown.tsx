@@ -16,7 +16,6 @@ export default function MobileMenuDropdown() {
 	const pages = [
 		{ name: globalsWording.topbar.pages.team[locale], url: urls.team.index },
 		{ name: globalsWording.topbar.pages.portfolio[locale], url: urls.portfolio.index },
-		{ name: globalsWording.topbar.pages.contact[locale], url: urls.contact.index },
 	];
 	return (
 		<Menu as="div" className="relative inline-block text-left">

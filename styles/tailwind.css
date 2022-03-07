@@ -33,8 +33,8 @@
       display: inline-block;
       background-clip: text;
       -webkit-background-clip: text;
-      color: transparent;
-      /* text-shadow: 7px 7px 0px #bdbdbd2e; */
+      color: rgba(0, 0, 0, 0.1);
+      /* text-shadow: 10px 10px 10px #bdbdbd2e; */
       padding-right: 1px
     }
 

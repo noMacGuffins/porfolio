@@ -22,7 +22,7 @@ const TopBar = ({ mode }) => {
 	return (
 		<Div absolute wFull z100 {...textColorProp}>
 			<Row flex justifyCenter py20 mx30={!isTablet} mx10={isTablet}>
-				<Col auto flex itemsCenter px20={!isTablet}>
+				<Col auto flex itemsCenter px20={!isTablet} onClick={() => moveTo(urls.index)} cursorPointer>
 					{/* <Div imgTag src={"images/sooniLabsBWIconNoBg.png"} h={200} w={200} style={{ opacity: 0.8 }}></Div> */}
 					<Div imgTag src={"images/sooniLabsIconNoBg.png"} h={591 / 8} w={422 / 8} style={{ opacity: 0.9, transform: "rotate(-90deg)" }} mx20></Div>
 				</Col>
@@ -46,11 +46,6 @@ const TopBar = ({ mode }) => {
 						<Col auto flex itemsCenter cursorPointer onClick={() => moveTo(urls.portfolio.index)}>
 							<Div spanTag fontBold px20>
 								{globalsWording.topbar.pages.portfolio[locale]}
-							</Div>
-						</Col>
-						<Col auto flex itemsCenter cursorPointer onClick={() => moveTo(urls.contact.index)}>
-							<Div spanTag fontBold px20>
-								{globalsWording.topbar.pages.contact[locale]}
 							</Div>
 						</Col>
 						<Col auto flex itemsCenter cursorPointer>
