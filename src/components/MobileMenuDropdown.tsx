@@ -17,7 +17,7 @@ export default function MobileMenuDropdown() {
 		{ name: globalsWording.topbar.pages.home[locale], url: urls.index },
 		{ name: globalsWording.topbar.pages.team[locale], url: urls.team.index },
 		{ name: globalsWording.topbar.pages.portfolio[locale], url: urls.portfolio.index },
-		{ name: globalsWording.topbar.pages.content[locale], url: urls.content.index },
+		// { name: globalsWording.topbar.pages.content[locale], url: urls.content.index },
 	];
 	return (
 		<Menu as="div" className="relative inline-block text-left">

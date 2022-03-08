@@ -27,11 +27,21 @@ export const globalsWording = {
 			en: <>Sooni Labs is the first Korean NFT-focused company that bridges the gap between NFTs and Real-World utility through practical B-Apps.</>,
 			ko: <>순이는 실용적인 D-App(Decentralized Application)을 통해 NFT의 실제 사회 공헌도를 높이는 한국 최초의 NFT 중심 기업입니다.</>,
 		},
-		subscribe: {
-			en: <>Subscribe to our newsletters</>,
-			ko: <>순이 뉴스레터 구독하기</>,
+		banner: {
+			wording: {
+				en: <>Check out our most recent launch</>,
+				ko: <>최신 프로젝트 보러가기</>,
+			},
+			link: {
+				ko: "https://www.gomz.io/ko",
+				en: "https://www.gomz.io/en",
+			},
 		},
 		pages: {
+			home: {
+				ko: "홈",
+				en: "Home",
+			},
 			team: {
 				ko: "팀",
 				en: "Team",
@@ -39,10 +49,6 @@ export const globalsWording = {
 			portfolio: {
 				ko: "포트폴리오",
 				en: "Portfolio",
-			},
-			contact: {
-				ko: "연락",
-				en: "Contact",
 			},
 		},
 	},

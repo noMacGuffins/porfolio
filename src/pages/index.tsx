@@ -9,12 +9,13 @@ import "src/scripts/cursorMove";
 import BasicHeadWrapper from "src/components/BasicHeadWrapper";
 import { useRouter } from "next/router";
 import Footer from "src/components/Footer";
+import { globalsWording } from "src/wording/globals";
 
 const Main = () => {
 	const isTablet = useIsTablet();
 	const { locale } = useRouter();
 	return (
-		<Div h={"102vh"} relative flex row itemsCenter justifyCenter clx={"radial-gradient"} px30>
+		<Div h={"102vh"} relative flex itemsCenter justifyCenter clx={"radial-gradient"} px30>
 			<Div maxW={600} fontBold textCenter leadingNone pb70 z100>
 				<Div textXxl={!isTablet} fontSize60={isTablet} clx={"timeline"} mb10 textGray900>
 					{pagesWording.index.main.title[locale]}
@@ -29,9 +30,15 @@ const Main = () => {
 						<Timeline totalProgress={progress} paused>
 							<Timeline
 								target={
-									<Div absolute left0 top={"30%"} bgBlack px30 py20 w80 rounded2xl cursorPointer>
-										<Div fontBold textWhite style={{ writingMode: "vertical-lr", textOrientation: "mixed" }}>
-											{pagesWording.index.main.subscribe[locale]}
+									<Div absolute left={-10} top={"30%"} bgBlack px30 py20 w80 rounded2xl cursorPointer>
+										<Div
+											aTag
+											href={globalsWording.footer.banner.link[locale]}
+											fontBold
+											textWhite
+											style={{ writingMode: "vertical-lr", textOrientation: "mixed" }}
+										>
+											{globalsWording.footer.banner.wording[locale]}
 										</Div>
 									</Div>
 								}

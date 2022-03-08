@@ -5,16 +5,12 @@ export const pagesWording = {
 	index: {
 		main: {
 			title: {
-				en: <>Sooni Labs</>,
-				ko: <>Sooni Labs</>,
+				en: <>SOONI Labs</>,
+				ko: <>SOONI Labs</>,
 			},
 			motto: {
 				en: <>Blockchain for the Betterment of Society</>,
 				ko: <>사회를 위한 블록체인</>,
-			},
-			subscribe: {
-				en: <>Subscribe to our newsletters</>,
-				ko: <>순이 뉴스레터 구독하기</>,
 			},
 		},
 		aboutUs: {
@@ -277,6 +273,46 @@ export const pagesWording = {
 			title: {
 				ko: "포트폴리오",
 				en: "Portfolio",
+			},
+			items: {
+				gomz: {
+					name: {
+						ko: "Gomz",
+						en: "Gomz",
+					},
+					desc: {
+						ko: "팝아트 PFP NFT",
+						en: "Pop Art PFP NFT",
+					},
+				},
+				gomzSpace: {
+					name: {
+						ko: "GomzSpace",
+						en: "GomzSpace",
+					},
+					desc: {
+						ko: "2d 메타버스",
+						en: "2d Metaverse",
+					},
+				},
+			},
+		},
+	},
+	content: {
+		index: {
+			title: {
+				ko: "콘텐츠",
+				en: "Content",
+			},
+			subsribe: {
+				button: {
+					ko: "구독",
+					en: "Subscribe",
+				},
+				subscribe: {
+					ko: "이메일로 받는 순이 뉴스레터에 구독하기",
+					en: "Subscribe to our email newsletter",
+				},
 			},
 			items: {
 				gomz: {

@@ -1,48 +1,84 @@
+import { NextPage } from "next";
 import Div from "src/components/Div";
-import { pagesWording } from "src/wording/pages";
-import { Controller, Scene } from "react-scrollmagic";
-import { Tween, Timeline } from "react-gsap";
-import useIsTablet from "src/hooks/useIsTablet";
 import TopBar from "src/components/TopBar";
-import { PlusCircleIcon } from "@heroicons/react/outline";
-import "src/scripts/cursorMove";
-import BasicHeadWrapper from "src/components/BasicHeadWrapper";
-import { useRouter } from "next/router";
+import { pagesWording } from "src/wording/pages";
+import Detail from "src/components/modals/Detail";
 import Footer from "src/components/Footer";
+import useIsTablet from "src/hooks/useIsTablet";
+import { useRouter } from "next/router";
+import BasicHeadWrapper from "src/components/BasicHeadWrapper";
+import "src/scripts/cursorMove";
+import Row from "src/components/Row";
+import Col from "src/components/Col";
 
-const Main = () => {
+const Content = () => {
 	const isTablet = useIsTablet();
 	const { locale } = useRouter();
+
+	const teamMembersInfo = [
+		{
+			name: pagesWording.content.index.items.gomz.name[locale],
+			desc: pagesWording.content.index.items.gomz.desc[locale],
+			visual: "images/portfolio/gomzNoBg.png",
+			isImg: true,
+		},
+		{
+			name: pagesWording.content.index.items.gomzSpace.name[locale],
+			desc: pagesWording.content.index.items.gomzSpace.desc[locale],
+			visual: "images/portfolio/gomzSpace.mp4",
+			isImg: false,
+		},
+	];
+
 	return (
-		<Div h={"102vh"} relative flex row itemsCenter justifyCenter clx={"radial-gradient"} px30>
-			<Div maxW={600} fontBold textCenter leadingNone pb70 z100>
-				<Div textXxl={!isTablet} fontSize60={isTablet} clx={"timeline"} mb10 textGray900>
-					{pagesWording.index.main.title[locale]}
+		<Div clx={!isTablet && "radial-gradient"}>
+			<TopBar mode={"light"}></TopBar>
+			<Div pt200 pb100 borderBlack borderB2>
+				<Div pb100 maxW={1200} mxAuto px30 gapX={30}>
+					<Div leadingNone textXxl={!isTablet} fontSize60={isTablet} fontBold clx={"colorful colorful2"}>
+						{pagesWording.content.index.title[locale]}
+					</Div>
 				</Div>
-				<Div textXl clx={"timeline colorful colorful2"} textGray900>
-					{pagesWording.index.main.motto[locale]}
+				<Div maxW={1200} mxAuto px30>
+					{teamMembersInfo.map((content) => {
+						return (
+							<Row key={content.name} mb50 gapX={30}>
+								<Col relative overflowHidden rounded2xl p0 cursorPointer h300 w300 auto>
+									{content.isImg ? (
+										<Div imgTag src={content.visual} objectCover hFull wFull></Div>
+									) : (
+										<Div objectCover hFull wFull bgBlack p20>
+											<video autoPlay width="100%" muted loop>
+												<source src={content.visual} type="video/mp4" />
+											</video>
+										</Div>
+									)}
+								</Col>
+								<Col flex itemsEnd>
+									<Div>
+										<Div textXl fontBold my5>
+											{content.name}
+										</Div>
+										<Div textLg>{content.desc}</Div>
+									</Div>
+								</Col>
+							</Row>
+						);
+					})}
 				</Div>
 			</Div>
+			<Footer />
+			<Detail />
 		</Div>
 	);
 };
 
-const Content = () => {
-	return (
-		<Controller>
-			<Div relative bgGray100>
-				<TopBar mode={"light"} />
-				<Main />
-				<Footer />
-			</Div>
-		</Controller>
-	);
-};
-
-export default function Index() {
+const Index: NextPage = () => {
 	return (
 		<BasicHeadWrapper>
 			<Content />
 		</BasicHeadWrapper>
 	);
-}
+};
+
+export default Index;

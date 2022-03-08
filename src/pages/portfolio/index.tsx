@@ -15,7 +15,7 @@ const Content = () => {
 	const isTablet = useIsTablet();
 	const { locale } = useRouter();
 
-	const teamMembersInfo = [
+	const portfolioInfo = [
 		{
 			name: pagesWording.portfolio.index.items.gomz.name[locale],
 			desc: pagesWording.portfolio.index.items.gomz.desc[locale],
@@ -40,7 +40,7 @@ const Content = () => {
 					</Div>
 				</Div>
 				<Div maxW={1200} mxAuto px30>
-					{teamMembersInfo.map((content) => {
+					{portfolioInfo.map((content) => {
 						return (
 							<Row key={content.name} mb50 gapX={30}>
 								<Col relative overflowHidden rounded2xl p0 cursorPointer h300 w300 auto>
@@ -48,7 +48,7 @@ const Content = () => {
 										<Div imgTag src={content.visual} objectCover hFull wFull></Div>
 									) : (
 										<Div objectCover hFull wFull bgBlack p20>
-											<video autoPlay width="100%" muted loop>
+											<video autoPlay={!isTablet} width="100%" muted loop>
 												<source src={content.visual} type="video/mp4" />
 											</video>
 										</Div>

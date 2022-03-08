@@ -130,7 +130,7 @@ const propsToClx = (props) => {
 		textBase: () => addStyle(styles, "", { fontSize: 15 }),
 		textLg: () => addStyle(styles, "", { fontSize: 20 }),
 		textXl: () => addStyle(styles, "", { fontSize: 30 }),
-		textXxl: () => addStyle(styles, "", { fontSize: 100 }),
+		textXxl: () => addStyle(styles, "", { fontSize: 80 }),
 		textXxxl: () => addStyle(styles, "", { fontSize: 150 }),
 		//font-family
 		fontFamily: (v) => addStyle(styles, "", { fontFamily: v }),
