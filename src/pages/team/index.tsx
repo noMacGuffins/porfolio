@@ -26,7 +26,7 @@ const Content = () => {
 			name: pagesWording.team.index.members.yeajean.name[locale],
 			position: pagesWording.team.index.members.yeajean.position[locale],
 			desc: pagesWording.team.index.members.yeajean.desc[locale],
-			img: "images/team/minjunkim.jpg",
+			img: "images/team/yeajean.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.eric.name[locale],
@@ -44,7 +44,7 @@ const Content = () => {
 			name: pagesWording.team.index.members.jade.name[locale],
 			position: pagesWording.team.index.members.jade.position[locale],
 			desc: pagesWording.team.index.members.jade.desc[locale],
-			img: "images/team/minjunkim.jpg",
+			img: "images/team/jadeyang.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.ian.name[locale],
@@ -62,7 +62,7 @@ const Content = () => {
 			name: pagesWording.team.index.members.seungan.name[locale],
 			position: pagesWording.team.index.members.seungan.position[locale],
 			desc: pagesWording.team.index.members.seungan.desc[locale],
-			img: "images/team/minjunkim.jpg",
+			img: "images/team/seunganjung.jpg",
 		},
 	];
 
