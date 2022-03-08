@@ -37,6 +37,7 @@ const Main = () => {
 											fontBold
 											textWhite
 											style={{ writingMode: "vertical-lr", textOrientation: "mixed" }}
+											clx={" colorful colorful2"}
 										>
 											{globalsWording.footer.banner.wording[locale]}
 										</Div>

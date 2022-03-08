@@ -19,7 +19,7 @@ const Footer = () => {
 					<Div mb20 fontBold>
 						{globalsWording.footer.intro[locale]}
 					</Div>
-					<Div cursorPointer aTag href={globalsWording.footer.banner.link[locale]}>
+					<Div cursorPointer aTag href={globalsWording.footer.banner.link[locale]} clx={"timeline colorful colorful2"}>
 						{globalsWording.footer.banner.wording[locale]}
 					</Div>
 				</Col>
