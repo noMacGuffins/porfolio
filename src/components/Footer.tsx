@@ -44,13 +44,19 @@ const Footer = () => {
 				<Col auto pl0>
 					<Row gapX={20}>
 						<Col px0 cursorPointer>
-							<Div imgTag src={"images/mailIcon.png"} w30 h30></Div>
+							<Div aTag href={"mailto:contact@soonilabs.com"}>
+								<Div imgTag src={"images/mailIcon.png"} w30 h30></Div>
+							</Div>
 						</Col>
 						<Col px0 cursorPointer>
-							<Div imgTag src={"images/instagramIcon.png"} w30 h30></Div>
+							<Div aTag href={"https://www.instagram.com/sooni__official/"}>
+								<Div imgTag src={"images/instagramIcon.png"} w30 h30></Div>
+							</Div>
 						</Col>
 						<Col pl0 cursorPointer>
-							<Div imgTag src={"images/twitterIcon.png"} w30 h30></Div>
+							<Div aTag href={"https://twitter.com/soonilabs"}>
+								<Div imgTag src={"images/twitterIcon.png"} w30 h30></Div>
+							</Div>
 						</Col>
 					</Row>
 				</Col>
