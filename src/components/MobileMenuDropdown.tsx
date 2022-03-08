@@ -12,10 +12,12 @@ function classNames(...classes) {
 }
 
 export default function MobileMenuDropdown() {
-	const { locale } = useRouter();
+	const { locale, pathname } = useRouter();
 	const pages = [
+		{ name: globalsWording.topbar.pages.home[locale], url: urls.index },
 		{ name: globalsWording.topbar.pages.team[locale], url: urls.team.index },
 		{ name: globalsWording.topbar.pages.portfolio[locale], url: urls.portfolio.index },
+		{ name: globalsWording.topbar.pages.content[locale], url: urls.content.index },
 	];
 	return (
 		<Menu as="div" className="relative inline-block text-left">
@@ -43,7 +45,11 @@ export default function MobileMenuDropdown() {
 										py10
 										px20
 										w150
-										clx={classNames(active ? "bg-gray-100 text-black" : "text-white", "block px-4 py-2")}
+										clx={classNames(
+											active ? "bg-gray-100 text-black" : "text-white",
+											"block px-4 py-2",
+											pathname == page.url && "colorful colorful2",
+										)}
 										onClick={() => moveTo(page.url)}
 									>
 										{page.name}

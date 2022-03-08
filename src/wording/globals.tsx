@@ -12,9 +12,13 @@ export const globalsWording = {
 				ko: "포트폴리오",
 				en: "Portfolio",
 			},
-			contact: {
-				ko: "연락",
-				en: "Contact",
+			home: {
+				ko: "홈",
+				en: "Home",
+			},
+			content: {
+				ko: "콘텐츠",
+				en: "Content",
 			},
 		},
 	},

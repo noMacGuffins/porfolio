@@ -23,23 +23,25 @@ const Main = () => {
 					{pagesWording.index.main.motto[locale]}
 				</Div>
 			</Div>
-			<Scene duration={200} pin={{ pushFollowers: true }}>
-				{(progress) => (
-					<Timeline totalProgress={progress} paused>
-						<Timeline
-							target={
-								<Div absolute left0 top={isTablet ? "80%" : "30%"} bgBlack px30 py20 w80={!isTablet} maxW={isTablet && 200} rounded2xl cursorPointer>
-									<Div fontBold textWhite style={!isTablet && { writingMode: "vertical-lr", textOrientation: "mixed" }}>
-										{pagesWording.index.main.subscribe[locale]}
+			{!isTablet && (
+				<Scene duration={200} pin={{ pushFollowers: true }}>
+					{(progress) => (
+						<Timeline totalProgress={progress} paused>
+							<Timeline
+								target={
+									<Div absolute left0 top={"30%"} bgBlack px30 py20 w80 rounded2xl cursorPointer>
+										<Div fontBold textWhite style={{ writingMode: "vertical-lr", textOrientation: "mixed" }}>
+											{pagesWording.index.main.subscribe[locale]}
+										</Div>
 									</Div>
-								</Div>
-							}
-						>
-							<Tween from={{ x: 0 }} to={{ x: -200 }} />
+								}
+							>
+								<Tween from={{ x: 0 }} to={{ x: -200 }} />
+							</Timeline>
 						</Timeline>
-					</Timeline>
-				)}
-			</Scene>
+					)}
+				</Scene>
+			)}
 			<Scene duration={200} pin={{ pushFollowers: true }}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
@@ -88,8 +90,9 @@ const Main = () => {
 
 const AboutUs = () => {
 	const { locale } = useRouter();
+	const isTablet = useIsTablet();
 	return (
-		<Div relative wScreen overflowHidden px30>
+		<Div relative wScreen overflowHidden px30 style={{ backgroundColor: isTablet && "rgba(0, 256, 0, 0.15)" }}>
 			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={250}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
@@ -105,11 +108,13 @@ const AboutUs = () => {
 								</Div>
 							}
 						>
-							<Tween from={{ y: 400 }} to={{ y: 0 }} />
+							<Tween from={{ y: 400, opacity: 0 }} to={{ y: 0, opacity: 1 }} />
 						</Timeline>
-						<Timeline target={<Div absolute top0 left={"30%"} w1000 h1000 rounded3000 style={{ backgroundColor: "rgba(0, 256, 0, 0.15)" }}></Div>}>
-							<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 2.5, scaleY: 2.5 }} />
-						</Timeline>
+						{!isTablet && (
+							<Timeline target={<Div absolute top0 left={"30%"} w1000 h1000 rounded3000 style={{ backgroundColor: "rgba(0, 256, 0, 0.15)" }}></Div>}>
+								<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 2.5, scaleY: 2.5 }} />
+							</Timeline>
+						)}
 					</Timeline>
 				)}
 			</Scene>
@@ -119,9 +124,10 @@ const AboutUs = () => {
 
 const Mission = () => {
 	const { locale } = useRouter();
+	const isTablet = useIsTablet();
 	return (
-		<Div relative wScreen overflowHidden px30>
-			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={700}>
+		<Div relative wScreen overflowHidden px30 style={{ backgroundColor: isTablet && "rgba(0, 256, 256, 0.15)" }}>
+			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={800}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
 						<Timeline
@@ -136,11 +142,15 @@ const Mission = () => {
 								</Div>
 							}
 						>
-							<Tween from={{ y: 400 }} to={{ y: 0 }} />
+							<Tween from={{ y: 400, opacity: 0 }} to={{ y: 0, opacity: 1 }} />
 						</Timeline>
-						<Timeline target={<Div absolute top0 left={"30%"} w1000 h1000 rounded3000 style={{ backgroundColor: "rgba(0, 256, 256, 0.15)" }}></Div>}>
-							<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 2.5, scaleY: 2.5 }} />
-						</Timeline>
+						{!isTablet && (
+							<Timeline
+								target={<Div absolute top0 left={"30%"} w1000 h1000 rounded3000 style={{ backgroundColor: "rgba(0, 256, 256, 0.15)" }}></Div>}
+							>
+								<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 2.5, scaleY: 2.5 }} />
+							</Timeline>
+						)}
 					</Timeline>
 				)}
 			</Scene>
@@ -230,7 +240,7 @@ const Values = () => {
 								</Div>
 							}
 						>
-							<Tween from={{ y: 400 }} to={{ y: 0 }} />
+							<Tween from={{ y: 400, opacity: 0 }} to={{ y: 0, opacity: 1 }} />
 						</Timeline>
 					</Timeline>
 				)}

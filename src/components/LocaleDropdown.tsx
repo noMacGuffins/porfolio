@@ -3,12 +3,14 @@ import { Menu, Transition } from "@headlessui/react";
 import { GlobeAltIcon } from "@heroicons/react/outline";
 import Div from "./Div";
 import { LOCALES, reloadWithLocale } from "src/modules/routerHelper";
+import { useRouter } from "next/router";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
 }
 
 export default function LocaleDropdown() {
+	const { locale: nextLocale } = useRouter();
 	return (
 		<Menu as="div" className="relative inline-block text-left">
 			<div>
@@ -34,7 +36,11 @@ export default function LocaleDropdown() {
 									<Div
 										py10
 										px20
-										clx={classNames(active ? "bg-gray-100 text-black" : "text-white", "block px-4 py-2")}
+										clx={classNames(
+											active ? "bg-gray-100 text-black" : "text-white",
+											"block px-4 py-2",
+											LOCALES[locale] == nextLocale && "colorful colorful2",
+										)}
 										onClick={() => reloadWithLocale(LOCALES[locale])}
 									>
 										{locale}
