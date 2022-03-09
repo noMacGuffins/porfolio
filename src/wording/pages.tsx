@@ -143,27 +143,27 @@ export const pagesWording = {
 						ko: "김민준",
 					},
 					position: {
-						ko: "CEO",
-						en: "CEO",
+						ko: "Co-Founder, CEO",
+						en: "Co-Founder, CEO",
+					},
+					specialty: {
+						en: "Interested in scaling businesses to its maximum potential",
+						ko: "기업을 극한으로 키운다",
 					},
 					desc: {
 						en: (
-							<>
-								KAIST BTM
-								<br />
-								NONCE
-								<br />
-								MSK
-							</>
+							<ul className="list-disc">
+								<li>KAIST Business & Tech Management</li>
+								<li>NONCE Blockchain Community</li>
+								<li>KLAYTN & Ethereum Enthusiast</li>
+							</ul>
 						),
 						ko: (
-							<>
-								KAIST BTM
-								<br />
-								NONCE
-								<br />
-								MSK
-							</>
+							<ul className="list-disc">
+								<li>KAIST Business & Tech Management</li>
+								<li>NONCE 블록체인 커뮤니티</li>
+								<li>KLAYTN & Ethereum 광팬</li>
+							</ul>
 						),
 					},
 				},
@@ -176,9 +176,23 @@ export const pagesWording = {
 						ko: "CMO",
 						en: "CMO",
 					},
+					specialty: {
+						en: "Interested in marketing, management, and operation",
+						ko: "마케팅, 매니지먼트, 오퍼레이션의 조화를 이룬다",
+					},
 					desc: {
-						en: "Yonsei Business",
-						ko: "연세대 경영",
+						en: (
+							<ul className="list-disc">
+								<li>Yonsei University Business</li>
+								<li>Experienced Project Manager in multiple start-ups</li>
+							</ul>
+						),
+						ko: (
+							<ul className="list-disc">
+								<li>Yonsei University 경영</li>
+								<li>스타트업 피엠 경력 다수</li>
+							</ul>
+						),
 					},
 				},
 				eric: {
@@ -190,9 +204,25 @@ export const pagesWording = {
 						ko: "CBO",
 						en: "CBO",
 					},
+					specialty: {
+						en: "Focused on executing practicality through jpegs",
+						ko: "모든 것에 실용성을 주입하다",
+					},
 					desc: {
-						en: "NYU Statistics",
-						ko: "NYU 통계",
+						en: (
+							<ul className="list-disc">
+								<li>New York University</li>
+								<li>Full-Time Crypto Trader</li>
+								<li>Experiences in building E-Commerce and NFT projects</li>
+							</ul>
+						),
+						ko: (
+							<ul className="list-disc">
+								<li>New York University</li>
+								<li>풀타임 가상자산 거래</li>
+								<li>이커머스, NFT 창업 경력 다수</li>
+							</ul>
+						),
 					},
 				},
 				jieun: {
@@ -201,12 +231,26 @@ export const pagesWording = {
 						ko: "박지은",
 					},
 					position: {
-						en: "Creative Director",
-						ko: "디자인 총괄",
+						en: "Lead Designer",
+						ko: "디자인 리드",
+					},
+					specialty: {
+						en: "Drawing ideas into reality",
+						ko: "아이디어를 그림으로 실체화한다",
 					},
 					desc: {
-						en: "HKPolyU ID",
-						ko: "HKPolyU ID",
+						en: (
+							<ul className="list-disc">
+								<li>HongKong PolyTechnic University Industrial Design</li>
+								<li>HongKong 2022 Disney Imaginations Competition Finalist</li>
+							</ul>
+						),
+						ko: (
+							<ul className="list-disc">
+								<li>HongKong PolyTechnic University 산업디자인</li>
+								<li>HongKong 2022 Disney Imaginations Competition 결선 진출</li>
+							</ul>
+						),
 					},
 				},
 				jade: {
@@ -218,9 +262,23 @@ export const pagesWording = {
 						ko: "UI/UX 디자이너",
 						en: "UI/UX Designer",
 					},
+					specialty: {
+						en: "Interactions made simply beautiful",
+						ko: "간단하게 예쁜 상호작용을 만든다",
+					},
 					desc: {
-						en: "KAIST ID",
-						ko: "KAIST ID",
+						en: (
+							<ul className="list-disc">
+								<li>KAIST Industrial Design</li>
+								<li>Designed 10+ successful web pages</li>
+							</ul>
+						),
+						ko: (
+							<ul className="list-disc">
+								<li>KAIST 산업디자인</li>
+								<li>다수의 성공적인 웹앱 디자인 경력</li>
+							</ul>
+						),
 					},
 				},
 				ian: {
@@ -229,12 +287,28 @@ export const pagesWording = {
 						ko: "박세한",
 					},
 					position: {
-						ko: "CTO",
-						en: "CTO",
+						ko: "Co-Founder, CTO",
+						en: "Co-Founder, CTO",
+					},
+					specialty: {
+						en: "Developing the next generation of web",
+						ko: "웹의 다음 세대를 이끈다",
 					},
 					desc: {
-						en: "KAIST CS",
-						ko: "KAIST CS",
+						en: (
+							<ul className="list-disc">
+								<li>KAIST Computer Science</li>
+								<li>SW Engineer @ Ringle</li>
+								<li>Metaverse Specialist</li>
+							</ul>
+						),
+						ko: (
+							<ul className="list-disc">
+								<li>KAIST Computer Science</li>
+								<li>개발자 @ 링글</li>
+								<li>Metaverse Specialist</li>
+							</ul>
+						),
 					},
 				},
 				jaehwan: {
@@ -246,9 +320,25 @@ export const pagesWording = {
 						ko: "Smart Contract 개발자",
 						en: "Smart Contract Developer",
 					},
+					specialty: {
+						en: "Loading... until everything is decentralized",
+						ko: "탈중화화 까지 로딩중",
+					},
 					desc: {
-						en: "KAIST CS",
-						ko: "KAIST CS",
+						en: (
+							<ul className="list-disc">
+								<li>KAIST Computer Science</li>
+								<li>SW Engineer @Waddle</li>
+								<li>Multiple work experiences in FinTech</li>
+							</ul>
+						),
+						ko: (
+							<ul className="list-disc">
+								<li>KAIST Computer Science</li>
+								<li>개발자 @와들</li>
+								<li>핀테크 기업 경력</li>
+							</ul>
+						),
 					},
 				},
 				seungan: {
@@ -257,12 +347,26 @@ export const pagesWording = {
 						ko: "정승안",
 					},
 					position: {
-						ko: "서버 개발자",
-						en: "Server-side Developer",
+						ko: "풀 스택 개발자",
+						en: "Full Stack Developer",
+					},
+					specialty: {
+						en: "To code is to speak",
+						ko: "코딩으로 말한다",
 					},
 					desc: {
-						en: "KAIST CS",
-						ko: "KAIST CS",
+						en: (
+							<ul className="list-disc">
+								<li>KAIST Computer Science</li>
+								<li>Experiences in creating user-friendly apps</li>
+							</ul>
+						),
+						ko: (
+							<ul className="list-disc">
+								<li>KAIST Computer Science</li>
+								<li>유저 친화적 앱 개발 경력 다수</li>
+							</ul>
+						),
 					},
 				},
 			},

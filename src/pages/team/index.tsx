@@ -20,48 +20,56 @@ const Content = () => {
 			name: pagesWording.team.index.members.minjun.name[locale],
 			position: pagesWording.team.index.members.minjun.position[locale],
 			desc: pagesWording.team.index.members.minjun.desc[locale],
+			specialty: pagesWording.team.index.members.minjun.specialty[locale],
 			img: "images/team/minjunkim.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.yeajean.name[locale],
 			position: pagesWording.team.index.members.yeajean.position[locale],
 			desc: pagesWording.team.index.members.yeajean.desc[locale],
+			specialty: pagesWording.team.index.members.yeajean.specialty[locale],
 			img: "images/team/yeajeanlee.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.eric.name[locale],
 			position: pagesWording.team.index.members.eric.position[locale],
 			desc: pagesWording.team.index.members.eric.desc[locale],
-			img: "images/team/minjunkim.jpg",
+			specialty: pagesWording.team.index.members.eric.specialty[locale],
+			img: "images/team/erickim.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.jieun.name[locale],
 			position: pagesWording.team.index.members.jieun.position[locale],
 			desc: pagesWording.team.index.members.jieun.desc[locale],
+			specialty: pagesWording.team.index.members.jieun.specialty[locale],
 			img: "images/team/jieunpark.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.jade.name[locale],
 			position: pagesWording.team.index.members.jade.position[locale],
 			desc: pagesWording.team.index.members.jade.desc[locale],
+			specialty: pagesWording.team.index.members.jade.specialty[locale],
 			img: "images/team/jadeyang.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.ian.name[locale],
 			position: pagesWording.team.index.members.ian.position[locale],
 			desc: pagesWording.team.index.members.ian.desc[locale],
+			specialty: pagesWording.team.index.members.ian.specialty[locale],
 			img: "images/team/sehanpark.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.jaehwan.name[locale],
 			position: pagesWording.team.index.members.jaehwan.position[locale],
 			desc: pagesWording.team.index.members.jaehwan.desc[locale],
-			img: "images/team/minjunkim.jpg",
+			specialty: pagesWording.team.index.members.jaehwan.specialty[locale],
+			img: "images/team/jaehwanjung.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.seungan.name[locale],
 			position: pagesWording.team.index.members.seungan.position[locale],
 			desc: pagesWording.team.index.members.seungan.desc[locale],
+			specialty: pagesWording.team.index.members.seungan.specialty[locale],
 			img: "images/team/seunganjung.jpg",
 		},
 	];
@@ -107,6 +115,8 @@ const Content = () => {
 												<Div
 													textWhite
 													fontBold
+													px20
+													py10
 													clx={
 														"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 group-hover:text-15"
 													}
@@ -124,6 +134,7 @@ const Content = () => {
 										{content.name}
 									</Div>
 									<Div textLg>{content.position}</Div>
+									<Div italic>{content.specialty}</Div>
 								</Div>
 							</Div>
 						);

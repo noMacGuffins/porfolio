@@ -53,7 +53,7 @@ const Main = () => {
 					)}
 				</Scene>
 			)}
-			<Scene duration={200} pin={{ pushFollowers: true }}>
+			{/* <Scene duration={200} pin={{ pushFollowers: true }}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
 						<Timeline
@@ -94,7 +94,7 @@ const Main = () => {
 						</Timeline>
 					</Timeline>
 				)}
-			</Scene>
+			</Scene> */}
 		</Div>
 	);
 };
