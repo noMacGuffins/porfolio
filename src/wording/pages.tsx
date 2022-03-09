@@ -81,7 +81,7 @@ export const pagesWording = {
 			statusQuo: {
 				title: {
 					en: <>Breaking Stereotypes</>,
-					ko: <>사회적 고정관념</>,
+					ko: <>사회적 고정관념을 부수다</>,
 				},
 				desc: {
 					en: (
@@ -178,7 +178,7 @@ export const pagesWording = {
 					},
 					specialty: {
 						en: "Interested in marketing, management, and operation",
-						ko: "마케팅, 매니지먼트, 오퍼레이션의 조화를 이룬다",
+						ko: "마케팅, 매니지먼트, 오퍼레이션의 조화를 이루다",
 					},
 					desc: {
 						en: (
