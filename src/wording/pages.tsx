@@ -45,12 +45,7 @@ export const pagesWording = {
 						make a positive impact, to create a warm NFT ecosystem where art, society, and technology are all appreciated.
 					</>
 				),
-				ko: (
-					<>
-						사회에 도움이 되는 유틸리티 구축을 통해 한국에서 NFT를 활성화하고 국제 NFT 시장에서 새로운 한류를 이르킬 것 입니다. 예술, 사회, 블록체인
-						기술이 모두 활성화되어 국내, 국외 NFT 생태계에 긍정적인 영향을 미치는 그날까지, 열심히 노력하겠습니다.
-					</>
-				),
+				ko: <>저희는 예술, 사회, 블록체인 기술을 동원하여 사회에 도움이 되는 유틸리티 NFT 커뮤니티를 구축할 것입니다.</>,
 			},
 		},
 		values: {
@@ -191,7 +186,7 @@ export const pagesWording = {
 						),
 						ko: (
 							<ul className="list-disc">
-								<li>연세개학교 경영</li>
+								<li>연세대학교 경영</li>
 								<li>스타트업 프로젝트 메니져 경력 다수</li>
 							</ul>
 						),
@@ -235,7 +230,7 @@ export const pagesWording = {
 					},
 					position: {
 						en: "Lead Designer",
-						ko: "리드 디자인너",
+						ko: "리드 디자이너",
 					},
 					countries: "🇰🇷 🇭🇰 🇨🇳",
 					specialty: {

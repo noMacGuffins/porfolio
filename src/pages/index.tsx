@@ -113,7 +113,7 @@ const ForYou = () => {
 						<Timeline
 							style={{ zIndex: 100 }}
 							target={
-								<Div z100 maxW={960} mxAuto flex={!isTablet} itemsEnd justifyEnd clx={"transition group hover:transition-all"}>
+								<Div z100 maxW={960} mxAuto flex={!isTablet} itemsEnd justifyEnd clx={!isTablet && "transition group hover:transition-all"}>
 									<Div imgTag src={"images/helping.png"} w400></Div>
 									<Div absolute={!isTablet} top100 left0 clx={"transition group-hover:-translate-y-40"}>
 										<Div maxW={400} fontBold mb10 clx={"text-40 z-10 transition group-hover:transition-all"}>
@@ -144,7 +144,7 @@ const StatusQuo = () => {
 	const { locale } = useRouter();
 	const isTablet = useIsTablet();
 	return (
-		<Div relative wScreen px30 clx={"transition group hover:transition-all"} py100>
+		<Div relative wScreen px30 clx={!isTablet && "transition group hover:transition-all"} py100>
 			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={900}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
@@ -188,7 +188,7 @@ const CommunityObsessed = () => {
 	const { locale } = useRouter();
 	const isTablet = useIsTablet();
 	return (
-		<Div relative wScreen px30 clx={"transition group hover:transition-all"} py200>
+		<Div relative wScreen px30 clx={!isTablet && "transition group hover:transition-all"} py200>
 			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={1500}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
