@@ -236,7 +236,7 @@ export const pagesWording = {
 					},
 					specialty: {
 						en: "Drawing ideas into reality",
-						ko: "아이디어를 그림으로 실체화한다",
+						ko: "아이디어를 그림으로 실체화하다",
 					},
 					desc: {
 						en: (
@@ -264,7 +264,7 @@ export const pagesWording = {
 					},
 					specialty: {
 						en: "Interactions made simply beautiful",
-						ko: "간단하게 예쁜 상호작용을 만든다",
+						ko: "간단하게 예쁜 상호작용을 만들다",
 					},
 					desc: {
 						en: (
@@ -292,7 +292,7 @@ export const pagesWording = {
 					},
 					specialty: {
 						en: "Developing the next generation of web",
-						ko: "웹의 다음 세대를 이끈다",
+						ko: "웹의 다음 세대를 이끌다",
 					},
 					desc: {
 						en: (
