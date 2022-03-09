@@ -21,6 +21,7 @@ const Content = () => {
 			position: pagesWording.team.index.members.minjun.position[locale],
 			desc: pagesWording.team.index.members.minjun.desc[locale],
 			specialty: pagesWording.team.index.members.minjun.specialty[locale],
+			countries: pagesWording.team.index.members.minjun.countries,
 			img: "images/team/minjunkim.jpg",
 		},
 		{
@@ -28,6 +29,7 @@ const Content = () => {
 			position: pagesWording.team.index.members.yeajean.position[locale],
 			desc: pagesWording.team.index.members.yeajean.desc[locale],
 			specialty: pagesWording.team.index.members.yeajean.specialty[locale],
+			countries: pagesWording.team.index.members.yeajean.countries,
 			img: "images/team/yeajeanlee.jpg",
 		},
 		{
@@ -35,6 +37,7 @@ const Content = () => {
 			position: pagesWording.team.index.members.eric.position[locale],
 			desc: pagesWording.team.index.members.eric.desc[locale],
 			specialty: pagesWording.team.index.members.eric.specialty[locale],
+			countries: pagesWording.team.index.members.eric.countries,
 			img: "images/team/erickim.jpg",
 		},
 		{
@@ -42,6 +45,7 @@ const Content = () => {
 			position: pagesWording.team.index.members.jieun.position[locale],
 			desc: pagesWording.team.index.members.jieun.desc[locale],
 			specialty: pagesWording.team.index.members.jieun.specialty[locale],
+			countries: pagesWording.team.index.members.jieun.countries,
 			img: "images/team/jieunpark.jpg",
 		},
 		{
@@ -49,6 +53,7 @@ const Content = () => {
 			position: pagesWording.team.index.members.jade.position[locale],
 			desc: pagesWording.team.index.members.jade.desc[locale],
 			specialty: pagesWording.team.index.members.jade.specialty[locale],
+			countries: pagesWording.team.index.members.jade.countries,
 			img: "images/team/jadeyang.jpg",
 		},
 		{
@@ -56,6 +61,7 @@ const Content = () => {
 			position: pagesWording.team.index.members.ian.position[locale],
 			desc: pagesWording.team.index.members.ian.desc[locale],
 			specialty: pagesWording.team.index.members.ian.specialty[locale],
+			countries: pagesWording.team.index.members.ian.countries,
 			img: "images/team/sehanpark.jpg",
 		},
 		{
@@ -63,6 +69,7 @@ const Content = () => {
 			position: pagesWording.team.index.members.jaehwan.position[locale],
 			desc: pagesWording.team.index.members.jaehwan.desc[locale],
 			specialty: pagesWording.team.index.members.jaehwan.specialty[locale],
+			countries: pagesWording.team.index.members.jaehwan.countries,
 			img: "images/team/jaehwanjung.jpg",
 		},
 		{
@@ -70,6 +77,7 @@ const Content = () => {
 			position: pagesWording.team.index.members.seungan.position[locale],
 			desc: pagesWording.team.index.members.seungan.desc[locale],
 			specialty: pagesWording.team.index.members.seungan.specialty[locale],
+			countries: pagesWording.team.index.members.seungan.countries,
 			img: "images/team/seunganjung.jpg",
 		},
 	];
@@ -135,6 +143,7 @@ const Content = () => {
 									</Div>
 									<Div textLg>{content.position}</Div>
 									<Div italic>{content.specialty}</Div>
+									<Div italic>{content.countries}</Div>
 								</Div>
 							</Div>
 						);

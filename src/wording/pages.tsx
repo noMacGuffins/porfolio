@@ -143,12 +143,13 @@ export const pagesWording = {
 						ko: "김민준",
 					},
 					position: {
-						ko: "Co-Founder, CEO",
-						en: "Co-Founder, CEO",
+						ko: "CEO",
+						en: "CEO",
 					},
+					countries: "🇰🇷 🇨🇳 🇦🇺 🇺🇸",
 					specialty: {
 						en: "Interested in scaling businesses to its maximum potential",
-						ko: "기업을 극한으로 키운다",
+						ko: "기업을 극한으로 키우다",
 					},
 					desc: {
 						en: (
@@ -160,9 +161,9 @@ export const pagesWording = {
 						),
 						ko: (
 							<ul className="list-disc">
-								<li>KAIST Business & Tech Management</li>
-								<li>NONCE 블록체인 커뮤니티</li>
-								<li>KLAYTN & Ethereum 광팬</li>
+								<li>카이스트 기술경영</li>
+								<li>논스 블록체인 커뮤니티</li>
+								<li>클레이튼 & 이더리움 애호가</li>
 							</ul>
 						),
 					},
@@ -172,13 +173,14 @@ export const pagesWording = {
 						en: "Yea Jean Lee",
 						ko: "이예진",
 					},
+					countries: "🇰🇷 🇻🇳 ",
 					position: {
-						ko: "CMO",
-						en: "CMO",
+						ko: "COO",
+						en: "COO",
 					},
 					specialty: {
-						en: "Interested in marketing, management, and operation",
-						ko: "마케팅, 매니지먼트, 오퍼레이션의 조화를 이루다",
+						en: "People first",
+						ko: "사람이 먼저다",
 					},
 					desc: {
 						en: (
@@ -189,8 +191,8 @@ export const pagesWording = {
 						),
 						ko: (
 							<ul className="list-disc">
-								<li>Yonsei University 경영</li>
-								<li>스타트업 피엠 경력 다수</li>
+								<li>연세개학교 경영</li>
+								<li>스타트업 프로젝트 메니져 경력 다수</li>
 							</ul>
 						),
 					},
@@ -204,6 +206,7 @@ export const pagesWording = {
 						ko: "CBO",
 						en: "CBO",
 					},
+					countries: "🇰🇷 🇩🇪 🇨🇳 🇺🇸",
 					specialty: {
 						en: "Focused on executing practicality through jpegs",
 						ko: "모든 것에 실용성을 주입하다",
@@ -218,9 +221,9 @@ export const pagesWording = {
 						),
 						ko: (
 							<ul className="list-disc">
-								<li>New York University</li>
+								<li>뉴욕대학교</li>
 								<li>풀타임 가상자산 거래</li>
-								<li>이커머스, NFT 창업 경력 다수</li>
+								<li>이커머스, 엔에프티 창업 경력 다수</li>
 							</ul>
 						),
 					},
@@ -232,23 +235,24 @@ export const pagesWording = {
 					},
 					position: {
 						en: "Lead Designer",
-						ko: "디자인 리드",
+						ko: "리드 디자인너",
 					},
+					countries: "🇰🇷 🇭🇰 🇨🇳",
 					specialty: {
 						en: "Drawing ideas into reality",
-						ko: "아이디어를 그림으로 실체화하다",
+						ko: "아이디어를 그림으로 담다",
 					},
 					desc: {
 						en: (
 							<ul className="list-disc">
 								<li>HongKong PolyTechnic University Industrial Design</li>
-								<li>HongKong 2022 Disney Imaginations Competition Finalist</li>
+								<li>HongKong 2022 디즈니 이매지네이션 대회 결승 진출</li>
 							</ul>
 						),
 						ko: (
 							<ul className="list-disc">
-								<li>HongKong PolyTechnic University 산업디자인</li>
-								<li>HongKong 2022 Disney Imaginations Competition 결선 진출</li>
+								<li>홍콩 폴리테크닉 대학교 산업디자인</li>
+								<li>홍콩 2022 Disney Imaginations Competition 결선 진출</li>
 							</ul>
 						),
 					},
@@ -262,9 +266,10 @@ export const pagesWording = {
 						ko: "UI/UX 디자이너",
 						en: "UI/UX Designer",
 					},
+					countries: "🇰🇷 🇨🇳",
 					specialty: {
 						en: "Interactions made simply beautiful",
-						ko: "간단하게 예쁜 상호작용을 만들다",
+						ko: "간단하고 예쁜 상호작용을 만들다",
 					},
 					desc: {
 						en: (
@@ -275,7 +280,7 @@ export const pagesWording = {
 						),
 						ko: (
 							<ul className="list-disc">
-								<li>KAIST 산업디자인</li>
+								<li>카이스트 산업디자인</li>
 								<li>다수의 성공적인 웹앱 디자인 경력</li>
 							</ul>
 						),
@@ -287,13 +292,14 @@ export const pagesWording = {
 						ko: "박세한",
 					},
 					position: {
-						ko: "Co-Founder, CTO",
-						en: "Co-Founder, CTO",
+						ko: "CTO",
+						en: "CTO",
 					},
 					specialty: {
 						en: "Developing the next generation of web",
 						ko: "웹의 다음 세대를 이끌다",
 					},
+					countries: "🇰🇷 🇻🇳 🇨🇦",
 					desc: {
 						en: (
 							<ul className="list-disc">
@@ -304,9 +310,9 @@ export const pagesWording = {
 						),
 						ko: (
 							<ul className="list-disc">
-								<li>KAIST Computer Science</li>
+								<li>카이스트 전산학부</li>
 								<li>개발자 @ 링글</li>
-								<li>Metaverse Specialist</li>
+								<li>메타버스 개발</li>
 							</ul>
 						),
 					},
@@ -320,22 +326,23 @@ export const pagesWording = {
 						ko: "Smart Contract 개발자",
 						en: "Smart Contract Developer",
 					},
+					countries: "🇰🇷 🇸🇬",
 					specialty: {
 						en: "Loading... until everything is decentralized",
-						ko: "탈중화화 까지 로딩중",
+						ko: "탈중화 화 까지 로딩중",
 					},
 					desc: {
 						en: (
 							<ul className="list-disc">
 								<li>KAIST Computer Science</li>
-								<li>SW Engineer @Waddle</li>
+								<li>SW Engineer @ Waddle</li>
 								<li>Multiple work experiences in FinTech</li>
 							</ul>
 						),
 						ko: (
 							<ul className="list-disc">
-								<li>KAIST Computer Science</li>
-								<li>개발자 @와들</li>
+								<li>카이스트 전산 학부</li>
+								<li>개발자 @ 와들</li>
 								<li>핀테크 기업 경력</li>
 							</ul>
 						),
@@ -350,6 +357,7 @@ export const pagesWording = {
 						ko: "풀 스택 개발자",
 						en: "Full Stack Developer",
 					},
+					countries: "🇰🇷",
 					specialty: {
 						en: "To code is to speak",
 						ko: "코딩으로 말한다",
@@ -363,7 +371,7 @@ export const pagesWording = {
 						),
 						ko: (
 							<ul className="list-disc">
-								<li>KAIST Computer Science</li>
+								<li>카이스트 전산 학부</li>
 								<li>유저 친화적 앱 개발 경력 다수</li>
 							</ul>
 						),
@@ -379,6 +387,42 @@ export const pagesWording = {
 				en: "Portfolio",
 			},
 			items: {
+				founded: {
+					name: {
+						ko: "설립",
+						en: "Conception",
+					},
+					desc: {
+						ko: "SOONI LABS는 7명의 블록체인 애호가의 의해 2021년에 세워졌습니다.",
+						en: "SOONI LABS was founded in 2021 by seven blockchain enthusiasts.",
+					},
+				},
+				thinktomi: {
+					name: {
+						ko: "실리콘밸리 Thinktomi x KAIST 스타트업 프로그램 우승",
+						en: "SW Silicon Valley x KAIST Start Up Program 1st Place",
+					},
+					desc: {
+						ko: (
+							<>
+								@ CES, Las Vegas
+								<br />
+								파이널리스트 @ PitchForce
+								<br />
+								우승 @Thinktomi&apos;s 스타트업 대회.
+							</>
+						),
+						en: (
+							<>
+								@ CES, Las Vegas
+								<br />
+								Final Round @ PitchForce
+								<br />
+								1st @ Thinktomi&apos;s Start-Up Competition.
+							</>
+						),
+					},
+				},
 				gomz: {
 					name: {
 						ko: "Gomz",
