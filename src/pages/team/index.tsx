@@ -33,12 +33,12 @@ const Content = () => {
 			img: "images/team/yeajeanlee.jpg",
 		},
 		{
-			name: pagesWording.team.index.members.eric.name[locale],
-			position: pagesWording.team.index.members.eric.position[locale],
-			desc: pagesWording.team.index.members.eric.desc[locale],
-			specialty: pagesWording.team.index.members.eric.specialty[locale],
-			countries: pagesWording.team.index.members.eric.countries,
-			img: "images/team/erickim.jpg",
+			name: pagesWording.team.index.members.ian.name[locale],
+			position: pagesWording.team.index.members.ian.position[locale],
+			desc: pagesWording.team.index.members.ian.desc[locale],
+			specialty: pagesWording.team.index.members.ian.specialty[locale],
+			countries: pagesWording.team.index.members.ian.countries,
+			img: "images/team/sehanpark.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.jieun.name[locale],
@@ -56,14 +56,7 @@ const Content = () => {
 			countries: pagesWording.team.index.members.jade.countries,
 			img: "images/team/jadeyang.jpg",
 		},
-		{
-			name: pagesWording.team.index.members.ian.name[locale],
-			position: pagesWording.team.index.members.ian.position[locale],
-			desc: pagesWording.team.index.members.ian.desc[locale],
-			specialty: pagesWording.team.index.members.ian.specialty[locale],
-			countries: pagesWording.team.index.members.ian.countries,
-			img: "images/team/sehanpark.jpg",
-		},
+
 		{
 			name: pagesWording.team.index.members.jaehwan.name[locale],
 			position: pagesWording.team.index.members.jaehwan.position[locale],
@@ -79,6 +72,14 @@ const Content = () => {
 			specialty: pagesWording.team.index.members.seungan.specialty[locale],
 			countries: pagesWording.team.index.members.seungan.countries,
 			img: "images/team/seunganjung.jpg",
+		},
+		{
+			name: pagesWording.team.index.members.eric.name[locale],
+			position: pagesWording.team.index.members.eric.position[locale],
+			desc: pagesWording.team.index.members.eric.desc[locale],
+			specialty: pagesWording.team.index.members.eric.specialty[locale],
+			countries: pagesWording.team.index.members.eric.countries,
+			img: "images/team/erickim.jpg",
 		},
 	];
 

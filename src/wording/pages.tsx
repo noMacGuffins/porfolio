@@ -323,7 +323,7 @@ export const pagesWording = {
 						ko: "정재환",
 					},
 					position: {
-						ko: "Smart Contract 개발자",
+						ko: "스마트 컨트랙트 개발자",
 						en: "Smart Contract Developer",
 					},
 					countries: "🇰🇷 🇸🇬",
