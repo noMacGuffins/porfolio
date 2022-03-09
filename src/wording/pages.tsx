@@ -5,8 +5,8 @@ export const pagesWording = {
 	index: {
 		main: {
 			title: {
-				en: <>SOONI Labs</>,
-				ko: <>SOONI Labs</>,
+				en: <>SOONI LABS</>,
+				ko: <>SOONI LABS</>,
 			},
 			motto: {
 				en: <>Blockchain for the Betterment of Society</>,
@@ -80,7 +80,7 @@ export const pagesWording = {
 			},
 			statusQuo: {
 				title: {
-					en: <>Against the status quo</>,
+					en: <>Breaking Stereotypes</>,
 					ko: <>사회적 고정관념</>,
 				},
 				desc: {

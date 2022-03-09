@@ -26,7 +26,7 @@ const Content = () => {
 			name: pagesWording.team.index.members.yeajean.name[locale],
 			position: pagesWording.team.index.members.yeajean.position[locale],
 			desc: pagesWording.team.index.members.yeajean.desc[locale],
-			img: "images/team/yeajean.jpg",
+			img: "images/team/yeajeanlee.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.eric.name[locale],
@@ -38,7 +38,7 @@ const Content = () => {
 			name: pagesWording.team.index.members.jieun.name[locale],
 			position: pagesWording.team.index.members.jieun.position[locale],
 			desc: pagesWording.team.index.members.jieun.desc[locale],
-			img: "images/team/minjunkim.jpg",
+			img: "images/team/jieunpark.jpg",
 		},
 		{
 			name: pagesWording.team.index.members.jade.name[locale],

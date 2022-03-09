@@ -10,6 +10,8 @@ import BasicHeadWrapper from "src/components/BasicHeadWrapper";
 import { useRouter } from "next/router";
 import Footer from "src/components/Footer";
 import { globalsWording } from "src/wording/globals";
+import Row from "src/components/Row";
+import Col from "src/components/Col";
 
 const Main = () => {
 	const isTablet = useIsTablet();
@@ -96,22 +98,25 @@ const Main = () => {
 	);
 };
 
-const AboutUs = () => {
+const ForYou = () => {
 	const { locale } = useRouter();
 	const isTablet = useIsTablet();
 	return (
-		<Div relative wScreen overflowHidden px30 style={{ backgroundColor: isTablet && "rgba(0, 256, 0, 0.15)" }}>
+		<Div relative wScreen overflowHidden px30 pt150>
 			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={250}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
 						<Timeline
 							target={
-								<Div flex itemsCenter justifyCenter py150 z100>
-									<Div maxW={960}>
-										<Div fontBold textXl mb15>
-											{pagesWording.index.aboutUs.title[locale]}
+								<Div z100 maxW={960} mxAuto flex itemsEnd justifyEnd clx={"transition group hover:transition-all"}>
+									<Div imgTag src={"images/helping.png"} w400></Div>
+									<Div absolute top100 left0 clx={"transition group-hover:translate-y-1/2"}>
+										<Div maxW={400} fontBold mb10 clx={"text-40 z-10 transition group-hover:transition-all group-hover:text-30"}>
+											{pagesWording.index.values.helping.title[locale]}
 										</Div>
-										<Div textLg>{pagesWording.index.aboutUs.subtitle[locale]}</Div>
+										<Div maxW={500} mb15 fontBold z20 clx={"opacity-0 z-10 transition group-hover:transition-all group-hover:opacity-100"}>
+											{pagesWording.index.values.helping.desc[locale]}
+										</Div>
 									</Div>
 								</Div>
 							}
@@ -119,10 +124,84 @@ const AboutUs = () => {
 							<Tween from={{ y: 400, opacity: 0 }} to={{ y: 0, opacity: 1 }} />
 						</Timeline>
 						{!isTablet && (
-							<Timeline target={<Div absolute top0 left={"30%"} w1000 h1000 rounded3000 style={{ backgroundColor: "rgba(0, 256, 0, 0.15)" }}></Div>}>
-								<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 2.5, scaleY: 2.5 }} />
+							<Timeline target={<Div absolute top100 left={"30%"} w400 h400 rounded3000 style={{ backgroundColor: "rgba(0, 256, 0, 0.15)" }}></Div>}>
+								<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 1, scaleY: 1 }} />
 							</Timeline>
 						)}
+					</Timeline>
+				)}
+			</Scene>
+		</Div>
+	);
+};
+
+const StatusQuo = () => {
+	const { locale } = useRouter();
+	const isTablet = useIsTablet();
+	return (
+		<Div relative wScreen px30 clx={"transition group hover:transition-all"} py100>
+			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={1000}>
+				{(progress) => (
+					<Timeline totalProgress={progress} paused>
+						{!isTablet && (
+							<Timeline target={<Div absolute top0 left={"30%"} w800 h800 rounded3000 style={{ backgroundColor: "rgba(0, 256, 256, 0.15)" }}></Div>}>
+								<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 1, scaleY: 1 }} />
+							</Timeline>
+						)}
+						<Timeline
+							target={
+								<Div z100 maxW={960} mxAuto flex itemsEnd justifyStart>
+									<Div imgTag src={"images/stereotypes.png"} w500></Div>
+									<Div absolute top0 right0 clx={"transition group-hover:translate-y-1/2"}>
+										<Div fontBold maxW={300} mb10 clx={"text-40 z-10 transition group-hover:transition-all group-hover:text-30"}>
+											{pagesWording.index.values.statusQuo.title[locale]}
+										</Div>
+										<Div maxW={400} mb15 fontBold z20 clx={"opacity-0 z-10 transition group-hover:transition-all group-hover:opacity-100"}>
+											{pagesWording.index.values.statusQuo.desc[locale]}
+										</Div>
+									</Div>
+								</Div>
+							}
+						>
+							<Tween from={{ y: 400, opacity: 0 }} to={{ y: 0, opacity: 1 }} />
+						</Timeline>
+					</Timeline>
+				)}
+			</Scene>
+		</Div>
+	);
+};
+
+const CommunityObsessed = () => {
+	const { locale } = useRouter();
+	const isTablet = useIsTablet();
+	return (
+		<Div relative wScreen px30 clx={"transition group hover:transition-all"} py200>
+			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={1200}>
+				{(progress) => (
+					<Timeline totalProgress={progress} paused>
+						{!isTablet && (
+							<Timeline target={<Div absolute top0 left={"30%"} w600 h600 rounded3000 style={{ backgroundColor: "rgba(0, 256, 0, 0.15)" }}></Div>}>
+								<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 1, scaleY: 1 }} />
+							</Timeline>
+						)}
+						<Timeline
+							target={
+								<Div z100 maxW={960} mxAuto flex itemsEnd justifyEnd>
+									<Div imgTag src={"images/community.png"} w500></Div>
+									<Div absolute top0 left0 clx={"transition group-hover:translate-y-1/4"}>
+										<Div fontBold maxW={300} mb10 clx={"text-40 z-10 transition group-hover:transition-all group-hover:text-30"}>
+											{pagesWording.index.values.community.title[locale]}
+										</Div>
+										<Div maxW={400} mb15 fontBold z20 clx={"opacity-0 z-10 transition group-hover:transition-all group-hover:opacity-100"}>
+											{pagesWording.index.values.community.desc[locale]}
+										</Div>
+									</Div>
+								</Div>
+							}
+						>
+							<Tween from={{ y: 400, opacity: 0 }} to={{ y: 0, opacity: 1 }} />
+						</Timeline>
 					</Timeline>
 				)}
 			</Scene>
@@ -135,16 +214,13 @@ const Mission = () => {
 	const isTablet = useIsTablet();
 	return (
 		<Div relative wScreen overflowHidden px30 style={{ backgroundColor: isTablet && "rgba(0, 256, 256, 0.15)" }}>
-			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={800}>
+			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={2200}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
 						<Timeline
 							target={
 								<Div flex itemsCenter justifyCenter py150 z100>
-									<Div maxW={960}>
-										<Div fontBold textXl mb15>
-											{pagesWording.index.mission.title[locale]}
-										</Div>
+									<Div maxW={960} textCenter fontBold>
 										<Div textLg>{pagesWording.index.mission.subtitle[locale]}</Div>
 									</Div>
 								</Div>
@@ -166,106 +242,16 @@ const Mission = () => {
 	);
 };
 
-const Values = () => {
-	const isTablet = useIsTablet();
-	const { locale } = useRouter();
-	const valueContents = [
-		{ title: pagesWording.index.values.helping.title[locale], desc: pagesWording.index.values.helping.desc[locale], img: "images/helping.jpeg" },
-		{
-			title: pagesWording.index.values.statusQuo.title[locale],
-			desc: pagesWording.index.values.statusQuo.desc[locale],
-			img: "images/statusQuo.jpeg",
-		},
-		{
-			title: pagesWording.index.values.community.title[locale],
-			desc: pagesWording.index.values.community.desc[locale],
-			img: "images/community.jpeg",
-		},
-	];
-	return (
-		<Div relative wScreen overflowHidden px30>
-			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={1200}>
-				{(progress) => (
-					<Timeline totalProgress={progress} paused>
-						<Timeline
-							target={
-								<Div flex itemsCenter justifyCenter py150>
-									<Div maxW={960}>
-										<Div fontBold textXl mb15>
-											{pagesWording.index.values.title[locale]}
-										</Div>
-										<Div
-											style={{
-												display: "grid",
-												gridTemplateColumns: isTablet ? "1fr" : "1fr 1fr 1fr",
-												gridTemplateRows: 300,
-												gridRowGap: 20,
-												gridColumnGap: 20,
-											}}
-										>
-											{valueContents.map((content, index) => {
-												return (
-													<Div
-														relative
-														col={!isTablet}
-														overflowHidden
-														rounded2xl
-														p0
-														cursorPointer
-														key={content.title}
-														h300={isTablet}
-														clx={`group transition hover:transition-all`}
-													>
-														<Div absolute wFull hFull p20 clx={"group-hover:backdrop-blur-lg"}>
-															<Div relative wFull hFull>
-																<Div
-																	fontBold
-																	maxW={250}
-																	pb15
-																	leadingNone
-																	clx={"text-20 transition group-hover:transition-all group-hover:translate-y-10 group-hover:text-30"}
-																>
-																	{content.title}
-																</Div>
-																<Div
-																	clx={
-																		"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 group-hover:text-15"
-																	}
-																>
-																	{content.desc}
-																</Div>
-																<Div fontNormal w30 h30 absolute bottom0 right0 clx={"transition group-hover:transition-all group-hover:opacity-0"}>
-																	<PlusCircleIcon />
-																</Div>
-															</Div>
-														</Div>
-														<Div imgTag src={content.img} objectCover hFull wFull></Div>
-													</Div>
-												);
-											})}
-										</Div>
-									</Div>
-								</Div>
-							}
-						>
-							<Tween from={{ y: 400, opacity: 0 }} to={{ y: 0, opacity: 1 }} />
-						</Timeline>
-					</Timeline>
-				)}
-			</Scene>
-		</Div>
-	);
-};
-
 const Content = () => {
 	return (
 		<Controller>
 			<Div relative bgGray100>
 				<TopBar mode={"light"} />
 				<Main />
-				<AboutUs />
+				<ForYou />
+				<StatusQuo />
+				<CommunityObsessed />
 				<Mission />
-				<Values />
 				<Footer />
 			</Div>
 		</Controller>
