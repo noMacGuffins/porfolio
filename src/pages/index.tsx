@@ -103,7 +103,7 @@ const ForYou = () => {
 	const { locale } = useRouter();
 	const isTablet = useIsTablet();
 	return (
-		<Div relative wScreen overflowHidden px30 pt150={!isTablet}>
+		<Div relative wScreen overflowHidden px30 py150={!isTablet}>
 			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={250}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
@@ -146,7 +146,7 @@ const StatusQuo = () => {
 	const isTablet = useIsTablet();
 	return (
 		<Div relative wScreen px30 clx={"transition group hover:transition-all"} py100>
-			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={1000}>
+			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={900}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
 						<Timeline
@@ -236,7 +236,7 @@ const Mission = () => {
 	const isTablet = useIsTablet();
 	return (
 		<Div relative wScreen overflowHidden px30 style={{ backgroundColor: isTablet && "rgba(0, 256, 256, 0.15)" }}>
-			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={1900}>
+			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={2100}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>
 						<Timeline
