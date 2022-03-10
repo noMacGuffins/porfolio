@@ -59,7 +59,7 @@ const Content = () => {
 			specialty: pagesWording.team.index.members.jaehwan.specialty[locale],
 			countries: pagesWording.team.index.members.jaehwan.countries,
 			school: "images/kaistLogo.png",
-			img: "images/team/jaehwanjung.jpg",
+			img: "images/team/jaehwanjeong.jpeg",
 		},
 		{
 			name: pagesWording.team.index.members.seungan.name[locale],

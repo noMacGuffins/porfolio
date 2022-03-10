@@ -47,7 +47,7 @@ export const pagesWording = {
 				),
 				ko: (
 					<>
-						SOONI Labs는 한국뿐만 아니라 세계를 위한 프로젝트를 개발합니다.
+						SOONI LABS는 한국뿐만 아니라 세계를 위한 프로젝트를 개발합니다.
 						<br /> 예술, 사회, 기술이 융합되어 긍정적인 영향을 끼치는 따뜻한 NFT 생태계를 만들기 위해 이 자리에 있습니다.
 					</>
 				),
@@ -416,8 +416,8 @@ export const pagesWording = {
 				},
 				pitchForce: {
 					name: {
-						ko: "Silicon Valley PitchForce",
-						en: "실리콘밸리 PitchForce",
+						ko: "실리콘밸리 PitchForce",
+						en: "Silicon Valley PitchForce",
 					},
 					desc: {
 						ko: <>PitchForce 스타트업 대회 결선 진출</>,
