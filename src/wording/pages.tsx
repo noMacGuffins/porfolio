@@ -101,7 +101,7 @@ export const pagesWording = {
 			},
 			community: {
 				title: {
-					en: <>Community-obsessed</>,
+					en: [<>Community-</>,<>obsessed</>],
 					ko: <>커뮤니티와 함께</>,
 				},
 				desc: {
