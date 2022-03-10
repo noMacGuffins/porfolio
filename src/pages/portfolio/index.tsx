@@ -64,7 +64,18 @@ const Content = () => {
 							return (
 								<Div flex justifyEnd={isRightElement && !isTablet} py20>
 									<Div maxW={300}>
-										<Div relative overflowHidden rounded2xl p0 cursorPointer h250 w250 auto>
+										<Div
+											relative
+											overflowHidden
+											rounded2xl
+											p0
+											cursorPointer
+											h250={index > 1}
+											w250={index > 1}
+											h200={index <= 1}
+											w200={index <= 1}
+											auto
+										>
 											{content.isImg ? (
 												<Div imgTag src={content.visual} objectCover hFull wFull></Div>
 											) : (

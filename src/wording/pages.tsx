@@ -52,8 +52,8 @@ export const pagesWording = {
 				),
 				ko: (
 					<>
-						SOONI Labs는 한국뿐만 아니라 세계를 위한 프로젝트를 개발합니다. 예술, 사회, 기술이 융합되어 긍정적인 영향을 끼치는 따뜻한 NFT 생태계를
-						만들기 위해 이 자리에 있습니다.
+						SOONI Labs는 한국뿐만 아니라 세계를 위한 프로젝트를 개발합니다.
+						<br /> 예술, 사회, 기술이 융합되어 긍정적인 영향을 끼치는 따뜻한 NFT 생태계를 만들기 위해 이 자리에 있습니다.
 					</>
 				),
 			},
@@ -65,14 +65,14 @@ export const pagesWording = {
 			},
 			helping: {
 				title: {
-					en: <>For you and those around us</>,
+					en: <>For you and those around you</>,
 					ko: <>당신과 당신 주변 사람들을 위해</>,
 				},
 				desc: {
 					en: (
 						<>
-							Every project of ours is dedicated to solve societal issues. We aspire to help everyone recognize the practicality of NFTs regardless of
-							gender, knowledge, and generational gap.
+							Our every project is dedicated to solve societal issues. We aspire to help everyone create social value through the practicality of NFT,
+							regardless of gender, background, or generational differences.
 						</>
 					),
 					ko: (
@@ -117,8 +117,8 @@ export const pagesWording = {
 					),
 					ko: (
 						<>
-							NFT 컬렉션의 수명은 결코 함께 나아가고있는 커뮤니티에 의해 결정된다고 믿습니다. 커뮤니티의 목소리는 SOONI Labs의 향후 발자취를 결정하며,
-							함께 진정한 DAO를 향해 나아갑니다.
+							NFT 컬렉션의 수명은 결코 함께 나아가고있는 커뮤니티에 의해 결정된다고 믿습니다. 커뮤니티의 목소리는 SOONI LABS의 향후 발자취를 결정하며,
+							함께 진정한 커뮤니티를 향해 나아갑니다.
 						</>
 					),
 				},
@@ -132,8 +132,17 @@ export const pagesWording = {
 				en: <>Team</>,
 			},
 			subtitle: {
-				ko: "SOONI Labs 팀원들은 블록체인을 기반으로 함께 고민하고, 해결하며 세계를 향해 나아갑니다.",
-				en: "A group of active problem solvers working together to provide value from blockchain, for the world.",
+				ko: (
+					<>
+						SOONI LABS 팀원들은 블록체인을 기반으로 함께 <br /> 고민하고 해결하며, 세계를 향해 나아갑니다.
+					</>
+				),
+				en: (
+					<>
+						A group of active problem solvers working together <br />
+						to provide value from blockchain, for the world.
+					</>
+				),
 			},
 			members: {
 				minjun: {
@@ -187,7 +196,7 @@ export const pagesWording = {
 						en: (
 							<Div textCenter>
 								<Div pt20>Yonsei University Business</Div>
-								<Div pt20>Experienced Project Manager in multiple start-ups</Div>
+								<Div pt20>PM @ CodeGreen</Div>
 							</Div>
 						),
 						ko: (
@@ -385,7 +394,7 @@ export const pagesWording = {
 				founded: {
 					name: {
 						ko: "설립",
-						en: "Conception",
+						en: "Foundation",
 					},
 					desc: {
 						ko: "SOONI LABS 2021년 설립",
@@ -447,7 +456,7 @@ export const pagesWording = {
 					en: "Subscribe",
 				},
 				subscribe: {
-					ko: "이메일로 받는 순이 뉴스레터에 구독하기",
+					ko: "이메일로 받는 SOONI 뉴스레터에 구독하기",
 					en: "Subscribe to our email newsletter",
 				},
 			},
