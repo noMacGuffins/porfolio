@@ -214,7 +214,9 @@ const CommunityObsessed = () => {
 									<Div imgTag src={"images/community.png"} w500></Div>
 									<Div absolute={!isTablet} top0 left0 clx={"transition group-hover:-translate-y-40"}>
 										<Div fontBold maxW={300} mb10 clx={"text-40 z-10 transition group-hover:transition-all"}>
-											{pagesWording.index.values.community.title[locale]}
+											{pagesWording.index.values.community.title[locale][0]}
+											{isTablet && <br />}
+											{pagesWording.index.values.community.title[locale][1]}
 										</Div>
 										<Div
 											maxW={400}

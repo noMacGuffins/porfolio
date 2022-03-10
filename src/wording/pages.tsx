@@ -48,7 +48,7 @@ export const pagesWording = {
 				ko: (
 					<>
 						SOONI LABS는 한국뿐만 아니라 전 세계를 위한 지속적인 프로젝트 개발을 통해
-						<br /> 예술, 사회, 기술이 융합되어 긍정적인 영향을 주는 따뜻한 NFT 생태계를 만들어 갑니다.
+						예술, 사회, 기술이 융합되어 긍정적인 영향을 주는 따뜻한 NFT 생태계를 만들어 갑니다.
 					</>
 				),
 			},
@@ -101,7 +101,7 @@ export const pagesWording = {
 			},
 			community: {
 				title: {
-					en: [<>Community-</>,<>obsessed</>],
+					en: [<>Community-</>, <>obsessed</>],
 					ko: <>커뮤니티와 함께</>,
 				},
 				desc: {
