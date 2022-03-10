@@ -127,17 +127,8 @@ export const pagesWording = {
 				en: <>Team</>,
 			},
 			subtitle: {
-				ko: (
-					<>
-						SOONI LABS 팀원들은 블록체인을 기반으로 함께 <br /> 고민하고 해결하며, 세계를 향해 나아갑니다.
-					</>
-				),
-				en: (
-					<>
-						A group of active problem solvers working together <br />
-						to provide value from blockchain, for the world.
-					</>
-				),
+				ko: [<>SOONI LABS 팀원들은 블록체인을 기반으로</>, <>함께 고민하고 해결하며, 세계를 향해 나아갑니다.</>],
+				en: [<>A group of active problem solvers working together</>, <>to provide value from blockchain, for the world.</>],
 			},
 			members: {
 				minjun: {
@@ -192,12 +183,14 @@ export const pagesWording = {
 							<Div textCenter>
 								<Div pt20>Yonsei University Business</Div>
 								<Div pt20>PM @ CodeGreen</Div>
+								<Div pt20>Marketing @ KOTE</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
 								<Div pt20>연세대학교 경영학과</Div>
 								<Div pt20>PM @ CodeGreen</Div>
+								<Div pt20>마케팅 @ KOTE</Div>
 							</Div>
 						),
 					},

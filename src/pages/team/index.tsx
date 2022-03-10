@@ -100,7 +100,9 @@ const Content = () => {
 					</Div>
 					<Div flex col={!isTablet} itemsEnd py0 maxW={700} mt20>
 						<Div textLg fontBold textLeft textGray800>
-							{pagesWording.team.index.subtitle[locale]}
+							{pagesWording.team.index.subtitle[locale][0]}
+							{isTablet ? " " : <br />}
+							{pagesWording.team.index.subtitle[locale][1]}
 						</Div>
 					</Div>
 				</Div>
@@ -127,6 +129,7 @@ const Content = () => {
 													textWhite
 													fontBold
 													px20
+													rounded2xl
 													clx={
 														"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 group-hover:text-15"
 													}
