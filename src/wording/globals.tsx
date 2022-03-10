@@ -25,7 +25,7 @@ export const globalsWording = {
 	footer: {
 		intro: {
 			en: <>SOONI LABS is the first Korean NFT-focused company that bridges the gap between NFTs and Real-World utility through practical B-Apps.</>,
-			ko: <>SOONI LABS는 실용적인 D-App(Decentralized Application)을 통해 NFT의 실제 사회 공헌도를 높이는 한국 최초의 NFT 중심 기업입니다.</>,
+			ko: <>SOONI LABS는 실용적인 B-App(Decentralized Application)을 통해 NFT의 실제 사회 공헌도를 높이는 한국 최초의 NFT 중심 기업입니다.</>,
 		},
 		banner: {
 			wording: {

@@ -35,6 +35,15 @@ const Content = () => {
 			img: "images/team/yeajeanlee.jpg",
 		},
 		{
+			name: pagesWording.team.index.members.eric.name[locale],
+			position: pagesWording.team.index.members.eric.position[locale],
+			desc: pagesWording.team.index.members.eric.desc[locale],
+			specialty: pagesWording.team.index.members.eric.specialty[locale],
+			countries: pagesWording.team.index.members.eric.countries,
+			school: "images/nyuLogo.png",
+			img: "images/team/erickim.jpg",
+		},
+		{
 			name: pagesWording.team.index.members.ian.name[locale],
 			position: pagesWording.team.index.members.ian.position[locale],
 			desc: pagesWording.team.index.members.ian.desc[locale],
@@ -43,25 +52,6 @@ const Content = () => {
 			school: "images/kaistLogo.png",
 			img: "images/team/sehanpark.jpg",
 		},
-		{
-			name: pagesWording.team.index.members.jieun.name[locale],
-			position: pagesWording.team.index.members.jieun.position[locale],
-			desc: pagesWording.team.index.members.jieun.desc[locale],
-			specialty: pagesWording.team.index.members.jieun.specialty[locale],
-			countries: pagesWording.team.index.members.jieun.countries,
-			school: "images/hongKongPolyULogo.png",
-			img: "images/team/jieunpark.jpg",
-		},
-		{
-			name: pagesWording.team.index.members.jade.name[locale],
-			position: pagesWording.team.index.members.jade.position[locale],
-			desc: pagesWording.team.index.members.jade.desc[locale],
-			specialty: pagesWording.team.index.members.jade.specialty[locale],
-			countries: pagesWording.team.index.members.jade.countries,
-			school: "images/kaistLogo.png",
-			img: "images/team/jadeyang.jpg",
-		},
-
 		{
 			name: pagesWording.team.index.members.jaehwan.name[locale],
 			position: pagesWording.team.index.members.jaehwan.position[locale],
@@ -81,13 +71,22 @@ const Content = () => {
 			img: "images/team/seunganjung.jpg",
 		},
 		{
-			name: pagesWording.team.index.members.eric.name[locale],
-			position: pagesWording.team.index.members.eric.position[locale],
-			desc: pagesWording.team.index.members.eric.desc[locale],
-			specialty: pagesWording.team.index.members.eric.specialty[locale],
-			countries: pagesWording.team.index.members.eric.countries,
-			school: "images/nyuLogo.png",
-			img: "images/team/erickim.jpg",
+			name: pagesWording.team.index.members.jieun.name[locale],
+			position: pagesWording.team.index.members.jieun.position[locale],
+			desc: pagesWording.team.index.members.jieun.desc[locale],
+			specialty: pagesWording.team.index.members.jieun.specialty[locale],
+			countries: pagesWording.team.index.members.jieun.countries,
+			school: "images/hongKongPolyULogo.png",
+			img: "images/team/jieunpark.jpg",
+		},
+		{
+			name: pagesWording.team.index.members.jade.name[locale],
+			position: pagesWording.team.index.members.jade.position[locale],
+			desc: pagesWording.team.index.members.jade.desc[locale],
+			specialty: pagesWording.team.index.members.jade.specialty[locale],
+			countries: pagesWording.team.index.members.jade.countries,
+			school: "images/kaistLogo.png",
+			img: "images/team/jadeyang.jpg",
 		},
 	];
 
@@ -132,7 +131,7 @@ const Content = () => {
 														"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 group-hover:text-15"
 													}
 												>
-													<Div imgTag src={content.school} w100 h100 mxAuto bgWhite rounded200 />
+													{/* <Div imgTag src={content.school} w100 h100 mxAuto bgWhite rounded200 /> */}
 													{content.desc}
 												</Div>
 												<Div

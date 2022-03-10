@@ -30,12 +30,7 @@ export const pagesWording = {
 						practical B-Apps.
 					</>
 				),
-				ko: (
-					<>
-						2021년에 설립된 SOONI Labs는 실용적인 D-App(Decentralized Application)을 통해 NFT의 실제 사회 공헌도를 높이는 한국 최초의 NFT 중심
-						기업입니다.
-					</>
-				),
+				ko: <>2021년에 설립된 SOONI Labs는 실용적인 B-App을 통해 NFT의 실제 사회 공헌도를 높이는 한국 최초의 NFT 중심 기업입니다.</>,
 			},
 		},
 		mission: {
@@ -226,12 +221,16 @@ export const pagesWording = {
 							<Div textCenter>
 								<Div pt20>New York University</Div>
 								<Div pt20>PM @ GreenWall Building Materials</Div>
+								<Div pt20>High City Berlin Clothing Brand Founder</Div>
+								<Div pt20>NFT Degen</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
 								<Div pt20>뉴욕대학교</Div>
 								<Div pt20>PM @ GreenWall Building Materials</Div>
+								<Div pt20>High City Berlin 의류브랜드 창업</Div>
+								<Div pt20>NFT 활동가</Div>
 							</Div>
 						),
 					},
@@ -253,16 +252,18 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div pt20>HongKong PolyTechnic University Industrial Design</Div>
+								<Div pt20>HongKong PolyTechnic University Product Design</Div>
 								<Div pt20>Product Designer @ Lulugine</Div>
 								<Div pt20>Illustrator @ A’ Prime</Div>
+								<Div pt20>HK 2022 Disney Imaginations Competition Finalist</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div pt20>홍콩 폴리테크닉 대학교 산업디자인학과</Div>
+								<Div pt20>홍콩 폴리테크닉 대학교 제품디자인학과</Div>
 								<Div pt20>제품 디자이너 @ Lulugine</Div>
 								<Div pt20>일러스트 디자이너 @ A’ Prime</Div>
+								<Div pt20>HK 2022 Disney Imaginations Competition 결승 진출</Div>
 							</Div>
 						),
 					},
@@ -313,12 +314,14 @@ export const pagesWording = {
 							<Div textCenter>
 								<Div pt20>KAIST Computer Science</Div>
 								<Div pt20>SW Engineer @ Ringle</Div>
+								<Div pt20>Web-based Metaverse Specialist</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
 								<Div pt20>KAIST 전산학부</Div>
 								<Div pt20>개발자 @ 링글</Div>
+								<Div pt20>웹 기반 Metaverse 개발자</Div>
 							</Div>
 						),
 					},
@@ -398,7 +401,7 @@ export const pagesWording = {
 					},
 					desc: {
 						ko: "SOONI LABS 2021년 설립",
-						en: "SOONI LABS was founded in 2021.",
+						en: "SOONI LABS was founded in 2021",
 					},
 				},
 				thinktomi: {
@@ -414,7 +417,7 @@ export const pagesWording = {
 				pitchForce: {
 					name: {
 						ko: "Silicon Valley PitchForce",
-						en: "Silicon Valley PitchForce",
+						en: "실리콘밸리 PitchForce",
 					},
 					desc: {
 						ko: <>PitchForce 스타트업 대회 결선 진출</>,
