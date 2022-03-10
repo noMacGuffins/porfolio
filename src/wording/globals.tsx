@@ -24,8 +24,8 @@ export const globalsWording = {
 	},
 	footer: {
 		intro: {
-			en: <>SOONILABS is the first Korean NFT-focused company that bridges the gap between NFTs and Real-World utility through practical B-Apps.</>,
-			ko: <>SOONILABS는 실용적인 B-App을 통해 NFT와 실제 사회를 연결하여 사회적 가치 창출에 앞장서는 한국 최초의 NFT 중심 기업입니다.</>,
+			en: <>SOONI LABS is the first Korean NFT-focused company that bridges the gap between NFTs and Real-World utility through practical B-Apps.</>,
+			ko: <>SOONI LABS는 실용적인 B-App을 통해 NFT와 실제 사회를 연결하여 사회적 가치 창출에 앞장서는 한국 최초의 NFT 중심 기업입니다.</>,
 		},
 		banner: {
 			wording: {
