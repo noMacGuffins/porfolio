@@ -34,15 +34,7 @@ const Content = () => {
 			school: "images/yonseiLogo.png",
 			img: "images/team/yeajeanlee.jpg",
 		},
-		{
-			name: pagesWording.team.index.members.eric.name[locale],
-			position: pagesWording.team.index.members.eric.position[locale],
-			desc: pagesWording.team.index.members.eric.desc[locale],
-			specialty: pagesWording.team.index.members.eric.specialty[locale],
-			countries: pagesWording.team.index.members.eric.countries,
-			school: "images/nyuLogo.png",
-			img: "images/team/erickim.jpg",
-		},
+
 		{
 			name: pagesWording.team.index.members.ian.name[locale],
 			position: pagesWording.team.index.members.ian.position[locale],
@@ -87,6 +79,15 @@ const Content = () => {
 			countries: pagesWording.team.index.members.jade.countries,
 			school: "images/kaistLogo.png",
 			img: "images/team/jadeyang.jpg",
+		},
+		{
+			name: pagesWording.team.index.members.eric.name[locale],
+			position: pagesWording.team.index.members.eric.position[locale],
+			desc: pagesWording.team.index.members.eric.desc[locale],
+			specialty: pagesWording.team.index.members.eric.specialty[locale],
+			countries: pagesWording.team.index.members.eric.countries,
+			school: "images/nyuLogo.png",
+			img: "images/team/erickim.jpg",
 		},
 	];
 

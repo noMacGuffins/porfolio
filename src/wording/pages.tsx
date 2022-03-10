@@ -214,7 +214,6 @@ export const pagesWording = {
 							<Div textCenter>
 								<Div pt20>New York University</Div>
 								<Div pt20>PM @ GreenWall Building Materials</Div>
-								<Div pt20>High City Berlin Clothing Brand Founder</Div>
 								<Div pt20>NFT Degen</Div>
 							</Div>
 						),
@@ -222,7 +221,6 @@ export const pagesWording = {
 							<Div textCenter>
 								<Div pt20>뉴욕대학교</Div>
 								<Div pt20>PM @ GreenWall Building Materials</Div>
-								<Div pt20>High City Berlin 의류브랜드 창업</Div>
 								<Div pt20>NFT 활동가</Div>
 							</Div>
 						),
