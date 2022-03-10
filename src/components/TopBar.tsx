@@ -30,7 +30,7 @@ const TopBar = ({ mode }) => {
 			<Row flex justifyCenter py20 mx30={!isTablet} mx10={isTablet}>
 				<Col auto flex itemsCenter px20={!isTablet} onClick={() => moveTo(urls.index)} cursorPointer>
 					{/* <Div imgTag src={"images/sooniLabsBWIconNoBg.png"} h={200} w={200} style={{ opacity: 0.8 }}></Div> */}
-					<Div imgTag src={"images/sooniLabsIconNew.png"} h={100} w={100} style={{ opacity: 0.9 }}></Div>
+					<Div imgTag src={"images/sooniLabsIconNew.png"} h={60} w={60} style={{ opacity: 0.9 }}></Div>
 				</Col>
 				<Col />
 				{isTablet ? (
@@ -46,7 +46,7 @@ const TopBar = ({ mode }) => {
 					<>
 						{pages.map((page) => {
 							return (
-								<Col auto flex itemsCenter cursorPointer onClick={() => moveTo(page.url)} key={page.url}>
+								<Col auto flex itemsCenter cursorPointer onClick={() => moveTo(page.url)} key={page.url} pb4>
 									<Div spanTag fontBold px20 clx={pathname == page.url && "colorful colorful2"}>
 										{page.name}
 									</Div>

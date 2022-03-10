@@ -7,7 +7,7 @@ import Footer from "src/components/Footer";
 import useIsTablet from "src/hooks/useIsTablet";
 import { useRouter } from "next/router";
 import BasicHeadWrapper from "src/components/BasicHeadWrapper";
-import "src/scripts/cursorMove";
+// import "src/scripts/cursorMove";
 import Row from "src/components/Row";
 import Col from "src/components/Col";
 
@@ -25,13 +25,19 @@ const Content = () => {
 		{
 			name: pagesWording.portfolio.index.items.thinktomi.name[locale],
 			desc: pagesWording.portfolio.index.items.thinktomi.desc[locale],
-			visual: "images/thinktomiIcon.jpeg",
+			visual: "images/thinktomiIcon.png",
+			isImg: true,
+		},
+		{
+			name: pagesWording.portfolio.index.items.pitchForce.name[locale],
+			desc: pagesWording.portfolio.index.items.pitchForce.desc[locale],
+			visual: "images/pitchForceLogo.png",
 			isImg: true,
 		},
 		{
 			name: pagesWording.portfolio.index.items.gomz.name[locale],
 			desc: pagesWording.portfolio.index.items.gomz.desc[locale],
-			visual: "images/portfolio/gomzNoBg.png",
+			visual: "images/portfolio/gomzIllust.png",
 			isImg: true,
 		},
 		{
@@ -43,7 +49,7 @@ const Content = () => {
 	];
 
 	return (
-		<Div clx={!isTablet && "radial-gradient"}>
+		<Div>
 			<TopBar mode={"light"}></TopBar>
 			<Div pt200 pb100>
 				<Div row={!isTablet} pb100 maxW={1200} mxAuto px30>

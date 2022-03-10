@@ -9,8 +9,13 @@ export const pagesWording = {
 				ko: <>SOONI LABS</>,
 			},
 			motto: {
-				en: <>Blockchain for the Betterment of Society</>,
-				ko: <>사회를 위한 블록체인</>,
+				en: (
+					<>
+						Blockchain
+						<br /> for the Betterment of Society
+					</>
+				),
+				ko: <>더 나은 사회를 위한 블록체인</>,
 			},
 		},
 		aboutUs: {
@@ -45,7 +50,12 @@ export const pagesWording = {
 						make a positive impact, to create a warm NFT ecosystem where art, society, and technology are all appreciated.
 					</>
 				),
-				ko: <>저희는 예술, 사회, 블록체인 기술을 동원하여 사회에 도움이 되는 유틸리티 NFT 커뮤니티를 구축할 것입니다.</>,
+				ko: (
+					<>
+						SOONI Labs는 한국뿐만 아니라 세계를 위한 프로젝트를 개발합니다. 예술, 사회, 기술이 융합되어 긍정적인 영향을 끼치는 따뜻한 NFT 생태계를
+						만들기 위해 이 자리에 있습니다.
+					</>
+				),
 			},
 		},
 		values: {
@@ -56,7 +66,7 @@ export const pagesWording = {
 			helping: {
 				title: {
 					en: <>For you and those around us</>,
-					ko: <>당신과 우리 주변 사람들을 위해</>,
+					ko: <>당신과 당신 주변 사람들을 위해</>,
 				},
 				desc: {
 					en: (
@@ -67,8 +77,8 @@ export const pagesWording = {
 					),
 					ko: (
 						<>
-							순이의 모든 프로젝트는 사회적 문제 해결에 전념합니다. 성, 배경, 세대 차이에 상관없이 모두가 NFT의 실용성을 인식할 수 있도록 도울
-							것입니다.
+							모든 프로젝트는 사회적 문제 해결에 전념합니다. 성, 배경, 세대 차이에 상관없이 모두가 NFT의 실용성을 통해 사회적 가치를 창출할 수 있도록
+							돕습니다.
 						</>
 					),
 				},
@@ -76,7 +86,7 @@ export const pagesWording = {
 			statusQuo: {
 				title: {
 					en: <>Breaking Stereotypes</>,
-					ko: <>사회적 고정관념을 부수다</>,
+					ko: <>고정관념에 도전하다</>,
 				},
 				desc: {
 					en: (
@@ -87,8 +97,8 @@ export const pagesWording = {
 					),
 					ko: (
 						<>
-							암호화폐, 블록체인 및 NFT와 관련하여 좋지 않은 인식이 대다수입니다. “투기”, “도박”, “불법” 등 여러 단어들과 얽혀있습니다. NFT의 실제
-							활용도 창출을 통해 디지털 자산을 둘러싼 이러한 고정 관념에 도전합니다.
+							암호화폐, 블록체인 및 NFT와 관련하여 “투기”, “도박”, “불법” 등 부정적 사회적 인식이 존재합니다. NFT의 실제 활용도 창출을 통해 디지털
+							자산을 둘러싼 이러한 고정관념에 도전합니다.
 						</>
 					),
 				},
@@ -96,7 +106,7 @@ export const pagesWording = {
 			community: {
 				title: {
 					en: <>Community-obsessed</>,
-					ko: <>커뮤니티 중점</>,
+					ko: <>커뮤니티와 함께</>,
 				},
 				desc: {
 					en: (
@@ -107,8 +117,8 @@ export const pagesWording = {
 					),
 					ko: (
 						<>
-							NFT 컬렉션의 수명은 결코 커뮤니티에 의해 결정된다고 믿습니다. 저희 회사를 위해 함께 나아가고 있는 커뮤니티의 목소리에 귀를 기울것입니다.
-							커뮤니티 의견은 SOONI LABS 향후 결정에 반영됩니다.
+							NFT 컬렉션의 수명은 결코 함께 나아가고있는 커뮤니티에 의해 결정된다고 믿습니다. 커뮤니티의 목소리는 SOONI Labs의 향후 발자취를 결정하며,
+							함께 진정한 DAO를 향해 나아갑니다.
 						</>
 					),
 				},
@@ -118,18 +128,12 @@ export const pagesWording = {
 	team: {
 		index: {
 			title: {
-				ko: "팀",
-				en: (
-					<>
-						Our
-						<br />
-						Team
-					</>
-				),
+				ko: "Team",
+				en: <>Team</>,
 			},
 			subtitle: {
-				ko: "블록 체인을 통해 세상을 위한 새로운 가치를 창출하는 역동적인 무리",
-				en: "A group of active problem solvers working together to provide value from blockchain for the world.",
+				ko: "SOONI Labs 팀원들은 블록체인을 기반으로 함께 고민하고, 해결하며 세계를 향해 나아갑니다.",
+				en: "A group of active problem solvers working together to provide value from blockchain, for the world.",
 			},
 			members: {
 				minjun: {
@@ -143,23 +147,25 @@ export const pagesWording = {
 					},
 					countries: "🇰🇷 🇨🇳 🇦🇺 🇺🇸",
 					specialty: {
-						en: "Interested in scaling businesses to its maximum potential",
-						ko: "기업을 극한으로 키우다",
+						en: "Creating connection between humanity and blockchain",
+						ko: "사람과 블록체인을 연결하다",
 					},
 					desc: {
 						en: (
-							<ul className="list-disc">
-								<li>KAIST Business & Tech Management</li>
-								<li>NONCE Blockchain Community</li>
-								<li>KLAYTN & Ethereum Enthusiast</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>KAIST Business & Tech Management</Div>
+								<Div pt20>NONCE Blockchain Community Member</Div>
+								<Div pt20>1st in MSK x Block Crafters Case Competition</Div>
+							</Div>
 						),
 						ko: (
-							<ul className="list-disc">
-								<li>카이스트 기술경영</li>
-								<li>논스 블록체인 커뮤니티</li>
-								<li>클레이튼 & 이더리움 애호가</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>KAIST 기술경영학부</Div>
+								<Div pt20>블록체인 커뮤니티 NONCE 멤버</Div>
+								<Div pt20>
+									MSK x Block Crafters <br /> 산학협력 프로젝트 우승
+								</Div>
+							</Div>
 						),
 					},
 				},
@@ -179,16 +185,16 @@ export const pagesWording = {
 					},
 					desc: {
 						en: (
-							<ul className="list-disc">
-								<li>Yonsei University Business</li>
-								<li>Experienced Project Manager in multiple start-ups</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>Yonsei University Business</Div>
+								<Div pt20>Experienced Project Manager in multiple start-ups</Div>
+							</Div>
 						),
 						ko: (
-							<ul className="list-disc">
-								<li>연세대학교 경영</li>
-								<li>스타트업 프로젝트 메니져 경력 다수</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>연세대학교 경영학과</Div>
+								<Div pt20>PM @ CodeGreen</Div>
+							</Div>
 						),
 					},
 				},
@@ -208,18 +214,16 @@ export const pagesWording = {
 					},
 					desc: {
 						en: (
-							<ul className="list-disc">
-								<li>New York University</li>
-								<li>Full-Time Crypto Trader</li>
-								<li>Experiences in building E-Commerce and NFT projects</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>New York University</Div>
+								<Div pt20>PM @ GreenWall Building Materials</Div>
+							</Div>
 						),
 						ko: (
-							<ul className="list-disc">
-								<li>뉴욕대학교</li>
-								<li>풀타임 가상자산 거래</li>
-								<li>이커머스, 엔에프티 창업 경력 다수</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>뉴욕대학교</Div>
+								<Div pt20>PM @ GreenWall Building Materials</Div>
+							</Div>
 						),
 					},
 				},
@@ -239,16 +243,18 @@ export const pagesWording = {
 					},
 					desc: {
 						en: (
-							<ul className="list-disc">
-								<li>HongKong PolyTechnic University Industrial Design</li>
-								<li>HongKong 2022 디즈니 이매지네이션 대회 결승 진출</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>HongKong PolyTechnic University Industrial Design</Div>
+								<Div pt20>Product Designer @ Lulugine</Div>
+								<Div pt20>Illustrator @ A’ Prime</Div>
+							</Div>
 						),
 						ko: (
-							<ul className="list-disc">
-								<li>홍콩 폴리테크닉 대학교 산업디자인</li>
-								<li>홍콩 2022 Disney Imaginations Competition 결선 진출</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>홍콩 폴리테크닉 대학교 산업디자인학과</Div>
+								<Div pt20>제품 디자이너 @ Lulugine</Div>
+								<Div pt20>일러스트 디자이너 @ A’ Prime</Div>
+							</Div>
 						),
 					},
 				},
@@ -268,16 +274,14 @@ export const pagesWording = {
 					},
 					desc: {
 						en: (
-							<ul className="list-disc">
-								<li>KAIST Industrial Design</li>
-								<li>Designed 10+ successful web pages</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>KAIST Industrial Design</Div>
+							</Div>
 						),
 						ko: (
-							<ul className="list-disc">
-								<li>카이스트 산업디자인</li>
-								<li>다수의 성공적인 웹앱 디자인 경력</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>KAIST 산업디자인학과</Div>
+							</Div>
 						),
 					},
 				},
@@ -297,18 +301,16 @@ export const pagesWording = {
 					countries: "🇰🇷 🇻🇳 🇨🇦",
 					desc: {
 						en: (
-							<ul className="list-disc">
-								<li>KAIST Computer Science</li>
-								<li>SW Engineer @ Ringle</li>
-								<li>Metaverse Specialist</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>KAIST Computer Science</Div>
+								<Div pt20>SW Engineer @ Ringle</Div>
+							</Div>
 						),
 						ko: (
-							<ul className="list-disc">
-								<li>카이스트 전산학부</li>
-								<li>개발자 @ 링글</li>
-								<li>메타버스 개발</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>KAIST 전산학부</Div>
+								<Div pt20>개발자 @ 링글</Div>
+							</Div>
 						),
 					},
 				},
@@ -318,28 +320,28 @@ export const pagesWording = {
 						ko: "정재환",
 					},
 					position: {
-						ko: "스마트 컨트랙트 개발자",
+						ko: "Smart Contract 개발자",
 						en: "Smart Contract Developer",
 					},
 					countries: "🇰🇷 🇸🇬",
 					specialty: {
 						en: "Loading... until everything is decentralized",
-						ko: "탈중화 화 까지 로딩중",
+						ko: "모든 걸 탈중앙화중...",
 					},
 					desc: {
 						en: (
-							<ul className="list-disc">
-								<li>KAIST Computer Science</li>
-								<li>SW Engineer @ Waddle</li>
-								<li>Multiple work experiences in FinTech</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>KAIST Computer Science</Div>
+								<Div pt20>Founder, SW Engineer @ Sureplus</Div>
+								<Div pt20>SW Engineer @ Waddle</Div>
+							</Div>
 						),
 						ko: (
-							<ul className="list-disc">
-								<li>카이스트 전산 학부</li>
-								<li>개발자 @ 와들</li>
-								<li>핀테크 기업 경력</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>KAIST 전산학부</Div>
+								<Div pt20>공동 창립자, 개발자 @ SurePlus</Div>
+								<Div pt20>개발자 @ Waddle</Div>
+							</Div>
 						),
 					},
 				},
@@ -359,16 +361,14 @@ export const pagesWording = {
 					},
 					desc: {
 						en: (
-							<ul className="list-disc">
-								<li>KAIST Computer Science</li>
-								<li>Experiences in creating user-friendly apps</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>KAIST Computer Science</Div>
+							</Div>
 						),
 						ko: (
-							<ul className="list-disc">
-								<li>카이스트 전산 학부</li>
-								<li>유저 친화적 앱 개발 경력 다수</li>
-							</ul>
+							<Div textCenter>
+								<Div pt20>KAIST 전산학부</Div>
+							</Div>
 						),
 					},
 				},
@@ -378,7 +378,7 @@ export const pagesWording = {
 	portfolio: {
 		index: {
 			title: {
-				ko: "포트폴리오",
+				ko: "Portfolio",
 				en: "Portfolio",
 			},
 			items: {
@@ -388,54 +388,48 @@ export const pagesWording = {
 						en: "Conception",
 					},
 					desc: {
-						ko: "SOONI LABS는 7명의 블록체인 애호가의 의해 2021년에 세워졌습니다.",
-						en: "SOONI LABS was founded in 2021 by seven blockchain enthusiasts.",
+						ko: "SOONI LABS 2021년 설립",
+						en: "SOONI LABS was founded in 2021.",
 					},
 				},
 				thinktomi: {
 					name: {
-						ko: "실리콘밸리 Thinktomi x KAIST 스타트업 프로그램 우승",
-						en: "SW Silicon Valley x KAIST Start Up Program 1st Place",
+						ko: "실리콘밸리 Thinktomi x KAIST 스타트업 프로그램",
+						en: "SW Silicon Valley x KAIST Start Up Program",
 					},
 					desc: {
-						ko: (
-							<>
-								@ CES, Las Vegas
-								<br />
-								파이널리스트 @ PitchForce
-								<br />
-								우승 @Thinktomi&apos;s 스타트업 대회.
-							</>
-						),
-						en: (
-							<>
-								@ CES, Las Vegas
-								<br />
-								Final Round @ PitchForce
-								<br />
-								1st @ Thinktomi&apos;s Start-Up Competition.
-							</>
-						),
+						ko: <>Thinktomi 스타트업 대회 우승</>,
+						en: <>Thinktomi Start-Up Competition 1st Place</>,
+					},
+				},
+				pitchForce: {
+					name: {
+						ko: "Silicon Valley PitchForce",
+						en: "Silicon Valley PitchForce",
+					},
+					desc: {
+						ko: <>PitchForce 스타트업 대회 결선 진출</>,
+						en: <>PitchForces Start-Up Competition Finalist</>,
 					},
 				},
 				gomz: {
 					name: {
-						ko: "Gomz",
-						en: "Gomz",
+						ko: "NFT: GOMZ",
+						en: "NFT: GOMZ",
 					},
 					desc: {
-						ko: "팝아트 PFP NFT",
-						en: "Pop Art PFP NFT",
+						ko: "COMING SOON",
+						en: "COMING SOON",
 					},
 				},
 				gomzSpace: {
 					name: {
-						ko: "GomzSpace",
-						en: "GomzSpace",
+						ko: "Metaverse: GOMZSPACE",
+						en: "Metaverse: GOMZSPACE",
 					},
 					desc: {
-						ko: "2d 메타버스",
-						en: "2d Metaverse",
+						ko: "COMING SOON",
+						en: "COMING SOON",
 					},
 				},
 			},

@@ -5,19 +5,19 @@ export const globalsWording = {
 	topbar: {
 		pages: {
 			team: {
-				ko: "팀",
+				ko: "Team",
 				en: "Team",
 			},
 			portfolio: {
-				ko: "포트폴리오",
+				ko: "Portfolio",
 				en: "Portfolio",
 			},
 			home: {
-				ko: "홈",
+				ko: "Home",
 				en: "Home",
 			},
 			content: {
-				ko: "콘텐츠",
+				ko: "Content",
 				en: "Content",
 			},
 		},
@@ -29,8 +29,8 @@ export const globalsWording = {
 		},
 		banner: {
 			wording: {
-				en: <>Check out our most recent launch</>,
-				ko: <>최신 프로젝트 보러가기</>,
+				en: <>Check out our most recent release</>,
+				ko: <>신규 프로젝트 보러가기</>,
 			},
 			link: {
 				ko: "https://www.gomz.io/ko",
@@ -39,15 +39,15 @@ export const globalsWording = {
 		},
 		pages: {
 			home: {
-				ko: "홈",
+				ko: "Home",
 				en: "Home",
 			},
 			team: {
-				ko: "팀",
+				ko: "Team",
 				en: "Team",
 			},
 			portfolio: {
-				ko: "포트폴리오",
+				ko: "Portfolio",
 				en: "Portfolio",
 			},
 		},

@@ -8,7 +8,7 @@ import { PlusCircleIcon } from "@heroicons/react/outline";
 import useIsTablet from "src/hooks/useIsTablet";
 import { useRouter } from "next/router";
 import BasicHeadWrapper from "src/components/BasicHeadWrapper";
-import "src/scripts/cursorMove";
+// import "src/scripts/cursorMove";
 import Col from "src/components/Col";
 
 const Content = () => {
@@ -22,6 +22,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.minjun.desc[locale],
 			specialty: pagesWording.team.index.members.minjun.specialty[locale],
 			countries: pagesWording.team.index.members.minjun.countries,
+			school: "images/kaistLogo.png",
 			img: "images/team/minjunkim.jpg",
 		},
 		{
@@ -30,6 +31,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.yeajean.desc[locale],
 			specialty: pagesWording.team.index.members.yeajean.specialty[locale],
 			countries: pagesWording.team.index.members.yeajean.countries,
+			school: "images/yonseiLogo.png",
 			img: "images/team/yeajeanlee.jpg",
 		},
 		{
@@ -38,6 +40,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.ian.desc[locale],
 			specialty: pagesWording.team.index.members.ian.specialty[locale],
 			countries: pagesWording.team.index.members.ian.countries,
+			school: "images/kaistLogo.png",
 			img: "images/team/sehanpark.jpg",
 		},
 		{
@@ -46,6 +49,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.jieun.desc[locale],
 			specialty: pagesWording.team.index.members.jieun.specialty[locale],
 			countries: pagesWording.team.index.members.jieun.countries,
+			school: "images/hongKongPolyULogo.png",
 			img: "images/team/jieunpark.jpg",
 		},
 		{
@@ -54,6 +58,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.jade.desc[locale],
 			specialty: pagesWording.team.index.members.jade.specialty[locale],
 			countries: pagesWording.team.index.members.jade.countries,
+			school: "images/kaistLogo.png",
 			img: "images/team/jadeyang.jpg",
 		},
 
@@ -63,6 +68,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.jaehwan.desc[locale],
 			specialty: pagesWording.team.index.members.jaehwan.specialty[locale],
 			countries: pagesWording.team.index.members.jaehwan.countries,
+			school: "images/kaistLogo.png",
 			img: "images/team/jaehwanjung.jpg",
 		},
 		{
@@ -71,6 +77,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.seungan.desc[locale],
 			specialty: pagesWording.team.index.members.seungan.specialty[locale],
 			countries: pagesWording.team.index.members.seungan.countries,
+			school: "images/kaistLogo.png",
 			img: "images/team/seunganjung.jpg",
 		},
 		{
@@ -79,20 +86,21 @@ const Content = () => {
 			desc: pagesWording.team.index.members.eric.desc[locale],
 			specialty: pagesWording.team.index.members.eric.specialty[locale],
 			countries: pagesWording.team.index.members.eric.countries,
+			school: "images/nyuLogo.png",
 			img: "images/team/erickim.jpg",
 		},
 	];
 
 	return (
-		<Div clx={!isTablet && "radial-gradient"}>
+		<Div>
 			<TopBar mode={"light"}></TopBar>
 			<Div pt200 pb100 borderBlack borderB2>
 				<Div row={!isTablet} pb100 maxW={1200} mxAuto px30 gapX={30}>
 					<Div col={!isTablet} leadingNone colAuto textXxl={!isTablet} fontSize60={isTablet} fontBold clx={"colorful colorful2"}>
 						{pagesWording.team.index.title[locale]}
 					</Div>
-					<Div flex col={!isTablet} itemsEnd py0 maxW={500} mt20>
-						<Div textLg fontBold textLeft textGray700>
+					<Div flex col={!isTablet} itemsEnd py0 maxW={700} mt20>
+						<Div textLg fontBold textLeft textGray800>
 							{pagesWording.team.index.subtitle[locale]}
 						</Div>
 					</Div>
@@ -114,25 +122,30 @@ const Content = () => {
 							<Div key={content.name} flex itemsEnd>
 								<Div wFull>
 									<Div relative overflowHidden rounded2xl p0 cursorPointer h300={isTablet}>
-										<Div absolute wFull hFull p20 clx={"group transition hover:backdrop-blur-md hover:transition-all"}>
-											<Div relative wFull hFull>
-												<Div
-													fontBold
-													maxW={250}
-													clx={"text-20 transition group-hover:transition-all group-hover:translate-y-10 group-hover:text-30"}
-												></Div>
+										<Div absolute wFull hFull clx={"group transition hover:backdrop-blur-md hover:transition-all"}>
+											<Div relative wFull hFull flex itemsCenter justifyCenter>
 												<Div
 													textWhite
 													fontBold
 													px20
-													py10
 													clx={
 														"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 group-hover:text-15"
 													}
 												>
+													<Div imgTag src={content.school} w100 h100 mxAuto bgWhite rounded200 />
 													{content.desc}
 												</Div>
-												<Div textBlack fontNormal w30 h30 absolute bottom0 right0 clx={"transition group-hover:transition-all group-hover:opacity-0"}>
+												<Div
+													m10
+													textBlack
+													fontNormal
+													w30
+													h30
+													absolute
+													bottom0
+													right0
+													clx={"transition group-hover:transition-all group-hover:opacity-0"}
+												>
 													<PlusCircleIcon />
 												</Div>
 											</Div>
@@ -143,7 +156,7 @@ const Content = () => {
 										{content.name}
 									</Div>
 									<Div textLg>{content.position}</Div>
-									<Div italic>{content.specialty}</Div>
+									{/* <Div italic>{content.specialty}</Div> */}
 									<Div italic>{content.countries}</Div>
 								</Div>
 							</Div>

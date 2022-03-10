@@ -23,7 +23,7 @@ const Main = () => {
 				<Div textXxl={!isTablet} fontSize60={isTablet} clx={"timeline"} mb10 textGray900>
 					{pagesWording.index.main.title[locale]}
 				</Div>
-				<Div textXl clx={"timeline colorful colorful2"} textGray900>
+				<Div textXl={!isTablet} fontSize25={isTablet} clx={"timeline colorful colorful2"} textGray900>
 					{pagesWording.index.main.motto[locale]}
 				</Div>
 			</Div>
@@ -150,7 +150,16 @@ const StatusQuo = () => {
 					<Timeline totalProgress={progress} paused>
 						<Timeline
 							target={
-								<Div absolute top0 triggerHook={1} left={"30%"} w800 h800 rounded3000 style={{ backgroundColor: "rgba(0, 256, 256, 0.15)" }}></Div>
+								<Div
+									absolute
+									top0
+									triggerHook={1}
+									left={isTablet ? "-120%" : "30%"}
+									w800
+									h800
+									rounded3000
+									style={{ backgroundColor: "rgba(0, 256, 256, 0.15)" }}
+								></Div>
 							}
 						>
 							<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 1, scaleY: 1 }} />

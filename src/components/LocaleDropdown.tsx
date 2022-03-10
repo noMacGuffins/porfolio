@@ -14,7 +14,7 @@ export default function LocaleDropdown() {
 	return (
 		<Menu as="div" className="relative inline-block text-left">
 			<div>
-				<Menu.Button className="px-4 text-lg text-black">
+				<Menu.Button className="px-4 text-black">
 					<GlobeAltIcon width={30} height={30} />
 				</Menu.Button>
 			</div>
