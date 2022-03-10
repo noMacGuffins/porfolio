@@ -106,14 +106,14 @@ export const pagesWording = {
 				desc: {
 					en: (
 						<>
-							We believe the longevity of NFT collections are determined by the community. To build a powerful community for our company and projects,
-							our supporters’ voices will be reflected in our future decisions.
+							We believe the longevity of NFT collections are determined by the community. Our supporters’ voices will be reflected in our future
+							decisions to evolve into a powerful DAO.
 						</>
 					),
 					ko: (
 						<>
-							NFT 컬렉션의 수명은 결코 함께 나아가고있는 커뮤니티에 의해 결정된다고 믿습니다. 커뮤니티의 목소리는 SOONI LABS의 향후 발자취를 결정하며,
-							함께 진정한 커뮤니티를 향해 나아갑니다.
+							NFT 컬렉션의 수명은 함께 발전하는 커뮤니티에 의해 결정된다고 확신합니다. SOONI LABS는 커뮤니티의 목소리와 함께 진정한 DAO를 향해 같이
+							나아갑니다.
 						</>
 					),
 				},
