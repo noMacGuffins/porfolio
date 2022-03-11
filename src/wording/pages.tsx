@@ -148,14 +148,14 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div pt20>KAIST Business & Tech Management</Div>
+								<Div>KAIST Business & Tech Management</Div>
 								<Div pt20>NONCE Blockchain Community Member</Div>
 								<Div pt20>1st in MSK x Block Crafters Case Competition</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div pt20>KAIST 기술경영학부</Div>
+								<Div>KAIST 기술경영학부</Div>
 								<Div pt20>블록체인 커뮤니티 NONCE 멤버</Div>
 								<Div pt20>
 									MSK x Block Crafters <br /> 산학협력 프로젝트 우승
@@ -181,14 +181,14 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div pt20>Yonsei University Business</Div>
+								<Div>Yonsei University Business</Div>
 								<Div pt20>PM @ CodeGreen</Div>
 								<Div pt20>Marketing @ KOTE</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div pt20>연세대학교 경영학과</Div>
+								<Div>연세대학교 경영학과</Div>
 								<Div pt20>PM @ CodeGreen</Div>
 								<Div pt20>마케팅 @ KOTE</Div>
 							</Div>
@@ -212,14 +212,14 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div pt20>New York University</Div>
+								<Div>New York University</Div>
 								<Div pt20>PM @ GreenWall Building Materials</Div>
 								<Div pt20>NFT Degen</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div pt20>뉴욕대학교</Div>
+								<Div>뉴욕대학교</Div>
 								<Div pt20>PM @ GreenWall Building Materials</Div>
 								<Div pt20>NFT 활동가</Div>
 							</Div>
@@ -243,7 +243,7 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div pt20>HongKong PolyTechnic University Product Design</Div>
+								<Div>HongKong PolyTechnic University Product Design</Div>
 								<Div pt20>Product Designer @ Lulugine</Div>
 								<Div pt20>Illustrator @ A’ Prime</Div>
 								<Div pt20>HK 2022 Disney Imaginations Competition Finalist</Div>
@@ -251,7 +251,7 @@ export const pagesWording = {
 						),
 						ko: (
 							<Div textCenter>
-								<Div pt20>홍콩 폴리테크닉 대학교 제품디자인학과</Div>
+								<Div>홍콩 폴리테크닉 대학교 제품디자인학과</Div>
 								<Div pt20>제품 디자이너 @ Lulugine</Div>
 								<Div pt20>일러스트 디자이너 @ A’ Prime</Div>
 								<Div pt20>HK 2022 Disney Imaginations Competition 결승 진출</Div>
@@ -276,12 +276,12 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div pt20>KAIST Industrial Design</Div>
+								<Div>KAIST Industrial Design</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div pt20>KAIST 산업디자인학과</Div>
+								<Div>KAIST 산업디자인학과</Div>
 							</Div>
 						),
 					},
@@ -303,14 +303,14 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div pt20>KAIST Computer Science</Div>
+								<Div>KAIST Computer Science</Div>
 								<Div pt20>SW Engineer @ Ringle</Div>
 								<Div pt20>Web-based Metaverse Specialist</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div pt20>KAIST 전산학부</Div>
+								<Div>KAIST 전산학부</Div>
 								<Div pt20>개발자 @ 링글</Div>
 								<Div pt20>웹 기반 Metaverse 개발자</Div>
 							</Div>
@@ -334,14 +334,14 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div pt20>KAIST Computer Science</Div>
+								<Div>KAIST Computer Science</Div>
 								<Div pt20>Founder, SW Engineer @ Sureplus</Div>
 								<Div pt20>SW Engineer @ Waddle</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div pt20>KAIST 전산학부</Div>
+								<Div>KAIST 전산학부</Div>
 								<Div pt20>공동 창립자, 개발자 @ SurePlus</Div>
 								<Div pt20>개발자 @ Waddle</Div>
 							</Div>
@@ -365,12 +365,12 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div pt20>KAIST Computer Science</Div>
+								<Div>KAIST Computer Science</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div pt20>KAIST 전산학부</Div>
+								<Div>KAIST 전산학부</Div>
 							</Div>
 						),
 					},

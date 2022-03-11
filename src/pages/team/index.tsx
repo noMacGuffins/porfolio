@@ -124,13 +124,14 @@ const Content = () => {
 							<Div key={content.name} flex itemsEnd>
 								<Div wFull>
 									<Div relative overflowHidden rounded2xl p0 cursorPointer h300={isTablet} h400={!isTablet}>
-										<Div absolute wFull hFull clx={"group transition hover:backdrop-blur-md hover:transition-all"}>
+										<Div absolute wFull hFull clx={"group transition hover:backdrop-blur-md hover:transition-all"} p0>
 											<Div relative wFull hFull flex itemsCenter justifyCenter>
 												<Div
 													textWhite
 													fontBold
 													px20
 													rounded2xl
+													pb20
 													clx={
 														"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 group-hover:text-15"
 													}
