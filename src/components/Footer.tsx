@@ -49,7 +49,7 @@ const Footer = () => {
 							</Div>
 						</Col>
 						<Col px0 cursorPointer>
-							<Div aTag href={"https://www.instagram.com/sooni__official/"}>
+							<Div aTag href={"https://www.instagram.com/soonilabs/"}>
 								<Div imgTag src={"images/instagramIcon.png"} w30 h30></Div>
 							</Div>
 						</Col>

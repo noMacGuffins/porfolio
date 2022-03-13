@@ -30,7 +30,11 @@ export const pagesWording = {
 						practical B-Apps.
 					</>
 				),
-				ko: <>2021년에 설립된 SOONI LABS는 실용적인 B-App을 통해 NFT와 실제 사회를 연결하여 사회적 가치 창출에 앞장서는 한국 최초의 NFT 중심 기업입니다.</>,
+				ko: (
+					<>
+						2021년에 설립된 SOONI LABS는 실용적인 B-App을 통해 NFT와 실제 사회를 연결하여 사회적 가치 창출에 앞장서는 한국 최초의 NFT 중심 기업입니다.
+					</>
+				),
 			},
 		},
 		mission: {
@@ -47,8 +51,8 @@ export const pagesWording = {
 				),
 				ko: (
 					<>
-						SOONI LABS는 한국뿐만 아니라 전 세계를 위한 지속적인 프로젝트 개발을 통해
-						예술, 사회, 기술이 융합되어 긍정적인 영향을 주는 따뜻한 NFT 생태계를 만들어 갑니다.
+						SOONI LABS는 한국뿐만 아니라 전 세계를 위한 지속적인 프로젝트 개발을 통해 예술, 사회, 기술이 융합되어 긍정적인 영향을 주는 따뜻한 NFT
+						생태계를 만들어 갑니다.
 					</>
 				),
 			},
@@ -66,16 +70,15 @@ export const pagesWording = {
 				desc: {
 					en: (
 						<>
-							Our every project is dedicated to solve societal issues. We aspire to help everyone create social value through the practicality of NFT,
-							regardless of gender, background, or generational differences.
+							Our every project is dedicated to solving societal issues. We aspire to help everyone create social value through the practicality of
+							NFTs, regardless of gender, background, or generational differences.
 						</>
 					),
 					ko: (
 						<>
-							모든 프로젝트는 사회적 문제 해결을 위해 존재합니다. 성별, 배경, 세대 차이에 상관없이 모두가 NFT의 실용성을 통해 사회적 가치를 창출할 수 있도록
-							돕습니다.
+							모든 프로젝트는 사회적 문제 해결을 위해 존재합니다. 성별, 배경, 세대 차이에 상관없이 모두가 NFT의 실용성을 통해 사회적 가치를 창출할 수
+							있도록 돕습니다.
 						</>
-						
 					),
 				},
 			},
@@ -93,8 +96,8 @@ export const pagesWording = {
 					),
 					ko: (
 						<>
-							암호화폐, 블록체인 및 NFT와 관련하여 “투기”, “도박”, “불법” 등 부정적 사회적 인식이 존재합니다. NFT의 실제 사회적 가치 창출을 통해 디지털
-							자산을 둘러싼 여러 부정적인 고정관념에 맞서 도전합니다.
+							암호화폐, 블록체인 및 NFT와 관련하여 “투기”, “도박”, “불법” 등 부정적 사회적 인식이 존재합니다. NFT의 실제 사회적 가치 창출을 통해
+							디지털 자산을 둘러싼 여러 부정적인 고정관념에 맞서 도전합니다.
 						</>
 					),
 				},
@@ -102,7 +105,7 @@ export const pagesWording = {
 			community: {
 				title: {
 					en: [<>Community-</>, <>obsessed</>],
-					ko: [<>커뮤니티와 함께</>,<></>],
+					ko: [<>커뮤니티와 함께</>, <></>],
 				},
 				desc: {
 					en: (
@@ -413,7 +416,7 @@ export const pagesWording = {
 					},
 					desc: {
 						ko: <>PitchForce 스타트업 대회 결선 진출</>,
-						en: <>PitchForces Start-Up Competition Finalist</>,
+						en: <>PitchForce Startup Competition Finalist</>,
 					},
 				},
 				gomz: {
