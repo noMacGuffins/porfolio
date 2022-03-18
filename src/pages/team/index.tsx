@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import BasicHeadWrapper from "src/components/BasicHeadWrapper";
 // import "src/scripts/cursorMove";
 import Col from "src/components/Col";
+import { moveTo } from "src/modules/routerHelper";
 
 const Content = () => {
 	const isTablet = useIsTablet();
@@ -51,6 +52,7 @@ const Content = () => {
 			countries: pagesWording.team.index.members.ian.countries,
 			school: "images/kaistLogo.png",
 			img: "images/team/sehanpark.jpg",
+			devLogs: `https://dev.soonilabs.com/${locale}/notes/noMacGuffins`,
 		},
 		{
 			name: pagesWording.team.index.members.jaehwan.name[locale],
@@ -60,6 +62,7 @@ const Content = () => {
 			countries: pagesWording.team.index.members.jaehwan.countries,
 			school: "images/kaistLogo.png",
 			img: "images/team/jaehwanjeong.jpeg",
+			devLogs: `https://dev.soonilabs.com/${locale}/notes/youngmi97`,
 		},
 		{
 			name: pagesWording.team.index.members.seungan.name[locale],
@@ -69,6 +72,7 @@ const Content = () => {
 			countries: pagesWording.team.index.members.seungan.countries,
 			school: "images/kaistLogo.png",
 			img: "images/team/seunganjung.jpg",
+			devLogs: `https://dev.soonilabs.com/${locale}/notes/junggernaut`,
 		},
 		{
 			name: pagesWording.team.index.members.jieun.name[locale],
@@ -88,7 +92,6 @@ const Content = () => {
 			school: "images/kaistLogo.png",
 			img: "images/team/jadeyang.jpg",
 		},
-		
 	];
 
 	return (
@@ -160,7 +163,11 @@ const Content = () => {
 										{content.name}
 									</Div>
 									<Div textLg>{content.position}</Div>
-									{/* <Div italic>{content.specialty}</Div> */}
+									{content.devLogs && (
+										<Div textInfo cursorPointer onClick={() => moveTo(content.devLogs)}>
+											Dev Logs
+										</Div>
+									)}
 									<Div italic>{content.countries}</Div>
 								</Div>
 							</Div>
