@@ -12,6 +12,9 @@ const Footer = () => {
 		{ name: globalsWording.footer.pages.team[locale], url: urls.team.index },
 		{ name: globalsWording.footer.pages.portfolio[locale], url: urls.portfolio.index },
 	];
+	const notReady = () => {
+		alert("This function is not ready yet.");
+	};
 	return (
 		<Div bgBlack textWhite py150 px30>
 			<Row mxAuto maxW={960} mb100>
@@ -19,7 +22,7 @@ const Footer = () => {
 					<Div mb20 fontBold>
 						{globalsWording.footer.intro[locale]}
 					</Div>
-					<Div cursorPointer aTag href={globalsWording.footer.banner.link[locale]} clx={"timeline colorful colorful2"}>
+					<Div cursorPointer onClick={notReady} clx={"timeline colorful colorful2"}>
 						{globalsWording.footer.banner.wording[locale]}
 					</Div>
 				</Col>

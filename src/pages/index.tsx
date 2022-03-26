@@ -17,6 +17,9 @@ import classNames from "classnames";
 const Main = () => {
 	const isTablet = useIsTablet();
 	const { locale } = useRouter();
+	const notReady = () => {
+		alert("This function is not ready yet.");
+	};
 	return (
 		<Div h={"102vh"} relative flex itemsCenter justifyCenter clx={"radial-gradient"} px30>
 			<Div maxW={600} fontBold textCenter leadingNone pb70 z100>
@@ -35,8 +38,9 @@ const Main = () => {
 								target={
 									<Div absolute left={-10} top={"30%"} bgBlack px30 py20 w80 rounded2xl cursorPointer>
 										<Div
-											aTag
-											href={globalsWording.footer.banner.link[locale]}
+											// aTag
+											// href={globalsWording.footer.banner.link[locale]}
+											onClick={notReady}
 											fontBold
 											textWhite
 											style={{ writingMode: "vertical-lr", textOrientation: "mixed" }}

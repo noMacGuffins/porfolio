@@ -96,8 +96,8 @@ export const pagesWording = {
 					),
 					ko: (
 						<>
-							암호화폐, 블록체인 및 NFT와 관련하여 “투기”, “도박”, “불법” 등 부정적 사회적 인식이 존재합니다. NFT의 실제 사회적 가치 창출을 통해 디지털
-							자산을 둘러싼 고정관념에 도전합니다.
+							암호화폐, 블록체인 및 NFT와 관련하여 “투기”, “도박”, “불법” 등 부정적 사회적 인식이 존재합니다. NFT의 실제 사회적 가치 창출을 통해
+							디지털 자산을 둘러싼 고정관념에 도전합니다.
 						</>
 					),
 				},
@@ -116,7 +116,8 @@ export const pagesWording = {
 					),
 					ko: (
 						<>
-							NFT 컬렉션의 수명은 함께 발전하는 커뮤니티에 의해 결정된다고 확신합니다. SOONI LABS는 커뮤니티의 목소리와 함께 진정한 DAO를 향해 나아갑니다.
+							NFT 컬렉션의 수명은 함께 발전하는 커뮤니티에 의해 결정된다고 확신합니다. SOONI LABS는 커뮤니티의 목소리와 함께 진정한 DAO를 향해
+							나아갑니다.
 						</>
 					),
 				},
@@ -159,7 +160,7 @@ export const pagesWording = {
 						ko: (
 							<Div textCenter>
 								<Div>KAIST 기술경영학부</Div>
-								<Div pt20>블록체인 커뮤니티 NONCE 멤버</Div>
+								{/* <Div pt20>블록체인 커뮤니티 NONCE 멤버</Div> */}
 								<Div pt20>
 									MSK x Block Crafters <br /> 산학협력 프로젝트 우승
 								</Div>

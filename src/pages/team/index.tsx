@@ -163,11 +163,11 @@ const Content = () => {
 										{content.name}
 									</Div>
 									<Div textLg>{content.position}</Div>
-									{content.devLogs && (
+									{/* {content.devLogs && (
 										<Div textInfo cursorPointer onClick={() => moveTo(content.devLogs)}>
 											Dev Logs
 										</Div>
-									)}
+									)} */}
 									<Div italic>{content.countries}</Div>
 								</Div>
 							</Div>
