@@ -43,8 +43,8 @@ const Content = () => {
 		{
 			name: pagesWording.portfolio.index.items.gomzSpace.name[locale],
 			desc: pagesWording.portfolio.index.items.gomzSpace.desc[locale],
-			visual: "images/portfolio/gomzSpace.mp4",
-			isImg: false,
+			visual: "images/portfolio/betterWorldBlueLogo.png",
+			isImg: true,
 		},
 	];
 

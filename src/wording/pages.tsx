@@ -431,8 +431,8 @@ export const pagesWording = {
 				},
 				gomzSpace: {
 					name: {
-						ko: "Metaverse: GOMZSPACE",
-						en: "Metaverse: GOMZSPACE",
+						ko: "BetterWorld",
+						en: "BetterWorld",
 					},
 					desc: {
 						ko: "COMING SOON",
