@@ -6,7 +6,4 @@ export const urls = {
     portfolio: {
         index: '/portfolio',
     },
-    content: {
-        index: '/content'
-    }
 }

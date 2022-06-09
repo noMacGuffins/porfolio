@@ -2,14 +2,13 @@ import { NextPage } from "next";
 import Div from "src/components/Div";
 import TopBar from "src/components/TopBar";
 import { pagesWording } from "src/wording/pages";
-import Detail from "src/components/modals/Detail";
 import Footer from "src/components/Footer";
 import useIsTablet from "src/hooks/useIsTablet";
 import { useRouter } from "next/router";
 import BasicHeadWrapper from "src/components/BasicHeadWrapper";
-// import "src/scripts/cursorMove";
 import Row from "src/components/Row";
 import Col from "src/components/Col";
+import { IMAGES } from "src/modules/images";
 
 const Content = () => {
 	const isTablet = useIsTablet();
@@ -19,31 +18,33 @@ const Content = () => {
 		{
 			name: pagesWording.portfolio.index.items.founded.name[locale],
 			desc: pagesWording.portfolio.index.items.founded.desc[locale],
-			visual: "images/sooniLabsIconNew.png",
+			visual: IMAGES.sooniLabsIconNew,
 			isImg: true,
 		},
 		{
 			name: pagesWording.portfolio.index.items.thinktomi.name[locale],
 			desc: pagesWording.portfolio.index.items.thinktomi.desc[locale],
-			visual: "images/thinktomiIcon.png",
+			visual: IMAGES.thinktomiIcon,
 			isImg: true,
 		},
 		{
 			name: pagesWording.portfolio.index.items.pitchForce.name[locale],
 			desc: pagesWording.portfolio.index.items.pitchForce.desc[locale],
-			visual: "images/pitchForceLogo.png",
+			visual: IMAGES.pitchForceLogo,
 			isImg: true,
 		},
 		{
 			name: pagesWording.portfolio.index.items.gomz.name[locale],
 			desc: pagesWording.portfolio.index.items.gomz.desc[locale],
-			visual: "images/portfolio/gomzIllust.png",
+			visual: IMAGES.portfolio.webeIllust,
+			link: "https://www.weirdbears.io",
 			isImg: true,
 		},
 		{
 			name: pagesWording.portfolio.index.items.gomzSpace.name[locale],
 			desc: pagesWording.portfolio.index.items.gomzSpace.desc[locale],
-			visual: "images/portfolio/betterWorldBlueLogo.png",
+			visual: IMAGES.portfolio.betterWorldBlueLogo,
+			link: "https://www.betterworldapp.io",
 			isImg: true,
 		},
 	];
@@ -63,7 +64,7 @@ const Content = () => {
 						const Info = () => {
 							return (
 								<Div flex justifyEnd={isRightElement && !isTablet} py20>
-									<Div maxW={300}>
+									<Div maxW={300} aTag={content.link} href={content.link}>
 										<Div
 											relative
 											overflowHidden
@@ -76,15 +77,7 @@ const Content = () => {
 											w200={index <= 1}
 											auto
 										>
-											{content.isImg ? (
-												<Div imgTag src={content.visual} objectCover hFull wFull></Div>
-											) : (
-												<Div objectCover hFull wFull bgBlack p20>
-													<video autoPlay={!isTablet} width="100%" muted loop>
-														<source src={content.visual} type="video/mp4" />
-													</video>
-												</Div>
-											)}
+											<Div imgTag src={content.visual} objectCover hFull wFull></Div>
 										</Div>
 										<Div flex itemsEnd>
 											<Div>
@@ -112,7 +105,6 @@ const Content = () => {
 				</Div>
 			</Div>
 			<Footer />
-			<Detail />
 		</Div>
 	);
 };

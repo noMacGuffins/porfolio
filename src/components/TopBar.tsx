@@ -1,9 +1,4 @@
-import { GlobeAltIcon } from "@heroicons/react/outline";
-import { useDispatch, useSelector } from "react-redux";
 import useIsTablet from "src/hooks/useIsTablet";
-
-import { RootState } from "src/store/reducers/rootReducer";
-import Link from "next/link";
 import Col from "./Col";
 import Div from "./Div";
 import Row from "./Row";
@@ -13,7 +8,7 @@ import LocaleDropdown from "./LocaleDropdown";
 import MobileMenuDropdown from "./MobileMenuDropdown";
 import { useRouter } from "next/router";
 import { globalsWording } from "src/wording/globals";
-import { pagesWording } from "src/wording/pages";
+import { IMAGES } from "src/modules/images";
 
 const TopBar = ({ mode }) => {
 	const isTablet = useIsTablet();
@@ -29,8 +24,7 @@ const TopBar = ({ mode }) => {
 		<Div absolute wFull z100 {...textColorProp}>
 			<Row flex justifyCenter py20 mx30={!isTablet} mx10={isTablet}>
 				<Col auto flex itemsCenter px20={!isTablet} onClick={() => moveTo(urls.index)} cursorPointer>
-					{/* <Div imgTag src={"images/sooniLabsBWIconNoBg.png"} h={200} w={200} style={{ opacity: 0.8 }}></Div> */}
-					<Div imgTag src={"images/sooniLabsIconNew.png"} h={60} w={60} style={{ opacity: 0.9 }}></Div>
+					<Div imgTag src={IMAGES.sooniLabsIconNew} h={60} w={60} style={{ opacity: 0.9 }}></Div>
 				</Col>
 				<Col />
 				{isTablet ? (

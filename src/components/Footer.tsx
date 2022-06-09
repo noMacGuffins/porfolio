@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { IMAGES } from "src/modules/images";
 import { urls } from "src/modules/urls";
 import { globalsWording } from "src/wording/globals";
 import Col from "./Col";
@@ -12,9 +13,6 @@ const Footer = () => {
 		{ name: globalsWording.footer.pages.team[locale], url: urls.team.index },
 		{ name: globalsWording.footer.pages.portfolio[locale], url: urls.portfolio.index },
 	];
-	const notReady = () => {
-		alert("This function is not ready yet.");
-	};
 	return (
 		<Div bgBlack textWhite py150 px30>
 			<Row mxAuto maxW={960} mb100>
@@ -22,7 +20,7 @@ const Footer = () => {
 					<Div mb20 fontBold>
 						{globalsWording.footer.intro[locale]}
 					</Div>
-					<Div cursorPointer onClick={notReady} clx={"timeline colorful colorful2"}>
+					<Div aTag href={globalsWording.footer.banner.link[locale]} cursorPointer clx={"timeline colorful colorful2"}>
 						{globalsWording.footer.banner.wording[locale]}
 					</Div>
 				</Col>
@@ -48,17 +46,17 @@ const Footer = () => {
 					<Row gapX={20}>
 						<Col px0 cursorPointer>
 							<Div aTag href={"mailto:contact@soonilabs.com"}>
-								<Div imgTag src={"images/mailIcon.png"} w30 h30></Div>
+								<Div imgTag src={IMAGES.mailIcon} w30 h30></Div>
 							</Div>
 						</Col>
 						<Col px0 cursorPointer>
 							<Div aTag href={"https://www.instagram.com/soonilabs/"}>
-								<Div imgTag src={"images/instagramIcon.png"} w30 h30></Div>
+								<Div imgTag src={IMAGES.instagramIcon} w30 h30></Div>
 							</Div>
 						</Col>
 						<Col pl0 cursorPointer>
 							<Div aTag href={"https://twitter.com/soonilabs"}>
-								<Div imgTag src={"images/twitterIcon.png"} w30 h30></Div>
+								<Div imgTag src={IMAGES.twitterIcon} w30 h30></Div>
 							</Div>
 						</Col>
 					</Row>

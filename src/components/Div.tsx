@@ -20,7 +20,7 @@ import _ from 'lodash'
 import type { DivPropsType } from 'src/types/DivPropsType'
 import ReactTooltip from 'react-tooltip'
 import randomstring from 'randomstring'
-import { COLORS } from 'src/modules/constants'
+import { COLORS } from "src/modules/colors";
 
 const addToClxs = (clxs, obj, breakpoints?) => {
   if (obj) {

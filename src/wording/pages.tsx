@@ -9,13 +9,8 @@ export const pagesWording = {
 				ko: <>SOONI LABS</>,
 			},
 			motto: {
-				en: (
-					<>
-						Blockchain
-						<br /> for the Betterment of Society
-					</>
-				),
-				ko: <>더 나은 사회를 위한 블록체인</>,
+				en: <>Blockchain that Connects</>,
+				ko: <>사회를 잇는 블록체인</>,
 			},
 		},
 		aboutUs: {
@@ -296,8 +291,8 @@ export const pagesWording = {
 						ko: "박세한",
 					},
 					position: {
-						ko: "CTO",
-						en: "CTO",
+						ko: "Tech Lead",
+						en: "Tech Lead",
 					},
 					specialty: {
 						en: "Developing the next generation of web",
@@ -309,14 +304,12 @@ export const pagesWording = {
 							<Div textCenter>
 								<Div>KAIST Computer Science</Div>
 								<Div pt20>SW Engineer @ Ringle</Div>
-								<Div pt20>Web-based Metaverse Specialist</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
 								<Div>KAIST 전산학부</Div>
 								<Div pt20>개발자 @ 링글</Div>
-								<Div pt20>웹 기반 Metaverse 개발자</Div>
 							</Div>
 						),
 					},
@@ -421,8 +414,8 @@ export const pagesWording = {
 				},
 				gomz: {
 					name: {
-						ko: "NFT: GOMZ",
-						en: "NFT: GOMZ",
+						ko: "NFT: WEBE",
+						en: "NFT: WEBE",
 					},
 					desc: {
 						ko: "COMING SOON",

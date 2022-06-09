@@ -4,22 +4,17 @@ import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
 import useIsTablet from "src/hooks/useIsTablet";
 import TopBar from "src/components/TopBar";
-import { PlusCircleIcon } from "@heroicons/react/outline";
 import "src/scripts/cursorMove";
 import BasicHeadWrapper from "src/components/BasicHeadWrapper";
 import { useRouter } from "next/router";
 import Footer from "src/components/Footer";
 import { globalsWording } from "src/wording/globals";
-import Row from "src/components/Row";
-import Col from "src/components/Col";
 import classNames from "classnames";
+import { IMAGES } from "src/modules/images";
 
 const Main = () => {
 	const isTablet = useIsTablet();
 	const { locale } = useRouter();
-	const notReady = () => {
-		alert("This function is not ready yet.");
-	};
 	return (
 		<Div h={"102vh"} relative flex itemsCenter justifyCenter clx={"radial-gradient"} px30>
 			<Div maxW={600} fontBold textCenter leadingNone pb70 z100>
@@ -38,9 +33,8 @@ const Main = () => {
 								target={
 									<Div absolute left={-10} top={"30%"} bgBlack px30 py20 w80 rounded2xl cursorPointer>
 										<Div
-											// aTag
-											// href={globalsWording.footer.banner.link[locale]}
-											onClick={notReady}
+											aTag
+											href={globalsWording.footer.banner.link[locale]}
 											fontBold
 											textWhite
 											style={{ writingMode: "vertical-lr", textOrientation: "mixed" }}
@@ -57,48 +51,6 @@ const Main = () => {
 					)}
 				</Scene>
 			)}
-			{/* <Scene duration={200} pin={{ pushFollowers: true }}>
-				{(progress) => (
-					<Timeline totalProgress={progress} paused>
-						<Timeline
-							target={
-								<Div
-									absolute
-									w800={!isTablet}
-									h800={!isTablet}
-									w300={isTablet}
-									h300={isTablet}
-									rounded3000
-									style={{ backgroundColor: "rgba(0, 256, 0, 0.1)" }}
-								></Div>
-							}
-						>
-							<Tween from={{ scaleX: 0, scaleY: 0, y: -100, x: -100 }} to={{ scaleX: 1, scaleY: 1 }} />
-						</Timeline>
-					</Timeline>
-				)}
-			</Scene>
-			<Scene duration={200} pin={{ pushFollowers: true }}>
-				{(progress) => (
-					<Timeline totalProgress={progress} paused>
-						<Timeline
-							target={
-								<Div
-									absolute
-									w800={!isTablet}
-									h800={!isTablet}
-									w300={isTablet}
-									h300={isTablet}
-									rounded3000
-									style={{ backgroundColor: "rgba(0, 256, 256, 0.1)" }}
-								></Div>
-							}
-						>
-							<Tween from={{ scaleX: 0, scaleY: 0, y: 0, x: 0 }} to={{ scaleX: 1, scaleY: 1 }} />
-						</Timeline>
-					</Timeline>
-				)}
-			</Scene> */}
 		</Div>
 	);
 };
@@ -118,7 +70,7 @@ const ForYou = () => {
 							style={{ zIndex: 100 }}
 							target={
 								<Div z100 maxW={960} mxAuto flex={!isTablet} itemsEnd justifyEnd clx={!isTablet && "transition group hover:transition-all"}>
-									<Div imgTag src={"images/helping.png"} w400></Div>
+									<Div imgTag src={IMAGES.helping} w400></Div>
 									<Div absolute={!isTablet} top100 left0 clx={"transition group-hover:-translate-y-40"}>
 										<Div maxW={400} fontBold mb10 clx={"text-40 z-10 transition group-hover:transition-all"}>
 											{pagesWording.index.values.helping.title[locale]}
@@ -171,7 +123,7 @@ const StatusQuo = () => {
 						<Timeline
 							target={
 								<Div z100 maxW={960} mxAuto flex={!isTablet} itemsEnd justifyStart>
-									<Div imgTag src={"images/stereotypes.png"} w500></Div>
+									<Div imgTag src={IMAGES.stereotypes} w500></Div>
 									<Div absolute={!isTablet} top100 right0 clx={"transition group-hover:-translate-y-40"}>
 										<Div maxW={400} fontBold mb10 clx={"text-40 z-10 transition group-hover:transition-all"}>
 											{pagesWording.index.values.statusQuo.title[locale]}
@@ -215,7 +167,7 @@ const CommunityObsessed = () => {
 						<Timeline
 							target={
 								<Div z100 maxW={960} mxAuto flex={!isTablet} itemsEnd justifyEnd>
-									<Div imgTag src={"images/community.png"} w500></Div>
+									<Div imgTag src={IMAGES.community} w500></Div>
 									<Div absolute={!isTablet} top0 left0 clx={"transition group-hover:-translate-y-40"}>
 										<Div fontBold maxW={300} mb10 clx={"text-40 z-10 transition group-hover:transition-all"}>
 											{pagesWording.index.values.community.title[locale][0]}

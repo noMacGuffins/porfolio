@@ -2,7 +2,6 @@ import { NextPage } from "next";
 import Div from "src/components/Div";
 import TopBar from "src/components/TopBar";
 import { pagesWording } from "src/wording/pages";
-import Detail from "src/components/modals/Detail";
 import Footer from "src/components/Footer";
 import { PlusCircleIcon } from "@heroicons/react/outline";
 import useIsTablet from "src/hooks/useIsTablet";
@@ -11,6 +10,7 @@ import BasicHeadWrapper from "src/components/BasicHeadWrapper";
 // import "src/scripts/cursorMove";
 import Col from "src/components/Col";
 import { moveTo } from "src/modules/routerHelper";
+import { IMAGES } from "src/modules/images";
 
 const Content = () => {
 	const isTablet = useIsTablet();
@@ -23,8 +23,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.minjun.desc[locale],
 			specialty: pagesWording.team.index.members.minjun.specialty[locale],
 			countries: pagesWording.team.index.members.minjun.countries,
-			school: "images/kaistLogo.png",
-			img: "images/team/minjunkim.jpg",
+			img: IMAGES.team.minjunkim,
 		},
 		{
 			name: pagesWording.team.index.members.yeajean.name[locale],
@@ -32,8 +31,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.yeajean.desc[locale],
 			specialty: pagesWording.team.index.members.yeajean.specialty[locale],
 			countries: pagesWording.team.index.members.yeajean.countries,
-			school: "images/yonseiLogo.png",
-			img: "images/team/yeajeanlee.jpg",
+			img: IMAGES.team.yeajeanlee,
 		},
 		{
 			name: pagesWording.team.index.members.eric.name[locale],
@@ -41,8 +39,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.eric.desc[locale],
 			specialty: pagesWording.team.index.members.eric.specialty[locale],
 			countries: pagesWording.team.index.members.eric.countries,
-			school: "images/nyuLogo.png",
-			img: "images/team/erickim.jpg",
+			img: IMAGES.team.erickim,
 		},
 		{
 			name: pagesWording.team.index.members.ian.name[locale],
@@ -50,9 +47,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.ian.desc[locale],
 			specialty: pagesWording.team.index.members.ian.specialty[locale],
 			countries: pagesWording.team.index.members.ian.countries,
-			school: "images/kaistLogo.png",
-			img: "images/team/sehanpark.jpg",
-			devLogs: `https://dev.soonilabs.com/${locale}/notes/noMacGuffins`,
+			img: IMAGES.team.sehanpark,
 		},
 		{
 			name: pagesWording.team.index.members.jaehwan.name[locale],
@@ -60,9 +55,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.jaehwan.desc[locale],
 			specialty: pagesWording.team.index.members.jaehwan.specialty[locale],
 			countries: pagesWording.team.index.members.jaehwan.countries,
-			school: "images/kaistLogo.png",
-			img: "images/team/jaehwanjeong.jpeg",
-			devLogs: `https://dev.soonilabs.com/${locale}/notes/youngmi97`,
+			img: IMAGES.team.jaehwanjeong,
 		},
 		{
 			name: pagesWording.team.index.members.seungan.name[locale],
@@ -70,9 +63,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.seungan.desc[locale],
 			specialty: pagesWording.team.index.members.seungan.specialty[locale],
 			countries: pagesWording.team.index.members.seungan.countries,
-			school: "images/kaistLogo.png",
-			img: "images/team/seunganjung.jpg",
-			devLogs: `https://dev.soonilabs.com/${locale}/notes/junggernaut`,
+			img: IMAGES.team.seunganjung,
 		},
 		{
 			name: pagesWording.team.index.members.jieun.name[locale],
@@ -80,8 +71,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.jieun.desc[locale],
 			specialty: pagesWording.team.index.members.jieun.specialty[locale],
 			countries: pagesWording.team.index.members.jieun.countries,
-			school: "images/hongKongPolyULogo.png",
-			img: "images/team/jieunpark.jpg",
+			img: IMAGES.team.jieunpark,
 		},
 		{
 			name: pagesWording.team.index.members.jade.name[locale],
@@ -89,8 +79,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.jade.desc[locale],
 			specialty: pagesWording.team.index.members.jade.specialty[locale],
 			countries: pagesWording.team.index.members.jade.countries,
-			school: "images/kaistLogo.png",
-			img: "images/team/jadeyang.jpg",
+			img: IMAGES.team.jadeyang,
 		},
 	];
 
@@ -176,7 +165,6 @@ const Content = () => {
 				</Div>
 			</Div>
 			<Footer />
-			<Detail />
 		</Div>
 	);
 };

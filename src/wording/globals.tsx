@@ -33,8 +33,8 @@ export const globalsWording = {
 				ko: <>신규 프로젝트 보러가기</>,
 			},
 			link: {
-				ko: "https://www.gomz.io/ko",
-				en: "https://www.gomz.io/en",
+				ko: "https://www.weirdbears.io/ko",
+				en: "https://www.weirdbears.io/en",
 			},
 		},
 		pages: {
