@@ -2,18 +2,18 @@ const prefix = "https://dj6yvnhvuzrpo.cloudfront.net";
 
 export const images = {
     portfolio: {
-        betterWorldBlueLogo: "/images/portfolio/betterWorldBlueLogo.png",
+        betterWorldLogo: "/images/portfolio/betterWorldLogo.png",
         webeIllust: "/images/portfolio/webeIllust.png",
     },
     team: {
         erickim: "/images/team/erickim.jpg",
-        jadeyang: "/images/team/jadeyang.jpg",
         jaehwanjeong: "/images/team/jaehwanjeong.jpeg",
         jieunpark: "/images/team/jieunpark.jpg",
         minjunkim: "/images/team/minjunkim.jpg",
         sehanpark: "/images/team/sehanpark.jpg",
         seunganjung: "/images/team/seunganjung.jpg",
         yeajeanlee: "/images/team/yeajeanlee.jpg",
+        tyler: "/images/team/tyler.jpg",
     },
     community: "/images/community.png",
     helping: "/images/helping.png",

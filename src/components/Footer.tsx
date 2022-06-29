@@ -39,7 +39,7 @@ const Footer = () => {
 			</Row>
 			<Row mxAuto maxW={960} whitespaceNowrap>
 				<Col pr0>
-					<Div>©Sooni Labs</Div>
+					<Div>©SOONI Labs</Div>
 				</Col>
 				<Col></Col>
 				<Col auto pl0>

@@ -79,7 +79,7 @@ const Content = () => {
 			desc: pagesWording.team.index.members.jade.desc[locale],
 			specialty: pagesWording.team.index.members.jade.specialty[locale],
 			countries: pagesWording.team.index.members.jade.countries,
-			img: IMAGES.team.jadeyang,
+			img: IMAGES.team.tyler,
 		},
 	];
 

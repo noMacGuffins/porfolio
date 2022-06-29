@@ -5,11 +5,11 @@ export const pagesWording = {
 	index: {
 		main: {
 			title: {
-				en: <>SOONI LABS</>,
-				ko: <>SOONI LABS</>,
+				en: <>SOONI Labs</>,
+				ko: <>SOONI Labs</>,
 			},
 			motto: {
-				en: <>Blockchain that Connects</>,
+				en: <>Connecting Through Blockchain</>,
 				ko: <>사회를 잇는 블록체인</>,
 			},
 		},
@@ -21,13 +21,13 @@ export const pagesWording = {
 			subtitle: {
 				en: (
 					<>
-						Founded in 2021, SOONI Labs is the first Korean NFT-focused company that bridges the gap between NFTs and Real-World utility through
+						Founded in 2021, SOONI Labs is the first Korean NFT-focused company that revitalizes a healthy Web 3.0 ecosystem through
 						practical B-Apps.
 					</>
 				),
 				ko: (
 					<>
-						2021년에 설립된 SOONI LABS는 실용적인 B-App을 통해 NFT와 실제 사회를 연결하여 사회적 가치 창출에 앞장서는 한국 최초의 NFT 중심 기업입니다.
+						2021년에 설립된 SOONI Labs는 실용적인 B-App을 통해 건강한 웹 3.0 생태계 구축에 앞장서는 한국 최초의 NFT 중심 기업입니다.
 					</>
 				),
 			},
@@ -40,13 +40,13 @@ export const pagesWording = {
 			subtitle: {
 				en: (
 					<>
-						As NFT enthusiasts, we will continuously develop beneficial projects for not only Koreans but also the global community. We are here to
-						make a positive impact, to create a warm NFT ecosystem where art, society, and technology are all appreciated.
+						We are here to
+						make a positive impact, to create a warm Web 3.0 ecosystem <br></br> where art, society, and technology are all appreciated.
 					</>
 				),
 				ko: (
 					<>
-						SOONI LABS는 한국뿐만 아니라 전 세계를 위한 지속적인 프로젝트 개발을 통해 예술, 사회, 기술이 융합되어 긍정적인 영향을 주는 따뜻한 NFT
+						SOONI Labs는 한국뿐만 아니라 전 세계를 위한 지속적인 프로젝트 개발을 통해<br></br>예술, 사회, 기술이 융합되어 긍정적인 영향을 주는 웹 3.0
 						생태계를 만들어 갑니다.
 					</>
 				),
@@ -65,13 +65,13 @@ export const pagesWording = {
 				desc: {
 					en: (
 						<>
-							Our every project is dedicated to solving societal issues. We aspire to help everyone create social value through the practicality of
-							NFTs, regardless of gender, background, or generational differences.
+							Our every project is dedicated to solving societal issues. We aspire to help everyone create social value through Web 3.0,
+							regardless of gender, background, or generational differences.
 						</>
 					),
 					ko: (
 						<>
-							모든 프로젝트는 사회적 문제 해결을 위해 존재합니다. 성별, 배경, 세대 차이에 상관없이 모두가 NFT의 실용성을 통해 사회적 가치를 창출할 수
+							모든 프로젝트는 사회적 문제 해결을 위해 존재합니다. 성별, 배경, 세대 차이에 상관없이 모두가 웹3.0을 통해 사회적 가치를 창출할 수
 							있도록 돕습니다.
 						</>
 					),
@@ -85,14 +85,14 @@ export const pagesWording = {
 				desc: {
 					en: (
 						<>
-							Crypto is often recognized as a “rugpull”, “ponzi scheme”, and a “rich-getting-richer mechanism”. Through practical applications of
-							NFTs, we challenge such stereotypes surrounding digital assets.
+							Things related to Web 3.0 is often recognized as a “rugpull" and “ponzi scheme”. Through practical and productive applications,
+							we challenge such stereotypes surrounding Web 3.0.
 						</>
 					),
 					ko: (
 						<>
-							암호화폐, 블록체인 및 NFT와 관련하여 “투기”, “도박”, “불법” 등 부정적 사회적 인식이 존재합니다. NFT의 실제 사회적 가치 창출을 통해
-							디지털 자산을 둘러싼 고정관념에 도전합니다.
+							웹 3.0과 관련해 아직은 “투기”, “도박" 등 부정적 사회 인식이 존재합니다. 실질적이고 생산적인 가치 창출을 통해
+							웹 3.0을 둘러싼 고정관념에 도전합니다.
 						</>
 					),
 				},
@@ -105,13 +105,13 @@ export const pagesWording = {
 				desc: {
 					en: (
 						<>
-							We believe the longevity of NFT collections are determined by the community. Our supporters’ voices will be reflected in our future
-							decisions to evolve into a powerful DAO.
+							We believe the longevity of Web 3.0 are determined by the users, the community. Our supporters’ voices will be reflected in our future
+							decisions to evolve into a healthy DAO.
 						</>
 					),
 					ko: (
 						<>
-							NFT 컬렉션의 수명은 함께 발전하는 커뮤니티에 의해 결정된다고 확신합니다. SOONI LABS는 커뮤니티의 목소리와 함께 진정한 DAO를 향해
+							웹 3.0의 수명은 결국 함께하는 유저와 커뮤니티에 의해 결정된다고 확신합니다. SOONI Labs는 커뮤니티의 목소리와 함께 건강한 DAO를 향해
 							나아갑니다.
 						</>
 					),
@@ -126,7 +126,7 @@ export const pagesWording = {
 				en: <>Team</>,
 			},
 			subtitle: {
-				ko: [<>SOONI LABS 팀원들은 블록체인을 기반으로</>, <>함께 고민하고 해결하며, 세계를 향해 나아갑니다.</>],
+				ko: [<>SOONI Labs 팀원들은 블록체인을 기반으로</>, <>함께 고민하고 해결하며, 세계를 향해 나아갑니다.</>],
 				en: [<>A group of active problem solvers working together</>, <>to provide value from blockchain, for the world.</>],
 			},
 			members: {
@@ -148,14 +148,14 @@ export const pagesWording = {
 						en: (
 							<Div textCenter>
 								<Div>KAIST Business & Tech Management</Div>
-								<Div pt20>NONCE Blockchain Community Member</Div>
+								<Div pt20>HR @ an edu-tech startup</Div>
 								<Div pt20>1st in MSK x Block Crafters Case Competition</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div>KAIST 기술경영학부</Div>
-								{/* <Div pt20>블록체인 커뮤니티 NONCE 멤버</Div> */}
+								<Div>KAIST 기술경영학 전공</Div>
+								<Div pt20>HR @ 에듀텍 스타트업</Div>
 								<Div pt20>
 									MSK x Block Crafters <br /> 산학협력 프로젝트 우승
 								</Div>
@@ -165,7 +165,7 @@ export const pagesWording = {
 				},
 				yeajean: {
 					name: {
-						en: "Yea Jean Lee",
+						en: "Serena Lee",
 						ko: "이예진",
 					},
 					countries: "🇰🇷 🇻🇳 ",
@@ -181,15 +181,15 @@ export const pagesWording = {
 						en: (
 							<Div textCenter>
 								<Div>Yonsei University Business</Div>
-								<Div pt20>PM @ CodeGreen</Div>
-								<Div pt20>Marketing @ KOTE</Div>
+								<Div pt20>PM @ a social venture</Div>
+								<Div pt20>Marketing @ a cultural complex</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div>연세대학교 경영학과</Div>
-								<Div pt20>PM @ CodeGreen</Div>
-								<Div pt20>마케팅 @ KOTE</Div>
+								<Div>연세대학교 경영학 전공</Div>
+								<Div pt20>PM @ 소셜 벤처 기업</Div>
+								<Div pt20>마케팅 @ 복합문화공간</Div>
 							</Div>
 						),
 					},
@@ -211,14 +211,14 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div>New York University</Div>
+								<Div>New York University Economy</Div>
 								<Div pt20>PM @ GreenWall Building Materials</Div>
 								<Div pt20>NFT Degen</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div>뉴욕대학교</Div>
+								<Div>뉴욕대학교 경제학 전공</Div>
 								<Div pt20>PM @ GreenWall Building Materials</Div>
 								<Div pt20>NFT 활동가</Div>
 							</Div>
@@ -250,7 +250,7 @@ export const pagesWording = {
 						),
 						ko: (
 							<Div textCenter>
-								<Div>홍콩 폴리테크닉 대학교 제품디자인학과</Div>
+								<Div>홍콩 폴리테크닉 대학교 제품디자인학 전공</Div>
 								<Div pt20>제품 디자이너 @ Lulugine</Div>
 								<Div pt20>일러스트 디자이너 @ A’ Prime</Div>
 								<Div pt20>HK 2022 Disney Imaginations Competition 결승 진출</Div>
@@ -260,14 +260,14 @@ export const pagesWording = {
 				},
 				jade: {
 					name: {
-						en: "Jade Yang",
-						ko: "양성현",
+						en: "Tyler Park",
+						ko: "박석민",
 					},
 					position: {
-						ko: "UI/UX 디자이너",
-						en: "UI/UX Designer",
+						ko: "액셀러레이터",
+						en: "Accelerator",
 					},
-					countries: "🇰🇷 🇨🇳",
+					countries: "🇰🇷",
 					specialty: {
 						en: "Interactions made simply beautiful",
 						ko: "간단하고 예쁜 상호작용을 만들다",
@@ -275,12 +275,16 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div>KAIST Industrial Design</Div>
+								<Div pt20>CEO @ a company-buidling startup</Div>
+								<Div pt20>Founder @ a tech startup</Div>
+								<Div pt20>Founder @ a blockchain startup</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div>KAIST 산업디자인학과</Div>
+								<Div pt20>CEO @ 컴퍼니 빌더</Div>
+								<Div pt20>창립자 @ 테크 스타트업</Div>
+								<Div pt20>창립자 @ 블록체인 스타트업</Div>
 							</Div>
 						),
 					},
@@ -303,13 +307,13 @@ export const pagesWording = {
 						en: (
 							<Div textCenter>
 								<Div>KAIST Computer Science</Div>
-								<Div pt20>SW Engineer @ Ringle</Div>
+								<Div pt20>SW Engineer @ an edu-tech startup</Div>
 							</Div>
 						),
 						ko: (
 							<Div textCenter>
-								<Div>KAIST 전산학부</Div>
-								<Div pt20>개발자 @ 링글</Div>
+								<Div>KAIST 전산학 전공</Div>
+								<Div pt20>개발자 @ 에듀텍 스타트업</Div>
 							</Div>
 						),
 					},
@@ -338,7 +342,7 @@ export const pagesWording = {
 						),
 						ko: (
 							<Div textCenter>
-								<Div>KAIST 전산학부</Div>
+								<Div>KAIST 전산학 전공</Div>
 								<Div pt20>공동 창립자, 개발자 @ SurePlus</Div>
 								<Div pt20>개발자 @ Waddle</Div>
 							</Div>
@@ -367,7 +371,7 @@ export const pagesWording = {
 						),
 						ko: (
 							<Div textCenter>
-								<Div>KAIST 전산학부</Div>
+								<Div>KAIST 전산학 전공</Div>
 							</Div>
 						),
 					},
@@ -388,8 +392,8 @@ export const pagesWording = {
 						en: "Foundation",
 					},
 					desc: {
-						ko: "SOONI LABS 2021년 설립",
-						en: "SOONI LABS was founded in 2021",
+						ko: "SOONI Labs 2021년 설립",
+						en: "SOONI Labs was founded in 2021",
 					},
 				},
 				thinktomi: {
@@ -414,8 +418,8 @@ export const pagesWording = {
 				},
 				gomz: {
 					name: {
-						ko: "NFT: WEBE",
-						en: "NFT: WEBE",
+						ko: "NFT: WeBe",
+						en: "NFT: WeBe",
 					},
 					desc: {
 						ko: "COMING SOON",
