@@ -41,12 +41,12 @@ export const pagesWording = {
 				en: (
 					<>
 						We are here to
-						make a positive impact, to create a warm Web 3.0 ecosystem <br></br> where art, society, and technology are all appreciated.
+						make a positive impact, to create a warm Web 3.0 ecosystem where art, society, and technology are all appreciated.
 					</>
 				),
 				ko: (
 					<>
-						SOONI Labs는 한국뿐만 아니라 전 세계를 위한 지속적인 프로젝트 개발을 통해<br></br>예술, 사회, 기술이 융합되어 긍정적인 영향을 주는 웹 3.0
+						SOONI Labs는 한국뿐만 아니라 전 세계를 위한 지속적인 프로젝트 개발을 통해 예술, 사회, 기술이 융합되어 긍정적인 영향을 주는 웹 3.0
 						생태계를 만들어 갑니다.
 					</>
 				),
