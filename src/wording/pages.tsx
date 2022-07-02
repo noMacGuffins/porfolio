@@ -211,7 +211,7 @@ export const pagesWording = {
 					desc: {
 						en: (
 							<Div textCenter>
-								<Div>New York University Economy</Div>
+								<Div>New York University Economics</Div>
 								<Div pt20>PM @ GreenWall Building Materials</Div>
 								<Div pt20>NFT Degen</Div>
 							</Div>
@@ -282,7 +282,7 @@ export const pagesWording = {
 						),
 						ko: (
 							<Div textCenter>
-								<Div pt20>CEO @ 컴퍼니 빌더</Div>
+								<Div pt20>CEO @ 컴퍼니 빌딩 스타트업</Div>
 								<Div pt20>창립자 @ 테크 스타트업</Div>
 								<Div pt20>창립자 @ 블록체인 스타트업</Div>
 							</Div>
@@ -422,8 +422,8 @@ export const pagesWording = {
 						en: "NFT: WeBe",
 					},
 					desc: {
-						ko: "COMING SOON",
-						en: "COMING SOON",
+						ko: "@WeBe_weirdbears",
+						en: "@WeBe_weirdbears",
 					},
 				},
 				gomzSpace: {

@@ -34,9 +34,9 @@ export const globalsWording = {
 				ko: <>신규 프로젝트 보러가기</>,
 			},
 			link: {
-				ko: null,
+				ko: "https://twitter.com/WeBe_weirdbears/",
 				// "https://www.weirdbears.io/ko",
-				en: null,
+				en: "https://twitter.com/WeBe_weirdbears/",
 				// "https://www.weirdbears.io/en",
 			},
 		},
