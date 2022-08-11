@@ -24,8 +24,7 @@ export const globalsWording = {
 	},
 	footer: {
 		intro: {
-			en: <>SOONI Labs is the first Korean NFT-focused company that revitalizes a healthy Web 3.0 ecosystem through
-			practical B-Apps.</>,
+			en: <>SOONI Labs is the first Korean NFT-focused company that revitalizes a healthy Web 3.0 ecosystem through practical B-Apps.</>,
 			ko: <>SOONI Labs는 실용적인 B-App을 통해 건강한 웹 3.0 생태계 구축에 앞장서는 한국 최초의 NFT 중심 기업입니다.</>,
 		},
 		banner: {
@@ -34,10 +33,8 @@ export const globalsWording = {
 				ko: <>신규 프로젝트 보러가기</>,
 			},
 			link: {
-				ko: "https://twitter.com/WeBe_weirdbears/",
-				// "https://www.weirdbears.io/ko",
-				en: "https://twitter.com/WeBe_weirdbears/",
-				// "https://www.weirdbears.io/en",
+				ko: "https://www.betterworldapp.io",
+				en: "https://www.betterworldapp.io",
 			},
 		},
 		pages: {

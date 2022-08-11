@@ -3,6 +3,7 @@ const prefix = "https://dj6yvnhvuzrpo.cloudfront.net";
 export const images = {
     portfolio: {
         betterWorldLogo: "/images/portfolio/betterWorldLogo.png",
+        betterWorldLogoAlpha: "/images/portfolio/betterWorldLogoAlpha.png",
         webeIllust: "/images/portfolio/webeIllust.png",
     },
     team: {

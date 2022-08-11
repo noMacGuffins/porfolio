@@ -21,15 +21,10 @@ export const pagesWording = {
 			subtitle: {
 				en: (
 					<>
-						Founded in 2021, SOONI Labs is the first Korean NFT-focused company that revitalizes a healthy Web 3.0 ecosystem through
-						practical B-Apps.
+						Founded in 2021, SOONI Labs is the first Korean NFT-focused company that revitalizes a healthy Web 3.0 ecosystem through practical B-Apps.
 					</>
 				),
-				ko: (
-					<>
-						2021년에 설립된 SOONI Labs는 실용적인 B-App을 통해 건강한 웹 3.0 생태계 구축에 앞장서는 한국 최초의 NFT 중심 기업입니다.
-					</>
-				),
+				ko: <>2021년에 설립된 SOONI Labs는 실용적인 B-App을 통해 건강한 웹 3.0 생태계 구축에 앞장서는 한국 최초의 NFT 중심 기업입니다.</>,
 			},
 		},
 		mission: {
@@ -38,16 +33,11 @@ export const pagesWording = {
 				ko: <>미션</>,
 			},
 			subtitle: {
-				en: (
-					<>
-						We are here to
-						make a positive impact, to create a warm Web 3.0 ecosystem where art, society, and technology are all appreciated.
-					</>
-				),
+				en: <>We are here to make a positive impact, to create a warm Web 3.0 ecosystem where art, society, and technology are all appreciated.</>,
 				ko: (
 					<>
-						SOONI Labs는 한국뿐만 아니라 전 세계를 위한 지속적인 프로젝트 개발을 통해 예술, 사회, 기술이 융합되어 긍정적인 영향을 주는 웹 3.0
-						생태계를 만들어 갑니다.
+						SOONI Labs는 한국뿐만 아니라 전 세계를 위한 지속적인 프로젝트 개발을 통해 예술, 사회, 기술이 융합되어 긍정적인 영향을 주는 웹 3.0 생태계를
+						만들어 갑니다.
 					</>
 				),
 			},
@@ -65,14 +55,14 @@ export const pagesWording = {
 				desc: {
 					en: (
 						<>
-							Our every project is dedicated to solving societal issues. We aspire to help everyone create social value through Web 3.0,
-							regardless of gender, background, or generational differences.
+							Our every project is dedicated to solving societal issues. We aspire to help everyone create social value through Web 3.0, regardless of
+							gender, background, or generational differences.
 						</>
 					),
 					ko: (
 						<>
-							모든 프로젝트는 사회적 문제 해결을 위해 존재합니다. 성별, 배경, 세대 차이에 상관없이 모두가 웹3.0을 통해 사회적 가치를 창출할 수
-							있도록 돕습니다.
+							모든 프로젝트는 사회적 문제 해결을 위해 존재합니다. 성별, 배경, 세대 차이에 상관없이 모두가 웹3.0을 통해 사회적 가치를 창출할 수 있도록
+							돕습니다.
 						</>
 					),
 				},
@@ -85,14 +75,14 @@ export const pagesWording = {
 				desc: {
 					en: (
 						<>
-							Things related to Web 3.0 is often recognized as a “rugpull" and “ponzi scheme”. Through practical and productive applications,
-							we challenge such stereotypes surrounding Web 3.0.
+							Things related to Web 3.0 is often recognized as a &quot;rugpull&quot; and “ponzi scheme”. Through practical and productive
+							applications, we challenge such stereotypes surrounding Web 3.0.
 						</>
 					),
 					ko: (
 						<>
-							웹 3.0과 관련해 아직은 “투기”, “도박" 등 부정적 사회 인식이 존재합니다. 실질적이고 생산적인 가치 창출을 통해
-							웹 3.0을 둘러싼 고정관념에 도전합니다.
+							웹 3.0과 관련해 아직은 “투기”, &quot;도박&quot; 등 부정적 사회 인식이 존재합니다. 실질적이고 생산적인 가치 창출을 통해 웹 3.0을 둘러싼
+							고정관념에 도전합니다.
 						</>
 					),
 				},
@@ -432,8 +422,8 @@ export const pagesWording = {
 						en: "BetterWorld",
 					},
 					desc: {
-						ko: "COMING SOON",
-						en: "COMING SOON",
+						ko: "PFP Communnity Utility App",
+						en: "PFP Communnity Utility App",
 					},
 				},
 			},
