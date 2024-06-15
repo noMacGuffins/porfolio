@@ -153,7 +153,7 @@ const CommunityObsessed = () => {
 	const { locale } = useRouter();
 	const isTablet = useIsTablet();
 	return (
-		<Div relative wScreen px30 clx={!isTablet && "transition group hover:transition-all"} py200>
+		<Div relative wScreen px30 clx={!isTablet && "transition group hover:transition-all"} py100>
 			<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0} offset={1500}>
 				{(progress) => (
 					<Timeline totalProgress={progress} paused>

@@ -73,14 +73,6 @@ const Content = () => {
 			countries: pagesWording.team.index.members.jieun.countries,
 			img: IMAGES.team.jieunpark,
 		},
-		{
-			name: pagesWording.team.index.members.jade.name[locale],
-			position: pagesWording.team.index.members.jade.position[locale],
-			desc: pagesWording.team.index.members.jade.desc[locale],
-			specialty: pagesWording.team.index.members.jade.specialty[locale],
-			countries: pagesWording.team.index.members.jade.countries,
-			img: IMAGES.team.tyler,
-		},
 	];
 
 	return (

@@ -1,4 +1,4 @@
-const prefix = "https://dj6yvnhvuzrpo.cloudfront.net";
+const prefix = "";
 
 export const images = {
     portfolio: {
