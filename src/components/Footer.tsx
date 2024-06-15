@@ -38,8 +38,9 @@ const Footer = () => {
 				</Col>
 			</Row>
 			<Row mxAuto maxW={960} whitespaceNowrap>
-				<Col pr0>
-					<Div>©SOONI Labs</Div>
+				<Col pr0 auto>
+					<Div fontSize20>©SOONI Labs</Div>
+					<Div fontSize12 pt5 aTag href={"https://soonilabs.notion.site/BetterWorld-25a6cb97fd784a8da6f633f19ceeeb2b"} target={'_blank'}>개인정보 처리 방침</Div>
 				</Col>
 				<Col></Col>
 				<Col auto pl0>
