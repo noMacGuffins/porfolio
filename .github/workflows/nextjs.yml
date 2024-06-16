@@ -1,0 +1,46 @@
+name: GitHub Pages Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js ⚡
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.20.2
+          cache: 'yarn'
+
+      - name: Cache 📦
+        uses: actions/cache@v3
+        with:
+          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
+          path: |
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: next-cache-${{ runner.os }}-nextjs-${{ hashFiles('**/package.json', '**/yarn.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            next-cache-${{ runner.os }}-nextjs-${{ hashFiles('**/package.json', '**/yarn.lock') }}-
+
+      - name: Install Dependencies ⚙️
+        run: |
+          yarn install
+
+      - name: Build 🔧
+        run: |
+          yarn deployGithub
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: out
