@@ -1,5 +1,5 @@
 {
-  "name": "mnm",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -24,6 +24,7 @@
     "autoprefixer": "^10.4.2",
     "bootstrap": "5.1.0",
     "classnames": "^2.3.1",
+    "framer-motion": "^11.2.10",
     "gsap": "^3.9.1",
     "isomorphic-unfetch": "^3.1.0",
     "jquery": "^3.6.0",
@@ -35,6 +36,7 @@
     "randomstring": "^1.2.2",
     "react": "17.0.2",
     "react-bootstrap": "^2.0.0-beta.6",
+    "react-device-detect": "^2.2.3",
     "react-dom": "17.0.2",
     "react-gsap": "^3.2.1",
     "react-helmet": "^6.1.0",

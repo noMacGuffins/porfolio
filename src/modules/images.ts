@@ -1,6 +1,14 @@
 const prefix = "";
 
 export const images = {
+    main:{
+        sehanProfile: "images/main/sehanProfile.jpg",
+        reactLogo: "images/main/reactLogo.png",
+        awsLogo: "images/main/awsLogo.png",
+        kaistLogo: "images/main/kaistLogo.png",
+        rubyOnRailsLogo: "images/main/rubyOnRailsLogo.png",
+        soonilabsView: "images/main/soonilabsView.png",
+    },
     portfolio: {
         betterWorldLogo: "/images/portfolio/betterWorldLogo.png",
         betterWorldLogoAlpha: "/images/portfolio/betterWorldLogoAlpha.png",

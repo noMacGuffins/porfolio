@@ -129,7 +129,7 @@ const propsToClx = (props) => {
 		textSm: () => addStyle(styles, "", { fontSize: 10 }),
 		textBase: () => addStyle(styles, "", { fontSize: 15 }),
 		textLg: () => addStyle(styles, "", { fontSize: 20 }),
-		textXl: () => addStyle(styles, "", { fontSize: 30 }),
+		textXl: () => addStyle(styles, "", { fontSize: 50 }),
 		textXxl: () => addStyle(styles, "", { fontSize: 80 }),
 		textXxxl: () => addStyle(styles, "", { fontSize: 150 }),
 		//font-family
@@ -870,6 +870,7 @@ const propsToClx = (props) => {
 		flexNowrap: () => clxs.push("flex-nowrap"),
 		// flex
 		flex1: () => clxs.push("flex-1"),
+		flex2: () => clxs.push("flex-2"),
 		flexAuto: () => clxs.push("flex-auto"),
 		flexInitial: () => clxs.push("flex-initial"),
 		flexNone: () => clxs.push("flex-none"),
